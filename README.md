@@ -1,93 +1,33 @@
-# Text Generator Web App Template
+# 越海 · 跨境电商 AI 知识助手
 
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+基于 [Dify 官方 Text Generator Web App 模板](https://github.com/langgenius/webapp-text-generator)制作的面试 Demo。保留模板的 Dify API 路由、流式响应和 Workflow 请求逻辑，提供中文提问与 Markdown 回答界面。
 
-## Config App
+## 本地运行
 
-Create a file named `.env.local` in the current directory and copy the contents from `.env.example`. Setting the following content:
-
-```
-# APP ID
-NEXT_PUBLIC_APP_ID=
-# APP API key
-NEXT_PUBLIC_APP_KEY=
-# APP API URL
-NEXT_PUBLIC_API_URL=
-# APP type
-# true for workflow apps
-NEXT_PUBLIC_APP_TYPE_WORKFLOW=
-```
-
-Config more in `config/index.ts` file:
-
-```js
-export const APP_INFO: AppInfo = {
-  title: 'Chat APP',
-  description: '',
-  copyright: '',
-  privacy_policy: '',
-  default_language: 'zh-Hans'
-}
-
-export const isShowPrompt = true
-export const promptTemplate = ''
-```
-
-## Getting Started
-
-First, install dependencies:
+需要 Node.js 20 或更新版本。复制 `.env.example` 为 `.env.local`，填写自己的 Dify 应用配置，然后运行：
 
 ```bash
-npm install
-# or
-yarn
-# or
-pnpm install
-```
-
-Then, run the development server:
-
-```bash
+npm ci
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+打开 <http://localhost:3000>。发布前运行 `npm run build`。
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Dify 配置
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
+| 变量 | 用途 |
+| --- | --- |
+| `NEXT_PUBLIC_APP_ID` | Dify 应用 ID |
+| `NEXT_PUBLIC_APP_KEY` | Dify 应用 API Key |
+| `NEXT_PUBLIC_API_URL` | Dify API 地址，云端为 `https://api.dify.ai/v1` |
+| `NEXT_PUBLIC_APP_TYPE_WORKFLOW` | Workflow 应用填 `true`；文本生成应用填 `false` |
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+变量名沿用官方模板。密钥只在服务端 API 路由读取，不在客户端界面使用。真实值只填 `.env.local`，该文件已被 Git 忽略；`.env.example` 不含密钥。应用需要在 Dify 中发布。前端从 `/api/parameters` 读取输入参数，再调用原有的 `/api/workflows/run` 或 `/api/completion-messages` 路由。推荐问题会填入 Dify 提供的文本输入字段，不改变请求协议。
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+可选的 `NEXT_PUBLIC_APP_BASE_URL_PATH` 和 `NEXT_PUBLIC_API_PREFIX` 用于非根路径部署；Vercel 根域名部署时保持为空。
 
-## Learn More
+## 部署到 Vercel
 
-To learn more about Next.js, take a look at the following resources:
+将此仓库推送到 GitHub，在 [Vercel 新建项目](https://vercel.com/new)中导入该仓库。项目根目录保持仓库根目录，Framework Preset 选择 Next.js，使用默认的 `npm run build`。在 Vercel 项目的 Environment Variables 中添加上表四个变量，选择 Production 环境并部署。更换环境变量后需要重新部署。
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on EdgeOne Pages
-
-[![Use EdgeOne Pages to deploy](https://cdnstatic.tencentcs.com/edgeone/pages/deploy.svg)](https://edgeone.ai/pages/new?repository-url=https://github.com/langgenius/webapp-text-generator)
-
-Deploy your Next.js application to Tencent EdgeOne Pages with just one click and go live in minutes.
-
-After clicking, simply log in to the EdgeOne Pages console, configure your build command, select an acceleration region, and set your environment variables as described in the Config App section above. 
-
-For a detailed walkthrough, see the Importing a Git Repository [guide](https://pages.edgeone.ai/document/importing-a-git-repository).
-
-## Deploy on Vercel
-
-> ⚠️ If you are using [Vercel Hobby](https://vercel.com/pricing), your message will be trucated due to the limitation of vercel.
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+部署完成后打开 Vercel 域名，用真实问题验证 Workflow 回答。Dify 应用的额度、模型服务及 Workflow 发布状态由 Dify 账户管理；较长的回答受 [Vercel Function 时长设置](https://vercel.com/docs/functions/configuring-functions/duration)影响。

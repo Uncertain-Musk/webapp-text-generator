@@ -1,12 +1,7 @@
 import type { FC } from 'react'
 import React from 'react'
-import { useTranslation } from 'react-i18next'
-import {
-  PlayIcon,
-} from '@heroicons/react/24/solid'
-import Select from '@/app/components/base/select'
+import { ArrowUpIcon } from '@heroicons/react/24/outline'
 import type { PromptConfig, VisionFile, VisionSettings } from '@/types/app'
-import Button from '@/app/components/base/button'
 import { DEFAULT_VALUE_MAX_LEN } from '@/config'
 import TextGenerationImageUploader from '@/app/components/base/image-uploader/text-generation-image-uploader'
 
@@ -17,118 +12,53 @@ export type IRunOnceProps = {
   onSend: () => void
   visionConfig: VisionSettings
   onVisionFilesChange: (files: VisionFile[]) => void
+  isBusy?: boolean
+  questionKey?: string
 }
-const RunOnce: FC<IRunOnceProps> = ({
-  promptConfig,
-  inputs,
-  onInputsChange,
-  onSend,
-  visionConfig,
-  onVisionFilesChange,
-}) => {
-  const { t } = useTranslation()
-
-  const onClear = () => {
-    const newInputs: Record<string, any> = {}
-    promptConfig.prompt_variables.forEach((item) => {
-      newInputs[item.key] = ''
-    })
-    onInputsChange(newInputs)
-  }
-
+const RunOnce: FC<IRunOnceProps> = ({ promptConfig, inputs, onInputsChange, onSend, visionConfig, onVisionFilesChange, isBusy, questionKey }) => {
+  const requiredMissing = promptConfig.prompt_variables.some(item => item.required !== false && !String(inputs[item.key] ?? '').trim())
   return (
-    <div className="">
-      <section>
-        {/* input form */}
-        <form>
-          {promptConfig.prompt_variables.map(item => (
-            <div className='w-full mt-4' key={item.key}>
-              <label className='text-gray-900 text-sm font-medium'>{item.name}</label>
-              <div className='mt-2'>
-                {item.type === 'select' && (
-                  <Select
-                    className='w-full'
-                    defaultValue={inputs[item.key]}
-                    onSelect={(i) => { onInputsChange({ ...inputs, [item.key]: i.value }) }}
-                    items={(item.options || []).map(i => ({ name: i, value: i }))}
-                    allowSearch={false}
-                    bgClassName='bg-gray-50'
-                  />
-                )}
-                {item.type === 'string' && (
-                  <input
-                    type="text"
-                    className="block w-full p-2 text-gray-900 border border-gray-300 rounded-lg bg-gray-50 sm:text-xs focus:ring-blue-500 focus:border-blue-500 "
-                    placeholder={`${item.name}${!item.required ? `(${t('appDebug.variableTable.optional')})` : ''}`}
-                    value={inputs[item.key]}
-                    onChange={(e) => { onInputsChange({ ...inputs, [item.key]: e.target.value }) }}
-                    maxLength={item.max_length || DEFAULT_VALUE_MAX_LEN}
-                  />
-                )}
-                {item.type === 'paragraph' && (
-                  <textarea
-                    className="block w-full h-[104px] p-2 text-gray-900 border border-gray-300 rounded-lg bg-gray-50 sm:text-xs focus:ring-blue-500 focus:border-blue-500 "
-                    placeholder={`${item.name}${!item.required ? `(${t('appDebug.variableTable.optional')})` : ''}`}
-                    value={inputs[item.key]}
-                    onChange={(e) => { onInputsChange({ ...inputs, [item.key]: e.target.value }) }}
-                  />
-                )}
-                {item.type === 'number' && (
-                  <input
-                    type="number"
-                    className="block w-full p-2 text-gray-900 border border-gray-300 rounded-lg bg-gray-50 sm:text-xs focus:ring-blue-500 focus:border-blue-500 "
-                    placeholder={`${item.name}${!item.required ? `(${t('appDebug.variableTable.optional')})` : ''}`}
-                    value={inputs[item.key]}
-                    onChange={(e) => { onInputsChange({ ...inputs, [item.key]: e.target.value }) }}
-                  />
-                )}
-              </div>
-            </div>
-          ))}
-          {
-            visionConfig?.enabled && (
-              <div className="w-full mt-4">
-                <div className="text-gray-900 text-sm font-medium">{t('common.imageUploader.imageUpload')}</div>
-                <div className='mt-2'>
-                  <TextGenerationImageUploader
-                    settings={visionConfig}
-                    onFilesChange={files => onVisionFilesChange(files.filter(file => file.progress !== -1).map(fileItem => ({
-                      type: 'image',
-                      transfer_method: fileItem.type,
-                      url: fileItem.url,
-                      upload_file_id: fileItem.fileId,
-                    })))}
-                  />
-                </div>
-              </div>
-            )
-          }
-          {promptConfig.prompt_variables.length > 0 && (
-            <div className='mt-4 h-[1px] bg-gray-100'></div>
-          )}
-          <div className='w-full mt-4'>
-            <div className="flex items-center justify-between">
-              <Button
-                className='!h-8 !p-3'
-                onClick={onClear}
-                disabled={false}
-              >
-                <span className='text-[13px]'>{t('common.operation.clear')}</span>
-              </Button>
-              <Button
-                type="primary"
-                className='!h-8 !pl-3 !pr-4'
-                onClick={onSend}
-                disabled={false}
-              >
-                <PlayIcon className="shrink-0 w-4 h-4 mr-1" aria-hidden="true" />
-                <span className='text-[13px]'>{t('app.generation.run')}</span>
-              </Button>
-            </div>
+    <form className='question-form' onSubmit={(event) => {
+      event.preventDefault()
+      if (!isBusy && !requiredMissing)
+        onSend()
+    }} onKeyDown={(event) => {
+      if ((event.ctrlKey || event.metaKey) && event.key === 'Enter' && !event.nativeEvent.isComposing) {
+        event.preventDefault()
+        event.currentTarget.requestSubmit()
+      }
+    }}>
+      {promptConfig.prompt_variables.map((item) => {
+        const primary = item.key === questionKey
+        const id = primary ? 'question' : `input-${item.key}`
+        const maxLength = item.max_length || (item.type === 'string' ? DEFAULT_VALUE_MAX_LEN : undefined)
+        return <div className={primary ? 'question-field primary-field' : 'question-field'} key={item.key}>
+          <div className='field-heading'><label htmlFor={id}>{primary ? '描述你的问题' : item.name}</label>
+            {primary && maxLength && <span>{String(inputs[item.key] || '').length} / {maxLength}</span>}
           </div>
-        </form>
-      </section>
-    </div>
+          {['string', 'paragraph'].includes(item.type) && <textarea id={id} rows={primary ? 5 : 3}
+            placeholder={primary ? '例如：我的 Amazon 美国站广告 ACOS 最近持续上升，应该从哪些方面排查？' : `请输入${item.name}`}
+            value={inputs[item.key] ?? ''} maxLength={maxLength} required={item.required !== false} disabled={isBusy}
+            onChange={event => onInputsChange({ ...inputs, [item.key]: event.target.value })} />}
+          {item.type === 'number' && <input id={id} type='number' value={inputs[item.key] ?? ''}
+            required={item.required !== false} disabled={isBusy}
+            onChange={event => onInputsChange({ ...inputs, [item.key]: event.target.value })} />}
+          {item.type === 'select' && <select id={id} value={inputs[item.key] ?? ''} required={item.required !== false} disabled={isBusy}
+            onChange={event => onInputsChange({ ...inputs, [item.key]: event.target.value })}>
+            <option value=''>请选择{item.name}</option>{item.options?.map(option => <option key={option} value={option}>{option}</option>)}
+          </select>}
+        </div>
+      })}
+      {visionConfig.enabled && <TextGenerationImageUploader settings={visionConfig}
+        onFilesChange={files => onVisionFilesChange(files.filter(file => file.progress !== -1).map(file => ({
+          type: 'image', transfer_method: file.type, url: file.url, upload_file_id: file.fileId,
+        })))} />}
+      <div className='composer-actions'><span className='keyboard-hint'>Ctrl / ⌘ + Enter 发送</span>
+        <button className='submit-button' type='submit' disabled={isBusy || requiredMissing || !questionKey}>
+          {isBusy ? <><span className='loading-ring' />正在分析</> : <>开始分析<ArrowUpIcon aria-hidden='true' /></>}
+        </button>
+      </div>
+    </form>
   )
 }
 export default React.memo(RunOnce)

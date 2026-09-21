@@ -1,10 +1,11 @@
 import React from 'react'
 
 import Main from '@/app/components'
+import { hasAppConfig } from '@/config/server'
 
 const App = () => {
   return (
-    <Main />
+    <Main isConfigured={hasAppConfig} />
   )
 }
 

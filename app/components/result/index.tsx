@@ -4,14 +4,12 @@ import React, { useEffect, useRef, useState } from 'react'
 import { useBoolean } from 'ahooks'
 import { t } from 'i18next'
 import produce from 'immer'
-import cn from 'classnames'
-import NoData from '../no-data'
+import { ArrowPathIcon, ChatBubbleLeftRightIcon } from '@heroicons/react/24/outline'
 import TextGenerationRes from './item'
 import Toast from '@/app/components/base/toast'
 import { sendCompletionMessage, sendWorkflowMessage, updateFeedback } from '@/service'
 import type { Feedbacktype, PromptConfig, VisionFile, VisionSettings, WorkflowProcess } from '@/types/app'
 import { NodeRunningStatus, TransferMethod, WorkflowRunningStatus } from '@/types/app'
-import Loading from '@/app/components/base/loading'
 import { sleep } from '@/utils'
 
 export type IResultProps = {
@@ -30,6 +28,7 @@ export type IResultProps = {
   onCompleted: (completionRes: string, taskId?: number, success?: boolean) => void
   visionConfig: VisionSettings
   completionFiles: VisionFile[]
+  onRespondingChange?: (responding: boolean) => void
 }
 
 const Result: FC<IResultProps> = ({
@@ -48,8 +47,10 @@ const Result: FC<IResultProps> = ({
   onCompleted,
   visionConfig,
   completionFiles,
+  onRespondingChange,
 }) => {
   const [isResponsing, { setTrue: setResponsingTrue, setFalse: setResponsingFalse }] = useBoolean(false)
+  const [requestFailed, setRequestFailed] = useState(false)
   useEffect(() => {
     if (controlStopResponding)
       setResponsingFalse()
@@ -64,11 +65,15 @@ const Result: FC<IResultProps> = ({
   const getCompletionRes = () => completionResRef.current
   const [workflowProcessData, doSetWorkflowProccessData] = useState<WorkflowProcess>()
   const workflowProcessDataRef = useRef<WorkflowProcess>()
-  const setWorkflowProccessData = (data: WorkflowProcess) => {
+  const setWorkflowProccessData = (data: WorkflowProcess | undefined) => {
     workflowProcessDataRef.current = data
     doSetWorkflowProccessData(data)
   }
   const getWorkflowProccessData = () => workflowProcessDataRef.current
+  const isBusy = isResponsing || workflowProcessData?.status === WorkflowRunningStatus.Running
+  useEffect(() => {
+    onRespondingChange?.(isBusy)
+  }, [isBusy, onRespondingChange])
 
   const { notify } = Toast
   const isNoData = !completionRes
@@ -105,12 +110,12 @@ const Result: FC<IResultProps> = ({
       if (hasEmptyInput)
         return
 
-      if (!inputs[key])
+      if (!String(inputs[key] ?? '').trim())
         hasEmptyInput = name
     })
 
     if (hasEmptyInput) {
-      logError(t('appDebug.errorMessage.valueOfVarRequired', { key: hasEmptyInput }))
+      logError(`请填写${hasEmptyInput}`)
       return false
     }
     if (completionFiles.find(item => item.transfer_method === TransferMethod.local_file && !item.upload_file_id)) {
@@ -121,7 +126,7 @@ const Result: FC<IResultProps> = ({
   }
 
   const handleSend = async () => {
-    if (isResponsing) {
+    if (isBusy) {
       notify({ type: 'info', message: t('appDebug.errorMessage.waitForResponse') })
       return false
     }
@@ -149,6 +154,8 @@ const Result: FC<IResultProps> = ({
       rating: null,
     })
     setCompletionRes('')
+    setWorkflowProccessData(undefined)
+    setRequestFailed(false)
 
     const res: string[] = []
     let tempMessageId = ''
@@ -163,6 +170,8 @@ const Result: FC<IResultProps> = ({
       await sleep(1000 * 60) // 1min timeout
       if (!isEnd) {
         setResponsingFalse()
+        setWorkflowProccessData(undefined)
+        setRequestFailed(true)
         onCompleted(getCompletionRes(), taskId, false)
         isTimeout = true
       }
@@ -173,6 +182,8 @@ const Result: FC<IResultProps> = ({
         data,
         {
           onWorkflowStarted: ({ workflow_run_id }) => {
+            if (isTimeout)
+              return
             tempMessageId = workflow_run_id
             setWorkflowProccessData({
               status: WorkflowRunningStatus.Running,
@@ -182,6 +193,8 @@ const Result: FC<IResultProps> = ({
             setResponsingFalse()
           },
           onNodeStarted: ({ data }) => {
+            if (isTimeout)
+              return
             setWorkflowProccessData(produce(getWorkflowProccessData()!, (draft) => {
               draft.expand = true
               draft.tracing!.push({
@@ -192,6 +205,8 @@ const Result: FC<IResultProps> = ({
             }))
           },
           onNodeFinished: ({ data }) => {
+            if (isTimeout)
+              return
             setWorkflowProccessData(produce(getWorkflowProccessData()!, (draft) => {
               const currentIndex = draft.tracing!.findIndex(trace => trace.node_id === data.node_id)
               if (currentIndex > -1 && draft.tracing) {
@@ -208,8 +223,9 @@ const Result: FC<IResultProps> = ({
           onWorkflowFinished: ({ data }) => {
             if (isTimeout)
               return
-            if (data.error) {
-              notify({ type: 'error', message: data.error })
+            if (data.error || data.status !== 'succeeded') {
+              setRequestFailed(true)
+              setWorkflowProccessData(undefined)
               setResponsingFalse()
               onCompleted(getCompletionRes(), taskId, false)
               isEnd = true
@@ -229,12 +245,23 @@ const Result: FC<IResultProps> = ({
             onCompleted(getCompletionRes(), taskId, true)
             isEnd = true
           },
+          onError: () => {
+            if (isTimeout)
+              return
+            setRequestFailed(true)
+            setWorkflowProccessData(undefined)
+            setResponsingFalse()
+            onCompleted(getCompletionRes(), taskId, false)
+            isEnd = true
+          },
         },
       )
     }
     else {
       sendCompletionMessage(data, {
         onData: (data: string, _isFirstMessage: boolean, { messageId }) => {
+          if (isTimeout)
+            return
           tempMessageId = messageId
           res.push(data)
           setCompletionRes(res.join(''))
@@ -253,6 +280,7 @@ const Result: FC<IResultProps> = ({
             return
 
           setResponsingFalse()
+          setRequestFailed(true)
           onCompleted(getCompletionRes(), taskId, false)
           isEnd = true
         },
@@ -276,6 +304,7 @@ const Result: FC<IResultProps> = ({
       workflowProcessData={workflowProcessData}
       className='mt-3'
       isError={isError}
+      isResponding={isBusy}
       onRetry={handleSend}
       content={completionRes}
       messageId={messageId}
@@ -288,29 +317,25 @@ const Result: FC<IResultProps> = ({
     />
   )
 
-  return (
-    <div className={cn(isNoData && !isCallBatchAPI && 'h-full')}>
-      {!isCallBatchAPI && (
-        (isResponsing && !completionRes)
-          ? (
-            <div className='flex h-full w-full justify-center items-center'>
-              <Loading type='area' />
-            </div>)
-          : (
-            <>
-              {(isNoData && !workflowProcessData)
-                ? <NoData />
-                : renderTextGenerationRes()
-              }
-            </>
-          )
-      )}
-      {isCallBatchAPI && (
-        <div className='mt-2'>
-          {renderTextGenerationRes()}
-        </div>
-      )}
+  if (requestFailed) {
+    return <div className='answer-error' role='alert'>
+      <p>这次分析未能完成。请检查网络，或稍后重新尝试。</p>
+      <button className='retry-button' type='button' onClick={handleSend}><ArrowPathIcon aria-hidden='true' />重新分析</button>
     </div>
-  )
+  }
+  if (isBusy && isNoData) {
+    return <div className='answer-loading' role='status'>
+      <p className='loading-message'><span className='loading-ring' />正在分析你的问题，请稍候…</p>
+      <div className='skeleton-line' aria-hidden='true' /><div className='skeleton-line' aria-hidden='true' /><div className='skeleton-line' aria-hidden='true' />
+    </div>
+  }
+  if (isNoData) {
+    return <div className='answer-empty'>
+      <ChatBubbleLeftRightIcon className='empty-symbol' strokeWidth={1} aria-hidden='true' />
+      <h3>从疑问，到清晰的下一步</h3>
+      <p>选择一个推荐问题，或描述你遇到的情况。<br />分析与建议将在这里呈现。</p>
+    </div>
+  }
+  return <div className='answer-content'>{renderTextGenerationRes()}</div>
 }
 export default React.memo(Result)

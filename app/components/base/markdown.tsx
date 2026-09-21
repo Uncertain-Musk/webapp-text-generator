@@ -16,7 +16,10 @@ export function Markdown(props: { content: string }) {
           RehypeKatex,
         ]}
         components={{
-          code({ node, inline, className, children, ...props }) {
+          a({ children, ...props }) {
+            return <a {...props} target='_blank' rel='noopener noreferrer'>{children}</a>
+          },
+          code({ node: _node, inline, className, children, ...props }) {
             const match = /language-(\w+)/.exec(className || '')
             return (!inline && match)
               ? (

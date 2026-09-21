@@ -22,10 +22,12 @@ export const sendWorkflowMessage = async (
     onNodeStarted,
     onNodeFinished,
     onWorkflowFinished,
+    onError,
   }: {
     onWorkflowStarted: IOnWorkflowStarted
     onNodeStarted: IOnNodeStarted
     onNodeFinished: IOnNodeFinished
+    onError?: IOnError
     onWorkflowFinished: IOnWorkflowFinished
   },
 ) => {
@@ -34,7 +36,7 @@ export const sendWorkflowMessage = async (
       ...body,
       response_mode: 'streaming',
     },
-  }, { onNodeStarted, onWorkflowStarted, onWorkflowFinished, onNodeFinished })
+  }, { onNodeStarted, onWorkflowStarted, onWorkflowFinished, onNodeFinished, onError })
 }
 
 export const fetchAppParams = async () => {
