@@ -7,10 +7,41 @@ import produce from 'immer'
 import { ArrowPathIcon, ChatBubbleLeftRightIcon } from '@heroicons/react/24/outline'
 import TextGenerationRes from './item'
 import Toast from '@/app/components/base/toast'
-import { sendCompletionMessage, sendWorkflowMessage, updateFeedback } from '@/service'
+import { sendCompletionMessage, sendWorkflowMessage } from '@/service'
+import { stripHiddenThinking } from '@/service/sse-stream'
 import type { Feedbacktype, PromptConfig, VisionFile, VisionSettings, WorkflowProcess } from '@/types/app'
 import { NodeRunningStatus, TransferMethod, WorkflowRunningStatus } from '@/types/app'
-import { sleep } from '@/utils'
+
+const STREAM_RENDER_INTERVAL = 80
+const STREAM_ACTIVITY_TIMEOUT = 60 * 1000
+const ANALYSIS_STAGES = ['理解你的问题', '检索跨境电商知识库', '整理分析与建议']
+
+const getWorkflowOutput = (outputs: any) => {
+  if (!outputs)
+    return ''
+  if (typeof outputs !== 'object' || Array.isArray(outputs))
+    return outputs
+
+  const keys = Object.keys(outputs)
+  if (keys.length === 0)
+    return ''
+  if (keys.length === 1)
+    return outputs[keys[0]]
+  return outputs
+}
+
+const sanitizeWorkflowOutput = (output: any): any => {
+  if (typeof output === 'string')
+    return stripHiddenThinking(output)
+  if (Array.isArray(output))
+    return output.map(sanitizeWorkflowOutput)
+  if (output && typeof output === 'object') {
+    return Object.fromEntries(
+      Object.entries(output).map(([key, value]) => [key, sanitizeWorkflowOutput(value)]),
+    )
+  }
+  return output
+}
 
 export type IResultProps = {
   isWorkflow: boolean
@@ -51,14 +82,16 @@ const Result: FC<IResultProps> = ({
 }) => {
   const [isResponsing, { setTrue: setResponsingTrue, setFalse: setResponsingFalse }] = useBoolean(false)
   const [requestFailed, setRequestFailed] = useState(false)
-  useEffect(() => {
-    if (controlStopResponding)
-      setResponsingFalse()
-  }, [controlStopResponding])
+  const [analysisStage, setAnalysisStage] = useState(0)
+  const [hasStartedStreaming, setHasStartedStreaming] = useState(false)
+  const abortControllerRef = useRef<AbortController | null>(null)
+  const activityTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null)
+  const renderTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null)
+  const requestSerialRef = useRef(0)
 
-  const [completionRes, doSetCompletionRes] = useState('')
-  const completionResRef = useRef('')
-  const setCompletionRes = (res: string) => {
+  const [completionRes, doSetCompletionRes] = useState<any>('')
+  const completionResRef = useRef<any>('')
+  const setCompletionRes = (res: any) => {
     completionResRef.current = res
     doSetCompletionRes(res)
   }
@@ -71,21 +104,44 @@ const Result: FC<IResultProps> = ({
   }
   const getWorkflowProccessData = () => workflowProcessDataRef.current
   const isBusy = isResponsing || workflowProcessData?.status === WorkflowRunningStatus.Running
+
   useEffect(() => {
     onRespondingChange?.(isBusy)
   }, [isBusy, onRespondingChange])
 
+  useEffect(() => {
+    return () => {
+      requestSerialRef.current += 1
+      abortControllerRef.current?.abort()
+      if (activityTimerRef.current)
+        clearTimeout(activityTimerRef.current)
+      if (renderTimerRef.current)
+        clearTimeout(renderTimerRef.current)
+    }
+  }, [])
+
+  useEffect(() => {
+    if (!controlStopResponding)
+      return
+    requestSerialRef.current += 1
+    abortControllerRef.current?.abort()
+    abortControllerRef.current = null
+    if (activityTimerRef.current)
+      clearTimeout(activityTimerRef.current)
+    if (renderTimerRef.current)
+      clearTimeout(renderTimerRef.current)
+    setWorkflowProccessData(undefined)
+    setResponsingFalse()
+  }, [controlStopResponding, setResponsingFalse])
+
   const { notify } = Toast
   const isNoData = !completionRes
+  const [feedback, setFeedback] = useState<Feedbacktype>({ rating: null })
 
-  const [messageId, setMessageId] = useState<string | null>(null)
-  const [feedback, setFeedback] = useState<Feedbacktype>({
-    rating: null,
-  })
-
-  const handleFeedback = async (feedback: Feedbacktype) => {
-    await updateFeedback({ url: `/messages/${messageId}/feedbacks`, body: { rating: feedback.rating } })
-    setFeedback(feedback)
+  const handleFeedback = (nextFeedback: Feedbacktype) => {
+    setFeedback(current => ({
+      rating: current.rating === nextFeedback.rating ? null : nextFeedback.rating,
+    }))
   }
 
   const logError = (message: string) => {
@@ -93,24 +149,19 @@ const Result: FC<IResultProps> = ({
   }
 
   const checkCanSend = () => {
-    // batch will check outer
     if (isCallBatchAPI)
       return true
 
     const prompt_variables = promptConfig?.prompt_variables
-    if (!prompt_variables || prompt_variables?.length === 0)
+    if (!prompt_variables || prompt_variables.length === 0)
       return true
 
     let hasEmptyInput = ''
-    const requiredVars = prompt_variables?.filter(({ key, name, required }) => {
-      const res = (!key || !key.trim()) || (!name || !name.trim()) || (required || required === undefined || required === null)
-      return res
-    }) || [] // compatible with old version
+    const requiredVars = prompt_variables.filter(({ key, name, required }) => {
+      return (!key || !key.trim()) || (!name || !name.trim()) || (required || required === undefined || required === null)
+    })
     requiredVars.forEach(({ key, name }) => {
-      if (hasEmptyInput)
-        return
-
-      if (!String(inputs[key] ?? '').trim())
+      if (!hasEmptyInput && !String(inputs[key] ?? '').trim())
         hasEmptyInput = name
     })
 
@@ -122,7 +173,7 @@ const Result: FC<IResultProps> = ({
       notify({ type: 'info', message: t('appDebug.errorMessage.waitForImgUpload') })
       return false
     }
-    return !hasEmptyInput
+    return true
   }
 
   const handleSend = async () => {
@@ -130,159 +181,222 @@ const Result: FC<IResultProps> = ({
       notify({ type: 'info', message: t('appDebug.errorMessage.waitForResponse') })
       return false
     }
-
     if (!checkCanSend())
       return
 
-    const data: Record<string, any> = {
-      inputs,
-    }
-    if (visionConfig.enabled && completionFiles && completionFiles?.length > 0) {
+    const data: Record<string, any> = { inputs }
+    if (visionConfig.enabled && completionFiles?.length > 0) {
       data.files = completionFiles.map((item) => {
-        if (item.transfer_method === TransferMethod.local_file) {
-          return {
-            ...item,
-            url: '',
-          }
-        }
+        if (item.transfer_method === TransferMethod.local_file)
+          return { ...item, url: '' }
         return item
       })
     }
 
-    setMessageId(null)
-    setFeedback({
-      rating: null,
-    })
+    abortControllerRef.current?.abort()
+    if (activityTimerRef.current)
+      clearTimeout(activityTimerRef.current)
+    if (renderTimerRef.current)
+      clearTimeout(renderTimerRef.current)
+
+    const requestId = requestSerialRef.current + 1
+    requestSerialRef.current = requestId
+    const abortController = new AbortController()
+    abortControllerRef.current = abortController
+    let isEnd = false
+    let isTimeout = false
+    let streamedText = ''
+    let receivedFirstChunk = false
+    let lastVisibleText = ''
+    let nodeCount = 0
+    const isCurrentRequest = () => requestSerialRef.current === requestId
+
+    setFeedback({ rating: null })
     setCompletionRes('')
     setWorkflowProccessData(undefined)
     setRequestFailed(false)
-
-    const res: string[] = []
-    let tempMessageId = ''
+    setAnalysisStage(0)
+    setHasStartedStreaming(false)
 
     if (!isPC)
       onShowRes()
 
-    setResponsingTrue()
-    let isEnd = false
-    let isTimeout = false;
-    (async () => {
-      await sleep(1000 * 60) // 1min timeout
-      if (!isEnd) {
-        setResponsingFalse()
-        setWorkflowProccessData(undefined)
-        setRequestFailed(true)
-        onCompleted(getCompletionRes(), taskId, false)
-        isTimeout = true
+    const clearRequestTimers = () => {
+      if (activityTimerRef.current) {
+        clearTimeout(activityTimerRef.current)
+        activityTimerRef.current = null
       }
-    })()
+      if (renderTimerRef.current) {
+        clearTimeout(renderTimerRef.current)
+        renderTimerRef.current = null
+      }
+    }
+
+    const settleRequest = (success: boolean) => {
+      if (!isCurrentRequest() || isEnd)
+        return
+      isEnd = true
+      clearRequestTimers()
+      abortControllerRef.current = null
+      setResponsingFalse()
+      onCompleted(getCompletionRes(), taskId, success)
+    }
+
+    const failRequest = () => {
+      if (!isCurrentRequest() || isEnd)
+        return
+      setRequestFailed(true)
+      setWorkflowProccessData(undefined)
+      settleRequest(false)
+    }
+
+    const handleActivityTimeout = () => {
+      if (!isCurrentRequest() || isEnd)
+        return
+      isTimeout = true
+      abortController.abort()
+      failRequest()
+    }
+
+    const markActivity = () => {
+      if (!isCurrentRequest() || isEnd)
+        return
+      if (activityTimerRef.current)
+        clearTimeout(activityTimerRef.current)
+      activityTimerRef.current = setTimeout(handleActivityTimeout, STREAM_ACTIVITY_TIMEOUT)
+    }
+
+    const flushStreamedText = () => {
+      if (!isCurrentRequest() || isEnd)
+        return
+      if (renderTimerRef.current) {
+        clearTimeout(renderTimerRef.current)
+        renderTimerRef.current = null
+      }
+      const visibleText = stripHiddenThinking(streamedText)
+      lastVisibleText = visibleText
+      setCompletionRes(visibleText)
+    }
+
+    const queueTextChunk = (text: string) => {
+      if (!text || !isCurrentRequest() || isEnd)
+        return
+      streamedText += text
+      const visibleText = stripHiddenThinking(streamedText)
+      if (!visibleText || visibleText === lastVisibleText)
+        return
+      if (!receivedFirstChunk) {
+        receivedFirstChunk = true
+        lastVisibleText = visibleText
+        setHasStartedStreaming(true)
+        setCompletionRes(visibleText)
+        return
+      }
+      if (!renderTimerRef.current)
+        renderTimerRef.current = setTimeout(flushStreamedText, STREAM_RENDER_INTERVAL)
+    }
+
+    setResponsingTrue()
+    markActivity()
 
     if (isWorkflow) {
-      sendWorkflowMessage(
-        data,
-        {
-          onWorkflowStarted: ({ workflow_run_id }) => {
-            if (isTimeout)
-              return
-            tempMessageId = workflow_run_id
-            setWorkflowProccessData({
-              status: WorkflowRunningStatus.Running,
-              tracing: [],
-              expand: false,
-            })
-            setResponsingFalse()
-          },
-          onNodeStarted: ({ data }) => {
-            if (isTimeout)
-              return
-            setWorkflowProccessData(produce(getWorkflowProccessData()!, (draft) => {
-              draft.expand = true
-              draft.tracing!.push({
-                ...data,
-                status: NodeRunningStatus.Running,
-                expand: true,
-              } as any)
-            }))
-          },
-          onNodeFinished: ({ data }) => {
-            if (isTimeout)
-              return
-            setWorkflowProccessData(produce(getWorkflowProccessData()!, (draft) => {
-              const currentIndex = draft.tracing!.findIndex(trace => trace.node_id === data.node_id)
-              if (currentIndex > -1 && draft.tracing) {
-                draft.tracing[currentIndex] = {
-                  ...(draft.tracing[currentIndex].extras
-                    ? { extras: draft.tracing[currentIndex].extras }
-                    : {}),
-                  ...data,
-                  expand: !!data.error,
-                } as any
-              }
-            }))
-          },
-          onWorkflowFinished: ({ data }) => {
-            if (isTimeout)
-              return
-            if (data.error || data.status !== 'succeeded') {
-              setRequestFailed(true)
-              setWorkflowProccessData(undefined)
-              setResponsingFalse()
-              onCompleted(getCompletionRes(), taskId, false)
-              isEnd = true
-              return
-            }
-            setWorkflowProccessData(produce(getWorkflowProccessData()!, (draft) => {
-              draft.status = data.error ? WorkflowRunningStatus.Failed : WorkflowRunningStatus.Succeeded
-            }))
-            if (!data.outputs)
-              setCompletionRes('')
-            else if (Object.keys(data.outputs).length > 1)
-              setCompletionRes(data.outputs)
-            else
-              setCompletionRes(data.outputs[Object.keys(data.outputs)[0]])
-            setResponsingFalse()
-            setMessageId(tempMessageId)
-            onCompleted(getCompletionRes(), taskId, true)
-            isEnd = true
-          },
-          onError: () => {
-            if (isTimeout)
-              return
-            setRequestFailed(true)
-            setWorkflowProccessData(undefined)
-            setResponsingFalse()
-            onCompleted(getCompletionRes(), taskId, false)
-            isEnd = true
-          },
+      void sendWorkflowMessage(data, {
+        signal: abortController.signal,
+        onActivity: markActivity,
+        onTextChunk: queueTextChunk,
+        onWorkflowStarted: () => {
+          if (isTimeout || !isCurrentRequest())
+            return
+          setWorkflowProccessData({
+            status: WorkflowRunningStatus.Running,
+            tracing: [],
+            expand: false,
+          })
+          setResponsingFalse()
         },
-      )
+        onNodeStarted: ({ data }) => {
+          if (isTimeout || !isCurrentRequest())
+            return
+          nodeCount += 1
+          setAnalysisStage(nodeCount === 1 ? 1 : 2)
+          const currentProcess = getWorkflowProccessData()
+          if (!currentProcess)
+            return
+          setWorkflowProccessData(produce(currentProcess, (draft) => {
+            draft.expand = true
+            draft.tracing!.push({
+              ...data,
+              status: NodeRunningStatus.Running,
+              expand: true,
+            } as any)
+          }))
+        },
+        onNodeFinished: ({ data }) => {
+          if (isTimeout || !isCurrentRequest())
+            return
+          setAnalysisStage(2)
+          const currentProcess = getWorkflowProccessData()
+          if (!currentProcess)
+            return
+          setWorkflowProccessData(produce(currentProcess, (draft) => {
+            const currentIndex = draft.tracing!.findIndex(trace => trace.node_id === data.node_id)
+            if (currentIndex > -1 && draft.tracing) {
+              draft.tracing[currentIndex] = {
+                ...(draft.tracing[currentIndex].extras ? { extras: draft.tracing[currentIndex].extras } : {}),
+                ...data,
+                expand: !!data.error,
+              } as any
+            }
+          }))
+        },
+        onWorkflowFinished: ({ data }) => {
+          if (isTimeout || !isCurrentRequest())
+            return
+          if (data.error || data.status !== 'succeeded') {
+            failRequest()
+            return
+          }
+
+          if (renderTimerRef.current) {
+            clearTimeout(renderTimerRef.current)
+            renderTimerRef.current = null
+          }
+          const finalOutput = sanitizeWorkflowOutput(getWorkflowOutput(data.outputs))
+          setCompletionRes(finalOutput || stripHiddenThinking(streamedText))
+          const currentProcess = getWorkflowProccessData()
+          if (currentProcess) {
+            setWorkflowProccessData(produce(currentProcess, (draft) => {
+              draft.status = WorkflowRunningStatus.Succeeded
+            }))
+          }
+          settleRequest(true)
+        },
+        onError: () => {
+          if (!isTimeout)
+            failRequest()
+        },
+      })
     }
     else {
-      sendCompletionMessage(data, {
-        onData: (data: string, _isFirstMessage: boolean, { messageId }) => {
-          if (isTimeout)
+      void sendCompletionMessage(data, {
+        signal: abortController.signal,
+        onData: (text: string) => {
+          if (isTimeout || !isCurrentRequest())
             return
-          tempMessageId = messageId
-          res.push(data)
-          setCompletionRes(res.join(''))
+          markActivity()
+          queueTextChunk(text)
         },
         onCompleted: () => {
-          if (isTimeout)
+          if (isTimeout || !isCurrentRequest())
             return
-
-          setResponsingFalse()
-          setMessageId(tempMessageId)
-          onCompleted(getCompletionRes(), taskId, true)
-          isEnd = true
+          if (renderTimerRef.current)
+            clearTimeout(renderTimerRef.current)
+          setCompletionRes(stripHiddenThinking(streamedText))
+          settleRequest(true)
         },
-        onError() {
-          if (isTimeout)
-            return
-
-          setResponsingFalse()
-          setRequestFailed(true)
-          onCompleted(getCompletionRes(), taskId, false)
-          isEnd = true
+        onError: () => {
+          if (!isTimeout)
+            failRequest()
         },
       })
     }
@@ -291,12 +405,12 @@ const Result: FC<IResultProps> = ({
   useEffect(() => {
     if (controlSend)
       handleSend()
-  }, [controlSend])
+  }, [controlSend]) // eslint-disable-line react-hooks/exhaustive-deps
 
   useEffect(() => {
     if (controlRetry)
       handleSend()
-  }, [controlRetry])
+  }, [controlRetry]) // eslint-disable-line react-hooks/exhaustive-deps
 
   const renderTextGenerationRes = () => (
     <TextGenerationRes
@@ -307,7 +421,6 @@ const Result: FC<IResultProps> = ({
       isResponding={isBusy}
       onRetry={handleSend}
       content={completionRes}
-      messageId={messageId}
       isInWebApp
       onFeedback={handleFeedback}
       feedback={feedback}
@@ -323,10 +436,20 @@ const Result: FC<IResultProps> = ({
       <button className='retry-button' type='button' onClick={handleSend}><ArrowPathIcon aria-hidden='true' />重新分析</button>
     </div>
   }
-  if (isBusy && isNoData) {
+  if (isBusy && isNoData && !hasStartedStreaming) {
     return <div className='answer-loading' role='status'>
-      <p className='loading-message'><span className='loading-ring' />正在分析你的问题，请稍候…</p>
-      <div className='skeleton-line' aria-hidden='true' /><div className='skeleton-line' aria-hidden='true' /><div className='skeleton-line' aria-hidden='true' />
+      <div className='analysis-progress' aria-label='分析进度'>
+        {ANALYSIS_STAGES.map((stage, index) => (
+          <React.Fragment key={stage}>
+            <div className={index < analysisStage ? 'analysis-step complete' : index === analysisStage ? 'analysis-step active' : 'analysis-step'}>
+              <span className='analysis-step-dot'>{index < analysisStage ? '✓' : index + 1}</span>
+              <span>{stage}</span>
+            </div>
+            {index < ANALYSIS_STAGES.length - 1 && <span className='analysis-step-arrow' aria-hidden='true'>→</span>}
+          </React.Fragment>
+        ))}
+      </div>
+      <p className='loading-message'><span className='loading-ring' />正在准备与你的问题相关的分析</p>
     </div>
   }
   if (isNoData) {
@@ -338,4 +461,5 @@ const Result: FC<IResultProps> = ({
   }
   return <div className='answer-content'>{renderTextGenerationRes()}</div>
 }
+
 export default React.memo(Result)

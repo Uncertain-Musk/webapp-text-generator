@@ -19,6 +19,11 @@ export function Markdown(props: { content: string }) {
           a({ children, ...props }) {
             return <a {...props} target='_blank' rel='noopener noreferrer'>{children}</a>
           },
+          table({ node: _node, children, ...props }) {
+            return <div className='markdown-table-wrap' role='region' aria-label='表格，可横向滚动' tabIndex={0}>
+              <table {...props}>{children}</table>
+            </div>
+          },
           code({ node: _node, inline, className, children, ...props }) {
             const match = /language-(\w+)/.exec(className || '')
             return (!inline && match)

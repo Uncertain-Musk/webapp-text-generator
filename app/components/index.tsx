@@ -3,6 +3,7 @@ import React, { useEffect, useRef, useState } from 'react'
 import { ArrowPathIcon, ArrowUpRightIcon } from '@heroicons/react/24/outline'
 import RunOnce from './run-once'
 import Result from './result'
+import BusinessTips from './business-tips'
 import { APP_INFO, IS_WORKFLOW } from '@/config'
 import { fetchAppParams } from '@/service'
 import { userInputsFormToPromptVariables } from '@/utils/prompt'
@@ -142,6 +143,7 @@ export default function TextGeneration({ isConfigured }: { isConfigured: boolean
               visionConfig={visionConfig} completionFiles={completionFiles} />
           </section>
         </div>
+        <BusinessTips />
       </main>
       <footer className='site-footer'><span>越海 · 专注跨境电商知识</span><span>AI 回答仅供参考，平台政策与合规要求请以官方信息为准。</span></footer>
     </div>

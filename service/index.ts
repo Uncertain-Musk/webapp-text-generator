@@ -1,13 +1,15 @@
-import type { IOnCompleted, IOnData, IOnError, IOnNodeFinished, IOnNodeStarted, IOnWorkflowFinished, IOnWorkflowStarted } from './base'
+import type { IOnActivity, IOnCompleted, IOnData, IOnError, IOnNodeFinished, IOnNodeStarted, IOnTextChunk, IOnWorkflowFinished, IOnWorkflowStarted } from './base'
 import { get, post, ssePost } from './base'
 import type { Feedbacktype } from '@/types/app'
 
-export const sendCompletionMessage = async (body: Record<string, any>, { onData, onCompleted, onError }: {
+export const sendCompletionMessage = async (body: Record<string, any>, { onData, onCompleted, onError, signal }: {
   onData: IOnData
   onCompleted: IOnCompleted
   onError: IOnError
+  signal?: AbortSignal
 }) => {
   return ssePost('completion-messages', {
+    signal,
     body: {
       ...body,
       response_mode: 'streaming',
@@ -22,21 +24,28 @@ export const sendWorkflowMessage = async (
     onNodeStarted,
     onNodeFinished,
     onWorkflowFinished,
+    onTextChunk,
+    onActivity,
     onError,
+    signal,
   }: {
     onWorkflowStarted: IOnWorkflowStarted
     onNodeStarted: IOnNodeStarted
     onNodeFinished: IOnNodeFinished
     onError?: IOnError
     onWorkflowFinished: IOnWorkflowFinished
+    onTextChunk: IOnTextChunk
+    onActivity?: IOnActivity
+    signal?: AbortSignal
   },
 ) => {
   return ssePost('workflows/run', {
+    signal,
     body: {
       ...body,
       response_mode: 'streaming',
     },
-  }, { onNodeStarted, onWorkflowStarted, onWorkflowFinished, onNodeFinished, onError })
+  }, { onNodeStarted, onWorkflowStarted, onWorkflowFinished, onNodeFinished, onTextChunk, onActivity, onError })
 }
 
 export const fetchAppParams = async () => {

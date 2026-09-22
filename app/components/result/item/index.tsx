@@ -2,7 +2,7 @@
 import type { FC } from 'react'
 import React, { useEffect, useState } from 'react'
 import copy from 'copy-to-clipboard'
-import { ArrowPathIcon, CheckIcon, ClipboardDocumentIcon } from '@heroicons/react/24/outline'
+import { ArrowPathIcon, CheckIcon, ClipboardDocumentIcon, HandThumbDownIcon, HandThumbUpIcon } from '@heroicons/react/24/outline'
 import { Markdown } from '@/app/components/base/markdown'
 import type { Feedbacktype, WorkflowProcess } from '@/types/app'
 
@@ -13,7 +13,6 @@ export type IGenerationItemProps = {
   isError: boolean
   onRetry: () => void
   content: any
-  messageId?: string | null
   isLoading?: boolean
   isResponding?: boolean
   isInWebApp?: boolean
@@ -24,7 +23,7 @@ export type IGenerationItemProps = {
   taskId?: string
 }
 
-const GenerationItem: FC<IGenerationItemProps> = ({ content, messageId, isError, onRetry, isResponding }) => {
+const GenerationItem: FC<IGenerationItemProps> = ({ content, isError, onRetry, isResponding, feedback, onFeedback }) => {
   const [copied, setCopied] = useState(false)
   useEffect(() => {
     setCopied(false)
@@ -42,13 +41,25 @@ const GenerationItem: FC<IGenerationItemProps> = ({ content, messageId, isError,
     <article>
       {typeof content === 'string' ? <Markdown content={content} /> : <pre className='structured-output'>{text}</pre>}
       <div className='answer-actions'>
-        <button className='copy-button' type='button' disabled={!messageId || isResponding}
-          onClick={() => {
-            if (copy(text))
-              setCopied(true)
-          }} aria-live='polite'>
-          {copied ? <CheckIcon aria-hidden='true' /> : <ClipboardDocumentIcon aria-hidden='true' />}{copied ? '已复制' : '复制回答'}
-        </button>
+        <div className='answer-action-buttons'>
+          <button className='copy-button' type='button' disabled={!text || isResponding}
+            onClick={() => {
+              if (copy(text))
+                setCopied(true)
+            }} aria-live='polite'>
+            {copied ? <CheckIcon aria-hidden='true' /> : <ClipboardDocumentIcon aria-hidden='true' />}{copied ? '已复制' : '复制回答'}
+          </button>
+          <button className={feedback?.rating === 'like' ? 'feedback-button selected' : 'feedback-button'}
+            type='button' disabled={isResponding} aria-pressed={feedback?.rating === 'like'}
+            onClick={() => onFeedback?.({ rating: 'like' })}>
+            <HandThumbUpIcon aria-hidden='true' />有帮助
+          </button>
+          <button className={feedback?.rating === 'dislike' ? 'feedback-button selected' : 'feedback-button'}
+            type='button' disabled={isResponding} aria-pressed={feedback?.rating === 'dislike'}
+            onClick={() => onFeedback?.({ rating: 'dislike' })}>
+            <HandThumbDownIcon aria-hidden='true' />没帮助
+          </button>
+        </div>
         <span>{isResponding ? '回答正在生成…' : '结合实际业务情况参考'}</span>
       </div>
     </article>

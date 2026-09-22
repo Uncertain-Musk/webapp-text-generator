@@ -1,5 +1,6 @@
 import { API_PREFIX } from '@/config'
 import Toast from '@/app/components/base/toast'
+import { readSSEStream } from './sse-stream'
 
 const TIME_OUT = 5 * 60 * 1000 // five minutes
 
@@ -91,6 +92,18 @@ export type NodeFinishedResponse = {
   }
 }
 
+export type TextChunkResponse = {
+  task_id: string
+  workflow_run_id: string
+  event: 'text_chunk'
+  data: {
+    text: string
+    from_variable_selector?: string[]
+  }
+}
+
+export type SSEActivityEvent = 'ping' | 'workflow_started' | 'workflow_finished' | 'node_started' | 'node_finished' | 'text_chunk'
+
 export type IOnDataMoreInfo = {
   conversationId: string | undefined
   messageId: string
@@ -104,6 +117,8 @@ export type IOnWorkflowStarted = (workflowStarted: WorkflowStartedResponse) => v
 export type IOnWorkflowFinished = (workflowFinished: WorkflowFinishedResponse) => void
 export type IOnNodeStarted = (nodeStarted: NodeStartedResponse) => void
 export type IOnNodeFinished = (nodeFinished: NodeFinishedResponse) => void
+export type IOnTextChunk = (text: string, textChunk: TextChunkResponse) => void
+export type IOnActivity = (event: SSEActivityEvent) => void
 
 type IOtherOptions = {
   needAllResponseContent?: boolean
@@ -114,6 +129,8 @@ type IOtherOptions = {
   onWorkflowFinished?: IOnWorkflowFinished
   onNodeStarted?: IOnNodeStarted
   onNodeFinished?: IOnNodeFinished
+  onTextChunk?: IOnTextChunk
+  onActivity?: IOnActivity
 }
 
 function unicodeToChar(text: string) {
@@ -122,80 +139,57 @@ function unicodeToChar(text: string) {
   })
 }
 
-const handleStream = (
+const handleStream = async (
   response: Response,
-  onData: IOnData,
+  onData?: IOnData,
   onCompleted?: IOnCompleted,
   onWorkflowStarted?: IOnWorkflowStarted,
   onWorkflowFinished?: IOnWorkflowFinished,
   onNodeStarted?: IOnNodeStarted,
   onNodeFinished?: IOnNodeFinished,
+  onTextChunk?: IOnTextChunk,
+  onActivity?: IOnActivity,
 ) => {
-  if (!response.ok)
-    throw new Error('Network response was not ok')
-
-  const reader = response.body?.getReader()
-  const decoder = new TextDecoder('utf-8')
-  let buffer = ''
-  let bufferObj: any
   let isFirstMessage = true
-  function read() {
-    reader?.read().then((result: any) => {
-      if (result.done) {
-        onCompleted && onCompleted()
-        return
-      }
-      buffer += decoder.decode(result.value, { stream: true })
-      const lines = buffer.split('\n')
-      try {
-        lines.forEach((message) => {
-          if (!message || !message.startsWith('data: '))
-            return
-          try {
-            bufferObj = JSON.parse(message.substring(6)) // remove data: and parse as json
-          }
-          catch (e) {
-            onData('', isFirstMessage, {
-              conversationId: bufferObj?.conversation_id,
-              messageId: bufferObj?.id,
-            })
-            return
-          }
-          if (bufferObj.event === 'message') {
-            onData(unicodeToChar(bufferObj.answer), isFirstMessage, {
-              conversationId: bufferObj.conversation_id,
-              messageId: bufferObj.id,
-            })
-            isFirstMessage = false
-          }
-          else if (bufferObj.event === 'workflow_started') {
-            onWorkflowStarted?.(bufferObj as WorkflowStartedResponse)
-          }
-          else if (bufferObj.event === 'workflow_finished') {
-            onWorkflowFinished?.(bufferObj as WorkflowFinishedResponse)
-          }
-          else if (bufferObj.event === 'node_started') {
-            onNodeStarted?.(bufferObj as NodeStartedResponse)
-          }
-          else if (bufferObj.event === 'node_finished') {
-            onNodeFinished?.(bufferObj as NodeFinishedResponse)
-          }
-        })
-        buffer = lines[lines.length - 1]
-      }
-      catch (e) {
-        onData('', false, {
-          conversationId: undefined,
-          messageId: '',
-          errorMessage: `${e}`,
-        })
-        return
-      }
+  const activityEvents = new Set<SSEActivityEvent>([
+    'ping',
+    'workflow_started',
+    'workflow_finished',
+    'node_started',
+    'node_finished',
+    'text_chunk',
+  ])
 
-      read()
-    })
-  }
-  read()
+  await readSSEStream(response, (bufferObj) => {
+    const event = bufferObj.event as SSEActivityEvent
+    if (activityEvents.has(event))
+      onActivity?.(event)
+
+    if (bufferObj.event === 'message') {
+      onData?.(unicodeToChar(bufferObj.answer), isFirstMessage, {
+        conversationId: bufferObj.conversation_id,
+        messageId: bufferObj.id,
+      })
+      isFirstMessage = false
+    }
+    else if (bufferObj.event === 'workflow_started') {
+      onWorkflowStarted?.(bufferObj as WorkflowStartedResponse)
+    }
+    else if (bufferObj.event === 'workflow_finished') {
+      onWorkflowFinished?.(bufferObj as WorkflowFinishedResponse)
+    }
+    else if (bufferObj.event === 'node_started') {
+      onNodeStarted?.(bufferObj as NodeStartedResponse)
+    }
+    else if (bufferObj.event === 'node_finished') {
+      onNodeFinished?.(bufferObj as NodeFinishedResponse)
+    }
+    else if (bufferObj.event === 'text_chunk') {
+      const textChunk = bufferObj as TextChunkResponse
+      onTextChunk?.(textChunk.data?.text || '', textChunk)
+    }
+  })
+  onCompleted?.()
 }
 
 const baseFetch = (url: string, fetchOptions: any, { needAllResponseContent }: IOtherOptions) => {
@@ -322,6 +316,8 @@ export const ssePost = (
     onWorkflowFinished,
     onNodeStarted,
     onNodeFinished,
+    onTextChunk,
+    onActivity,
   }: IOtherOptions) => {
   const options = Object.assign({}, baseOptions, {
     method: 'POST',
@@ -334,7 +330,7 @@ export const ssePost = (
   if (body)
     options.body = JSON.stringify(body)
 
-  globalThis.fetch(urlWithPrefix, options)
+  return globalThis.fetch(urlWithPrefix, options)
     .then((res: any) => {
       if (!/^(2|3)\d{2}$/.test(res.status)) {
         // eslint-disable-next-line no-new
@@ -352,10 +348,12 @@ export const ssePost = (
           return
         }
         onData?.(str, isFirstMessage, moreInfo)
-      }, onCompleted, onWorkflowStarted, onWorkflowFinished, onNodeStarted, onNodeFinished)
+      }, onCompleted, onWorkflowStarted, onWorkflowFinished, onNodeStarted, onNodeFinished, onTextChunk, onActivity)
     }).catch((e) => {
+      if (e?.name === 'AbortError')
+        return
       Toast.notify({ type: 'error', message: e })
-      onError?.(e)
+      onError?.(e instanceof Error ? e.message : `${e}`)
     })
 }
 

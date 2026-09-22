@@ -34,6 +34,14 @@ npm run dev
 
 Dify Workflow Service API Key 已绑定应用，因此不需要单独的 App ID。当前项目固定使用 Workflow 模式，也不需要额外的应用类型环境变量。真实值只放在 `.env.local`；该文件已被 Git 忽略，`.env.example` 不包含密钥。
 
+## 流式回答
+
+Workflow Route 使用 SSE 转发 Dify 的 `text_chunk`、节点状态和完成事件。浏览器在首个文本块到达后开始展示回答，后续文本按短时间窗口合并刷新；每次 SSE 活动都会重置无活动超时。连续 60 秒未收到任何活动时，客户端取消请求并显示重新分析入口。
+
+## 经营建议
+
+页面底部固定展示六条经营建议，可在五组本地内容之间切换。建议数据保存在前端常量中，“换一批”只更新页面状态，不调用 Dify 或任何外部接口。
+
 ## 部署到 Vercel
 
 将仓库推送到 GitHub，在 [Vercel 新建项目](https://vercel.com/new)中导入仓库。Framework Preset 选择 Next.js，使用默认安装和 `npm run build` 命令。
