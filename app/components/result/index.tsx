@@ -9,6 +9,7 @@ import TextGenerationRes from './item'
 import Toast from '@/app/components/base/toast'
 import { sendCompletionMessage, sendWorkflowMessage } from '@/service'
 import { stripHiddenThinking } from '@/service/sse-stream'
+import type { WorkflowContext } from '@/utils/workflow-context'
 import type { Feedbacktype, PromptConfig, VisionFile, VisionSettings, WorkflowProcess } from '@/types/app'
 import { NodeRunningStatus, TransferMethod, WorkflowRunningStatus } from '@/types/app'
 
@@ -51,6 +52,7 @@ export type IResultProps = {
   isError: boolean
   promptConfig: PromptConfig | null
   inputs: Record<string, any>
+  workflowContext?: WorkflowContext
   controlSend?: number
   controlRetry?: number
   controlStopResponding?: number
@@ -70,6 +72,7 @@ const Result: FC<IResultProps> = ({
   isError,
   promptConfig,
   inputs,
+  workflowContext,
   controlSend,
   controlRetry,
   controlStopResponding,
@@ -185,6 +188,10 @@ const Result: FC<IResultProps> = ({
       return
 
     const data: Record<string, any> = { inputs }
+    if (isWorkflow) {
+      data.platform_context = workflowContext?.platform_context ?? ''
+      data.market_context = workflowContext?.market_context ?? ''
+    }
     if (visionConfig.enabled && completionFiles?.length > 0) {
       data.files = completionFiles.map((item) => {
         if (item.transfer_method === TransferMethod.local_file)
@@ -456,7 +463,7 @@ const Result: FC<IResultProps> = ({
     return <div className='answer-empty'>
       <ChatBubbleLeftRightIcon className='empty-symbol' strokeWidth={1} aria-hidden='true' />
       <h3>从疑问，到清晰的下一步</h3>
-      <p>选择一个推荐问题，或描述你遇到的情况。<br />分析与建议将在这里呈现。</p>
+      <p>选择上方任务，或描述你遇到的情况。<br />回答将在这里呈现。</p>
     </div>
   }
   return <div className='answer-content'>{renderTextGenerationRes()}</div>

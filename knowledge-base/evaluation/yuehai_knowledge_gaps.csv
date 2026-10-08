@@ -1,0 +1,26 @@
+﻿gap_id,platform,market,topic,user_query,gap_type,priority,status,official_source_candidate,notes
+GAP-001,Amazon,US,申诉,Amazon 美国站账号停用后提交申诉的期限和具体材料是什么？,官方正文需要登录,P1,待核验,https://sellercentral.amazon.com/help/hub/reference/G201623610,本次实际打开跳转登录页，不从论坛经验或记忆补期限和材料。
+GAP-002,Amazon,US,申诉,Amazon 美国站A-to-z申诉必须几天内提交？,官方正文无法读取,P1,待核验,https://sellercentral.amazon.com/help/hub/reference/external/G202041210,本次页面只有JavaScript壳；公开指南仅证实可申诉，没有期限，不填写统一期限。
+GAP-003,Amazon,US,申诉,Amazon 美国站SAFE-T完整适用条件和提交时限是什么？,官方正文无法读取,P1,待核验,https://sellercentral.amazon.com/help/hub/reference/external/G202175000,从公开退货指南的seller reimbursements链接实际打开，只返回JavaScript页面壳；未核验完整赔付条件和期限，不用CSBA特例代替。
+GAP-004,Amazon,US,退款退货,Amazon 美国站损坏或寄错商品的退货可以扣多少费用？,详细扣费规则未核验,P1,待核验,https://sellercentral.amazon.com/help/hub/reference/external/G201725780,公开指南提及可按条件扣费，链接细则未读到正文；不推定20%或50%扣费比例。；从公开指南链接复查，仍只返回JavaScript壳。
+GAP-005,Amazon,US,退款退货,Amazon 美国站各类目当前退货期限及节日例外是什么？,详细买家政策原页无法读取,P1,待核验,https://www.amazon.com/gp/help/customer/display.html/?nodeId=GKM69DUUYKQWKWX7,原始买家退货政策请求返回503；未把公开概览的一般30天扩为所有商品通用期限。
+GAP-006,Amazon,US,商品合规,Amazon 美国站处方或专业医疗器械到底能否通过专业医疗计划销售？,官方指南范围冲突,P0,待核验,https://sell.amazon.com/blog/how-to-sell-health-personal-care,同页专业医疗计划准入与禁止处方医疗器械表述范围不清；相关可售结论未入库。
+GAP-007,Amazon,US,广告与经营,Amazon 美国站无边框广告背景必须与页面对比还是不能对比？,同页规则与检查清单冲突,P0,待核验,https://advertising.amazon.com/library/guides/sponsored-brands-display-ads-moderation,背景规则303行要求与白/灰白页面对比，清单330行却禁止对比；未入库该结论。
+GAP-008,Amazon,US,物流,Amazon 美国站FBA制造商条码的当前资格和2026年规则是什么？,后台详细规则未核验,P1,待核验,https://sell.amazon.com/blog/fba-packaging-prep-labeling,公开指南不足以确认各卖家及商品条码资格，未用旧默认混储说明推定当前规则。
+GAP-009,TikTok Shop,US,退款退货,TikTok Shop 美国站买家责任退货的运费，卖家应承担全部还是50%？,官方条款冲突,P0,待官方澄清,https://seller-us.tiktok.com/university/essay?knowledge_id=984433248438058;https://seller-us.tiktok.com/university/essay?knowledge_id=3253210454181634,管理页100–104行及政策302行称卖家承担全部；管理页FAQ302–305行称平台安排的部分理由补贴、卖家50%。未生成通用补贴/成本比例结论。
+GAP-010,TikTok Shop,US,退款退货,TikTok Shop 美国站所有售后申请都统一4个工作日审核吗？,摘要与详细条件冲突,P0,待官方澄清,https://seller-us.tiktok.com/university/essay?knowledge_id=3634802985453313;https://seller-us.tiktok.com/university/essay?knowledge_id=984433248438058;https://seller-us.tiktok.com/university/essay?knowledge_id=3253210454181634,Policy Pulse页305–308行摘要称全售后4工作日、Day10可审；管理详页分别给不可退2/4工作日、未发货24小时。只纳入明确分支，不能统一成4天。；不可退及未发货响应期限不选择任一版本，相关QA已排除。；替换商品响应时限也保守排除待确认。
+GAP-011,TikTok Shop,US,退款退货,TikTok Shop 美国站货不对板、坏货或错货退货申请按48小时还是4工作日响应？,同页时限适用冲突,P0,待官方澄清,https://seller-us.tiktok.com/university/essay?knowledge_id=3253210454181634,政策251行一般退货退款4工作日，562行商品问题48小时；未将一般4天发布为覆盖所有质量问题的QA。
+GAP-012,TikTok Shop,US,退款退货,TikTok Shop 美国站Final Sale退款审核超过100美元是否有4工作日？,官方页面时限冲突,P0,待官方澄清,https://seller-us.tiktok.com/university/essay?knowledge_id=984433248438058;https://seller-us.tiktok.com/university/essay?knowledge_id=3253210454181634,管理页184行按≤100为2、>100为4工作日；政策477行Final Sale写2工作日且未分价格，未写统一期限QA。
+GAP-013,TikTok Shop,US,费用与结算,TikTok Shop 美国站各结算档位的具体天数及预留款比例是多少？,图片表格未核验,P1,待核验图片或Seller Center,https://seller-us.tiktok.com/university/essay?course_type=1&from=search&identity=1&knowledge_id=3995852763531009&role=1,正文可证5档结算与3级预留、持有30天，但具体数字在图片；打开图片链接未读到表格，不以记忆补数。
+GAP-014,TikTok Shop,US,费用与结算,TikTok Shop 美国站当前各类目的平台佣金、退款管理费和其他费率是多少？,官方费率来源未完成核验,P1,待补充官方费率明细,https://seller-us.tiktok.com/university,本轮未取得可覆盖当前各类目的完整官方费率正文；不使用历史统一6%或其他旧数字。
+GAP-015,TikTok Shop,US,广告与经营,TikTok Shop 美国站Shop Ads的费用、归因和退款口径是什么？,独立广告政策正文未核验,P2,待补充官方广告政策,https://ads.tiktok.com/help,本轮广告与经营仅纳入已核验评价政策，未以一般广告经验补Shop Ads规则。
+GAP-016,TikTok Shop,US,订单履约,TikTok Shop 美国站manifest或应用内扫码是否能替代承运商扫描用于LDR？,官方页面认定边界冲突,P0,待官方澄清,https://seller-us.tiktok.com/university/essay?knowledge_id=3995852763301633;https://seller-us.tiktok.com/university/essay?knowledge_id=3668989549299511,履约页109–110行允许合格事件，LDR页84/107/126行仅写承运商扫描；不以日期新旧自动择一，相关QA排除。
+GAP-017,TikTok Shop,US,退款退货,TikTok Shop 美国站快速退款后检查退货商品的复审可上传视频吗？,流程及证据格式边界冲突,P0,待官方澄清,https://seller-us.tiktok.com/university/essay?knowledge_id=984433248438058;https://seller-us.tiktok.com/university/essay?knowledge_id=3253210454181634;https://seller-us.tiktok.com/university/essay?knowledge_id=3634802985453313,管理页81–96行Respond/Appeal框架要求照片且不收视频；9/28政策325–326行二次复审提到图片、视频、备注；Pulse307行取消单独快速退款申诉队列，当前具体流程需确认，相关QA排除。
+GAP-018,Amazon,UK,退款退货,Amazon 英国站退货规则是什么？,knowledge_coverage,P1,out_of_scope,,用户给定的真实Bad Case；本轮只做美国站，不能套用美国站期限。
+GAP-019,General,,广告与经营,ACOS 是什么？,general_coverage,P1,open,,原始500条问题与答案全文未找到ACOS字样；应归General，但本轮不扩写。
+GAP-020,General,,广告与经营,ROAS 是什么？,general_coverage,P2,open,,原始500条问题与答案全文未找到ROAS字样；应归General，但本轮不扩写。
+GAP-021,TikTok Shop,UK,退款退货,TikTok Shop 英国站退款需要多久处理？,knowledge_coverage,P2,out_of_scope,,范围外测试候选，不是实际线上失败日志；不能套用美国站时限。
+GAP-022,Temu,US,退款退货,Temu 美国市场的退货期限是多久？,knowledge_coverage,P2,out_of_scope,,范围外测试候选，本轮不铺Temu。
+GAP-023,Shopee,SG,账号与违规,Shopee 新加坡站违规申诉期限是多少？,knowledge_coverage,P2,out_of_scope,,范围外测试候选，本轮不铺Shopee。
+GAP-024,,,退款退货,退款多久？,context_ambiguity,P1,needs_clarification,,模糊测试候选；无平台、站点和订单状态，预期先澄清，不猜具体期限。
+GAP-025,Amazon,US,费用与结算,我的店铺今天还能结算多少钱？,store_data_unavailable,P1,out_of_scope,,没有店铺API或真实结算数据，知识库不能回答账户实时金额。

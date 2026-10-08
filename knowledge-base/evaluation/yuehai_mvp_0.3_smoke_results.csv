@@ -1,0 +1,103 @@
+﻿test_id,query,platform_context,market_context,expected_type,expected_kb,expected_behavior,actual_retrieval_query,actual_resolved_platform,actual_resolved_market,actual_kb,actual_top1_question,actual_top1_source,actual_top1_relevant,http_status,streaming_ok,time_to_first_text_ms,total_latency_ms,cross_platform_error,cross_market_error,fallback_correct,final_answer,failure_layer,result,notes
+A01,ACOS 是什么？,,,General KB,General KB,General KB / 通用知识正常回答。,ACOS 是什么？,,,UNKNOWN,UNKNOWN,UNKNOWN,UNKNOWN,200,true,11186,16311,false,false,false,"ACOS 是 **Advertising Cost of Sales**，即“广告销售成本比”，常用于跨境电商广告效果分析。
+
+公式：
+
+**ACOS = 广告花费 ÷ 广告带来的销售额 × 100%**
+
+例如：广告花了 20 元，带来了 100 元销售额，那么：
+
+**ACOS = 20 ÷ 100 × 100% = 20%**
+
+它表示每产生 100 元广告销售额，需要花多少广告费。一般来说，ACOS 越低，广告投入产出越好；但实际判断还要结合产品利润率、推广阶段和销售目标。",COVERAGE,FAIL_COVERAGE,检索结果为空，实际进入LLM闲聊(qwen3.8-max)给出ACOS定义；没有General KB证据。概念表述本身不判为政策幻觉。
+A02,跨境电商怎么筛选目标市场？,,,General KB,General KB,General KB。,跨境电商怎么筛选目标市场？,,,跨境电商知识问答 1,核心是用需求、竞争、准入、物流和税费共同筛选可进入的国家或地区，而不是只看流量大小。跨境场景还要同时核对目的国要求、平台规则和实际履约能力。,UNKNOWN,true,200,true,4986,12001,false,false,UNKNOWN,"筛选跨境电商目标市场，核心逻辑是**“多维验证”**，而非仅看流量大小。你需要结合以下五个关键维度进行综合评估，并排除常见误区：
+
+### 1. 五大核心筛选维度
+*   **需求真实性**：通过关键词搜索量、类目趋势、竞品评价及试单数据，确认当地用户是否有真实购买需求，以及是否存在未被满足的痛点。
+*   **竞争格局**：分析目标市场的卖家密度和头部品牌影响力，判断新进入者的生存空间。
+*   **准入合规性**：核对目的国的法律法规、产品认证要求（如CE、FDA等）以及平台的具体上架规则，确保产品可合法销售。
+*   **物流履约能力**：评估从发货地到目的国的物流时效、成本稳定性以及末端配送的可控性。
+*   **税费与售后成本**：计算进口关税、增值税（VAT/GST）以及潜在退货率带来的隐性成本，确保利润模型可行。
+
+### 2. 避免常见误区
+*   **误区**：将“高访问量”或“大流量”等同于适合进入的市场。
+*   **风险**：忽略履约难度、高额税费和售后成本，导致实际亏损。
+*   **建议**：始终以“需求+竞争+准入+物流+税费”共同构成的闭环作为验证标准。
+
+### 3. 执行动作
+*   将上述维度的检查结果纳入**站点与SKU的上线清单**。
+*   在经营复盘中，记录因误判市场导致的损失，并制定相应的预防动作。
+
+> **注意**：不同国家/地区的政策、税率及平台规则可能随时间调整，建议在确定最终市场前，以各平台最新官方公告及目的国实时法规为准。",NONE,PASS,General市场筛选分块被召回，最终回答保留需求、竞争、准入、物流、税费维度。
+A03,退款多久处理？,TikTok Shop,US,Policy KB,Policy KB,retrieval_query体现TikTok Shop美国站，主要使用对应Policy。,TikTok Shop 美国站 退款多久处理？,TikTok Shop,US,跨境电商知识问答 1,适用范围：TikTok Shop 美国站获准使用相关工具的订单；设定处理期为H个工作日，In Transit限H+1，未Awaiting Collection自动取消限H+4，Delivered限H+5；不能套普通订单期限；官方来源：TikTok Shop Seller University《订单履约政策》；官方页面：https://seller-us.tiktok.com/university/essay?knowledge_id=3995852763301633；官方页面日期：2026-09-28；官方页面未明确标注生效日期；最后核验：2026-10-02。,https://seller-us.tiktok.com/university/essay?knowledge_id=3995852763301633,false,200,true,4958,12003,false,false,false,"针对 TikTok Shop 美国站，退款处理时长取决于订单所处的具体阶段和场景，主要涉及以下三种情况：
+
+**1. 正常履约中的订单（基于 SLA 设定）**
+*   **处理期限**：通常为 **H 个工作日**。
+*   **特殊状态调整**：
+    *   **In Transit（运输中）**：限制为 **H+1** 个工作日。
+    *   **未 Awaiting Collection（未待取件）自动取消**：限制为 **H+4** 个工作日。
+    *   **Delivered（已送达）**：限制为 **H+5** 个工作日。
+*   **注意**：此规则适用于获准使用相关工具的订单，不能套用普通订单的期限。卖家需核对产品处理期及订单显示的三项 SLA。
+
+**2. 退货包裹在逆向物流中停滞**
+*   **加速退款条件**：若退货包裹连续 **10 天或以上** 无物流更新，买家可联系平台要求加速退款。
+*   **平台权限**：平台可在退货实际送达卖家之前先行退款。
+*   **注意**：并非所有停滞包裹都会必然自动退款，卖家应跟踪退货物流并及时处理平台发来的售后通知。
+
+**3. 符合退货条件的订单（退货窗口期）**
+*   **默认期限**：从订单显示 **Delivered（已送达）** 起算 **30 个自然日**。
+*   **卖家自定义**：部分合格卖家可设置 **14/30/45/90 天** 的退货窗口。
+*   **临时覆盖**：指定节日或促销期间，平台可能会临时覆盖卖家的设置。
+*   **注意**：请核对该订单结账时显示的窗口期以及 Seller Center 中的节日通知。
+
+**建议：**
+以上规则依据 TikTok Shop Seller University《订单履约政策》及《客户订单取消、退货及退款政策》整理（最后核验日期：2026-10-02）。由于平台政策可能随时间调整，请务必以 TikTok Shop 官方后台最新发布的规则为准。",GENERATION,FAIL_GENERATION,上下文正确，但把处理期H及H+1/H+4/H+5发货SLA当成退款处理时长；召回缺少明确退款响应规则且未先澄清。
+A04,TikTok Shop 美国站商品违规后怎么申诉？,TikTok Shop,US,Policy KB,Policy KB,TikTok Shop美国站Policy。,TikTok Shop 美国站商品违规后怎么申诉？,TikTok Shop,US,跨境电商知识问答 1,适用范围：TikTok Shop 美国站可申诉的卖家违规处罚；每项限2次，首次须在违规通知后30天内，二次须在首次拒绝后15天内；部分即时执法事项为12–72小时，以违规通知为准，申诉不保证通过；官方来源：TikTok Shop Seller University《卖家处罚政策》；官方页面：https://seller-us.tiktok.com/university/essay?course_type=1&from=search&identity=1&knowledge_id=2380042836166443&role=1；官方页面日期：2026-07-31；官方页面未明确标注生效日期；最后核验：2026-10-02。,https://seller-us.tiktok.com/university/essay?course_type=1&from=search&identity=1&knowledge_id=2380042836166443&role=1,true,200,true,4024,11137,false,false,UNKNOWN,"根据 TikTok Shop 美国站《卖家处罚政策》，商品违规后的申诉流程及关键规则如下：
+
+### 1. 申诉核心步骤
+*   **查看通知**：登录 Seller Center，找到具体的违规通知。
+*   **提交证据**：在 Seller Center 的申诉入口提交相关证据材料。
+*   **遵守时限**：严格按照该具体违规事项规定的截止时间完成提交。
+
+### 2. 申诉次数与时限限制
+*   **次数限制**：每项违规最多允许申诉 **2次**。
+*   **首次申诉**：必须在收到违规通知后的 **30天内** 提出。
+*   **二次申诉**：若首次被拒，必须在收到拒绝结果后的 **15天内** 提出。
+*   **特殊情形**：部分即时执法事项的申诉窗口可能更短（通常为 **12–72小时**），请务必以您收到的具体违规通知中注明的时限为准。
+
+### 3. 重要注意事项
+*   **纠正入口优先**：如果违规通知中提供了“纠正”（Rectification）入口且非即时执法，建议先尝试在限定时间（通常12-72小时）内完成纠正。若平台认可纠正充分，可能无需执行后续处罚或进入申诉流程。
+*   **不保证通过**：提交申诉不代表一定能成功撤销处罚，平台将根据提交的证据进行审核。
+*   **信息来源**：以上规则基于官方 Seller University《卖家处罚政策》（最后核验日期：2026-10-02）。
+
+建议您立即登录 TikTok Shop Seller Center，查看具体违规页面的提示，确认是适用“纠正”还是“申诉”，并严格遵守页面显示的倒计时。",NONE,PASS,命中TikTok违规申诉P0072及纠正P0073，保留两次、30/15天与即时事项12–72小时例外。
+A05,退货怎么处理？,Amazon,US,Policy KB,Policy KB,Amazon美国站Policy。,Amazon 美国站 退货怎么处理？,Amazon,US,跨境电商知识问答 1,适用范围：Amazon 美国站；大多数危险品退货需手动授权，须确认退货设施可安全接收并协调合规运输和标识；部分符合条件的案件仍可能自动授权，不能将危险品一律要求买家寄回；官方来源：Amazon 官方《自配送订单的 Amazon 买家退货管理》；官方页面：https://sell.amazon.com/blog/manage-customer-returns；官方页面日期：2025-04-15；官方页面未明确标注生效日期；最后核验：2026-10-02。,https://sell.amazon.com/blog/manage-customer-returns,true,200,true,4593,9726,false,false,UNKNOWN,"在 Amazon 美国站处理退货时，请根据具体案件情况执行以下操作：
+
+1. **查看待办事项**
+   进入后台的 **Manage Returns**（管理退货）页面，查看 **Pending Actions**（待处理动作）。对于不在自动退货政策内或属于豁免类目的请求，您需要在 **24小时内** 进行审核并作出决定（批准、拒绝或要求更多信息）。
+
+2. **区分退货原因与费用承担**
+   *   **买家责任**：若因“误购”、“改变主意”等买家个人原因退货，运费通常由买家承担，可从退款中扣除。
+   *   **卖家责任**：若因“商品缺陷”、“发货错误”等卖家原因退货，运费及退款由卖家承担。
+   *   **注意**：请务必核对具体的退货原因代码，不要对所有退货统一扣费。
+
+3. **特殊商品处理（如危险品）**
+   *   大多数危险品退货需要**手动授权**。
+   *   在批准前，须确认您的退货设施具备安全接收能力，并协调符合合规要求的运输方式和标识。
+   *   部分符合条件的案件仍可能自动授权，请勿将危险品一律强制要求买家寄回，需个案分析。
+
+**建议：** 平台政策可能随时间调整，请以 Amazon 卖家中心最新官方指南为准。",NONE,PASS,按Amazon美国站Policy说明手动审核、原因费用责任和危险品例外，无跨平台规则。
+A06,Amazon 美国站 FBA 发货有什么要求？,Amazon,US,Policy KB,Policy KB,Amazon美国站Policy。,Amazon 美国站 FBA 发货有什么要求？,Amazon,US,跨境电商知识问答 1,适用范围：Amazon 美国站；货件达到可调查资格后，可在 Contents 请求研究差异并提供库存所有权和送达凭证；本页不支持将所有差异都立即申请赔付；官方来源：Amazon 官方《如何追踪 FBA 入库货件》；官方页面：https://sell.amazon.com/blog/fba-shipment-tracking；官方页面日期：2025-01-07；官方页面未明确标注生效日期；最后核验：2026-10-02。,https://sell.amazon.com/blog/fba-shipment-tracking,false,200,true,5133,7486,false,false,true,"当前知识库信息不足，暂时无法可靠确认 Amazon 美国站 FBA 发货的具体操作要求（如包装、标签、预约等标准流程）。
+
+检索到的内容主要涉及**货件差异调查与赔付申请**、**FBM 退货政策合规性**以及**对账请求的沟通时效**，并未包含 FBA 入库发货的基础规范。
+
+建议以 Amazon 卖家后台最新官方指引为准，或访问以下官方页面获取详细要求：
+*   **FBA 货件创建与追踪指南**：https://sell.amazon.com/blog/fba-shipment-tracking",RETRIEVAL,FAIL_RETRIEVAL,召回FBA差异调查、FBM退货和补资料；未命中本地已有FBA包装/条码P0037-P0038。最终安全承认不足。
+A07,Amazon 英国站退货规则是什么？,Amazon,US,Expected Gap,Expected Gap,显式UK覆盖US，不能将US规则冒充UK；信息不足时兜底。,Amazon 英国站退货规则是什么？,Amazon,UK,跨境电商知识问答 1,适用范围：Amazon 美国站；公开指南按退货原因区分：误购或改变主意等由买家承担并可从退款扣除，缺陷或发货错误等由卖家承担；实际原因代码及例外按后台对应规则核对；官方来源：Amazon 官方《自配送订单的 Amazon 买家退货管理》；官方页面：https://sell.amazon.com/blog/manage-customer-returns；官方页面日期：2025-04-15；官方页面未明确标注生效日期；最后核验：2026-10-02。,https://sell.amazon.com/blog/manage-customer-returns,false,200,true,4316,6327,false,false,true,"当前知识库信息不足，暂时无法可靠确认 Amazon 英国站（UK）的具体退货规则。
+
+**原因说明：**
+您提供的检索结果明确标注适用范围为 **Amazon 美国站**，且引用的是针对美国市场的官方指南。由于跨境电商平台在不同站点（如美国站与英国站）的退货政策、费用承担方式及处理时效可能存在显著差异，不能将美国站的规则直接套用于英国站。
+
+**建议：**
+请查阅 Amazon Seller Central 中针对 **UK 市场** 的最新官方政策页面，或参考《Amazon 英国站退货政策》相关文档，以获取准确信息。",NONE,EXPECTED_GAP,显式英国站解析为UK；实际召回美国站分块，但最终明确拒绝套用并提示UK知识不足。
+A08,你好,TikTok Shop,US,Greeting,Greeting,走greeting / 非知识检索分支。,TikTok Shop 美国站 你好,TikTok Shop,US,UNKNOWN,UNKNOWN,UNKNOWN,UNKNOWN,200,true,996,1103,false,false,UNKNOWN,你好，我是跨境电商知识助手，可以帮你解答平台运营、选品、物流、广告、税务、合规等相关问题。,NONE,PASS,代码intent=greeting，未执行knowledge-retrieval或LLM节点，直接问候输出。

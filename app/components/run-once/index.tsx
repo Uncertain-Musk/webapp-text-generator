@@ -14,8 +14,9 @@ export type IRunOnceProps = {
   onVisionFilesChange: (files: VisionFile[]) => void
   isBusy?: boolean
   questionKey?: string
+  questionPlaceholder?: string
 }
-const RunOnce: FC<IRunOnceProps> = ({ promptConfig, inputs, onInputsChange, onSend, visionConfig, onVisionFilesChange, isBusy, questionKey }) => {
+const RunOnce: FC<IRunOnceProps> = ({ promptConfig, inputs, onInputsChange, onSend, visionConfig, onVisionFilesChange, isBusy, questionKey, questionPlaceholder }) => {
   const requiredMissing = promptConfig.prompt_variables.some(item => item.required !== false && !String(inputs[item.key] ?? '').trim())
   return (
     <form className='question-form' onSubmit={(event) => {
@@ -37,7 +38,7 @@ const RunOnce: FC<IRunOnceProps> = ({ promptConfig, inputs, onInputsChange, onSe
             {primary && maxLength && <span>{String(inputs[item.key] || '').length} / {maxLength}</span>}
           </div>
           {['string', 'paragraph'].includes(item.type) && <textarea id={id} rows={primary ? 5 : 3}
-            placeholder={primary ? '例如：我的 Amazon 美国站广告 ACOS 最近持续上升，应该从哪些方面排查？' : `请输入${item.name}`}
+            placeholder={primary ? questionPlaceholder : `请输入${item.name}`}
             value={inputs[item.key] ?? ''} maxLength={maxLength} required={item.required !== false} disabled={isBusy}
             onChange={event => onInputsChange({ ...inputs, [item.key]: event.target.value })} />}
           {item.type === 'number' && <input id={id} type='number' value={inputs[item.key] ?? ''}

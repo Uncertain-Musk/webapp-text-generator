@@ -1,0 +1,24 @@
+{
+  "checked_on": "2026-10-03",
+  "baseline_created_on": "2026-10-02",
+  "protected_directories": [
+    "app",
+    "config",
+    "service",
+    "utils"
+  ],
+  "baseline_files": 155,
+  "current_files": 155,
+  "modified": [],
+  "missing": [],
+  "added": [],
+  "business_files_unchanged": true,
+  "original_path": "C:\\Users\\zg105\\Desktop\\Codex生成文件\\跨境电商高频问答500条.csv",
+  "original_sha256": "534a5c9866ea602e46f99bf843e52768967eafc0f33572e6d7be60e82ea52088",
+  "general_sha256": "534a5c9866ea602e46f99bf843e52768967eafc0f33572e6d7be60e82ea52088",
+  "general_byte_identical": true,
+  "git_head": "6abc009339408b1cdb65c08c7648a663a2ab25a1",
+  "expected_git_head": "6abc009339408b1cdb65c08c7648a663a2ab25a1",
+  "git_head_unchanged": true,
+  "path_comparison": "Windows path separators normalized to /"
+}

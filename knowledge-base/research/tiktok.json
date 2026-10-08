@@ -1,0 +1,911 @@
+{
+  "platform": "TikTok Shop",
+  "market": "US",
+  "sources": [
+    {
+      "source_id": "TTS-S01",
+      "topic": "退款退货",
+      "source_title": "Requirements for Managing Returns, Refunds, and Replacements",
+      "source_url": "https://seller-us.tiktok.com/university/essay?knowledge_id=984433248438058",
+      "official_domain": "seller-us.tiktok.com",
+      "page_date": "2026-08-20",
+      "effective_date": "",
+      "last_verified_date": "2026-10-02",
+      "notes": "本次联网打开官方原始页面并读取正文；页首日期不等同生效日期。本次正文页首为08/20/2026；搜索结果出现09/17/2026的渠道差异未用作生效日期。运费段与FAQ冲突未派生通用成本QA。；官方页面未明确标注生效日期。",
+      "evidence_summary": "正文不可退商品节（179行）：≤100美元2个工作日、>100美元4个工作日；未发货节（188–190行）24小时；退货评级（80–96行）JPG/PNG、每文件≤5MB、最多6张；自动部分退款（133–142行）；换货补发（281–286行）。",
+      "answer_title": "退货、退款及替换商品管理要求"
+    },
+    {
+      "source_id": "TTS-S02",
+      "topic": "退款退货",
+      "source_title": "Customer Order Cancellation, Return, and Refund Policy",
+      "source_url": "https://seller-us.tiktok.com/university/essay?knowledge_id=3253210454181634",
+      "official_domain": "seller-us.tiktok.com",
+      "page_date": "2026-09-28",
+      "effective_date": "",
+      "last_verified_date": "2026-10-02",
+      "notes": "本次联网打开官方原始页面并读取正文；页首日期不等同生效日期。一般售后4工作日与商品问题48小时、Final Sale价档及摘要存在适用边界差异，已记conflicts/gaps。；官方页面未明确标注生效日期。",
+      "evidence_summary": "卖家取消（145–151行）；退货窗口（216–243行）默认Delivered后30个自然日、节日可覆盖；逆向物流停滞（266行）≥10天可加速退款；假/错误退货地址（272–274行）；4PL未收货仅退款（635–638行）。",
+      "answer_title": "客户订单取消、退货及退款政策"
+    },
+    {
+      "source_id": "TTS-S03",
+      "topic": "申诉",
+      "source_title": "Requirements for After-sales Dispute Escalations",
+      "source_url": "https://seller-us.tiktok.com/university/essay?course_type=1&from=search&identity=1&knowledge_id=3985068541478658&role=1",
+      "official_domain": "seller-us.tiktok.com",
+      "page_date": "2026-09-02",
+      "effective_date": "",
+      "last_verified_date": "2026-10-02",
+      "notes": "本次联网打开官方原始页面并读取正文；页首日期不等同生效日期。售后纠纷申诉与违规处罚申诉是不同流程。；官方页面未明确标注生效日期。",
+      "evidence_summary": "售后纠纷时限表及证据流程（282–310行）：通知后48小时交证据；裁定申诉（331–334行）：收到裁定后30个自然日；缺件/空包证据（101–109行）须关联订单并证明所有承诺物品已装包。",
+      "answer_title": "售后纠纷升级处理要求"
+    },
+    {
+      "source_id": "TTS-S04",
+      "topic": "退款退货",
+      "source_title": "Non-Buyer Fault Return & Refund Rate (NBFR) Requirements",
+      "source_url": "https://seller-us.tiktok.com/university/essay?knowledge_id=5914428974778167",
+      "official_domain": "seller-us.tiktok.com",
+      "page_date": "2026-07-01",
+      "effective_date": "",
+      "last_verified_date": "2026-10-02",
+      "notes": "本次联网打开官方原始页面并读取正文；页首日期不等同生效日期。；官方页面未明确标注生效日期。",
+      "evidence_summary": "范围及算法（72–82、108–120行）：过去60天已送达订单中卖家/物流责任退货退款占比；例外（97–103行）；SPS影响（125–133行）。",
+      "answer_title": "非买家责任退货退款率要求"
+    },
+    {
+      "source_id": "TTS-S05",
+      "topic": "账号与违规",
+      "source_title": "Seller Enforcement Policy",
+      "source_url": "https://seller-us.tiktok.com/university/essay?course_type=1&from=search&identity=1&knowledge_id=2380042836166443&role=1",
+      "official_domain": "seller-us.tiktok.com",
+      "page_date": "2026-07-31",
+      "effective_date": "",
+      "last_verified_date": "2026-10-02",
+      "notes": "原始带编码搜索参数的URL曾读取成功，复查报错；使用本条标准搜索参数URL再次打开并读取正文，07/31/2026为页首日期，未明确标注生效日期。",
+      "evidence_summary": "一般申诉（135–145行）：每违规2次、首次30天、二次被拒后15天，部分事项12–72小时；纠正（146–153行）12–72小时；关联账号（99–113行）；买家PII（115–128行）；资金暂扣（87–97行）45/90/365天。",
+      "answer_title": "卖家处罚政策"
+    },
+    {
+      "source_id": "TTS-S06",
+      "topic": "账号与违规",
+      "source_title": "Account Health Rating (AHR) Requirements",
+      "source_url": "https://seller-us.tiktok.com/university/essay?knowledge_id=6750828276418350",
+      "official_domain": "seller-us.tiktok.com",
+      "page_date": "2026-06-29",
+      "effective_date": "",
+      "last_verified_date": "2026-10-02",
+      "notes": "本次联网打开官方原始页面并读取正文；页首日期不等同生效日期。；官方页面未明确标注生效日期。",
+      "evidence_summary": "AHR定义（70–75行）：0–1000、过去180天、初始200；加分（79–84行）：每200完成订单4分、每周最多20；里程碑（108–121行）150/100/50对应7/14/28天、0可永久停用；重置例外（131–136行）。",
+      "answer_title": "账号健康度评分要求"
+    },
+    {
+      "source_id": "TTS-S07",
+      "topic": "商品合规",
+      "source_title": "Prohibited Products Policy",
+      "source_url": "https://seller-us.tiktok.com/university/essay?knowledge_id=1399532709988097",
+      "official_domain": "seller-us.tiktok.com",
+      "page_date": "2026-09-29",
+      "effective_date": "",
+      "last_verified_date": "2026-10-02",
+      "notes": "本次联网打开官方原始页面并读取正文；页首日期不等同生效日期。；官方页面未明确标注生效日期。",
+      "evidence_summary": "禁止产品总类（83–90行）含灰色市场及制裁产地；酒/烟/电子烟（92–104行）：可食用含酒精≥0.5%ABV食品禁售；无尼古丁吸入型电子烟仍禁；排除酒主题商品等。",
+      "answer_title": "禁售商品政策"
+    },
+    {
+      "source_id": "TTS-S08",
+      "topic": "商品合规",
+      "source_title": "Restricted Products Policy",
+      "source_url": "https://seller-us.tiktok.com/university/essay?knowledge_id=3238037484275457&lang=en",
+      "official_domain": "seller-us.tiktok.com",
+      "page_date": "2026-09-01",
+      "effective_date": "",
+      "last_verified_date": "2026-10-02",
+      "notes": "本次联网打开官方原始页面并读取正文；页首日期不等同生效日期。采用实际打开的英文官方页面URL。；官方页面未明确标注生效日期。",
+      "evidence_summary": "资格级别（100–104行）：类目、逐商品及邀请制；逐商品清单（128–146行）；邀请制（147–161行）含膳食补充剂；平台可要求补充资料（95–104行）。",
+      "answer_title": "受限商品政策"
+    },
+    {
+      "source_id": "TTS-S09",
+      "topic": "商品发布",
+      "source_title": "Product Listing Policy",
+      "source_url": "https://seller-us.tiktok.com/university/essay?knowledge_id=3196690250417921",
+      "official_domain": "seller-us.tiktok.com",
+      "page_date": "2026-09-01",
+      "effective_date": "",
+      "last_verified_date": "2026-10-02",
+      "notes": "本次联网打开官方原始页面并读取正文；页首日期不等同生效日期。；官方页面未明确标注生效日期。",
+      "evidence_summary": "禁止发布行为（85–87行）旧listing换产品及重复listing；图片（189–196行）最多9张、主图白底、≥600×600；类目（166–178行）卖家须复核自动建议。",
+      "answer_title": "商品发布政策"
+    },
+    {
+      "source_id": "TTS-S10",
+      "topic": "商品合规",
+      "source_title": "Intellectual Property Policy",
+      "source_url": "https://seller-us.tiktok.com/university/essay?default_language=en&knowledge_id=6837901778306818",
+      "official_domain": "seller-us.tiktok.com",
+      "page_date": "2026-07-16",
+      "effective_date": "",
+      "last_verified_date": "2026-10-02",
+      "notes": "本次联网打开官方原始页面并读取正文；页首日期不等同生效日期。具体法律例外及个案权利判断不在这些QA中扩展。；官方页面未明确标注生效日期。",
+      "evidence_summary": "商标（79–85行）含店名头像；版权（86–91行）含照片文字音乐视频；品牌授权（112–122行）：二级经销商需两封连续LOA。",
+      "answer_title": "知识产权政策"
+    },
+    {
+      "source_id": "TTS-S11",
+      "topic": "商品合规",
+      "source_title": "Product Recall Policy",
+      "source_url": "https://seller-us.tiktok.com/university/essay?knowledge_id=1439743821383425",
+      "official_domain": "seller-us.tiktok.com",
+      "page_date": "2026-05-22",
+      "effective_date": "",
+      "last_verified_date": "2026-10-02",
+      "notes": "本次联网打开官方原始页面并读取正文；页首日期不等同生效日期。；官方页面未明确标注生效日期。",
+      "evidence_summary": "召回定义（78–85行）含自愿及政府强制；通知（94–100行）移除商品、取消进行中订单；恢复（103–112行）制造商合规信及平台批准。",
+      "answer_title": "商品召回政策"
+    },
+    {
+      "source_id": "TTS-S12",
+      "topic": "订单履约",
+      "source_title": "Fulfillment Policy",
+      "source_url": "https://seller-us.tiktok.com/university/essay?knowledge_id=3995852763301633",
+      "official_domain": "seller-us.tiktok.com",
+      "page_date": "2026-09-28",
+      "effective_date": "",
+      "last_verified_date": "2026-10-02",
+      "notes": "本次联网打开官方原始页面并读取正文；页首日期不等同生效日期。09/28正文允许合格manifest/应用内扫描事件，08/06 LDR页只写承运商扫描，存在适用边界差异，manifest/应用内扫码认定QA排除待确认。；官方页面未明确标注生效日期。",
+      "evidence_summary": "SLA表（90–107行）：常规2/5/6工作日，定制处理H+1/H+4/H+5，预售关闭后2/5/6；合格发货事件（109–110行）可含manifest或应用内扫描；工作日排除周末与联邦假日。",
+      "answer_title": "订单履约政策"
+    },
+    {
+      "source_id": "TTS-S13",
+      "topic": "订单履约",
+      "source_title": "Late Dispatch Rate Requirements",
+      "source_url": "https://seller-us.tiktok.com/university/essay?knowledge_id=3668989549299511",
+      "official_domain": "seller-us.tiktok.com",
+      "page_date": "2026-08-06",
+      "effective_date": "",
+      "last_verified_date": "2026-10-02",
+      "notes": "本次联网打开官方原始页面并读取正文；页首日期不等同生效日期。正文单独注明常规订单2工作日规则自2026-01-26起，并未明确整篇生效日期；该规则的当前SLA取09/28 Fulfillment Policy。；官方页面未明确标注生效日期。",
+      "evidence_summary": "处罚（90–98行）：LDR>10%；例外（85–89行）FBT排除、TikTok Shipping不排除；申诉证据（117–123行）物流商延误确认及对应时段/订单。",
+      "answer_title": "迟发货率要求"
+    },
+    {
+      "source_id": "TTS-S14",
+      "topic": "订单履约",
+      "source_title": "Seller-Fault Cancellation Rate Requirements",
+      "source_url": "https://seller-us.tiktok.com/university/essay?knowledge_id=7953001314830094",
+      "official_domain": "seller-us.tiktok.com",
+      "page_date": "2026-08-06",
+      "effective_date": "",
+      "last_verified_date": "2026-10-02",
+      "notes": "本次联网打开官方原始页面并读取正文；页首日期不等同生效日期。；官方页面未明确标注生效日期。",
+      "evidence_summary": "硬性要求（76–80行）SFCR≤2.5%；计入原因（83–92行）缺货、价格错误、无有效追踪、召回、欠邮资及假面单，真品证书仅二手奢侈品；例外（93–96行）创作者样品及FBT分子保护。",
+      "answer_title": "卖家责任取消率要求"
+    },
+    {
+      "source_id": "TTS-S15",
+      "topic": "物流",
+      "source_title": "On-Time Delivery (OTDR) Rate Requirements",
+      "source_url": "https://seller-us.tiktok.com/university/essay?knowledge_id=7671875816589099",
+      "official_domain": "seller-us.tiktok.com",
+      "page_date": "2026-09-16",
+      "effective_date": "",
+      "last_verified_date": "2026-10-02",
+      "notes": "本次联网打开官方原始页面并读取正文；页首日期不等同生效日期。仅特定物流方式的OTDR规则正文注明2026年6月起，未标整篇统一生效日期。；官方页面未明确标注生效日期。",
+      "evidence_summary": "要求（76–82行）OTDR≥80%；升级TikTok Shipping/CBT按及时发货保护，自2026年6月起；例外（91–95行）FBT按时、Express排除、周末联邦假日不计SLA。",
+      "answer_title": "按时送达率要求"
+    },
+    {
+      "source_id": "TTS-S16",
+      "topic": "物流",
+      "source_title": "Valid Tracking Rate Requirements",
+      "source_url": "https://seller-us.tiktok.com/university/essay?knowledge_id=1274968588748558",
+      "official_domain": "seller-us.tiktok.com",
+      "page_date": "2026-08-06",
+      "effective_date": "",
+      "last_verified_date": "2026-10-02",
+      "notes": "本次联网打开官方原始页面并读取正文；页首日期不等同生效日期。；官方页面未明确标注生效日期。",
+      "evidence_summary": "要求（75–83行）VTR≥95%、影响AHR不影响SPS、有效轨迹至少两次扫描且含末端状态；例外（94–98行）TikTok Shipping/FBT不评估。",
+      "answer_title": "有效追踪率要求"
+    },
+    {
+      "source_id": "TTS-S17",
+      "topic": "物流",
+      "source_title": "Customer Order Shipping Requirements",
+      "source_url": "https://seller-us.tiktok.com/university/essay?knowledge_id=6837879804970754",
+      "official_domain": "seller-us.tiktok.com",
+      "page_date": "2026-09-16",
+      "effective_date": "",
+      "last_verified_date": "2026-10-02",
+      "notes": "本次联网打开官方原始页面并读取正文；页首日期不等同生效日期。适用美国站实物商品；虚拟商品不适用本物流要求。；官方页面未明确标注生效日期。",
+      "evidence_summary": "Seller Shipping信息（109–113行）：追踪ID、物流商、服务，允许一次修正；面单（124–132行）禁站外链接/二维码；欺诈物流（206–219行）禁从其他零售平台购买并直发买家。",
+      "answer_title": "客户订单运输要求"
+    },
+    {
+      "source_id": "TTS-S18",
+      "topic": "商品合规",
+      "source_title": "Dangerous Goods Requirements",
+      "source_url": "https://seller-us.tiktok.com/university/essay?knowledge_id=2297870046414638",
+      "official_domain": "seller-us.tiktok.com",
+      "page_date": "2026-09-01",
+      "effective_date": "",
+      "last_verified_date": "2026-10-02",
+      "notes": "本次联网打开官方原始页面并读取正文；页首日期不等同生效日期。；官方页面未明确标注生效日期。",
+      "evidence_summary": "危险品判定及文件（87–96行）：SDS与具体产品匹配、不得自制/借相似品，锂电池另需UN38.3；在售后才识别危险品有90天交SDS宽限期；所有危险品须合法储存处理标识运输。",
+      "answer_title": "危险品要求"
+    },
+    {
+      "source_id": "TTS-S19",
+      "topic": "广告与经营",
+      "source_title": "Review Policy",
+      "source_url": "https://seller-us.tiktok.com/university/essay?knowledge_id=10019322",
+      "official_domain": "seller-us.tiktok.com",
+      "page_date": "2026-06-30",
+      "effective_date": "",
+      "last_verified_date": "2026-10-02",
+      "notes": "本次联网打开官方原始页面并读取正文；页首日期不等同生效日期。；官方页面未明确标注生效日期。",
+      "evidence_summary": "激励评价（63–70行）禁金钱/赠品/折扣等，官方激励评价功能例外；干预评价（71–77行）禁要求改删或仅邀满意客户；违规评价上报（108–109行）Product Ratings。",
+      "answer_title": "评价政策"
+    },
+    {
+      "source_id": "TTS-S20",
+      "topic": "费用与结算",
+      "source_title": "Dynamic Settlement and Reserve Policy",
+      "source_url": "https://seller-us.tiktok.com/university/essay?course_type=1&from=search&identity=1&knowledge_id=3995852763531009&role=1",
+      "official_domain": "seller-us.tiktok.com",
+      "page_date": "2026-07-31",
+      "effective_date": "",
+      "last_verified_date": "2026-10-02",
+      "notes": "本次联网打开官方原始页面并读取正文；页首日期不等同生效日期。结算天数及预留比例显示于图片，已打开图片链接但本次未能读取图片表格，不填具体阶梯数字。；官方页面未明确标注生效日期。",
+      "evidence_summary": "评估（66–81行）：每月1日，参考SPS、前15–45天成功送达量及限制；预留（83–90行）：每单签收日起30天；安全审核时当月任意时间可转递延结算。",
+      "answer_title": "动态结算及预留款政策"
+    }
+  ],
+  "rows": [
+    {
+      "source_id": "TTS-S01",
+      "topic": "退款退货",
+      "question": "TikTok Shop 美国站自动部分退款规则适用于哪些商品和金额？",
+      "answer": "适用范围：TikTok Shop 美国站卖家自设自动部分退款；仅可退类目、价格10–100美元，适用错货、损坏/缺陷、缺件或货不对板；下限为10%或5美元取高，上限为50%或50美元取低；免退退款优先，自设规则导致的退款不可申诉；官方来源：TikTok Shop Seller University《退货、退款及替换商品管理要求》；官方页面：https://seller-us.tiktok.com/university/essay?knowledge_id=984433248438058；官方页面日期：2026-08-20；官方页面未明确标注生效日期；最后核验：2026-10-02。",
+      "action": "在Preference设置符合范围的规则，并核对免退退款的优先级。"
+    },
+    {
+      "source_id": "TTS-S02",
+      "topic": "订单履约",
+      "question": "TikTok Shop 美国站缺货时可以要求买家自己取消订单吗？",
+      "answer": "适用范围：TikTok Shop 美国站卖家无法履约的已付款订单；不得因自己的库存问题要求买家取消；卖家可通知并取消，但可能计入SFCR；取消通知须及时以英文说明理由，并全额及时退款；官方来源：TikTok Shop Seller University《客户订单取消、退货及退款政策》；官方页面：https://seller-us.tiktok.com/university/essay?knowledge_id=3253210454181634；官方页面日期：2026-09-28；官方页面未明确标注生效日期；最后核验：2026-10-02。",
+      "action": "核实库存后从订单处理取消，并发送英文原因通知。"
+    },
+    {
+      "source_id": "TTS-S02",
+      "topic": "退款退货",
+      "question": "TikTok Shop 美国站买家通常能在签收后多久申请退货？",
+      "answer": "适用范围：TikTok Shop 美国站符合退货条件的订单；按结账时显示窗口，默认从Delivered起30个自然日；部分合格卖家可设14/30/45/90天，指定节日或促销可临时覆盖设置；官方来源：TikTok Shop Seller University《客户订单取消、退货及退款政策》；官方页面：https://seller-us.tiktok.com/university/essay?knowledge_id=3253210454181634；官方页面日期：2026-09-28；官方页面未明确标注生效日期；最后核验：2026-10-02。",
+      "action": "核对该订单结账窗口和Seller Center节日通知。"
+    },
+    {
+      "source_id": "TTS-S02",
+      "topic": "退款退货",
+      "question": "TikTok Shop 美国站退货物流十多天不更新，平台会先退款吗？",
+      "answer": "适用范围：TikTok Shop 美国站已进入逆向物流的退货包裹；连续10天或以上无物流更新时，买家可联系平台要求加速退款；平台可在退货送达卖家前退款，并非所有停滞包裹必然自动退款；官方来源：TikTok Shop Seller University《客户订单取消、退货及退款政策》；官方页面：https://seller-us.tiktok.com/university/essay?knowledge_id=3253210454181634；官方页面日期：2026-09-28；官方页面未明确标注生效日期；最后核验：2026-10-02。",
+      "action": "跟踪退货物流并处理平台发来的售后通知。"
+    },
+    {
+      "source_id": "TTS-S02",
+      "topic": "退款退货",
+      "question": "TikTok Shop 美国站退货地址填错导致包裹退回买家，费用由谁承担？",
+      "answer": "适用范围：TikTok Shop 美国站假、错误或不可投递的卖家退货地址；平台可酌情加速给买家退款；卖家承担退款及相关费用，可在允许时申诉；搬迁时须及时更新退货仓地址；官方来源：TikTok Shop Seller University《客户订单取消、退货及退款政策》；官方页面：https://seller-us.tiktok.com/university/essay?knowledge_id=3253210454181634；官方页面日期：2026-09-28；官方页面未明确标注生效日期；最后核验：2026-10-02。",
+      "action": "更新Return Warehouse地址，并在可申诉案件中提交事实证据。"
+    },
+    {
+      "source_id": "TTS-S02",
+      "topic": "退款退货",
+      "question": "TikTok Shop 美国站使用4PL物流的已送达未收到仅退款，需要卖家审批吗？",
+      "answer": "适用范围：TikTok Shop 美国站符合条件的4PL订单，买家选择Package was not received并申请仅退款；由平台审核，卖家无需批准或拒绝；不符合该4PL范围或平台要求补充资料时除外；官方来源：TikTok Shop Seller University《客户订单取消、退货及退款政策》；官方页面：https://seller-us.tiktok.com/university/essay?knowledge_id=3253210454181634；官方页面日期：2026-09-28；官方页面未明确标注生效日期；最后核验：2026-10-02。",
+      "action": "关注案件状态，并按平台要求补充资料。"
+    },
+    {
+      "source_id": "TTS-S03",
+      "topic": "申诉",
+      "question": "TikTok Shop 美国站收到售后纠纷通知后多久要交证据？",
+      "answer": "适用范围：TikTok Shop 美国站平台有效订单的售后纠纷；须在纠纷通知后48小时内交真实、相关、完整证据；错过期限可导致卖家承担自动退款；官方来源：TikTok Shop Seller University《售后纠纷升级处理要求》；官方页面：https://seller-us.tiktok.com/university/essay?course_type=1&from=search&identity=1&knowledge_id=3985068541478658&role=1；官方页面日期：2026-09-02；官方页面未明确标注生效日期；最后核验：2026-10-02。",
+      "action": "进入Orders > Manage Returns > Appealed/Disputed按时提交。"
+    },
+    {
+      "source_id": "TTS-S03",
+      "topic": "申诉",
+      "question": "TikTok Shop 美国站不服售后纠纷裁定，申诉期限是多少？",
+      "answer": "适用范围：TikTok Shop 美国站可申诉的售后纠纷裁定；收到裁定后30个自然日内在Help Center提交工单；正在进行的纠纷仍须遵守48小时交证据期限；官方来源：TikTok Shop Seller University《售后纠纷升级处理要求》；官方页面：https://seller-us.tiktok.com/university/essay?course_type=1&from=search&identity=1&knowledge_id=3985068541478658&role=1；官方页面日期：2026-09-02；官方页面未明确标注生效日期；最后核验：2026-10-02。",
+      "action": "记下裁定接收日期，提交工单及相关证据。"
+    },
+    {
+      "source_id": "TTS-S03",
+      "topic": "申诉",
+      "question": "TikTok Shop 美国站买家称少件或收到空包，售后纠纷怎样举证？",
+      "answer": "适用范围：TikTok Shop 美国站缺件或空包纠纷；提供能关联订单/包裹的运单、面单或轨迹，并按情形附装箱记录、SKU和数量及清晰照片/视频；不足以证明所有物品已装包可支持买家退款；官方来源：TikTok Shop Seller University《售后纠纷升级处理要求》；官方页面：https://seller-us.tiktok.com/university/essay?course_type=1&from=search&identity=1&knowledge_id=3985068541478658&role=1；官方页面日期：2026-09-02；官方页面未明确标注生效日期；最后核验：2026-10-02。",
+      "action": "整理与该订单面单关联的完整装箱证据。"
+    },
+    {
+      "source_id": "TTS-S04",
+      "topic": "退款退货",
+      "question": "TikTok Shop 美国站NBFR按什么订单和周期计算？",
+      "answer": "适用范围：TikTok Shop 美国站非买家责任退货退款率；取过去60天因卖家或物流责任产生退货退款的已送达订单数÷已送达且未取消订单数×100%；送达前取消订单不计入；官方来源：TikTok Shop Seller University《非买家责任退货退款率要求》；官方页面：https://seller-us.tiktok.com/university/essay?knowledge_id=5914428974778167；官方页面日期：2026-07-01；官方页面未明确标注生效日期；最后核验：2026-10-02。",
+      "action": "在SPS页面核对NBFR及对应订单原因。"
+    },
+    {
+      "source_id": "TTS-S04",
+      "topic": "退款退货",
+      "question": "TikTok Shop 美国站FBT和TikTok Shipping的物流问题都计入NBFR吗？",
+      "answer": "适用范围：TikTok Shop 美国站NBFR物流责任例外；FBT订单物流问题排除；TikTok Shipping仅包裹未收到的物流问题排除；其他问题不能据此一概豁免；官方来源：TikTok Shop Seller University《非买家责任退货退款率要求》；官方页面：https://seller-us.tiktok.com/university/essay?knowledge_id=5914428974778167；官方页面日期：2026-07-01；官方页面未明确标注生效日期；最后核验：2026-10-02。",
+      "action": "按物流方式和具体售后原因核对排除范围。"
+    },
+    {
+      "source_id": "TTS-S04",
+      "topic": "退款退货",
+      "question": "TikTok Shop 美国站NBFR升高会影响哪些店铺权益？",
+      "answer": "适用范围：TikTok Shop 美国站店铺SPS表现；NBFR是SPS组成指标；高NBFR可降低SPS、商品可见度及福利资格，低NBFR可改善表现；该页未给统一处罚阈值；官方来源：TikTok Shop Seller University《非买家责任退货退款率要求》；官方页面：https://seller-us.tiktok.com/university/essay?knowledge_id=5914428974778167；官方页面日期：2026-07-01；官方页面未明确标注生效日期；最后核验：2026-10-02。",
+      "action": "查看SPS表现及非买家责任售后明细。"
+    },
+    {
+      "source_id": "TTS-S05",
+      "topic": "申诉",
+      "question": "TikTok Shop 美国站违规处罚申诉能提几次，截止时间是什么？",
+      "answer": "适用范围：TikTok Shop 美国站可申诉的卖家违规处罚；每项限2次，首次须在违规通知后30天内，二次须在首次拒绝后15天内；部分即时执法事项为12–72小时，以违规通知为准，申诉不保证通过；官方来源：TikTok Shop Seller University《卖家处罚政策》；官方页面：https://seller-us.tiktok.com/university/essay?course_type=1&from=search&identity=1&knowledge_id=2380042836166443&role=1；官方页面日期：2026-07-31；官方页面未明确标注生效日期；最后核验：2026-10-02。",
+      "action": "查看违规通知，在Seller Center提交证据并遵守该事项时限。"
+    },
+    {
+      "source_id": "TTS-S05",
+      "topic": "申诉",
+      "question": "TikTok Shop 美国站收到违规通知后可以直接纠正而不申诉吗？",
+      "answer": "适用范围：TikTok Shop 美国站提供纠正入口且非即时执法的部分违规；可在Seller Center纠正，限通知后12–72小时，具体时间取决于违规；平台认可纠正充分时可不执行对应处罚；官方来源：TikTok Shop Seller University《卖家处罚政策》；官方页面：https://seller-us.tiktok.com/university/essay?course_type=1&from=search&identity=1&knowledge_id=2380042836166443&role=1；官方页面日期：2026-07-31；官方页面未明确标注生效日期；最后核验：2026-10-02。",
+      "action": "查看该违规的纠正入口和截止时间，完成所要求的纠正。"
+    },
+    {
+      "source_id": "TTS-S05",
+      "topic": "账号与违规",
+      "question": "TikTok Shop 美国站换一个公司或个人注册新店，能避免关联账号处罚吗？",
+      "answer": "适用范围：TikTok Shop 美国站相关使用、管理或经营的卖家账号；不同主体仍可被认定关联；平台综合联系方式、支付、人员、设备及商业资源判断；受罚账号继续相同业务可使关联店受对应处罚；官方来源：TikTok Shop Seller University《卖家处罚政策》；官方页面：https://seller-us.tiktok.com/university/essay?course_type=1&from=search&identity=1&knowledge_id=2380042836166443&role=1；官方页面日期：2026-07-31；官方页面未明确标注生效日期；最后核验：2026-10-02。",
+      "action": "核对账号关联事实，按违规通知的可用申诉流程提交材料。"
+    },
+    {
+      "source_id": "TTS-S05",
+      "topic": "账号与违规",
+      "question": "TikTok Shop 美国站订单完成后可以保留买家地址用于营销吗？",
+      "answer": "适用范围：TikTok Shop 美国站交易提供的买家个人信息；只能用于履行该特定交易，不得跨交易复用、站外联系或营销；交易及适用退货/争议窗口关闭后须无不当延迟地删除或匿名化；官方来源：TikTok Shop Seller University《卖家处罚政策》；官方页面：https://seller-us.tiktok.com/university/essay?course_type=1&from=search&identity=1&knowledge_id=2380042836166443&role=1；官方页面日期：2026-07-31；官方页面未明确标注生效日期；最后核验：2026-10-02。",
+      "action": "限制信息用途，并在窗口关闭后删除或匿名化。"
+    },
+    {
+      "source_id": "TTS-S05",
+      "topic": "费用与结算",
+      "question": "TikTok Shop 美国站违规后冻结资金一定到期全额返还吗？",
+      "answer": "适用范围：TikTok Shop 美国站因违规或未履行财务义务被暂扣的资金；可按性质严重性暂扣45、90或365天，期满先抵扣未结损失再付余额；欺骗、滥用、欺诈或违法行为可导致部分或全部永久扣留；官方来源：TikTok Shop Seller University《卖家处罚政策》；官方页面：https://seller-us.tiktok.com/university/essay?course_type=1&from=search&identity=1&knowledge_id=2380042836166443&role=1；官方页面日期：2026-07-31；官方页面未明确标注生效日期；最后核验：2026-10-02。",
+      "action": "查看资金扣留通知、未结费用及可用申诉入口。"
+    },
+    {
+      "source_id": "TTS-S06",
+      "topic": "账号与违规",
+      "question": "TikTok Shop 美国站新店AHR多少分，反映多长时间的行为？",
+      "answer": "适用范围：TikTok Shop 美国站卖家账号健康度；新卖家从200分起，评分范围0–1000，反映过去180天行为；≥200为绿色，51–199橙色，≤50红色；官方来源：TikTok Shop Seller University《账号健康度评分要求》；官方页面：https://seller-us.tiktok.com/university/essay?knowledge_id=6750828276418350；官方页面日期：2026-06-29；官方页面未明确标注生效日期；最后核验：2026-10-02。",
+      "action": "在Account Health页面查看分数及违规明细。"
+    },
+    {
+      "source_id": "TTS-S06",
+      "topic": "账号与违规",
+      "question": "TikTok Shop 美国站正常完成订单能给AHR加多少分？",
+      "answer": "适用范围：TikTok Shop 美国站过去180天符合条件的完成订单；每200单加4分，每周最多20分；样品、退货、退款、取消或任何缺陷订单不计；违规关联政策测验另按测验加分；官方来源：TikTok Shop Seller University《账号健康度评分要求》；官方页面：https://seller-us.tiktok.com/university/essay?knowledge_id=6750828276418350；官方页面日期：2026-06-29；官方页面未明确标注生效日期；最后核验：2026-10-02。",
+      "action": "核对符合条件的完成订单和可用政策测验。"
+    },
+    {
+      "source_id": "TTS-S06",
+      "topic": "账号与违规",
+      "question": "TikTok Shop 美国站AHR降到150、100、50或0分会怎样？",
+      "answer": "适用范围：TikTok Shop 美国站AHR里程碑执法；150/100/50分可分别限制新增listing和大型活动报名7/14/28天，0分可永久停用；可用里程碑测验可缩短部分处罚；官方来源：TikTok Shop Seller University《账号健康度评分要求》；官方页面：https://seller-us.tiktok.com/university/essay?knowledge_id=6750828276418350；官方页面日期：2026-06-29；官方页面未明确标注生效日期；最后核验：2026-10-02。",
+      "action": "查看对应里程碑通知和可用测验。"
+    },
+    {
+      "source_id": "TTS-S06",
+      "topic": "账号与违规",
+      "question": "TikTok Shop 美国站AHR加分扣分会永久保留吗？",
+      "answer": "适用范围：TikTok Shop 美国站AHR积分重置；每笔获得或扣除的积分在180天后重置；成功申诉或纠正后返还的积分不适用该重置规则；官方来源：TikTok Shop Seller University《账号健康度评分要求》；官方页面：https://seller-us.tiktok.com/university/essay?knowledge_id=6750828276418350；官方页面日期：2026-06-29；官方页面未明确标注生效日期；最后核验：2026-10-02。",
+      "action": "按积分事件日期核对，误罚使用可用申诉或纠正流程。"
+    },
+    {
+      "source_id": "TTS-S07",
+      "topic": "商品合规",
+      "question": "TikTok Shop 美国站含酒精巧克力或酱料可以上架吗？",
+      "answer": "适用范围：TikTok Shop 美国站含酒精可食用食品；酒精体积分数≥0.5%禁售，即使宣称煮掉或减少酒精；该节不覆盖酒主题周边、无酒精mocktail和非食用酒精产品；官方来源：TikTok Shop Seller University《禁售商品政策》；官方页面：https://seller-us.tiktok.com/university/essay?knowledge_id=1399532709988097；官方页面日期：2026-09-29；官方页面未明确标注生效日期；最后核验：2026-10-02。",
+      "action": "核实配方及酒精含量，禁售食品勿上架。"
+    },
+    {
+      "source_id": "TTS-S07",
+      "topic": "商品合规",
+      "question": "TikTok Shop 美国站无尼古丁电子烟或维生素雾化棒能卖吗？",
+      "answer": "适用范围：TikTok Shop 美国站模拟吸烟或直接吸入物质的产品；不论是否含烟草或尼古丁均禁售，包括无尼古丁、维生素和健康雾化产品及功能配件；纯装饰配件不在该节范围；官方来源：TikTok Shop Seller University《禁售商品政策》；官方页面：https://seller-us.tiktok.com/university/essay?knowledge_id=1399532709988097；官方页面日期：2026-09-29；官方页面未明确标注生效日期；最后核验：2026-10-02。",
+      "action": "核对预期用途，移除禁售吸入产品。"
+    },
+    {
+      "source_id": "TTS-S07",
+      "topic": "商品合规",
+      "question": "TikTok Shop 美国站正品但来自非授权渠道的灰色市场商品可以卖吗？",
+      "answer": "适用范围：TikTok Shop 美国站未经授权分销渠道的灰色市场商品；该政策将灰色市场商品列为禁售，正品身份本身不能绕过该限制；官方来源：TikTok Shop Seller University《禁售商品政策》；官方页面：https://seller-us.tiktok.com/university/essay?knowledge_id=1399532709988097；官方页面日期：2026-09-29；官方页面未明确标注生效日期；最后核验：2026-10-02。",
+      "action": "核对供应及授权渠道，禁止的灰色市场商品勿发布。"
+    },
+    {
+      "source_id": "TTS-S07",
+      "topic": "商品合规",
+      "question": "TikTok Shop 美国站产地受经济或贸易制裁的商品能上架美国站吗？",
+      "answer": "适用范围：TikTok Shop 美国站不能合法进口到买家所在国的商品；包括来源或制造于受经济/贸易制裁地区的商品，列为禁售；不能仅凭当地可售认定平台可售；官方来源：TikTok Shop Seller University《禁售商品政策》；官方页面：https://seller-us.tiktok.com/university/essay?knowledge_id=1399532709988097；官方页面日期：2026-09-29；官方页面未明确标注生效日期；最后核验：2026-10-02。",
+      "action": "核对商品来源、制造地及进口可行性后再发布。"
+    },
+    {
+      "source_id": "TTS-S08",
+      "topic": "商品合规",
+      "question": "TikTok Shop 美国站类目批准和逐商品批准有什么区别？",
+      "answer": "适用范围：TikTok Shop 美国站受限商品资格审核；类目级资格通过后可发布该类商品；商品级资格须为每个商品提供材料；指定婴童/医疗等商品可能仍需逐商品审核；官方来源：TikTok Shop Seller University《受限商品政策》；官方页面：https://seller-us.tiktok.com/university/essay?knowledge_id=3238037484275457&lang=en；官方页面日期：2026-09-01；官方页面未明确标注生效日期；最后核验：2026-10-02。",
+      "action": "在Qualification Center核对商品对应的资格层级。"
+    },
+    {
+      "source_id": "TTS-S08",
+      "topic": "商品合规",
+      "question": "TikTok Shop 美国站膳食补充剂卖家只提交材料就能获得类目权限吗？",
+      "answer": "适用范围：TikTok Shop 美国站膳食补充剂等邀请制类目；仅选定合格卖家获邀后可申请，普通材料提交不等于获得邀请或批准；官方来源：TikTok Shop Seller University《受限商品政策》；官方页面：https://seller-us.tiktok.com/university/essay?knowledge_id=3238037484275457&lang=en；官方页面日期：2026-09-01；官方页面未明确标注生效日期；最后核验：2026-10-02。",
+      "action": "先核对邀请资格，再通过Qualification Center申请。"
+    },
+    {
+      "source_id": "TTS-S08",
+      "topic": "商品合规",
+      "question": "TikTok Shop 美国站受限商品已经获批上线，还会被要求补资料吗？",
+      "answer": "适用范围：TikTok Shop 美国站受限商品审核及在售期间；批准不保证，平台可在审批或商品上线后要求额外文件；不符合资格的受限商品不得发布；官方来源：TikTok Shop Seller University《受限商品政策》；官方页面：https://seller-us.tiktok.com/university/essay?knowledge_id=3238037484275457&lang=en；官方页面日期：2026-09-01；官方页面未明确标注生效日期；最后核验：2026-10-02。",
+      "action": "保持材料准确，并响应平台补充资料要求。"
+    },
+    {
+      "source_id": "TTS-S09",
+      "topic": "商品发布",
+      "question": "TikTok Shop 美国站同款不同颜色尺寸能建多个商品链接吗？",
+      "answer": "适用范围：TikTok Shop 美国站同一商品的有效颜色、尺码或款式变体；须归到同一商品页，不得为同一商品创建重复listing；重复或误导listing可被移除并处罚；官方来源：TikTok Shop Seller University《商品发布政策》；官方页面：https://seller-us.tiktok.com/university/essay?knowledge_id=3196690250417921；官方页面日期：2026-09-01；官方页面未明确标注生效日期；最后核验：2026-10-02。",
+      "action": "将有效变体归并到同一产品页。"
+    },
+    {
+      "source_id": "TTS-S09",
+      "topic": "商品发布",
+      "question": "TikTok Shop 美国站可以把有好评的旧listing改成另一款商品吗？",
+      "answer": "适用范围：TikTok Shop 美国站既有商品listing；禁止改标题、图片、品牌或价格等关键内容以换成另一产品，误导客户并使旧评价/履约数据失效；购买时详情须被履行；官方来源：TikTok Shop Seller University《商品发布政策》；官方页面：https://seller-us.tiktok.com/university/essay?knowledge_id=3196690250417921；官方页面日期：2026-09-01；官方页面未明确标注生效日期；最后核验：2026-10-02。",
+      "action": "为不同产品建立对应listing，并核对已成交订单详情。"
+    },
+    {
+      "source_id": "TTS-S09",
+      "topic": "商品发布",
+      "question": "TikTok Shop 美国站商品主图和其他图片有怎样的要求？",
+      "answer": "适用范围：TikTok Shop 美国站listing商品图片；最多9张方图且选1张主图；主图为产品正面、纯白背景，所有图至少600×600，不得加logo、文字、边框、水印或覆盖图案，勿重复同角度；官方来源：TikTok Shop Seller University《商品发布政策》；官方页面：https://seller-us.tiktok.com/university/essay?knowledge_id=3196690250417921；官方页面日期：2026-09-01；官方页面未明确标注生效日期；最后核验：2026-10-02。",
+      "action": "上传符合要求的真实产品图片并选定主图。"
+    },
+    {
+      "source_id": "TTS-S09",
+      "topic": "商品发布",
+      "question": "TikTok Shop 美国站系统推荐的商品类目可以直接信任吗？",
+      "answer": "适用范围：TikTok Shop 美国站创建商品listing；卖家须复核并纠正自动建议，选最准确类目；错误类目可受罚，需要批准的类目须先获批；官方来源：TikTok Shop Seller University《商品发布政策》；官方页面：https://seller-us.tiktok.com/university/essay?knowledge_id=3196690250417921；官方页面日期：2026-09-01；官方页面未明确标注生效日期；最后核验：2026-10-02。",
+      "action": "发布前复核功能与类目，并完成所需资格审批。"
+    },
+    {
+      "source_id": "TTS-S10",
+      "topic": "商品合规",
+      "question": "TikTok Shop 美国站没获授权能把第三方品牌放在店名或头像吗？",
+      "answer": "适用范围：TikTok Shop 美国站第三方商标的店名或头像使用；政策明确禁止未经授权使用第三方商标，包括店名及用户头像；官方来源：TikTok Shop Seller University《知识产权政策》；官方页面：https://seller-us.tiktok.com/university/essay?default_language=en&knowledge_id=6837901778306818；官方页面日期：2026-07-16；官方页面未明确标注生效日期；最后核验：2026-10-02。",
+      "action": "核对授权并移除未经授权的品牌标识。"
+    },
+    {
+      "source_id": "TTS-S10",
+      "topic": "商品合规",
+      "question": "TikTok Shop 美国站商品图、音乐或视频能直接复制别人的素材吗？",
+      "answer": "适用范围：TikTok Shop 美国站listing和推广内容中的版权素材；不得未经许可使用有版权的照片、文字、音乐或视频，也不得擅自复制、传播或表演版权作品；官方来源：TikTok Shop Seller University《知识产权政策》；官方页面：https://seller-us.tiktok.com/university/essay?default_language=en&knowledge_id=6837901778306818；官方页面日期：2026-07-16；官方页面未明确标注生效日期；最后核验：2026-10-02。",
+      "action": "核对素材许可，使用有权使用的素材。"
+    },
+    {
+      "source_id": "TTS-S10",
+      "topic": "商品合规",
+      "question": "TikTok Shop 美国站二级授权经销商申请品牌授权要提交几封LOA？",
+      "answer": "适用范围：TikTok Shop 美国站适用品牌授权要求的二级经销商；须提交两封：商标权利人授权一级经销商、一级经销商再授权申请人；材料须准确完整并保持更新；官方来源：TikTok Shop Seller University《知识产权政策》；官方页面：https://seller-us.tiktok.com/university/essay?default_language=en&knowledge_id=6837901778306818；官方页面日期：2026-07-16；官方页面未明确标注生效日期；最后核验：2026-10-02。",
+      "action": "在Seller Center提交完整连续的两级授权文件。"
+    },
+    {
+      "source_id": "TTS-S11",
+      "topic": "商品合规",
+      "question": "TikTok Shop 美国站制造商自愿召回的商品还能继续卖吗？",
+      "answer": "适用范围：TikTok Shop 美国站被制造商或政府召回的商品；自愿召回与政府强制召回都属于召回，卖家不得发布或销售；须解决召回并获批恢复后才可重新上架；官方来源：TikTok Shop Seller University《商品召回政策》；官方页面：https://seller-us.tiktok.com/university/essay?knowledge_id=1439743821383425；官方页面日期：2026-05-22；官方页面未明确标注生效日期；最后核验：2026-10-02。",
+      "action": "停止销售被召回商品并核对受影响批次。"
+    },
+    {
+      "source_id": "TTS-S11",
+      "topic": "商品合规",
+      "question": "TikTok Shop 美国站平台获悉召回后，进行中的订单会怎样？",
+      "answer": "适用范围：TikTok Shop 美国站受召回影响的商品和订单；平台会移除受影响商品、通知相关卖家，并取消进行中订单和通知买家；平台通知不能替代卖家/制造商召回义务；官方来源：TikTok Shop Seller University《商品召回政策》；官方页面：https://seller-us.tiktok.com/university/essay?knowledge_id=1439743821383425；官方页面日期：2026-05-22；官方页面未明确标注生效日期；最后核验：2026-10-02。",
+      "action": "核对受影响商品与订单并履行召回责任。"
+    },
+    {
+      "source_id": "TTS-S11",
+      "topic": "商品合规",
+      "question": "TikTok Shop 美国站召回解决后怎样申请重新上架？",
+      "answer": "适用范围：TikTok Shop 美国站召回商品恢复；向AM或申诉流程提交相关制造商合规信：PDF/Word、正式抬头和签字、召回原因、安全新库存说明及产品信息；审核批准后才可重上；官方来源：TikTok Shop Seller University《商品召回政策》；官方页面：https://seller-us.tiktok.com/university/essay?knowledge_id=1439743821383425；官方页面日期：2026-05-22；官方页面未明确标注生效日期；最后核验：2026-10-02。",
+      "action": "取得符合要求的合规信并提交恢复申请。"
+    },
+    {
+      "source_id": "TTS-S12",
+      "topic": "订单履约",
+      "question": "TikTok Shop 美国站普通订单的发货、自动取消和送达期限分别是什么？",
+      "answer": "适用范围：TikTok Shop 美国站常规订单，自Awaiting Shipment起；2个工作日内In Transit；5个工作日仍未Awaiting Collection会自动取消；6个工作日内Delivered；周末和美国联邦假日不计，特殊假日可延长；官方来源：TikTok Shop Seller University《订单履约政策》；官方页面：https://seller-us.tiktok.com/university/essay?knowledge_id=3995852763301633；官方页面日期：2026-09-28；官方页面未明确标注生效日期；最后核验：2026-10-02。",
+      "action": "查看订单三项SLA，按工作日安排发货与跟踪。"
+    },
+    {
+      "source_id": "TTS-S12",
+      "topic": "订单履约",
+      "question": "TikTok Shop 美国站Made-to-Order、Backorder或自定义处理期订单用什么SLA？",
+      "answer": "适用范围：TikTok Shop 美国站获准使用相关工具的订单；设定处理期为H个工作日，In Transit限H+1，未Awaiting Collection自动取消限H+4，Delivered限H+5；不能套普通订单期限；官方来源：TikTok Shop Seller University《订单履约政策》；官方页面：https://seller-us.tiktok.com/university/essay?knowledge_id=3995852763301633；官方页面日期：2026-09-28；官方页面未明确标注生效日期；最后核验：2026-10-02。",
+      "action": "核对产品处理期及订单显示的三项SLA。"
+    },
+    {
+      "source_id": "TTS-S12",
+      "topic": "订单履约",
+      "question": "TikTok Shop 美国站预售订单的履约期限从什么时候算？",
+      "answer": "适用范围：TikTok Shop 美国站Pre-Order订单；以预售关闭日期为起点，2个工作日内In Transit，5个工作日仍未Awaiting Collection会自动取消，6个工作日内Delivered；工作日排除周末及联邦假日；官方来源：TikTok Shop Seller University《订单履约政策》；官方页面：https://seller-us.tiktok.com/university/essay?knowledge_id=3995852763301633；官方页面日期：2026-09-28；官方页面未明确标注生效日期；最后核验：2026-10-02。",
+      "action": "从预售关闭日核对订单发货和送达截止日。"
+    },
+    {
+      "source_id": "TTS-S13",
+      "topic": "订单履约",
+      "question": "TikTok Shop 美国站LDR超过多少会触发处罚？",
+      "answer": "适用范围：TikTok Shop 美国站店铺迟发货率；LDR>10%触发执法，可扣AHR、限单或延长结算；重复违规可加重，LDR不直接影响SPS但可通过OTDR间接影响；官方来源：TikTok Shop Seller University《迟发货率要求》；官方页面：https://seller-us.tiktok.com/university/essay?knowledge_id=3668989549299511；官方页面日期：2026-08-06；官方页面未明确标注生效日期；最后核验：2026-10-02。",
+      "action": "在Orders > Fulfillment Performance检查LDR及迟发订单。"
+    },
+    {
+      "source_id": "TTS-S13",
+      "topic": "订单履约",
+      "question": "TikTok Shop 美国站使用TikTok Shipping后还能被计迟发货吗？",
+      "answer": "适用范围：TikTok Shop 美国站LDR履约方式例外；TikTok Shipping不豁免，卖家仍负责发货；FBT由平台履约而排除；大范围中断时SLA可能临时延长；官方来源：TikTok Shop Seller University《迟发货率要求》；官方页面：https://seller-us.tiktok.com/university/essay?knowledge_id=3668989549299511；官方页面日期：2026-08-06；官方页面未明确标注生效日期；最后核验：2026-10-02。",
+      "action": "核对订单最新SLA和履约方式。"
+    },
+    {
+      "source_id": "TTS-S13",
+      "topic": "申诉",
+      "question": "TikTok Shop 美国站物流商造成迟发货，LDR申诉要什么证明？",
+      "answer": "适用范围：TikTok Shop 美国站认为LDR错误且归因物流商的处罚；提交物流商官方确认或可验证官方声明，覆盖公司、影响时段、原因、订单数及跟踪号，文件需印章或签字，时戳与受影响订单一致；官方来源：TikTok Shop Seller University《迟发货率要求》；官方页面：https://seller-us.tiktok.com/university/essay?knowledge_id=3668989549299511；官方页面日期：2026-08-06；官方页面未明确标注生效日期；最后核验：2026-10-02。",
+      "action": "下载迟发订单，收集物流商确认并在处罚工单申诉。"
+    },
+    {
+      "source_id": "TTS-S14",
+      "topic": "订单履约",
+      "question": "TikTok Shop 美国站卖家责任取消率SFCR必须控制在多少？",
+      "answer": "适用范围：TikTok Shop 美国站已确认Awaiting Shipment订单；硬性要求≤2.5%，超过可受执法并随重复违规加重；SFCR直接影响SPS；官方来源：TikTok Shop Seller University《卖家责任取消率要求》；官方页面：https://seller-us.tiktok.com/university/essay?knowledge_id=7953001314830094；官方页面日期：2026-08-06；官方页面未明确标注生效日期；最后核验：2026-10-02。",
+      "action": "在Fulfillment Performance或SPS页面核对SFCR。"
+    },
+    {
+      "source_id": "TTS-S14",
+      "topic": "订单履约",
+      "question": "TikTok Shop 美国站哪些取消原因会计入SFCR？",
+      "answer": "适用范围：TikTok Shop 美国站卖家责任订单取消；包括缺货、价格错误、SLA内无有效追踪而自动取消、召回、欠邮资或假面单；未提供真品证书只适用于二手奢侈品；官方来源：TikTok Shop Seller University《卖家责任取消率要求》；官方页面：https://seller-us.tiktok.com/university/essay?knowledge_id=7953001314830094；官方页面日期：2026-08-06；官方页面未明确标注生效日期；最后核验：2026-10-02。",
+      "action": "按取消原因核对记录并及时提供有效追踪和所需文件。"
+    },
+    {
+      "source_id": "TTS-S14",
+      "topic": "订单履约",
+      "question": "TikTok Shop 美国站样品单和FBT单怎样计入SFCR？",
+      "answer": "适用范围：TikTok Shop 美国站SFCR例外订单；创作者样品单不计；FBT计入全部确认订单分母，但不计入卖家责任取消分子；官方来源：TikTok Shop Seller University《卖家责任取消率要求》；官方页面：https://seller-us.tiktok.com/university/essay?knowledge_id=7953001314830094；官方页面日期：2026-08-06；官方页面未明确标注生效日期；最后核验：2026-10-02。",
+      "action": "按订单类型复核SFCR分子与分母。"
+    },
+    {
+      "source_id": "TTS-S15",
+      "topic": "物流",
+      "question": "TikTok Shop 美国站OTDR的最低要求是多少？",
+      "answer": "适用范围：TikTok Shop 美国站店铺按时送达率；须≥80%，低于可受执法；一般以送达截止日前Delivered订单÷评估期应送达订单计算，并影响SPS；官方来源：TikTok Shop Seller University《按时送达率要求》；官方页面：https://seller-us.tiktok.com/university/essay?knowledge_id=7671875816589099；官方页面日期：2026-09-16；官方页面未明确标注生效日期；最后核验：2026-10-02。",
+      "action": "查看订单deliver-by日期及店铺OTDR。"
+    },
+    {
+      "source_id": "TTS-S15",
+      "topic": "物流",
+      "question": "TikTok Shop 美国站升级TikTok Shipping或CBT遇到下游延误会降低OTDR吗？",
+      "answer": "适用范围：TikTok Shop 美国站升级TikTok Shipping及Collections by TikTok订单；正文注明自2026年6月起，按dispatch SLA及时发货后，下游晚送达仍计按时；迟发仍可能影响，合格发货事件按平台履约规则认定；官方来源：TikTok Shop Seller University《按时送达率要求》；官方页面：https://seller-us.tiktok.com/university/essay?knowledge_id=7671875816589099；官方页面日期：2026-09-16；官方页面未明确标注生效日期；最后核验：2026-10-02。",
+      "action": "确保在发货SLA内完成平台认可的合格发货事件。"
+    },
+    {
+      "source_id": "TTS-S15",
+      "topic": "物流",
+      "question": "TikTok Shop 美国站OTDR有哪些物流方式和工作日例外？",
+      "answer": "适用范围：TikTok Shop 美国站OTDR履约例外；FBT始终按及时送达计；Express Shipping不参与OTDR；周末和美国联邦假日不计送达SLA；官方来源：TikTok Shop Seller University《按时送达率要求》；官方页面：https://seller-us.tiktok.com/university/essay?knowledge_id=7671875816589099；官方页面日期：2026-09-16；官方页面未明确标注生效日期；最后核验：2026-10-02。",
+      "action": "按物流类型复核OTDR并按工作日核对截止日。"
+    },
+    {
+      "source_id": "TTS-S16",
+      "topic": "物流",
+      "question": "TikTok Shop 美国站VTR的最低要求是多少，会影响哪个分数？",
+      "answer": "适用范围：TikTok Shop 美国站被评估的有效追踪率；硬性要求≥95%，不足会处罚并扣AHR；VTR不影响SPS，TikTok Shipping及FBT不评估该指标；官方来源：TikTok Shop Seller University《有效追踪率要求》；官方页面：https://seller-us.tiktok.com/university/essay?knowledge_id=1274968588748558；官方页面日期：2026-08-06；官方页面未明确标注生效日期；最后核验：2026-10-02。",
+      "action": "在Fulfillment Performance核对VTR和异常包裹。"
+    },
+    {
+      "source_id": "TTS-S16",
+      "topic": "物流",
+      "question": "TikTok Shop 美国站什么条件下追踪号码才算有效？",
+      "answer": "适用范围：TikTok Shop 美国站被评估的已发包裹；至少2次有效承运商扫描且含送达/尝试送达等认可末端状态；地址匹配、未跨订单或客户重复、时间戳一致准确；丢失、途中损坏或无法投递扫描也可计；官方来源：TikTok Shop Seller University《有效追踪率要求》；官方页面：https://seller-us.tiktok.com/university/essay?knowledge_id=1274968588748558；官方页面日期：2026-08-06；官方页面未明确标注生效日期；最后核验：2026-10-02。",
+      "action": "核对每包裹唯一号码、地址和承运商完整扫描。"
+    },
+    {
+      "source_id": "TTS-S16",
+      "topic": "物流",
+      "question": "TikTok Shop 美国站TikTok Shipping和FBT也计算VTR吗？",
+      "answer": "适用范围：TikTok Shop 美国站VTR履约例外；TikTok Shipping和FBT不评估VTR；成功申诉确认误判的订单可从计数移除；官方来源：TikTok Shop Seller University《有效追踪率要求》；官方页面：https://seller-us.tiktok.com/university/essay?knowledge_id=1274968588748558；官方页面日期：2026-08-06；官方页面未明确标注生效日期；最后核验：2026-10-02。",
+      "action": "核对履约方式，误判时使用处罚申诉入口。"
+    },
+    {
+      "source_id": "TTS-S17",
+      "topic": "物流",
+      "question": "TikTok Shop 美国站Seller Shipping填错追踪号可以修改吗？",
+      "answer": "适用范围：TikTok Shop 美国站实物商品Seller Shipping；须填写追踪ID、物流商及运输服务并与面单一致；错误可修正1次，错误追踪可造成迟发或取消；官方来源：TikTok Shop Seller University《客户订单运输要求》；官方页面：https://seller-us.tiktok.com/university/essay?knowledge_id=6837879804970754；官方页面日期：2026-09-16；官方页面未明确标注生效日期；最后核验：2026-10-02。",
+      "action": "先用一次修改机会修正，仍有问题再寻求客服帮助。"
+    },
+    {
+      "source_id": "TTS-S17",
+      "topic": "物流",
+      "question": "TikTok Shop 美国站包裹面单能放站外网址或客服二维码吗？",
+      "answer": "适用范围：TikTok Shop 美国站实物订单面单；不得放超链接、二维码、其他平台联系方式或无关信息；须牢固贴附并含客户完整地址、订单号及Seller Center退货地址；官方来源：TikTok Shop Seller University《客户订单运输要求》；官方页面：https://seller-us.tiktok.com/university/essay?knowledge_id=6837879804970754；官方页面日期：2026-09-16；官方页面未明确标注生效日期；最后核验：2026-10-02。",
+      "action": "核对面单必要信息并去除引导站外内容。"
+    },
+    {
+      "source_id": "TTS-S17",
+      "topic": "物流",
+      "question": "TikTok Shop 美国站收到TikTok订单后从另一零售平台购买并直发买家可以吗？",
+      "answer": "适用范围：TikTok Shop 美国站实物订单履约；平台将从另一零售商或电商平台购买、安排并直接发给TikTok买家的行为列为欺诈物流禁行；可导致物流权限限制或关店等；官方来源：TikTok Shop Seller University《客户订单运输要求》；官方页面：https://seller-us.tiktok.com/university/essay?knowledge_id=6837879804970754；官方页面日期：2026-09-16；官方页面未明确标注生效日期；最后核验：2026-10-02。",
+      "action": "勿使用该代购直发模式履行订单。"
+    },
+    {
+      "source_id": "TTS-S18",
+      "topic": "商品合规",
+      "question": "TikTok Shop 美国站危险品可以用类似商品的SDS或自己制作的SDS吗？",
+      "answer": "适用范围：TikTok Shop 美国站危险品安全数据表；不可自制或借用类似商品SDS；须取得与具体产品直接匹配的制造商文件，也可由认证第三方实验室出具，并核对运输信息；官方来源：TikTok Shop Seller University《危险品要求》；官方页面：https://seller-us.tiktok.com/university/essay?knowledge_id=2297870046414638；官方页面日期：2026-09-01；官方页面未明确标注生效日期；最后核验：2026-10-02。",
+      "action": "取得匹配SDS/MSDS并上传所需文件。"
+    },
+    {
+      "source_id": "TTS-S18",
+      "topic": "商品合规",
+      "question": "TikTok Shop 美国站含锂电池商品除了SDS还要什么文件？",
+      "answer": "适用范围：TikTok Shop 美国站锂电池商品；须额外上传UN38.3锂电池测试报告；危险品仍须按适用法律正确储存、处理、贴标和运输；官方来源：TikTok Shop Seller University《危险品要求》；官方页面：https://seller-us.tiktok.com/university/essay?knowledge_id=2297870046414638；官方页面日期：2026-09-01；官方页面未明确标注生效日期；最后核验：2026-10-02。",
+      "action": "取得该商品匹配的UN38.3报告并提交。"
+    },
+    {
+      "source_id": "TTS-S18",
+      "topic": "商品合规",
+      "question": "TikTok Shop 美国站商品上架后才被识别为危险品，需要多久补SDS？",
+      "answer": "适用范围：TikTok Shop 美国站已上架后才被识别为危险品的商品；平台给90天宽限期通过Seller Center提交所需SDS；此期限不免除正确危险品标识及运输义务；官方来源：TikTok Shop Seller University《危险品要求》；官方页面：https://seller-us.tiktok.com/university/essay?knowledge_id=2297870046414638；官方页面日期：2026-09-01；官方页面未明确标注生效日期；最后核验：2026-10-02。",
+      "action": "在宽限期内提交匹配SDS，并核对危险品运输要求。"
+    },
+    {
+      "source_id": "TTS-S19",
+      "topic": "广告与经营",
+      "question": "TikTok Shop 美国站能返现或送礼让买家写评价吗？",
+      "answer": "适用范围：TikTok Shop 美国站卖家邀评的消息、视频及LIVE等渠道；禁止以金钱、赠品、折扣、退款等奖励换评价；使用官方TikTok Shop Incentivized Review功能是该限制的例外；官方来源：TikTok Shop Seller University《评价政策》；官方页面：https://seller-us.tiktok.com/university/essay?knowledge_id=10019322；官方页面日期：2026-06-30；官方页面未明确标注生效日期；最后核验：2026-10-02。",
+      "action": "停止私下奖励邀评，符合资格时按官方功能操作。"
+    },
+    {
+      "source_id": "TTS-S19",
+      "topic": "广告与经营",
+      "question": "TikTok Shop 美国站能要求差评买家删除或修改评价吗？",
+      "answer": "适用范围：TikTok Shop 美国站卖家影响客户评价的行为；禁止要求客户改删评价、阻止评价或仅向满意客户邀评；违反可扣分或限制销售；官方来源：TikTok Shop Seller University《评价政策》；官方页面：https://seller-us.tiktok.com/university/essay?knowledge_id=10019322；官方页面日期：2026-06-30；官方页面未明确标注生效日期；最后核验：2026-10-02。",
+      "action": "停止改删要求及选择性邀评。"
+    },
+    {
+      "source_id": "TTS-S19",
+      "topic": "广告与经营",
+      "question": "TikTok Shop 美国站遇到错误、无效或辱骂评价怎样处理？",
+      "answer": "适用范围：TikTok Shop 美国站可举报的客户评价；可在Seller Center的Product Ratings页面举报，平台调查并采取适当行动；举报不保证移除；官方来源：TikTok Shop Seller University《评价政策》；官方页面：https://seller-us.tiktok.com/university/essay?knowledge_id=10019322；官方页面日期：2026-06-30；官方页面未明确标注生效日期；最后核验：2026-10-02。",
+      "action": "进入Product Ratings提交对应评价举报。"
+    },
+    {
+      "source_id": "TTS-S20",
+      "topic": "费用与结算",
+      "question": "TikTok Shop 美国站结算档位和预留等级什么时候评估？",
+      "answer": "适用范围：TikTok Shop 美国站卖家的动态结算；每月1日评估，参考SPS、前15–45天成功送达订单数及临时账号限制；平台仍可依据账号或安全检查随时调整；官方来源：TikTok Shop Seller University《动态结算及预留款政策》；官方页面：https://seller-us.tiktok.com/university/essay?course_type=1&from=search&identity=1&knowledge_id=3995852763531009&role=1；官方页面日期：2026-07-31；官方页面未明确标注生效日期；最后核验：2026-10-02。",
+      "action": "查看当月结算档位、预留等级及账号限制。"
+    },
+    {
+      "source_id": "TTS-S20",
+      "topic": "费用与结算",
+      "question": "TikTok Shop 美国站预留款要持有多久才释放？",
+      "answer": "适用范围：TikTok Shop 美国站已送达订单的预留资金；每单从送达日起保留30天，用于潜在退货退款；未被使用的预留款期满释放，具体比例按该店当月等级；官方来源：TikTok Shop Seller University《动态结算及预留款政策》；官方页面：https://seller-us.tiktok.com/university/essay?course_type=1&from=search&identity=1&knowledge_id=3995852763531009&role=1；官方页面日期：2026-07-31；官方页面未明确标注生效日期；最后核验：2026-10-02。",
+      "action": "按送达日期核对预留款和期满释放记录。"
+    },
+    {
+      "source_id": "TTS-S20",
+      "topic": "费用与结算",
+      "question": "TikTok Shop 美国站月初评估后还会突然进入递延结算吗？",
+      "answer": "适用范围：TikTok Shop 美国站平台或卖家安全审核；可在当月任何时间进入Deferred Settlement Period；月初档位不保证整月固定；官方来源：TikTok Shop Seller University《动态结算及预留款政策》；官方页面：https://seller-us.tiktok.com/university/essay?course_type=1&from=search&identity=1&knowledge_id=3995852763531009&role=1；官方页面日期：2026-07-31；官方页面未明确标注生效日期；最后核验：2026-10-02。",
+      "action": "查看安全审核及临时账号限制通知。"
+    }
+  ],
+  "gaps": [
+    {
+      "topic": "退款退货",
+      "user_query": "TikTok Shop 美国站买家责任退货的运费，卖家应承担全部还是50%？",
+      "gap_type": "官方条款冲突",
+      "priority": "P0",
+      "status": "待官方澄清",
+      "official_source_candidate": "https://seller-us.tiktok.com/university/essay?knowledge_id=984433248438058;https://seller-us.tiktok.com/university/essay?knowledge_id=3253210454181634",
+      "notes": "管理页100–104行及政策302行称卖家承担全部；管理页FAQ302–305行称平台安排的部分理由补贴、卖家50%。未生成通用补贴/成本比例结论。"
+    },
+    {
+      "topic": "退款退货",
+      "user_query": "TikTok Shop 美国站所有售后申请都统一4个工作日审核吗？",
+      "gap_type": "摘要与详细条件冲突",
+      "priority": "P0",
+      "status": "待官方澄清",
+      "official_source_candidate": "https://seller-us.tiktok.com/university/essay?knowledge_id=3634802985453313;https://seller-us.tiktok.com/university/essay?knowledge_id=984433248438058;https://seller-us.tiktok.com/university/essay?knowledge_id=3253210454181634",
+      "notes": "Policy Pulse页305–308行摘要称全售后4工作日、Day10可审；管理详页分别给不可退2/4工作日、未发货24小时。只纳入明确分支，不能统一成4天。；不可退及未发货响应期限不选择任一版本，相关QA已排除。；替换商品响应时限也保守排除待确认。"
+    },
+    {
+      "topic": "退款退货",
+      "user_query": "TikTok Shop 美国站货不对板、坏货或错货退货申请按48小时还是4工作日响应？",
+      "gap_type": "同页时限适用冲突",
+      "priority": "P0",
+      "status": "待官方澄清",
+      "official_source_candidate": "https://seller-us.tiktok.com/university/essay?knowledge_id=3253210454181634",
+      "notes": "政策251行一般退货退款4工作日，562行商品问题48小时；未将一般4天发布为覆盖所有质量问题的QA。"
+    },
+    {
+      "topic": "退款退货",
+      "user_query": "TikTok Shop 美国站Final Sale退款审核超过100美元是否有4工作日？",
+      "gap_type": "官方页面时限冲突",
+      "priority": "P0",
+      "status": "待官方澄清",
+      "official_source_candidate": "https://seller-us.tiktok.com/university/essay?knowledge_id=984433248438058;https://seller-us.tiktok.com/university/essay?knowledge_id=3253210454181634",
+      "notes": "管理页184行按≤100为2、>100为4工作日；政策477行Final Sale写2工作日且未分价格，未写统一期限QA。"
+    },
+    {
+      "topic": "费用与结算",
+      "user_query": "TikTok Shop 美国站各结算档位的具体天数及预留款比例是多少？",
+      "gap_type": "图片表格未核验",
+      "priority": "P1",
+      "status": "待核验图片或Seller Center",
+      "official_source_candidate": "https://seller-us.tiktok.com/university/essay?course_type=1&from=search&identity=1&knowledge_id=3995852763531009&role=1",
+      "notes": "正文可证5档结算与3级预留、持有30天，但具体数字在图片；打开图片链接未读到表格，不以记忆补数。"
+    },
+    {
+      "topic": "费用与结算",
+      "user_query": "TikTok Shop 美国站当前各类目的平台佣金、退款管理费和其他费率是多少？",
+      "gap_type": "官方费率来源未完成核验",
+      "priority": "P1",
+      "status": "待补充官方费率明细",
+      "official_source_candidate": "https://seller-us.tiktok.com/university",
+      "notes": "本轮未取得可覆盖当前各类目的完整官方费率正文；不使用历史统一6%或其他旧数字。"
+    },
+    {
+      "topic": "广告与经营",
+      "user_query": "TikTok Shop 美国站Shop Ads的费用、归因和退款口径是什么？",
+      "gap_type": "独立广告政策正文未核验",
+      "priority": "P2",
+      "status": "待补充官方广告政策",
+      "official_source_candidate": "https://ads.tiktok.com/help",
+      "notes": "本轮广告与经营仅纳入已核验评价政策，未以一般广告经验补Shop Ads规则。"
+    },
+    {
+      "topic": "订单履约",
+      "user_query": "TikTok Shop 美国站manifest或应用内扫码是否能替代承运商扫描用于LDR？",
+      "gap_type": "官方页面认定边界冲突",
+      "priority": "P0",
+      "status": "待官方澄清",
+      "official_source_candidate": "https://seller-us.tiktok.com/university/essay?knowledge_id=3995852763301633;https://seller-us.tiktok.com/university/essay?knowledge_id=3668989549299511",
+      "notes": "履约页109–110行允许合格事件，LDR页84/107/126行仅写承运商扫描；不以日期新旧自动择一，相关QA排除。"
+    },
+    {
+      "topic": "退款退货",
+      "user_query": "TikTok Shop 美国站快速退款后检查退货商品的复审可上传视频吗？",
+      "gap_type": "流程及证据格式边界冲突",
+      "priority": "P0",
+      "status": "待官方澄清",
+      "official_source_candidate": "https://seller-us.tiktok.com/university/essay?knowledge_id=984433248438058;https://seller-us.tiktok.com/university/essay?knowledge_id=3253210454181634;https://seller-us.tiktok.com/university/essay?knowledge_id=3634802985453313",
+      "notes": "管理页81–96行Respond/Appeal框架要求照片且不收视频；9/28政策325–326行二次复审提到图片、视频、备注；Pulse307行取消单独快速退款申诉队列，当前具体流程需确认，相关QA排除。"
+    }
+  ],
+  "conflicts": [
+    {
+      "conflict_id": "TTS-C01",
+      "topic": "退款退货",
+      "source_ids": [
+        "TTS-S01",
+        "TTS-S02"
+      ],
+      "official_pages": [
+        "https://seller-us.tiktok.com/university/essay?knowledge_id=984433248438058",
+        "https://seller-us.tiktok.com/university/essay?knowledge_id=3253210454181634"
+      ],
+      "issue": "退货运费全部承担与FAQ部分理由50%补贴并列",
+      "evidence_locator": "管理页100–104与302–305行；政策289–305行",
+      "handling": "不发布通用费用比例，列P0缺口。"
+    },
+    {
+      "conflict_id": "TTS-C02",
+      "topic": "退款退货",
+      "source_ids": [
+        "TTS-S01",
+        "TTS-S02"
+      ],
+      "official_pages": [
+        "https://seller-us.tiktok.com/university/essay?knowledge_id=3634802985453313",
+        "https://seller-us.tiktok.com/university/essay?knowledge_id=984433248438058",
+        "https://seller-us.tiktok.com/university/essay?knowledge_id=3253210454181634"
+      ],
+      "issue": "Policy Pulse统一4工作日摘要与详细条件2/4工作日及24小时不一致",
+      "evidence_locator": "Pulse305–308行；管理179、190行；政策251–252、270行",
+      "handling": "不自动选摘要或详细条款；涉及的不可退及未发货响应期限QA排除，等待确认。"
+    },
+    {
+      "conflict_id": "TTS-C03",
+      "topic": "退款退货",
+      "source_ids": [
+        "TTS-S02"
+      ],
+      "official_pages": [
+        "https://seller-us.tiktok.com/university/essay?knowledge_id=3253210454181634"
+      ],
+      "issue": "一般退货退款4工作日与商品问题48小时的优先级未说明",
+      "evidence_locator": "政策251及558–566行",
+      "handling": "质量问题通用响应时限不纳入QA。"
+    },
+    {
+      "conflict_id": "TTS-C04",
+      "topic": "退款退货",
+      "source_ids": [
+        "TTS-S01",
+        "TTS-S02"
+      ],
+      "official_pages": [
+        "https://seller-us.tiktok.com/university/essay?knowledge_id=984433248438058",
+        "https://seller-us.tiktok.com/university/essay?knowledge_id=3253210454181634"
+      ],
+      "issue": "Final Sale管理页2/4工作日分价档，政策页2工作日无价档",
+      "evidence_locator": "管理184–185行；政策477–479行",
+      "handling": "Final Sale审核期限不纳入QA。"
+    },
+    {
+      "conflict_id": "TTS-C05",
+      "topic": "订单履约",
+      "source_ids": [
+        "TTS-S12",
+        "TTS-S13"
+      ],
+      "official_pages": [
+        "https://seller-us.tiktok.com/university/essay?knowledge_id=3995852763301633",
+        "https://seller-us.tiktok.com/university/essay?knowledge_id=3668989549299511"
+      ],
+      "issue": "较旧LDR页仅述承运商扫描，较新履约正文允许合格manifest或应用内扫码",
+      "evidence_locator": "LDR84、107、126行；Fulfillment109–110行",
+      "handling": "不自动采用较新页面；manifest/应用内扫码的合格认定QA排除，等待确认。"
+    },
+    {
+      "conflict_id": "TTS-C06",
+      "topic": "退款退货",
+      "source_ids": [
+        "TTS-S01"
+      ],
+      "official_pages": [
+        "https://seller-us.tiktok.com/university/essay?knowledge_id=984433248438058"
+      ],
+      "issue": "搜索结果日期与本次实际正文页首日期不同",
+      "evidence_locator": "本次正文63行08/20/2026；搜索渠道曾显示09/17/2026",
+      "handling": "page_date取本次正文2026-08-20；不推导生效日。"
+    },
+    {
+      "conflict_id": "TTS-C07",
+      "topic": "退款退货",
+      "source_ids": [
+        "TTS-S01",
+        "TTS-S02"
+      ],
+      "official_pages": [
+        "https://seller-us.tiktok.com/university/essay?knowledge_id=984433248438058",
+        "https://seller-us.tiktok.com/university/essay?knowledge_id=3253210454181634",
+        "https://seller-us.tiktok.com/university/essay?knowledge_id=3634802985453313"
+      ],
+      "issue": "快速退款申诉/二次复审流程与是否接收视频的边界不清",
+      "evidence_locator": "管理页81–96行；退款政策325–326行；Pulse307行",
+      "handling": "不自动选择照片或视频版本，相关举证QA排除。"
+    }
+  ]
+}

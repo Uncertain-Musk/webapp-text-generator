@@ -1,0 +1,13 @@
+﻿bad_case_id,test_id,query,platform_context,market_context,expected_behavior,actual_behavior,result,failure_layer,severity,notes,recommended_next_action
+MF-BAD-001,STRUCT-G0001,跨境电商中，目标市场筛选是什么？,,,真实检索Question=CSV问题，Answer=CSV答案；仅核验结构，不评价该回答语义。,"跨境电商中的**目标市场筛选**，是指通过多维度数据评估，确定适合进入的国家或地区的过程。其核心在于**不只看流量大小**，而是基于以下五个关键维度共同决策：
+
+1.  **需求验证**：通过关键词、类目热度、竞品评价及试单数据，确认真实购买需求与未被满足的痛点。
+2.  **竞争分析**：核对竞品价格与市场饱和度。
+3.  **准入合规**：检查目的国的禁限售规定、平台规则以及当地法律要求。
+4.  **物流履约**：评估派送时效、退货可行性及实际履约能力。
+5.  **税费成本**：核算关税、增值税及其他相关费用对利润的影响。
+
+**执行建议：**
+*   **建立候选市场表**：先完成资料收集与逐项核对，将上述维度的结论写入可复查清单。
+*   **证据导向**：只有被证据支持的字段才能作为上线依据，避免主观猜测。
+*   **纳入上线清单**：将“目标市场筛选”和“需求验证”结果正式纳入站点与SKU的上线准备工作中，确认无误后再启动试运行。",FAIL_RETRIEVAL,RETRIEVAL,P0,结构阻塞：实际检索返回的3条General仍为Question=CSV答案、Answer=关键行动；与旧评测同document/segment标识。未评价答案生成。,人工核对当前Workflow所连dataset/document、重处理任务与实际QA预览；先让正确映射出现在当前Workflow返回中。本轮不修改Dify或检索参数。

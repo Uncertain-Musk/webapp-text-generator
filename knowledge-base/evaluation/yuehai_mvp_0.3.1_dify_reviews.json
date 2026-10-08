@@ -1,0 +1,9 @@
+{
+  "reviewed_at_utc": "2026-10-04",
+  "method": "逐字对照当前真实Workflow检索事件与本地原始五列CSV；General发现映射错位后按用户第一阶段要求停止。未复用旧语义判定。",
+  "cases": {},
+  "recommendation": "FAIL",
+  "recommendation_reason": "结构前置验收阻塞。唯一结构请求返回G0001/G0003/G0011，三条仍为Question=CSV答案、Answer=CSV关键行动，dataset/document/segment标识与旧评测相同。正确映射尚未在当前Workflow返回中得到确认；Amazon/TikTok结构、8条冒烟和54条完整集均未执行。这不是修复后知识质量FAIL结论，也不能据此判断千问Prompt质量。旧28/9/9/8只作为历史结果保留。",
+  "comparison_analysis": "本轮检索仍返回原General文档的三个旧segment，未观察到索引2/3映射。QA修复的通过率提升、政策错误消失数量和Gap改善幅度均无法计算。下一步由人工核对当前Workflow实际引用的dataset/document、重处理是否完成及QA预览；确保Question=问题、Answer=完整答案真实可检索，再重新启动结构阶段。当前唯一P0为结构阻塞，分类RETRIEVAL仅定位知识导入/引用文档层，不说明Hybrid或Rerank参数有错。",
+  "prompt_recommendation": "当前不建议修改千问Prompt：尚无修复映射后的Generation Error证据。先让正确映射进入当前Workflow，再按原测试集区分Coverage、Retrieval与正确知识已召回后的Generation。"
+}

@@ -1,0 +1,110 @@
+{
+  "checked_at_utc": "2026-10-08T14:15:43.142794+00:00",
+  "run_id": "93d55a30-b1ae-496e-ba29-5ae24fc61c69",
+  "typescript": {
+    "command": "node node_modules/typescript/bin/tsc --noEmit",
+    "exit_code": 0,
+    "result": "PASS"
+  },
+  "lint": {
+    "command": "node node_modules/next/dist/bin/next lint",
+    "exit_code": 0,
+    "result": "PASS_WITH_EXISTING_WARNINGS",
+    "source_warning_count": 8,
+    "tooling_notices": [
+      "next lint deprecated",
+      "Next.js ESLint plugin not detected"
+    ]
+  },
+  "build": {
+    "command": "node node_modules/next/dist/bin/next build",
+    "exit_code": 0,
+    "result": "PASS",
+    "static_pages": 13,
+    "note": "Build completed before standalone TypeScript check; local preview restarted afterward."
+  },
+  "unit_tests": {
+    "command": "node --disable-warning=MODULE_TYPELESS_PACKAGE_JSON --test tests/*.test.mjs",
+    "exit_code": 0,
+    "result": "PASS",
+    "tests": 12,
+    "pass": 12,
+    "fail": 0
+  },
+  "source_protection": {
+    "snapshot_files": 200,
+    "changed": [
+      "script\\evaluate-dify-mvp-0.3.1.mjs",
+      "knowledge-base\\README.md"
+    ],
+    "unexpected_changed": [],
+    "production_unchanged": true,
+    "evaluation_internal_snapshot": {
+      "baseline_files": 191,
+      "changed": [],
+      "added": [],
+      "unchanged": true
+    },
+    "protection_false_alarm_resolution": [
+      {
+        "checked_at_utc": "2026-10-08T14:14:15.645Z",
+        "previous": {
+          "baseline_files": 191,
+          "changed": [],
+          "added": [
+            "knowledge-base\\reports\\policy-source-provenance-audit.md"
+          ],
+          "unchanged": false
+        },
+        "resolution": "原保护文件内容未变；新增独立报告不属于本轮开始时的历史基线。固定历史保护清单后解除误报，保留此记录及新增文件。"
+      }
+    ]
+  },
+  "knowledge": {
+    "original_general_sha256": "534A5C9866EA602E46F99BF843E52768967EAFC0F33572E6D7BE60E82EA52088",
+    "general_copy_sha256": "534A5C9866EA602E46F99BF843E52768967EAFC0F33572E6D7BE60E82EA52088",
+    "general_byte_identical": true,
+    "general_rows": 500,
+    "policy_sha256": "588E4EF25264E2B4594817D8775DBBAF1C4A97A4746D206ABEA2FB7E8B5D5742",
+    "policy_rows": 124,
+    "test_source_sha256": "AE987060F024C82A6FBAF56C9FF21EA61C42B0412BF09169DF0FE7F52AA3E99A",
+    "test_source_unchanged": true
+  },
+  "runtime": {
+    "http_200_requests": 69,
+    "streaming_complete_requests": 69,
+    "total_requests": 69,
+    "smoke_streaming": 8,
+    "full_streaming": 54,
+    "diagnostics": {
+      "requests": 69,
+      "start_input_echo_confirmed": 69,
+      "streaming_success": 69,
+      "retrieval_nodes": 68,
+      "retrieval_query_matches": 68,
+      "raw_cross_platform_cases": [
+        "TEST-015",
+        "TEST-027"
+      ],
+      "raw_cross_market_cases": [
+        "TEST-014"
+      ]
+    }
+  },
+  "security": {
+    "method": "Compare exact configured server key against new artifacts and compiled public JavaScript; record only paths and counts, never key or headers.",
+    "artifact_files_scanned": 8,
+    "public_js_files_scanned": 29,
+    "exact_key_leak_files": [],
+    "bearer_header_value_files": [],
+    "result": "PASS",
+    "server_only_config_verified": true,
+    "proxy_route_sanitized_errors_verified": true
+  },
+  "git": {
+    "head": "6abc009339408b1cdb65c08c7648a663a2ab25a1",
+    "expected_head": "6abc009339408b1cdb65c08c7648a663a2ab25a1",
+    "commit_created": false,
+    "deployment_performed": false
+  }
+}

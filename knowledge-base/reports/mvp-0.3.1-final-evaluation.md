@@ -1,0 +1,273 @@
+# 越海 AI MVP 0.3.1｜Dify 知识库修复后完整回归验收
+
+日期：2026-10-08，Asia/Shanghai。Run ID：`93d55a30-b1ae-496e-ba29-5ae24fc61c69`。
+
+## 验收结论：FAIL
+
+**QA 映射样本已真实修复，服务链路可用；政策回答可靠性尚未达标。** 7 次结构探测、8 条冒烟、原始 54 条固定集均完成，合计 69 次真实 Streaming 请求成功。完整集为 **21 PASS、9 EXPECTED_GAP、10 NEEDS_REVIEW、14 FAIL**。失败中有 **7 条在充分、正确知识已召回后仍出现错误或关键条件遗漏**，包括首次扫描时限混淆、评价星级阈值错误、履约截止时间改写、申诉例外遗漏。不能用结构修复代替政策可靠性验收。
+
+本轮只扩展既有评测工具、保存证据和同步当前状态文档；未修改网站业务代码、Dify 配置、Prompt、模型、知识正文、检索参数、Context Resolution 或 Router。没有 commit，没有部署。
+
+## 证据与判定方法
+
+- 复用 `script/evaluate-dify-mvp-0.3.1.mjs`，增加独立输出目录和报告前缀；调用本站 `/api/workflows/run`，沿用服务端 SDK 代理与现有 SSE 读取器，没有新建另一套评测框架，没有 Mock。
+- 原始测试集为 `evaluation/yuehai_policy_kb_v1_test_queries.csv`，54 个唯一 ID；Query、上下文、预期类别和预期正文均未改。SHA-256：`AE987060F024C82A6FBAF56C9FF21EA61C42B0412BF09169DF0FE7F52AA3E99A`。预期字段保留的“尚未执行”等历史字样属于原 CSV，不代表本轮执行状态。
+- 完整阅读每条实际 QA、Context/Router 事件及最终回答后写入独立审查 JSON；默认状态为 NEEDS_REVIEW，不使用关键词自动判 PASS。FAIL_GENERATION 必须有本次实际召回且映射正确的知识行号，脚本会校验。
+- G/P 编号是本地 CSV 一基数据行号，不是 Dify 原生 ID。Question/Answer 与原文对照仅忽略空白；不删来源、适用范围、数字或例外。
+- 正确 Expected Gap 与 PASS 分开；冒烟与完整集分别汇总。Bad Case 只收录失败或待审，共 27 条（冒烟 3 + 完整集 24），不把安全 Gap 收为错误。
+- 这是对已导入知识及固定预期的回归，不是重新核验所有官方政策。源资料的最后核验日期仍为 2026-10-02，没有因本轮运行而刷新日期。
+- 运行期间工作区另新增[独立来源溯源审计](policy-source-provenance-audit.md)，该文件不属于本轮产物且未被修改。它将 P0001/P0016/P0021/P0062/P0100 标为来源或条件待审。本文 PASS 仅表示符合固定知识基线及预期，不等同于官方正文逐句正确或当前有效的认证；来源待审不能被 QA 映射修复取代。后续知识审核应优先处理这些条目，本轮不改固定预期或源知识。
+
+## A. 结构修复结果
+
+### 真实 QA 对照
+
+| 分组 | 已确认的唯一知识 | 实际结构 | 来源及适用范围 |
+| --- | --- | --- | --- |
+| General | G0001、G0003、G0009、G0011 | Question=CSV 问题；Answer=CSV 完整答案 | 与原始 General 正文一致 |
+| Amazon US | P0001、P0002、P0037 | Question=CSV 问题；Answer=CSV 完整答案 | 官方 URL、美国站适用范围、核验日期均保留 |
+| TikTok Shop US | P0062、P0063、P0072 | Question=CSV 问题；Answer=CSV 完整答案 | 官方 URL、美国站适用范围、核验日期均保留 |
+
+7 次结构请求取得上述 10 条唯一 QA；其中 G0001/G0003/G0011 均专门探测。全轮共有 **126 次 QA 命中、81 条唯一知识，CORRECT 126、MISALIGNED 0、UNVERIFIED 0**。每条完整实际/预期 Question、Answer 和真实 metadata 保存于结果 JSON 的 `qa_checks`，没有用最终回答倒推 ID。
+
+示例：G0001 实际 Question 为“跨境电商中，目标市场筛选是什么？”，Answer 以“核心是用需求、竞争、准入、物流和税费共同筛选……”开头；P0001 实际 Question 为“Amazon 美国站自配送收到退货后多久应退款？”，Answer 完整保留收到退货后 2 天及首次扫描已退款不重复操作的条件。P0072 的 Answer 完整保留每项 2 次、首次 30 天、二次 15 天与部分即时执法 12–72 小时例外。
+
+### 实际检索对象
+
+| 对象 | 本轮真实值 |
+| --- | --- |
+| dataset | `ba919c03-da30-4761-ac8f-abe35dad0c97`，名称“跨境电商知识问答 1” |
+| General document | `614fb475-5f85-4e8c-a433-423740e3ca95`，`跨境电商高频问答500条.csv` |
+| Policy document | `68f0800e-66ef-4e08-a96f-2d5df8ef64b5`，`yuehai_policy_kb_v1.csv` |
+| 运行事件中的 Workflow ID | `f0d354df-57c8-4fa1-b3da-bd895a07abb6` |
+| 模型事件 | `qwen3.8-flash`、`qwen3.8-max`；与旧轮观测集合相同 |
+
+General 与 Policy 实际位于同一 dataset 的不同文档，并非两个独立 dataset。通过配置好的 Service API 访问已发布应用，返回预期文档及运行 Workflow ID；管理侧发布版本号/配置快照为 UNKNOWN。记录中的每次 `workflow_run_id` 是运行 ID，不能当作已发布 Workflow ID。
+
+| 本地知识 | 旧 segment_id | 本轮 segment_id |
+| --- | --- | --- |
+| G0001 | `99241764-8af0-4bf9-bb13-2501257ded4e` | `e550f356-b435-4d09-aa70-1fb821eb6f12` |
+| G0003 | `7fe021f1-f893-4f81-a557-f8fd4317fea7` | `60878d8e-bb35-4499-bca3-3526597b8073` |
+| G0011 | `f354ecc6-41a1-45a5-8eb2-24675020670b` | `abbe279b-5577-4c5b-a504-f7bfbdc41e94` |
+| P0001 | `21d16ec5-0787-468a-87b4-44c851410ef7` | `ad871a10-624a-415b-a05a-da8b604dd3c6` |
+| P0062 | `f4d4289d-1aca-4799-b1dc-85aeafae566c` | `0858c2e6-fbba-49cc-a65a-647b34907a8a` |
+| P0072 | `cce2f869-bb3b-4609-bd43-fd7a8923f072` | `1d3d3707-7452-4b20-9469-02234d8c860a` |
+
+dataset/document ID 与旧轮相同，实际 QA 内容及 segment 已变化。本轮没有命中旧轮已记录的任何旧 segment；判断修复的主要依据是完整 QA 对照，ID 变化仅作辅助。对旧轮 8+54 原始命中重新做文本对照，162 次均符合旧的“答案→关键行动”错位结构，因此旧版政策质量和 Generation 归因不能当作有效最终结论。
+
+**核验边界：**实际命中的修复后分块能够检索，证明这些分块已可用；当前 Service API 不能枚举全部文档的 `enabled/indexing_status`，不能证明全部 624 行完成索引、所有旧副本全局停用。全库管理状态为 UNKNOWN，需人工在 Dify 管理界面确认。本轮未发现实际错位、旧错误分块参与或明确索引未完成证据，因而按最新规则完成后续测试。
+
+### 参数与 Streaming 链路
+
+`/api/parameters` 返回 HTTP 200，声明必填 query、可选 platform_context/market_context。前端存储及提交链路经现有源码和单元测试核对；69 次真实批量测试从本站服务端代理入口发起。
+
+```text
+浏览器 localStorage（yuehai.operating-environment.v1）
+→ site-shell/environment.tsx → components/index.tsx → components/result/index.tsx
+→ service/index.ts → service/base.ts → /api/workflows/run
+→ utils/workflow-context.ts → client.runWorkflow
+→ Dify 开始节点 → Context/Router → retrieval_query → 知识检索 → 千问 → SSE
+```
+
+实际 Dify 开始节点回显示例：
+
+```json
+{"query":"退款多久处理？","platform_context":"TikTok Shop","market_context":"US"}
+```
+
+```json
+{"query":"退款多久？","platform_context":"","market_context":""}
+```
+
+- 原 query 与两个独立上下文字段均逐项回显：69/69；未在浏览器端拼接原问题。
+- 知识节点 query 与 Context 输出 retrieval_query 相等：68/68；A08 greeting 不检索。
+- A07/TEST-011 明确 UK 覆盖页面 US；TEST-019 明确 Amazon US 覆盖 TikTok 环境；TEST-040 明确 TikTok US 覆盖 Amazon 环境，均正确。
+- TEST-017 的 Context 输出仍为空；最终却擅自按 Amazon US 回答。该例是生成阶段的范围假设错误，不能归为 Context 解析故障。
+- 真实请求 HTTP 200、Streaming 完整：69/69，其中冒烟 8/8、完整集 54/54；没有鉴权、接口变量或 SSE 阻塞。
+- 完整集平均首可见文本 8,165 ms，中位数 6,237 ms；平均总响应 12,321 ms，中位数 10,215 ms。以上是本轮 54 条串行请求的实测延迟，不是并发容量指标。
+
+## B. 8 条冒烟结果
+
+| ID | 结果 | 本轮实际情况 | 与旧轮相比 |
+| --- | --- | --- | --- |
+| A01 | FAIL_COVERAGE | ACOS 解释和公式正确，但 General 无该条目、召回为空，未说明知识缺口 | 与旧版覆盖判定一致；不判公式错误 |
+| A02 | PASS | G0006 正确召回，说明本地法规、语言/支付适配与小规模验证 | 维持 PASS |
+| A03 | FAIL_COVERAGE | TikTok/US 正确；P0062/P0063 只覆盖申请窗口与物流停滞，未覆盖各退款处理分支 | 旧发货 SLA 混用消失，分支时限缺口仍在；回答未先澄清 |
+| A04 | FAIL_RETRIEVAL | 违规申诉却只召回评价举报 P0121；正确 P0072 已在结构探测证明可用 | PASS 回退为 FAIL；最终安全兜底，未编造申诉规则 |
+| A05 | PASS | P0001/P0005 支持 Amazon US 退货后 2 天、避免重复退款、危险品条件 | 维持 PASS，无 TikTok 规则误用 |
+| A06 | PASS | P0038/P0039/P0024 支持 FBA 包装/接收/危险品要求，承认一般标签/箱规覆盖不完整 | FAIL_RETRIEVAL → PASS；相关召回改善，未混入 FBM |
+| A07 | EXPECTED_GAP | UK 解析优先，召回为空，未套 US 具体时限 | 保持正确兜底 |
+| A08 | PASS | greeting 分支，不调用检索，正常问候 | 维持 PASS |
+
+合计 **4 PASS、1 EXPECTED_GAP、3 FAIL，NEEDS_REVIEW 0**。失败层：Coverage 2、Retrieval 1。旧版也是 4/1/3；A06 改善与 A04 回退抵消。不存在系统性阻塞，按本轮要求继续 54 条，而非因孤立政策失败提前停止。
+
+## C. 54 条完整结果
+
+| 分类 | 数量 | ID |
+| --- | ---: | --- |
+| PASS | 21 | 001、003、004、019、022–026、028、030、031、038、039、041、042、044、046、048–050 |
+| EXPECTED_GAP | 9 | 011、014–016、035、051–054 |
+| NEEDS_REVIEW | 10 | 002、005、007、010、018、020、021、027、043、047 |
+| FAIL_ROUTING | 0 | — |
+| FAIL_CONTEXT | 0 | — |
+| FAIL_RETRIEVAL | 3 | 006、008、009 |
+| FAIL_COVERAGE | 4 | 012、013、036、037 |
+| FAIL_GENERATION | 7 | 017、029、032–034、040、045 |
+| FAIL_API | 0 | — |
+| 总计 | 54 | ID 前缀均为 TEST- |
+
+FAIL_GENERATION 7 条中，P1 为 TEST-017/029/033/040/045，P2 为 TEST-032/034。费用最低佣金、Vine 图片/描述条件属于低严重度关键遗漏，不等同于新编错误时限。TEST-047 漏“不影响 SPS”，沿用旧版同类遗漏的 NEEDS_REVIEW 口径，未把分类收紧当成新的能力回退。
+
+10 条 NEEDS_REVIEW 未计通过：General 的税务/认证及平台细则超出召回依据；TEST-020 的超时自动批准、TEST-021 的泛化申诉建议、TEST-027 的图片细则、TEST-043 的评价清除/引流建议等还需核验。TEST-018 正确拒绝实时结算金额，但追加结算周期解释未获充分支持。完整依据逐条保存在审查 JSON 和对比报告。
+
+## D. General 与 Policy 对比
+
+| 固定预期分组 | 数量 | 修复前 PASS | 本轮 PASS | 本轮 NEEDS_REVIEW | 本轮 FAIL |
+| --- | ---: | ---: | ---: | ---: | ---: |
+| General KB | 10 | 6/10，60.0% | 3/10，30.0% | 4 | 3 Retrieval |
+| Policy KB | 29 | 22/29，75.9% | 18/29，62.1% | 5 | 6 Generation |
+| Expected Gap | 15 | 独立评价兜底 | 9 个 EXPECTED_GAP | 1 | 4 Coverage + 1 Generation |
+
+这三组互斥并覆盖 54 条；不把 Expected Gap 并入 Policy 分母。Policy 与平台分组对应同一批样本，不能相加。
+
+### General
+
+- 已召回且核心内容正确：目标市场、选品标准、供应商准入。
+- **已有知识但本次未召回：**TEST-006 单位贡献毛利 G0211、TEST-008 补货现金流 G0251、TEST-009 库存规划 G0281。本地正文存在，但当前具体分块的 enabled/indexing_status 无管理 API 证据；下一步先检查这些分块状态及检索匹配，不能断言就是某个阈值错误。最终常识解释大体正确，不等于完成固定集要求的知识召回。
+- **覆盖缺口：**ACOS/ROAS 不在现有 General 内（TEST-012/013、A01）。公式本身正确，沿用旧版知识覆盖口径判 FAIL_COVERAGE；不是错误业务计算，也不应归给 Prompt。
+- **待审生成扩展：**需求验证、FBA/自配送、VAT/OSS/IOSS、认证问题追加了当前 QA 未支持的政策细则，未直接判事实正确。
+
+### Policy
+
+- 29 个固定 Policy 问题均有相关正确 QA 召回；TEST-021 的 P0003 召回恢复，A06 的 FBA 召回改善。A04 是单独冒烟请求的核心召回失败，不能被完整集另一条申诉题的成功召回掩盖。
+- 当前主要问题是回答未保留源知识的数字、起算状态、必要资格和例外。6 条 Policy Generation 失败有明确本轮 QA 依据；第 7 条 Generation 为 Expected Gap 分组中的 TEST-017 无环境自行选站点。
+- 缺失的退款处理细则属于 Coverage；召回逆向物流、申请窗口、发货 SLA，并不能提供未发货退款期限或视频举证规则。
+
+## E. Amazon US 与 TikTok Shop US 对比
+
+以下仅比较固定预期为 Policy KB、实际解析到对应 US 平台的样本，不混入范围外 Gap。
+
+| 平台 | 数量 | 修复前 PASS | 本轮 PASS | NEEDS_REVIEW | FAIL_GENERATION |
+| --- | ---: | ---: | ---: | ---: | ---: |
+| Amazon US | 16 | 12/16，75.0% | 9/16，56.3% | 3 | 4 |
+| TikTok Shop US | 13 | 10/13，76.9% | 9/13，69.2% | 2 | 2 |
+
+Amazon 在已覆盖 Policy 题上通过率更低：Buy Shipping 时限混淆、Customer Reviews 星级阈值错误，以及佣金/Vine 必要条件遗漏。TikTok 的关键风险是申诉即时执法例外和订单履约起算点；再计入固定 Gap 中的退款与举证问题，以及冒烟违规申诉漏召回，TikTok 售后处理也不能判为可靠。两个平台均有 P1，不能只按通过率选择一个平台作为已验收能力。
+
+候选检索仍有跨范围混入：TEST-015（Temu→Amazon）、TEST-027（Amazon 图片→TikTok P0090）、TEST-014（UK→US）。本轮没有 metadata filtering。TEST-014/015 最终安全兜底，不算最终政策误用；TEST-027 的追加图片规则是否来自异平台候选无法确认，标跨平台错误 UNKNOWN。TEST-017 因用户目标平台/站点未知，两项跨范围错误字段也为 UNKNOWN，并单独标记生成范围假设错误。
+
+因此记录为**已确认跨平台最终错误 0、跨站点最终错误 0，但不是全样本零风险结论**。完整集跨平台 UNKNOWN 2 条、跨站点 UNKNOWN 1 条；不能用这两个“0”掩盖无环境擅自选站点的问题。
+
+## F. 修复前后差异
+
+### 总体变化
+
+| 指标 | 修复前 | 本轮 | 变化 |
+| --- | ---: | ---: | --- |
+| PASS | 28 | 21 | 净减少 7 |
+| EXPECTED_GAP | 9 | 9 | 数量相同，案例构成有变 |
+| NEEDS_REVIEW | 9 | 10 | 增加 1 |
+| FAIL | 8 | 14 | 增加 6 |
+| General PASS | 6/10，60.0% | 3/10，30.0% | -30.0 个百分点 |
+| Policy PASS | 22/29，75.9% | 18/29，62.1% | -13.8 个百分点 |
+| Generation Error | 历史分类 5 | 本轮严格证据 7 | 不能直接按 +2 解释 Prompt 退化 |
+| Retrieval Error | 1 | 3 | P0003 恢复，3 条 General 新出现空召回 |
+| Coverage Error | 2 | 4 | 036/037 从历史 Generation 正确归为 Coverage，风险未消失 |
+| 正确 Gap 兜底 | 10/15，66.7% | 10/15，66.7% | 核心拒答率持平 |
+| 整条严格安全 Gap | 9/15，60.0% | 9/15，60.0% | 持平；带不确定扩展的记录不算全通过 |
+| 已确认跨平台最终错误 | 0，另有 UNKNOWN | 0，UNKNOWN 2 条 | 无法声称消除全部范围错误 |
+| 已确认跨站点最终错误 | 0，另有 UNKNOWN | 0，UNKNOWN 1 条 | 无环境选站点问题仍存在 |
+
+新增 PASS 2 条：TEST-041（FAIL→PASS）及 TEST-028（NEEDS_REVIEW→PASS）。原 28 PASS 中 19 条保持，7 条回退为 FAIL（006/008/009/029/032/034/045），2 条转 NEEDS_REVIEW（020/043）。FAIL→PASS 1 条，NEEDS_REVIEW→PASS 1 条。旧 TEST-021 FAIL_RETRIEVAL→NEEDS_REVIEW；检索已修复，但附加回答仍需审查，没有为了突出改善计为 PASS。
+
+正确 Gap 核心兜底 10 条包含 TEST-018：拒绝实时金额是正确的，但追加周期解释待审。旧版的相应附加待审案例为 TEST-052；本轮其未给可售结论，变为 EXPECTED_GAP。严格完整通过仍为 9 条。TEST-012/013 的公式正确但无知识覆盖，不混同政策幻觉；旧版同类判定保持。
+
+### 高风险旧案例追踪
+
+| 案例 | 修复前实际结果 | 修复后实际结果 | 旧问题是否消失 / 新问题 | 当前主要层 |
+| --- | --- | --- | --- | --- |
+| TEST-041 | FAIL_GENERATION；100分答7天、50分14天 | PASS；P0079完整，100分14天、50分28天 | 旧数字错误消失，测验缩短条件保留 | 本轮通过 |
+| A03 | FAIL_GENERATION；混用发货 H+1/H+4/H+5 | FAIL_COVERAGE；区分申请30天与处理期限，但未分清退款分支 | 发货 SLA 混用消失，充分覆盖和澄清仍缺 | Coverage |
+| TEST-036 | FAIL_GENERATION；缺知识后给24–48小时及自动批准 | FAIL_COVERAGE；仍无该分支依据，却称24小时及自动批准 | 无依据退款期限仍在，数字由区间变为24小时 | Coverage，次要为缺口下越界生成 |
+| TEST-037 | FAIL_GENERATION；要求务必上传完整视频 | FAIL_COVERAGE；承认视频规则未知，但举例24–72小时争议时窗 | 强制视频要求消失，新增无依据时窗 | Coverage，次要为缺口下越界生成 |
+| TEST-040 | FAIL_GENERATION；二次15天遗漏即时执法例外 | FAIL_GENERATION；正确P0072已召回，仍只给二次15天 | 即时执法12–72小时例外仍遗漏，旧行政救济扩展未再出现 | Generation |
+| TEST-017 | FAIL_GENERATION；无环境直接按Amazon US | FAIL_GENERATION；Context空，正确P0001/P0002已召回，仍按Amazon US | 自行选平台/站点仍在；本轮有正确QA证据可确认生成范围错误 | Generation |
+| A06 | FAIL_RETRIEVAL；FBA目标知识未正确召回 | PASS；召回P0038等FBA知识，说明一般标签/箱规覆盖不足 | FBA相关召回改善，无FBM混用；不是所有FBA要求已覆盖 | 本轮通过 |
+| TEST-021 | FAIL_RETRIEVAL；P0003未召回、混收到退货后2天 | NEEDS_REVIEW；P0003首条，保留预付标签/自动授权/首次扫描 | 核心召回及流程混淆修复；附加申诉建议范围待审 | 次要 Generation 待审 |
+
+### 映射错误造成了多大影响？
+
+结构影响是明确的：旧轮 162 次命中均为错位 QA，本轮 126 次命中全部正确，LLM 获得的 Answer 从关键行动恢复为完整知识正文。FBA、首次扫描退款及 AHR 的改善与修复后更完整的证据一致。
+
+**质量影响不能量化为“修复提高了多少正确率”**：固定集 PASS 净下降 7，新增召回空缺及生成错误；旧判定本身来自错误结构，模型也可能凭 Question 中的政策正文或常识答对。前后 Service API 事件中的 Workflow ID 和模型集合相同，本轮未改任何生产配置；但无法通过当前 API 获取 Prompt/检索参数的管理快照或发布版本哈希，不能证明外部配置绝无变化，也不能排除单次模型波动。应把明确结构修复、个案改善、剩余风险分别陈述，不把所有变化自动归因于映射。
+
+是否需要修改千问 Prompt：**后续已有证据支持定向约束生成保真、例外保留和无环境先澄清**，依据为本轮 7 条真正 Generation 错误；本轮未修改。Coverage 4 条、Retrieval 3 条及单独 A04 不能靠 Prompt 一概解决。
+
+## G. 最严重的 10 个 Bad Case
+
+本轮未发现系统不可用、密钥泄露或已确认系统性跨平台污染等 P0。以下 10 条为 P1；其余失败/待审含完整证据见 Bad Case CSV。
+
+| ID | 实际表现及用户影响 | 真实根因证据 | 建议处理方向 |
+| --- | --- | --- | --- |
+| TEST-029 | 把消息48小时回复改成承运商48小时首次扫描，并改写交运截止条件 | P0021/P0022已正确召回，源文没有该扫描48小时条件；Generation | 区分扫描、消息和不同保障计划条件 |
+| TEST-033 | Customer Reviews低于三星改成三星及以下，遗漏账号/品牌角色资格 | P0054完整已召回；星级阈值直接矛盾；Generation | 保留原阈值和工具资格，核验改评邀约建议 |
+| TEST-045 | 自动取消从Awaiting Shipment起5工作日改成发货后5工作日，状态条件也反转 | P0098完整已召回；起算点及未达状态被改写；Generation | 保留SLA起算状态、截止状态、工作日单位 |
+| TEST-040 | 违规二次申诉一律15天，漏即时执法12–72小时通知例外 | P0072完整已召回；旧问题复现；Generation | 先辨执法类型，完整保留普通/例外分支 |
+| TEST-036 | 未发货退款知识不足仍断言24小时及超时自动批准 | P0063/P0098/P0062均不包含该退款分支；Coverage | 核验并补足具体退款分支，缺口期间不给时限 |
+| TEST-037 | 承认视频规则未知后仍举例收货后24–72小时发起争议 | P0063/P0073/P0097无该举证时限；Coverage | 补核举证规则，未知时不输出示例政策数字 |
+| TEST-017 | 无经营环境、问题未指定平台却直接按Amazon US退款 | Context输出空，P0001/P0002范围完整；Generation范围假设 | 平台依赖问题先澄清，不修改空Context语义 |
+| A04 | 商品违规申诉只召回评价举报，核心问题只能兜底 | P0072在同轮结构探测可用，A04仅P0121；Retrieval | 检查申诉Query匹配与排序，而非补不存在的知识 |
+| TEST-006 | 单位贡献毛利已有知识但本次空召回 | 本地G0211存在，真实retrieval result为空；具体索引状态UNKNOWN；Retrieval | 核对该分块索引/启用状态，再分析匹配与排序 |
+| TEST-008 | 补货现金流已有知识但本次空召回 | 本地G0251存在，真实retrieval result为空；Retrieval | 同上；不能用模型常识回答替代知识召回验收 |
+
+同级还包括 TEST-009 的 G0281 空召回与 A03 的退款分支覆盖不足。P2 明确失败为 TEST-012/013、TEST-032/034；10 条 NEEDS_REVIEW 均未被计算为正确。
+
+## H. 下一步改进优先级（仅建议，未执行）
+
+| 优先级 | 用户影响与证据 | 应修改的层 | 需改 Dify | 需改知识库 | 需 Codex 改业务代码 |
+| --- | --- | --- | --- | --- | --- |
+| 1. 约束回答保留证据条件，缺环境先澄清 | TEST-029/033/045错误数字或计时，040漏例外，017擅自选站点；正确QA均已召回，直接影响履约/申诉决策 | Generation：回答指令与依据使用；不要改Context空值规则 | 是，人工审核后定向调整LLM回答约束并复测 | 此组无需新增知识 | 否；Codex可维护评测并联调，当前前端/代理无错误证据 |
+| 2. 修复已存在知识的稳定召回 | TEST-006/008/009为空；A04错召评价举报，而P0072已在同轮可用 | Retrieval：先核对目标分块启用/索引，再分析query与排序；不凭现象盲调阈值 | 是，先管理侧核验，再决定检索改动 | 无需编写新知识；只在确认分块处理异常时修复导入/索引 | 否，无需改生产API或UI |
+| 3. 核验并补齐售后分支与基础指标缺口 | TEST-036/037与A03缺退款/举证细则；012/013、A01缺ACOS/ROAS条目；独立来源审计另有5条待核验；未覆盖时仍越界给时限 | Coverage与来源审核，并验证缺口兜底；先解决官方条款适用差异 | 是，审核后导入知识并验证缺口处理 | 是，依据真实官方正文补充，争议未解则保留Gap | 不需改业务代码；知识文件、来源审计与评测资产可在获授权后维护 |
+
+完成对应改动后仍应使用原固定集复测；本轮不自行进入下一版本，不扩展 Agent、店铺 API、结构化比较或其他能力。
+
+## 工程保护
+
+| 检查 | 本轮实际结果 |
+| --- | --- |
+| TypeScript | `node node_modules/typescript/bin/tsc --noEmit`，exit 0 |
+| lint | `node node_modules/next/dist/bin/next lint`，exit 0；8条已有Hook/unused警告，另有next lint弃用与Next ESLint插件提示 |
+| build | `node node_modules/next/dist/bin/next build`，exit 0；13个静态页面生成完成；构建后再独立检查TypeScript |
+| unit tests | `node --disable-warning=MODULE_TYPELESS_PACKAGE_JSON --test tests/*.test.mjs`，12/12通过 |
+| 评测脚本语法 | `node --check script/evaluate-dify-mvp-0.3.1.mjs`，exit 0；report模式成功重现统计，无额外Dify请求 |
+| Streaming | 69/69真实请求完成；现有单测验证完成前交付分块、错误传播、think过滤及实际Route转发 |
+| API安全 | server-only配置、服务端SDK代理和脱敏错误仍保留；新产物及29个公开JS文件未发现实际服务端密钥或Bearer值 |
+| 文件保护 | 内部191个业务/知识/历史评测保护文件哈希完全一致；另200文件任务前快照中仅评测脚本与知识README变化，均在授权范围 |
+| 知识源 | 原始General与500条副本字节一致，Policy仍124条；源CSV、固定测试集及旧报告未改 |
+| Git/部署 | HEAD仍为`6abc009339408b1cdb65c08c7648a663a2ab25a1`，未commit、未部署；本地预览已恢复 |
+
+General SHA-256：`534A5C9866EA602E46F99BF843E52768967EAFC0F33572E6D7BE60E82EA52088`。
+
+Policy SHA-256：`588E4EF25264E2B4594817D8775DBBAF1C4A97A4746D206ABEA2FB7E8B5D5742`。
+
+最终检查曾因新增的独立来源审计被误报为历史文件变化。根因是续跑时重新枚举报告目录，把新文件纳入旧保护范围；评测工具已将历史文件清单固定到本轮开始基线，原文件变更和业务目录新增仍受保护。复现断言先失败、修复后通过，误报原始状态和解除理由保存在结果 JSON 的 `protection_notices`，新增报告保留。此修复不触碰业务代码，不改变任何实际测试结果或判分。
+
+源码中的前端、代理、Streaming、Context/Router逻辑未改。同步的当前说明为根README、PRODUCT、知识README，避免后续开发者误用历史阻塞状态。旧报告作为历史证据完整保留，不添加或覆盖内容。本轮没有读取/改写Dify管理配置，也没有泄露密钥、Authorization或敏感环境变量；安全检查只保存方法和计数。
+
+## 交付文件
+
+结果使用独立目录，保留所有同名历史结果。以下路径相对项目根目录 `C:\Users\zg105\Documents\Codex\2026-09-20\dify-ai-demo-https-github-com\webapp-text-generator`：
+
+1. `knowledge-base/evaluation/runs/2026-10-08-final/yuehai_mvp_0.3.1_results.csv`：54条完整结果。
+2. `knowledge-base/evaluation/runs/2026-10-08-final/yuehai_mvp_0.3.1_results.json`：真实完整回答、脱敏事件、结构对照、metadata、时延、保护证据。
+3. `knowledge-base/evaluation/runs/2026-10-08-final/yuehai_mvp_0.3.1_smoke_results.csv`：8条独立冒烟。
+4. `knowledge-base/evaluation/runs/2026-10-08-final/yuehai_mvp_0.3.1_bad_cases.csv`：27条失败/待审，不含正确Gap。
+5. `knowledge-base/evaluation/runs/2026-10-08-final/yuehai_mvp_0.3.1_dify_reviews.json`：62条完整语义审查、run绑定、验收建议和可重现报告。
+6. `knowledge-base/evaluation/runs/2026-10-08-final/yuehai_mvp_0.3.1_engineering_checks.json`：工程、安全及哈希证据。
+7. `knowledge-base/reports/mvp-0.3.1-final-evaluation.md`：本报告。
+8. `knowledge-base/reports/mvp-0.3.1-final-comparison.md`：8条冒烟及54条逐条前后比较。
+
+修改的既有文件仅为评测工具 `script/evaluate-dify-mvp-0.3.1.mjs` 和当前状态文档 `README.md`、`PRODUCT.md`、`knowledge-base/README.md`。临时审核辅助文件保存在系统Temp，未作为项目代码或交付资产。
+
+**到此停止，等待人工审核；未开始新的产品版本。**

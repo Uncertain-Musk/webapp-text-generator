@@ -1,0 +1,97 @@
+﻿test_id,query,platform_context,market_context,expected_type,expected_kb,expected_behavior,actual_retrieval_query,actual_resolved_platform,actual_resolved_market,actual_kb,actual_dataset,actual_dataset_id,actual_document_id,actual_segment_id,actual_top1_question,actual_top1_source,actual_top1_answer,actual_retrieval_questions,actual_retrieval_answers,actual_top1_relevant,http_status,streaming_ok,time_to_first_text_ms,total_latency_ms,cross_platform_error,cross_market_error,retrieval_relevant,final_answer_correct,fallback_correct,final_answer,failure_layer,result,notes
+A01,ACOS 是什么？,,,General KB,General KB,General KB / 通用知识正常回答。,ACOS 是什么？,,,UNKNOWN,UNKNOWN,UNKNOWN,UNKNOWN,UNKNOWN,UNKNOWN,UNKNOWN,UNKNOWN,[],[],false,200,true,10752,16025,false,false,false,true,false,"ACOS 是 **Advertising Cost of Sales** 的缩写，中文通常叫 **广告销售成本比**，用于衡量广告投入占广告带来销售额的比例。
+
+计算公式：
+
+**ACOS = 广告花费 ÷ 广告带来的销售额 × 100%**
+
+例如：  
+广告花了 20 美元，带来了 100 美元销售额：
+
+**20 ÷ 100 × 100% = 20%**
+
+也就是说，每获得 100 美元广告销售额，需要花 20 美元广告费。
+
+一般情况下，ACOS 越低，说明广告效率越高；但是否合理还要结合产品利润率、推广阶段和目标来判断。例如新品推广期可能允许较高 ACOS，而成熟产品更关注盈利，则会追求较低 ACOS。",COVERAGE,FAIL_COVERAGE,ACOS概念与公式正确，General覆盖仍缺失；保持旧版FAIL_COVERAGE口径，不判政策幻觉。
+A02,跨境电商怎么筛选目标市场？,,,General KB,General KB,General KB。,跨境电商怎么筛选目标市场？,,,跨境电商知识问答 1,跨境电商知识问答 1,ba919c03-da30-4761-ac8f-abe35dad0c97,614fb475-5f85-4e8c-a433-423740e3ca95,7c5d0af5-00be-468c-8596-05a1bdc02cd8,不同国家或平台下，目标市场筛选应如何调整？,UNKNOWN,按目的国法规、消费者语言和支付偏好分别配置，不以单一大站经验代替当地验证。不要把一个站点的设置直接复制到另一个站点。,"[""不同国家或平台下，目标市场筛选应如何调整？""]","[""按目的国法规、消费者语言和支付偏好分别配置，不以单一大站经验代替当地验证。不要把一个站点的设置直接复制到另一个站点。""]",true,200,true,6803,11540,false,false,true,true,UNKNOWN,"跨境电商筛选目标市场时，核心原则是**“本地化验证”**，切忌将单一站点的成功经验直接复制到其他市场。具体调整策略如下：
+
+1. **合规与法规适配**
+   不同目的国对商品资质、标签、环保标准及数据隐私的法规差异巨大。需针对每个潜在市场单独核查当地法律法规，确保产品合规准入。
+
+2. **消费者偏好匹配**
+   *   **语言与文化**：必须使用当地主流语言进行营销和客服沟通，并尊重文化禁忌。
+   *   **支付习惯**：不同国家的主流支付方式（如信用卡、电子钱包、货到付款等）差异显著，需接入当地高频使用的支付渠道以降低流失率。
+
+3. **独立验证机制**
+   不要依赖其他平台或国家的销售数据来推断新市场的表现。应在小范围内对新市场进行独立测试（如小规模广告投放、样品试销），根据当地实际反馈调整选品、定价和运营策略。
+
+**总结**：目标市场筛选应基于**目的国法规、消费者语言和支付偏好**分别配置，以当地实际验证结果为准，避免“一刀切”式运营。",NONE,PASS,使用General G0006回答市场适配和验证方法。
+A03,退款多久处理？,TikTok Shop,US,Policy KB,Policy KB,retrieval_query体现TikTok Shop美国站，主要使用对应Policy。,TikTok Shop 美国站 退款多久处理？,TikTok Shop,US,跨境电商知识问答 1,跨境电商知识问答 1,ba919c03-da30-4761-ac8f-abe35dad0c97,68f0800e-66ef-4e08-a96f-2d5df8ef64b5,d8b07bc7-e764-46d5-a286-21c79cf9c78c; 0858c2e6-fbba-49cc-a65a-647b34907a8a,TikTok Shop 美国站退货物流十多天不更新，平台会先退款吗？,https://seller-us.tiktok.com/university/essay?knowledge_id=3253210454181634,适用范围：TikTok Shop 美国站已进入逆向物流的退货包裹；连续10天或以上无物流更新时，买家可联系平台要求加速退款；平台可在退货送达卖家前退款，并非所有停滞包裹必然自动退款；官方来源：TikTok Shop Seller University《客户订单取消、退货及退款政策》；官方页面：https://seller-us.tiktok.com/university/essay?knowledge_id=3253210454181634；官方页面日期：2026-09-28；官方页面未明确标注生效日期；最后核验：2026-10-02。,"[""TikTok Shop 美国站退货物流十多天不更新，平台会先退款吗？"",""TikTok Shop 美国站买家通常能在签收后多久申请退货？""]","[""适用范围：TikTok Shop 美国站已进入逆向物流的退货包裹；连续10天或以上无物流更新时，买家可联系平台要求加速退款；平台可在退货送达卖家前退款，并非所有停滞包裹必然自动退款；官方来源：TikTok Shop Seller University《客户订单取消、退货及退款政策》；官方页面：https://seller-us.tiktok.com/university/essay?knowledge_id=3253210454181634；官方页面日期：2026-09-28；官方页面未明确标注生效日期；最后核验：2026-10-02。"",""适用范围：TikTok Shop 美国站符合退货条件的订单；按结账时显示窗口，默认从Delivered起30个自然日；部分合格卖家可设14/30/45/90天，指定节日或促销可临时覆盖设置；官方来源：TikTok Shop Seller University《客户订单取消、退货及退款政策》；官方页面：https://seller-us.tiktok.com/university/essay?knowledge_id=3253210454181634；官方页面日期：2026-09-28；官方页面未明确标注生效日期；最后核验：2026-10-02。""]",true,200,true,4611,12974,false,false,true,UNKNOWN,UNKNOWN,"基于当前知识库信息，针对 **TikTok Shop 美国站** 的退款处理时效，结论如下：
+
+**核心答案：**
+平台没有统一的固定“秒退”或“自动退款”时限，退款处理速度取决于退货物流状态和卖家审核情况。但在特定情况下（如物流停滞），买家可要求加速处理。
+
+**具体规则说明：**
+
+1.  **物流停滞触发加速退款：**
+    *   如果退货包裹已进入逆向物流，但**连续 10 天或以上无物流更新**，买家可以联系平台客服要求加速退款。
+    *   在此情况下，平台**可能**会在退货商品实际送达卖家之前先行向买家退款。
+    *   *注意：并非所有停滞包裹都会自动触发此机制，需买家主动申请或由平台判定。*
+
+2.  **常规流程依赖卖家审核：**
+    *   在正常物流更新的情况下，退款通常需要在退货商品被卖家签收并由卖家确认无误后才会发起。
+    *   具体的“卖家签收后多久到账”或“卖家审核时长”在当前检索结果中未提供明确的固定天数标准。
+
+3.  **退货申请窗口（前置条件）：**
+    *   买家通常在订单显示为 **Delivered（已送达）** 后的 **30 个自然日** 内可申请退货（部分卖家可设置 14/30/45/90 天）。这是启动退款流程的前提，而非退款处理时长。
+
+**建议操作：**
+*   **对买家：** 若发现退货物流超过 10 天无更新，请立即联系 TikTok Shop 官方客服投诉并要求加速退款。
+*   **对卖家：** 请确保及时在后台处理收到的退货请求，避免因处理延迟导致平台介入并可能引发纠纷率上升。
+
+**重要提示：**
+以上信息依据 TikTok Shop Seller University《客户订单取消、退货及退款政策》（最后核验日期：2026-10-02）。平台政策可能随时调整，请务必以 TikTok Shop 美国站后台最新官方公告为准。",COVERAGE,FAIL_COVERAGE,旧发货SLA混淆消失；各类退款处理时限仍无充分覆盖，且加入未获依据支持的常规流程。主因Coverage，次要为回答未先澄清。
+A04,TikTok Shop 美国站商品违规后怎么申诉？,TikTok Shop,US,Policy KB,Policy KB,TikTok Shop美国站Policy。,TikTok Shop 美国站商品违规后怎么申诉？,TikTok Shop,US,跨境电商知识问答 1,跨境电商知识问答 1,ba919c03-da30-4761-ac8f-abe35dad0c97,68f0800e-66ef-4e08-a96f-2d5df8ef64b5,b41401e9-7774-4720-9f1d-efd42816e12b,TikTok Shop 美国站遇到错误、无效或辱骂评价怎样处理？,https://seller-us.tiktok.com/university/essay?knowledge_id=10019322,适用范围：TikTok Shop 美国站可举报的客户评价；可在Seller Center的Product Ratings页面举报，平台调查并采取适当行动；举报不保证移除；官方来源：TikTok Shop Seller University《评价政策》；官方页面：https://seller-us.tiktok.com/university/essay?knowledge_id=10019322；官方页面日期：2026-06-30；官方页面未明确标注生效日期；最后核验：2026-10-02。,"[""TikTok Shop 美国站遇到错误、无效或辱骂评价怎样处理？""]","[""适用范围：TikTok Shop 美国站可举报的客户评价；可在Seller Center的Product Ratings页面举报，平台调查并采取适当行动；举报不保证移除；官方来源：TikTok Shop Seller University《评价政策》；官方页面：https://seller-us.tiktok.com/university/essay?knowledge_id=10019322；官方页面日期：2026-06-30；官方页面未明确标注生效日期；最后核验：2026-10-02。""]",false,200,true,9610,11043,false,false,false,false,true,"当前知识库信息不足，暂时无法可靠确认 TikTok Shop 美国站商品违规后的具体申诉流程、时限或所需材料。
+
+建议您直接访问 **TikTok Shop Seller Center** 的“账号健康”或“违规管理”页面查看具体违规通知中的申诉指引，或参考官方 Seller University 中关于《合规与处罚》的最新政策文档。",RETRIEVAL,FAIL_RETRIEVAL,商品违规申诉错召回为评价举报；正确P0072存在，安全兜底但核心召回失败。
+A05,退货怎么处理？,Amazon,US,Policy KB,Policy KB,Amazon美国站Policy。,Amazon 美国站 退货怎么处理？,Amazon,US,跨境电商知识问答 1,跨境电商知识问答 1,ba919c03-da30-4761-ac8f-abe35dad0c97,68f0800e-66ef-4e08-a96f-2d5df8ef64b5,ad871a10-624a-415b-a05a-da8b604dd3c6; abcea72c-265f-4d69-82b3-bdb6b090c573,Amazon 美国站自配送收到退货后多久应退款？,https://sell.amazon.com/blog/manage-customer-returns,适用范围：Amazon 美国站；自配送卖家收到退货后须在两天内退款，否则平台可代为自动退款；符合首次扫描退款的订单可在收货前已退款，不能重复退款；官方来源：Amazon 官方《自配送订单的 Amazon 买家退货管理》；官方页面：https://sell.amazon.com/blog/manage-customer-returns；官方页面日期：2025-04-15；官方页面未明确标注生效日期；最后核验：2026-10-02。,"[""Amazon 美国站自配送收到退货后多久应退款？"",""Amazon 美国站收到可能含危险品的退货请求怎么办？""]","[""适用范围：Amazon 美国站；自配送卖家收到退货后须在两天内退款，否则平台可代为自动退款；符合首次扫描退款的订单可在收货前已退款，不能重复退款；官方来源：Amazon 官方《自配送订单的 Amazon 买家退货管理》；官方页面：https://sell.amazon.com/blog/manage-customer-returns；官方页面日期：2025-04-15；官方页面未明确标注生效日期；最后核验：2026-10-02。"",""适用范围：Amazon 美国站；大多数危险品退货需手动授权，须确认退货设施可安全接收并协调合规运输和标识；部分符合条件的案件仍可能自动授权，不能将危险品一律要求买家寄回；官方来源：Amazon 官方《自配送订单的 Amazon 买家退货管理》；官方页面：https://sell.amazon.com/blog/manage-customer-returns；官方页面日期：2025-04-15；官方页面未明确标注生效日期；最后核验：2026-10-02。""]",true,200,true,7117,12447,false,false,true,true,UNKNOWN,"根据您所在的 **Amazon 美国站** 环境，针对“退货怎么处理”这一通用问题，结合知识库中的具体场景（自配送退款时限、危险品处理），为您提供以下核心处理指南：
+
+### 1. 普通自配送订单的退款时效
+*   **规则**：如果您作为自配送卖家收到买家的退货包裹，必须在 **2天内** 完成退款。
+*   **后果**：若未在规定时间内退款，Amazon 平台可能会代为自动退款。
+*   **注意**：如果符合“首次扫描退款”政策，买家可能在您收到货物前就已获得退款，此时请勿重复退款。
+
+### 2. 含危险品退货的特殊处理
+*   **规则**：大多数涉及危险品的退货请求需要 **手动授权**。
+*   **操作要求**：
+    *   确认您的退货接收设施能够安全接收该类物品。
+    *   协调符合合规要求的运输和标识方式。
+    *   **禁止**：不能简单地将所有危险品一律要求买家寄回，需根据具体情况判断是否允许退回或采取其他解决方案。
+
+### 💡 重要提示
+以上信息基于 Amazon 官方《自配送订单的 Amazon 买家退货管理》页面（最后核验日期：2026-10-02）。跨境电商政策可能随时间调整，建议您定期查阅 [Amazon 卖家中心官方帮助页面](https://sell.amazon.com/blog/manage-customer-returns) 以获取最新规定。",NONE,PASS,Amazon US退货回答与P0001/P0005一致。
+A06,Amazon 美国站 FBA 发货有什么要求？,Amazon,US,Policy KB,Policy KB,Amazon美国站Policy。,Amazon 美国站 FBA 发货有什么要求？,Amazon,US,跨境电商知识问答 1,跨境电商知识问答 1,ba919c03-da30-4761-ac8f-abe35dad0c97,68f0800e-66ef-4e08-a96f-2d5df8ef64b5,1c8aee57-d8cc-4f04-808f-70417785a364; 1be3801c-ff35-4b9e-97e4-8a927ef1e34f; 395c0f0e-7d96-451c-88c0-fa01eb307b56,Amazon 美国站FBA整套出售的商品该怎样包装？,https://sell.amazon.com/blog/fba-packaging-prep-labeling,适用范围：Amazon 美国站；作为单件出售的非官方组合须合并包装并在外部清楚标识整套出售、不要拆分；每个销售单位须保持为安全完整的单一包装；官方来源：Amazon 官方《FBA 预处理、包装与贴标入门指南》；官方页面：https://sell.amazon.com/blog/fba-packaging-prep-labeling；官方页面日期：2026-07-07；官方页面未明确标注生效日期；最后核验：2026-10-02。,"[""Amazon 美国站FBA整套出售的商品该怎样包装？"",""Amazon 美国站FBA货件显示Receiving就能马上配送吗？"",""Amazon 美国站健康护理危险品使用FBA前要做什么审核？""]","[""适用范围：Amazon 美国站；作为单件出售的非官方组合须合并包装并在外部清楚标识整套出售、不要拆分；每个销售单位须保持为安全完整的单一包装；官方来源：Amazon 官方《FBA 预处理、包装与贴标入门指南》；官方页面：https://sell.amazon.com/blog/fba-packaging-prep-labeling；官方页面日期：2026-07-07；官方页面未明确标注生效日期；最后核验：2026-10-02。"",""适用范围：Amazon 美国站；Receiving 表示已开始扫描入库；收到的商品可售，但可能先调拨到其他地点，因此不一定立即可发出；官方来源：Amazon 官方《如何追踪 FBA 入库货件》；官方页面：https://sell.amazon.com/blog/fba-shipment-tracking；官方页面日期：2025-01-07；官方页面未明确标注生效日期；最后核验：2026-10-02。"",""适用范围：Amazon 美国站；被归为危险品的商品需提交 SDS/MSDS 进行危险品审核，经 FBA 销售还需危险品计划资格；不能把所有健康护理产品一律视为危险品；官方来源：Amazon 官方《如何在 Amazon 销售健康与个人护理用品》；官方页面：https://sell.amazon.com/blog/how-to-sell-health-personal-care；官方页面日期：2026-04-01；官方页面未明确标注生效日期；最后核验：2026-10-02。""]",true,200,true,4451,10476,false,false,true,true,true,"根据当前知识库检索结果，关于 **Amazon 美国站 FBA 发货要求** 的具体信息不足，暂时无法可靠确认该平台或站点在通用发货流程（如标签、外箱标识、预约送仓等）上的完整具体规则。
+
+不过，结合上下文中的相关片段，可以明确以下几点特定场景的要求：
+
+1.  **整套出售商品的包装要求**：
+    *   作为单件出售的非官方组合商品，须合并包装并在外部清楚标识“整套出售”、“不要拆分”。
+    *   每个销售单位须保持为安全完整的单一包装。
+    *   *依据：Amazon 官方《FBA 预处理、包装与贴标入门指南》*
+
+2.  **危险品审核要求**：
+    *   若商品被归类为危险品（如部分健康护理产品），需提交 SDS/MSDS 进行危险品审核。
+    *   经 FBA 销售此类商品还需具备危险品计划资格。
+    *   *注意：并非所有健康护理产品都视为危险品，需具体判断。*
+    *   *依据：Amazon 官方《如何在 Amazon 销售健康与个人护理用品》*
+
+3.  **入库状态说明**：
+    *   货件显示 “Receiving” 仅表示已开始扫描入库，商品虽可售但可能先调拨到其他地点，不一定立即可发出。
+    *   *依据：Amazon 官方《如何追踪 FBA 入库货件》*
+
+**建议：**
+由于 FBA 发货涉及复杂的预处理、贴标、装箱及预约送仓等环节，且政策可能随时间调整，建议您直接查阅 Amazon Seller Central 后台最新的 **《FBA 预处理、包装与贴标指南》** 或联系亚马逊卖家支持，以获取最准确、完整的通用发货要求。",NONE,PASS,FBA相关召回改善，安全保留不完整范围，未混入FBM。
+A07,Amazon 英国站退货规则是什么？,Amazon,US,Expected Gap,Expected Gap,显式UK覆盖US，不能将US规则冒充UK；信息不足时兜底。,Amazon 英国站退货规则是什么？,Amazon,UK,UNKNOWN,UNKNOWN,UNKNOWN,UNKNOWN,UNKNOWN,UNKNOWN,UNKNOWN,UNKNOWN,[],[],UNKNOWN,200,true,33646,38057,false,false,UNKNOWN,true,true,"当前信息不足，暂时无法可靠确认 Amazon 英国站在 2026-10-08 的具体退货规则。涉及平台政策时，建议以 Amazon UK / Amazon Seller Central UK 最新官方规则为准。
+
+通常可重点核对：退货窗口期、商品是否需保持原状、退款或换货方式、退货运费承担、例外商品、FBA 与自发货差异。",NONE,EXPECTED_GAP,UK优先级正确；范围外知识安全兜底。
+A08,你好,TikTok Shop,US,Greeting,Greeting,走greeting / 非知识检索分支。,TikTok Shop 美国站 你好,TikTok Shop,US,UNKNOWN,UNKNOWN,UNKNOWN,UNKNOWN,UNKNOWN,UNKNOWN,UNKNOWN,UNKNOWN,[],[],UNKNOWN,200,true,3022,3051,false,false,UNKNOWN,true,UNKNOWN,你好，我是跨境电商知识助手，可以帮你解答平台运营、选品、物流、广告、税务、合规等相关问题。,NONE,PASS,greeting分支正常，存在经营环境也未强制检索。

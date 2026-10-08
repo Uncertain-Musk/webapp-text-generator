@@ -1,0 +1,3345 @@
+{
+  "schema_version": "0.3.1",
+  "run_id": "303fb36a-37c1-4582-9087-5af2d32812fc",
+  "started_at_utc": "2026-10-04T09:45:02.672Z",
+  "timezone": "Asia/Shanghai",
+  "test_date": "2026-10-04",
+  "base_url": "http://127.0.0.1:3000",
+  "test_source_sha256": "ae987060f024c82a6fbaf56c9ff21ea61c42b0412bf09169df0fe7f52aa3e99a",
+  "declared_model": "千问 3.8（用户提供）",
+  "observed_models": [
+    "qwen3.8-flash"
+  ],
+  "protection_baseline": {
+    "app/api/completion-messages/route.ts": "644ffdf54f5d448e8e9679421c7ecc8acd4e6ad095ca512157e58938b60becf8",
+    "app/api/file-upload/route.ts": "a1a732400fb805a54bf92707c1ab6e29d1dca7b245d38dba65ac0e16c05b2c8c",
+    "app/api/messages/route.ts": "158246b4510d065f61021dfc609517d9a2324d3a33925b731d18d87dda4556cc",
+    "app/api/messages/[messageId]/feedbacks/route.ts": "0e30f7ebe4ad4a89fdd1a7bf97e7b316be7d7d9df4c78b4d74afc1868a04d8cf",
+    "app/api/parameters/route.ts": "2872824a552d9442816d06d8be0479b414e3d8dce01317a0257823134acaeabf",
+    "app/api/utils/common.ts": "5050a81d6f14ce60e4496c5f26c642c24e304aebdaee8ea0bb0096d446cd05c2",
+    "app/api/workflows/run/route.ts": "d4489bbfa1c8a4267a3fde355c7c1b7905d6067b7cb0b1c1482f23f9beef6ae6",
+    "app/compliance/page.tsx": "da66c85f27c8aa5cefe49bc6863a967f7f262076c1bd0de63e76264acecab4e3",
+    "app/components/app-unavailable.tsx": "f6d1362145a96826ea1e9d3035a0ea49d6513125179dfbae2bedbb81041757aa",
+    "app/components/base/app-icon/index.tsx": "2cc360ab725f8c5bf597cf6250f6300eb53105466f4a1657a6e8278e8cbb486c",
+    "app/components/base/app-icon/style.module.css": "e2a3060a5449c4f4fc1a8708b92db54c403301cf8bd486912835c18aa9130979",
+    "app/components/base/button/index.tsx": "9f6fa2e0603f527865f054fd5cdf582bfe6d88acfc612da663a5d4391571e14a",
+    "app/components/base/icons/IconBase.tsx": "813c39b25e450e464359b643f196efc6b94ba6e300fe216dfdb242588e20e8b0",
+    "app/components/base/icons/line/alert-circle/data.json": "eca126455b5617d8ca42b6e826a0a09b5345a872135b12ffbf6f66430cc4e938",
+    "app/components/base/icons/line/alert-circle/index.tsx": "b41fd2510e68b4b85011f5a9816e048dfbdddf1c62a653c65e7281bd4ed0dc50",
+    "app/components/base/icons/line/alertsAndFeedback/AlertCircle.json": "ddd69fb50452d763c88af940c08290904ea5cc03d77cc06a7932ed48afb4b43a",
+    "app/components/base/icons/line/alertsAndFeedback/AlertCircle.tsx": "f29b96c50054faad53f29b0a43da90a7d00d1f0222a52f1f7884462c42468696",
+    "app/components/base/icons/line/alertsAndFeedback/AlertTriangle.json": "c7f88b09e4fd5fce97d75580bb721b44487f1c82fdaade9a77f54675cdfce02d",
+    "app/components/base/icons/line/alertsAndFeedback/AlertTriangle.tsx": "8269f067606528f1e57298d9e6ee710a4259e1dc349efad3d12ab7a95e3055f4",
+    "app/components/base/icons/line/alertsAndFeedback/index.ts": "d31327075a207ab19e424482fc76eb9807b2e7ec07fbfceaf8f5b958ded4bffd",
+    "app/components/base/icons/line/arrows/ChevronRight.json": "b6e2a62aeec0d539eba9547ae66061690eae35dd0d665bd4e28eec53b7400db7",
+    "app/components/base/icons/line/arrows/ChevronRight.tsx": "8527818852e00435b975b103f1082d38e1cfb7d515008b5d2a187f97020cea06",
+    "app/components/base/icons/line/arrows/Collapse04.json": "c9d0fafcd2abc7967b1ff2eb3df05119a129fb208c4e1519901f2968d4cb1c63",
+    "app/components/base/icons/line/arrows/Collapse04.tsx": "9c8d2e720cb5801aa4c78453b3f30572150934cbadd9a5738bbacef5fa1404a1",
+    "app/components/base/icons/line/arrows/index.ts": "859110b8d6f67384cdb933022d4c72781ad747f1cdfe803dfc9084b4db4c30c8",
+    "app/components/base/icons/line/clipboard/data.json": "61955d7127c64247468e18b0e53bfe1130311ba21d9a20810b3643113583b60d",
+    "app/components/base/icons/line/clipboard/index.tsx": "f0bf26d64e12497fcd9510c6b8b015ad8f34b3496f4ad34e04a50c71745586a5",
+    "app/components/base/icons/line/files/Clipboard.json": "5dcd263cf5dd078c9d6c5d308a2afad28af6a72573c207d47817aa559b35eb7a",
+    "app/components/base/icons/line/files/Clipboard.tsx": "4066f558c94b612158f83bcf06b6254213c42e0f382568b9ca389b756479e7ff",
+    "app/components/base/icons/line/files/ClipboardCheck.json": "5ae42d1bb1403d5114b6de4a51cd23597c02baa4be325cdb56dd1d1a0467ace7",
+    "app/components/base/icons/line/files/ClipboardCheck.tsx": "3c6b8e4c81895ee8e5b6a77c0f254bb2a59ede437cbd202c42b2ad84ea0aa895",
+    "app/components/base/icons/line/files/index.ts": "02732ed135bb4fc803e5f8a1477c6f8944323a0a88939be0dfb847f37768a607",
+    "app/components/base/icons/line/general/CheckCircle.json": "0ca4253c8a39a1f55e197787e249079680ea5234e5c659834c03d903ebb0949a",
+    "app/components/base/icons/line/general/CheckCircle.tsx": "6e200090d2278224606a9f2736417d6c69bbc9e36267e456ffed08144e99f86a",
+    "app/components/base/icons/line/general/index.ts": "ee1686ca0d767874d82c654fe6822fe5a9c9f109e89ff99bb08695960cb13458",
+    "app/components/base/icons/line/general/Loading02.json": "6079264d2739a292eb2d1c91c9535cbf5e7a76bb742fc74e67b782c11d5ecbe8",
+    "app/components/base/icons/line/general/Loading02.tsx": "de3368518bddc75f6fdbba10bb7875573f34db8b127a8f693a3cec3e69147b7e",
+    "app/components/base/icons/line/image-plus/data.json": "b1f71cc5606aa0edd5989e8e3e978c39f3dd13217027b5c91877b279cad5f6a0",
+    "app/components/base/icons/line/image-plus/index.tsx": "a71b721805dba81b218d312c131664ab2bb0bcf904d29fb1678b407dca148b28",
+    "app/components/base/icons/line/link-03/data.json": "e3d7d984e65a7b4b7bcf1733c1fada9633358121fad869532760d1d4990f9847",
+    "app/components/base/icons/line/link-03/index.tsx": "c56a2629d8070da7799c59b4ecd294c4e002df51efea8db0deb28fc4afe2deab",
+    "app/components/base/icons/line/loading-02/data.json": "48f6b554002a9d41eb82538cdcab089133c57c5cb591e139fe1ae4c7b3824bff",
+    "app/components/base/icons/line/loading-02/index.tsx": "793a08944d498604f9407b77eb7ecad7d9e9954193b9fc1900c879f29562376a",
+    "app/components/base/icons/line/refresh-ccw-01/data.json": "983eda0a06a38adcb9bb5ffd3c5de71ba3ae9b53270f0454c15d233101f30d63",
+    "app/components/base/icons/line/refresh-ccw-01/index.tsx": "8db0559c24eb3461cfac68f236eade25bb99d2a86a1fa9684543ed07d00dda08",
+    "app/components/base/icons/line/upload-03/data.json": "a86f4408154e81dc486b8d48a5a93560e3b47ce1038c5a45e7201e495d5078d4",
+    "app/components/base/icons/line/upload-03/index.tsx": "191c5847b99310493e541a057304349e649642ab7d6c14ac81b730681ec2eb9f",
+    "app/components/base/icons/line/x-close/data.json": "70819919083c86e6c25ffc43f43d93bc259fe250a19bbafc0376cbb44b02d821",
+    "app/components/base/icons/line/x-close/index.tsx": "8fb7f610210f183f302d5a5d4e19e6eb33e043134e930e4d0edcc62d50280029",
+    "app/components/base/icons/public/csv/data.json": "89028e462ec9bc7045c52d8c5ac31a6ba697d287d98861ef939c575bd30e45d2",
+    "app/components/base/icons/public/csv/index.tsx": "34c9ebcd42f03b3971acaa664dc018d6ec652740ab259a0d4bd2e2e4f7295ea8",
+    "app/components/base/icons/solid/alert-triangle/data.json": "269e4b66aa4bc96a126f696831e7e145bc234e094074785ad95e513e0343a5e3",
+    "app/components/base/icons/solid/alert-triangle/index.tsx": "ea1f06ab00f07e99fb2da2e2f05cd21b4a600600984383707602db32338b4ceb",
+    "app/components/base/icons/solid/alertsAndFeedback/AlertCircle.json": "ab14a6a66c086743b8c3c84c298c889ea41397001c9a0ddaf42e7ebb874a6a78",
+    "app/components/base/icons/solid/alertsAndFeedback/AlertCircle.tsx": "f29b96c50054faad53f29b0a43da90a7d00d1f0222a52f1f7884462c42468696",
+    "app/components/base/icons/solid/alertsAndFeedback/index.ts": "92aef4a51084f2f674935544ab6c59eb954c4b7269c43d03ba96220af3a558c9",
+    "app/components/base/icons/solid/arrows/Expand04.json": "dfd533c95fab0ce16fcb1b9c63150cb0f3af430a1568966e523be0be8e00610c",
+    "app/components/base/icons/solid/arrows/Expand04.tsx": "52bc67526c5545f738a87cc7f6d2e00ac026282aef5f5e0c4bc4b7e4a4a65d78",
+    "app/components/base/icons/solid/arrows/index.ts": "0f60c734619034d8bc00b1c2c9852fb172df3ab1531b7b07aa62b7c82da0ec99",
+    "app/components/base/icons/solid/download-02/data.json": "33e35fdba2e0963e7ae175e0852ab88b925456a0d4c05419f2dbb7aa8eedb3c3",
+    "app/components/base/icons/solid/download-02/index.tsx": "52c29c5061702f87d8c312df195b4caee3acc022ed659c259083c1cfe2f9e8ad",
+    "app/components/base/icons/solid/general/CheckCircle.json": "cd19ea9dc2c6e28db782b34ae71e642d5dac2f3daeb066018046d1773c2651c4",
+    "app/components/base/icons/solid/general/CheckCircle.tsx": "6e200090d2278224606a9f2736417d6c69bbc9e36267e456ffed08144e99f86a",
+    "app/components/base/icons/solid/general/index.ts": "0b451e1ea0af5023b668d0aa1f0ca8647da2063160cd5ae2f8f9d1a0b3bddb3e",
+    "app/components/base/icons/utils.tsx": "57242ec43bb0d31327c9b4b5de52c4b8e46f7d9413af36253dafd8714e43f3f8",
+    "app/components/base/icons/workflow/Answer.json": "14d656160009e50555f34b5ecf60215c8407bf559871a2f993734baccc87ae9c",
+    "app/components/base/icons/workflow/Answer.tsx": "a2553680a4c4900f8279f9306df283849ec79ae9b3778debe2b7fe6126cefcc5",
+    "app/components/base/icons/workflow/Code.json": "b9bb1f8ba3138f235bc948b4c7386d973e79ef10e9f347e76b6de999283ae18c",
+    "app/components/base/icons/workflow/Code.tsx": "11ff31467283d2634e12b704cdb649a8645b587550fc9bbf0b051b369df1539f",
+    "app/components/base/icons/workflow/End.json": "d0fed26ebf98e1ada38aab81e4dcb1b40c65d23199ed4d097c67876ed5d1ec00",
+    "app/components/base/icons/workflow/End.tsx": "e1576e12d5d190650a826421387ce8d5aea6d5cfc4f00e481c67090199b59a45",
+    "app/components/base/icons/workflow/Home.json": "ee2717c07d796686a8a04935ebbb8ad460c47899f445dc964cae7d2b9cc022d8",
+    "app/components/base/icons/workflow/Home.tsx": "897e1eb965b8ce1bcffbebbf265a7b99fb1e5478ed633d3d73c219bfc1b7702c",
+    "app/components/base/icons/workflow/Http.json": "e4327ccc487e64ed2fa8772aa39a0ab192ef721972cbc97af4094995d3f7e2e4",
+    "app/components/base/icons/workflow/Http.tsx": "7b6d68898a437fd099e144287c6494bbc879949960f0c8733ef339e3da81c966",
+    "app/components/base/icons/workflow/IfElse.json": "b2ac1eee1901856a170fac02c4647b3341345d27f2a3dcd8b37b03632d62428b",
+    "app/components/base/icons/workflow/IfElse.tsx": "a02e9c5c3b69ee2353bb32c29c6b3355d92527177b4c048d0f509e7733099517",
+    "app/components/base/icons/workflow/index.ts": "91f67fec315af267da9432a66ff5307509ad9920acc6d5fa7b7649f915e3bc17",
+    "app/components/base/icons/workflow/KnowledgeRetrieval.json": "2b8e985c4ea6e49a8d59cbd447982b982567a5dc17d9f411e00aeae8e11ceb16",
+    "app/components/base/icons/workflow/KnowledgeRetrieval.tsx": "316a91ea8a40e12e739d965917b3bcb3140dace6083946d671c9399c2e4f4274",
+    "app/components/base/icons/workflow/Llm.json": "82fdff3af670d7f0c1c0eba42173b05adc93476913c7422ab2d94c5dd5189814",
+    "app/components/base/icons/workflow/Llm.tsx": "2f9d7a03a42488bd9eab9b640a5f37d737e0e3168900ec7fbeda8ca14c1e6972",
+    "app/components/base/icons/workflow/QuestionClassifier.json": "ca43c410ff14f8ad2ce72005f9de7a7c1c2fcf7e08c9dbb1c1b79f535fc839fc",
+    "app/components/base/icons/workflow/QuestionClassifier.tsx": "50538eb5dac2683532750e172b8d34f9e186aea28c11b39511621246810a429e",
+    "app/components/base/icons/workflow/TemplatingTransform.json": "85a429abbe94b9246e75f056c8fb1afa02bd8a55614611df92744141c6ff9aca",
+    "app/components/base/icons/workflow/TemplatingTransform.tsx": "0606a9e4cb7385dc0c862f11d1b1024d1dc1f965c72477a2c2d4d5a470618dcb",
+    "app/components/base/icons/workflow/VariableX.json": "19cfb322cb3cefa82129437c00b5d854735707aa74095d63f53cddeaf8b8ed97",
+    "app/components/base/icons/workflow/VariableX.tsx": "6ab0cfd060661833ab68ab9d761da26df2fea09f3bc47dedff39463f228b5927",
+    "app/components/base/image-uploader/chat-image-uploader.tsx": "5d5180e7429a7d166c79f01fe7bcfc4ba96db80920df4a92dce802b1afdb6c8e",
+    "app/components/base/image-uploader/hooks.ts": "77acf8d6f2b5c0c161d431ca256b5a1b1b3192514727c4f5025745be80756109",
+    "app/components/base/image-uploader/image-link-input.tsx": "1a0aba5105457f6ebac92bac85907511de1f91a044a38ba1f7c9fa8c05440d65",
+    "app/components/base/image-uploader/image-list.tsx": "2df00dadf7ffe749224d2d0c3693dc30f74941c1e68eb70bfac79af4c07efdb0",
+    "app/components/base/image-uploader/image-preview.tsx": "b3bb1fe9792d2b19e2383cffede972e76e8f2a2d5affc857efaffe8f7f8d4be7",
+    "app/components/base/image-uploader/text-generation-image-uploader.tsx": "30625db12e58f0b47229a7e3abc781fd68ec09146b8bcb92744887ad9cb96ba7",
+    "app/components/base/image-uploader/uploader.tsx": "677238b74b7887a9e24ff1e0f960dea6c8f48bd44f4aef332281d535f637d620",
+    "app/components/base/image-uploader/utils.ts": "32af72f6389f8b94169895aa17d60f192a7eb18ad2ebefcafd7f74bdfc7f57b2",
+    "app/components/base/loading/index.tsx": "c08e60a6075850bb9c6c8b8c45288e8cd90a8aacdb0d970cf1c41c357e174f22",
+    "app/components/base/loading/style.css": "eb61c97478cea48464205e36ddf599c87ff5813a5a965e45f5702245c89ee316",
+    "app/components/base/markdown.tsx": "1a4688c86ba00aac490105917d0fa0aef4b29361c7f01512bf8091ef7e7024c8",
+    "app/components/base/portal-to-follow-elem/index.tsx": "eed686e023e7bb8fcf05dba55c72661ea7a2fe4c7d1083e827efbbb39000414b",
+    "app/components/base/select/index.tsx": "c05b2c1586b8d7dbe0dac62970ef43e34cd2d21eaa83c6aba0321b33377a23cf",
+    "app/components/base/spinner/index.tsx": "03165525daed33a68ab64e765d4bd604a02444d499138490f84eedae671278ea",
+    "app/components/base/tab-header/index.tsx": "38159d6c9432e65e00fe02ac065a2b262a88d83b521fff25c2ee2cf78f3dc1d5",
+    "app/components/base/tab-header/style.module.css": "13e8d5f8764696e65d71fd0d33c5eae0ba46738502c1694796ea0489a5cb760c",
+    "app/components/base/toast/index.tsx": "de648a58a7fae1f31e0bd60318f6236dfc4492551e21fda2e5f87fe35c2cb924",
+    "app/components/base/toast/style.module.css": "4c6c0f0a0222a9dea103df00abbedb73ebef716d5760960a9c0411561894229e",
+    "app/components/base/tooltip/index.tsx": "c53a0d75eae24e178be90ad9f5a5a736e2789eaea0a5b08aa89f4676d1ea6c1f",
+    "app/components/base/tooltip-plus/index.tsx": "efae21609070174176ada9c1119a391526ed82788c77cb863064ae86042debac",
+    "app/components/config-scence/index.tsx": "4509b43d283758500bb2f7161c0380a6795f907037c5ae878f4ffe40c23078c0",
+    "app/components/header.tsx": "d4d5f7674646684d2132fda980a1962fa9a7f1acd39fb498a53c5a42b8eaf1e8",
+    "app/components/icons/app-icon.svg": "c65c3e3fcd09c617f6eda7192593dc1a7c63d029aa35a2a77c14ed85e520e8e7",
+    "app/components/icons/star.svg": "c4181b277ab3c864b9b0fb6a36076ebc527e3d7bbb2971307a98f7f6fad144a6",
+    "app/components/index.tsx": "7ab6b7d19688b292067ecd8d5a6a9ddf356abc0be2eadb75aa38b86e1c184439",
+    "app/components/no-data/index.tsx": "3703dd88b5b00a8b2d3348e9d507644ba77b5693f97cb6cfaef50aeeabebac5e",
+    "app/components/result/index.tsx": "273d190b214acbd47dab7200a678cb3d36b53b59dc3f52f052c4fa6b707c934d",
+    "app/components/result/item/index.tsx": "58ffb5580c8386fee7e3ad86508a14da79bea1bb6c3a23ffa832293de56013ea",
+    "app/components/result/workflow/block-icon.tsx": "9e0fb0a0858f9075477b98fa936745b8a2a26615d04e95076bfeae0e7a733940",
+    "app/components/result/workflow/code-editor/index.tsx": "765b0720c9101cb67fed7ad13dc99f1f072c323e4b3e06e2ef237d4dba038c98",
+    "app/components/result/workflow/code-editor/style.css": "40388e0207b412df03c28f5b2c5468f59effe9937e54b0203a2c104c8564720c",
+    "app/components/result/workflow/editor/base.tsx": "4a2754bdb80c05e642ba16eb957fab2c8872794629023d53ff337a46fe644f7a",
+    "app/components/result/workflow/editor/prompt-editor-height-resize-wrap.tsx": "767cecbdee39b4f5e33f25007d0a8fc24ca6af98d0880b1c7d68ec2db222151e",
+    "app/components/result/workflow/editor/toggle-expand-btn.tsx": "5c314842ed0a9806877fc1ac6437b01837329911444b813aca5a22dd7876e3fe",
+    "app/components/result/workflow/editor/use-toggle-expend.ts": "de97f904fea3302df57e785aa1667aa0da8b9c60f57fa8901d91d1524bcddb12",
+    "app/components/result/workflow/node.tsx": "7606b5ba08b1d5d574d924c821bbf5b59f75d0304676259b329fa26ccdd3aa9a",
+    "app/components/result/workflow/workflow-process.tsx": "b102eb1a2c6f9b9b4bead54f0394af33a4e7b5e25e55eb86fd8836627763cc58",
+    "app/components/run-batch/csv-download/index.tsx": "09422f6439017c3c4b72a39560598146f44a4b0c13413550a5230337838bf337",
+    "app/components/run-batch/csv-reader/index.tsx": "5599fc8b6d221df8d248252c528721b80e25d8a993fd24c82a173bdbaf8b0b68",
+    "app/components/run-batch/csv-reader/style.module.css": "f5b8bf0bc935417e274b0fe92f3f7ab47af68ed596c96fd7bf4b310289d1fb4a",
+    "app/components/run-batch/index.tsx": "cabc8cda524c697ea658df0de8f99bfe219a9df3f41194bbc1ad953b961c2ddc",
+    "app/components/run-batch/res-download/index.tsx": "b5dbfd6be0c83d80ec43658bac6b6a818201bf5def28ef8e1f902b04b04de240",
+    "app/components/run-once/index.tsx": "252dd515cbfa58cce2d351c59ef4886b69195435d1fefcd3b91ec61c7c27bf38",
+    "app/components/section-page/index.tsx": "a159e07b5bfbea1fc374524bef72abf24a8ae23006683fb2cdee9711f3266a89",
+    "app/components/site-shell/environment.tsx": "9df09f5d61c1437766bc26eac99c8c5e4100cc5338f996e31a60d8faae060b06",
+    "app/components/site-shell/index.tsx": "1c2c51334f802ec04ae2da072910e34b52ac0e3706f37a1f97a9b907f44d25c2",
+    "app/components/style.module.css": "1606d2d2e5a60485814b4c0d08ace76d282e9feed40e6e66971c1a9f94e3cee0",
+    "app/components/task-launcher/index.tsx": "807bf06a781b4184c225885cc27e25a383452bffcfc700b326af83856096b3fa",
+    "app/global.d.ts": "9e61ac502e3faa82d5893434e90c8dd8ea9a77c9f99a050a5f64b6f56307d2c4",
+    "app/icon.svg": "5eafe17d4a6bfc16371fd01e00501f5f763fb52ba50025786a3f9404b8608c17",
+    "app/issues/page.tsx": "77d557b28525689181985d1ec558a5d67bc97314225b8c694088971efc3bb7f2",
+    "app/layout.tsx": "50de35a4138e5508cd0625569410d101eaf3e09e30e2767b7fabddd04decc881",
+    "app/page.tsx": "6b846b838a0b49e4b48aa7963bf42b2c75f7cec0f047383e7b2883e709f4a0c1",
+    "app/styles/globals.css": "843381a55458dfeca6a7432f8b3881a269a7a71f34a712a57cd9c5503f44710c",
+    "app/styles/markdown.scss": "edb18947e1720602e069bf4803d7a3f01d23d796c729bd824f50597ef25e5151",
+    "app/tools/page.tsx": "e1148f1ccadd9a87a0249ba2a645a7b64975e4e3772c464fdb4ee7758fddb5e8",
+    "service/base.ts": "b987efaa9deaf8f19385bf67179768f8261382c8ba7237d455f0bf368684a4d2",
+    "service/index.ts": "0625bcb17a7ddf75ccc046c6fed9e91cb93104f5bd00d29eeb13298ecdfe991b",
+    "service/sse-stream.ts": "78f63cd3ab9191acbf94fddf115c279d224e4800c072848a4d6d8ab63ab931b6",
+    "config/index.ts": "83a3bd5b9d73648d3c5e234950e0e8c17a4f8f5f6672617e1c7d9342ac7a7277",
+    "config/operating-environment.ts": "8fb8c7de08aa91732dc4fcd5708784cea188db63b798574eea265bff1f8fd240",
+    "config/server.ts": "da758959c255ffc94871108f90102a4cbbf833072b671a0b598b93da92a8769f",
+    "config/tasks.ts": "e651beb40fa9ea30854718c3c260d8a20092c8039f08d0576abb2abf5bc62149",
+    "utils/index.ts": "d49ae5d2f629f66b75f8421a737fdac1fede4e0199b7795b153a967815b61a9f",
+    "utils/prompt.ts": "3610a5cf815d42bc4c5a72e37f7fff4c8a2fd70932c7ab855ebf126074d892bc",
+    "utils/string.ts": "bcecca1504630f8319654df1849b818a463a43515904cdbf711bd736dc9daad1",
+    "utils/workflow-context.ts": "f2a2bca5ebac33459393550d18ba0ee8eb2a5285af5d9f19cf5db787ceb5cbd3",
+    "knowledge-base/general/yuehai_general_kb_v2.csv": "534a5c9866ea602e46f99bf843e52768967eafc0f33572e6d7be60e82ea52088",
+    "knowledge-base/policy/yuehai_policy_kb_v1.csv": "588e4ef25264e2b4594817d8775dbbaf1c4a97a4746d206abea2fb7e8b5d5742",
+    "knowledge-base/policy/yuehai_policy_kb_v1_sources.csv": "9ff90314a4de799dcbf03411e464e21b751351de7a0638d1fb31aadf8c0fc2f2",
+    "knowledge-base/evaluation/yuehai_knowledge_gaps.csv": "9420ebabbccc2f8e6445a97a32e2235180110c342a33ba759abb80fc0415254e",
+    "knowledge-base/evaluation/yuehai_policy_kb_v1_test_queries.csv": "ae987060f024c82a6fbaf56c9ff21ea61c42b0412bf09169df0fe7f52aa3e99a",
+    "script/evaluate-dify-mvp-0.3.mjs": "5e9678c05d780d337ccb30c526b81477a0e8cfe08c195d7f833a7e3ea06adaa6",
+    "knowledge-base/evaluation/yuehai_policy_kb_v1_dify_results.json": "c7b32d4525d448474e4c2389fb3ff33ef90fc8508221a1df7b9a15d361c66815",
+    "knowledge-base/evaluation/yuehai_policy_kb_v1_dify_results.csv": "abd321770ec18bd90293b73a12e9d596b0cd8a362a8d7a4108d8181a78c0d4c5",
+    "knowledge-base/evaluation/yuehai_mvp_0.3_smoke_results.csv": "7e8b8847fba17fdc31c7593c2eaeb273cdce4aa1bb35ee6539a13cbcaa941a47",
+    "knowledge-base/evaluation/yuehai_mvp_0.3_bad_cases.csv": "c91bc22b3446daa399e1d3da76c272ec549834e31ee10199d47d4e88c4c9c6b8",
+    "knowledge-base/evaluation/yuehai_mvp_0.3_dify_reviews.json": "e99184c24ef6b18e7cd5f651192d73e7588f2a2e78e7cf2c7a5abc86b94282ac",
+    "knowledge-base/evaluation/yuehai_mvp_0.3_engineering_checks.json": "84aa38c0f75bd2ba03a270f3daf8685a181b9516863ad23725d309d1780eda06",
+    "knowledge-base/reports/mvp-0.3-dify-evaluation.md": "172ea8ee4ebceb6ac077f5fd1c65d2b15dd88c9d91565e57a2cc21aef145b148"
+  },
+  "preflight": {
+    "checked_at_utc": "2026-10-04T09:45:05.090Z",
+    "endpoint": "http://127.0.0.1:3000/api/parameters",
+    "http_status": 200,
+    "variables": [
+      {
+        "variable": "query",
+        "required": true,
+        "type": "text-input"
+      },
+      {
+        "variable": "platform_context",
+        "required": false,
+        "type": "text-input"
+      },
+      {
+        "variable": "market_context",
+        "required": false,
+        "type": "text-input"
+      }
+    ],
+    "ok": true,
+    "parameters": {
+      "opening_statement": "",
+      "suggested_questions": [],
+      "suggested_questions_after_answer": {
+        "enabled": false
+      },
+      "speech_to_text": {
+        "enabled": false
+      },
+      "text_to_speech": {
+        "enabled": false,
+        "language": "",
+        "voice": ""
+      },
+      "retriever_resource": {
+        "enabled": true
+      },
+      "annotation_reply": {
+        "enabled": false
+      },
+      "more_like_this": {
+        "enabled": false
+      },
+      "user_input_form": [
+        {
+          "text-input": {
+            "default": "",
+            "hint": "",
+            "label": "query",
+            "max_length": 256,
+            "options": [],
+            "placeholder": "",
+            "required": true,
+            "type": "text-input",
+            "variable": "query"
+          }
+        },
+        {
+          "text-input": {
+            "variable": "platform_context",
+            "label": "platform_context",
+            "type": "text-input",
+            "required": false,
+            "options": [],
+            "placeholder": "",
+            "default": "",
+            "hint": "",
+            "max_length": 256,
+            "hide": true
+          }
+        },
+        {
+          "text-input": {
+            "variable": "market_context",
+            "label": "market_context",
+            "type": "text-input",
+            "required": false,
+            "options": [],
+            "placeholder": "",
+            "default": "",
+            "hint": "",
+            "max_length": 256,
+            "hide": true
+          }
+        }
+      ],
+      "sensitive_word_avoidance": {
+        "enabled": false
+      },
+      "file_upload": {
+        "image": {
+          "enabled": false,
+          "number_limits": 3,
+          "transfer_methods": [
+            "local_file",
+            "remote_url"
+          ]
+        },
+        "enabled": false,
+        "allowed_file_types": [
+          "image"
+        ],
+        "allowed_file_extensions": [
+          ".JPG",
+          ".JPEG",
+          ".PNG",
+          ".GIF",
+          ".WEBP",
+          ".SVG"
+        ],
+        "allowed_file_upload_methods": [
+          "local_file",
+          "remote_url"
+        ],
+        "number_limits": 3,
+        "fileUploadConfig": {
+          "file_size_limit": 15,
+          "knowledge_file_size_limit": 15,
+          "batch_count_limit": 5,
+          "file_upload_limit": 50,
+          "image_file_size_limit": 10,
+          "video_file_size_limit": 100,
+          "audio_file_size_limit": 50,
+          "skill_file_size_limit": 50,
+          "workflow_file_upload_limit": 10,
+          "image_file_batch_limit": 10,
+          "single_chunk_attachment_limit": 10,
+          "attachment_image_file_size_limit": 2
+        }
+      },
+      "system_parameters": {
+        "image_file_size_limit": 10,
+        "video_file_size_limit": 100,
+        "audio_file_size_limit": 50,
+        "file_size_limit": 15,
+        "workflow_file_upload_limit": 10
+      }
+    },
+    "missing": []
+  },
+  "structure": [
+    {
+      "test_id": "STRUCT-G0001",
+      "query": "跨境电商中，目标市场筛选是什么？",
+      "platform_context": "",
+      "market_context": "",
+      "expected_type": "General KB",
+      "expected_kb": "General KB",
+      "expected_behavior": "真实检索Question=CSV问题，Answer=CSV答案；仅核验结构，不评价该回答语义。",
+      "actual_retrieval_query": "跨境电商中，目标市场筛选是什么？",
+      "actual_resolved_platform": "",
+      "actual_resolved_market": "",
+      "actual_kb": "跨境电商知识问答 1",
+      "actual_top1_question": "核心是用需求、竞争、准入、物流和税费共同筛选可进入的国家或地区，而不是只看流量大小。跨境场景还要同时核对目的国要求、平台规则和实际履约能力。",
+      "actual_top1_source": "UNKNOWN",
+      "actual_top1_answer": "将“目标市场筛选”纳入站点与SKU的上线清单。",
+      "actual_retrieval_questions": "[\"核心是用需求、竞争、准入、物流和税费共同筛选可进入的国家或地区，而不是只看流量大小。跨境场景还要同时核对目的国要求、平台规则和实际履约能力。\",\"先建立候选市场表，核对需求信号、竞品价格、禁限售、关税税费、派送时效和退货可行性。把结论写入可复查清单，未被证据支持的字段不作为上线依据。\",\"核心是通过关键词、类目、竞品评价和试单数据确认真实购买需求与未被满足的痛点。跨境场景还要同时核对目的国要求、平台规则和实际履约能力。\"]",
+      "actual_retrieval_answers": "[\"将“目标市场筛选”纳入站点与SKU的上线清单。\",\"先完成资料收集与逐项核对，再启动试运行。\",\"将“需求验证”纳入站点与SKU的上线清单。\"]",
+      "actual_top1_relevant": "UNKNOWN",
+      "http_status": 200,
+      "streaming_ok": true,
+      "time_to_first_text_ms": 28501,
+      "total_latency_ms": 32516,
+      "cross_platform_error": "UNKNOWN",
+      "cross_market_error": "UNKNOWN",
+      "fallback_correct": "UNKNOWN",
+      "final_answer": "跨境电商中的**目标市场筛选**，是指通过多维度数据评估，确定适合进入的国家或地区的过程。其核心在于**不只看流量大小**，而是基于以下五个关键维度共同决策：\n\n1.  **需求验证**：通过关键词、类目热度、竞品评价及试单数据，确认真实购买需求与未被满足的痛点。\n2.  **竞争分析**：核对竞品价格与市场饱和度。\n3.  **准入合规**：检查目的国的禁限售规定、平台规则以及当地法律要求。\n4.  **物流履约**：评估派送时效、退货可行性及实际履约能力。\n5.  **税费成本**：核算关税、增值税及其他相关费用对利润的影响。\n\n**执行建议：**\n*   **建立候选市场表**：先完成资料收集与逐项核对，将上述维度的结论写入可复查清单。\n*   **证据导向**：只有被证据支持的字段才能作为上线依据，避免主观猜测。\n*   **纳入上线清单**：将“目标市场筛选”和“需求验证”结果正式纳入站点与SKU的上线准备工作中，确认无误后再启动试运行。",
+      "failure_layer": "RETRIEVAL",
+      "result": "FAIL_RETRIEVAL",
+      "notes": "结构阻塞：实际检索返回的3条General仍为Question=CSV答案、Answer=关键行动；与旧评测同document/segment标识。未评价答案生成。",
+      "structure_group": "General",
+      "request": {
+        "endpoint": "http://127.0.0.1:3000/api/workflows/run",
+        "body": {
+          "inputs": {
+            "query": "跨境电商中，目标市场筛选是什么？"
+          },
+          "platform_context": "",
+          "market_context": "",
+          "response_mode": "streaming"
+        },
+        "expected_server_inputs": {
+          "query": "跨境电商中，目标市场筛选是什么？",
+          "platform_context": "",
+          "market_context": ""
+        }
+      },
+      "started_at_utc": "2026-10-04T09:45:08.058Z",
+      "events": [
+        {
+          "received_ms": 1116,
+          "event": "workflow_started",
+          "workflow_run_id": "23b7a586-393f-4ef9-878c-2fc998b85422",
+          "task_id": "27514d3d-1e0f-45fd-ac44-1e03b8fa41eb",
+          "data": {
+            "id": "23b7a586-393f-4ef9-878c-2fc998b85422",
+            "workflow_id": "f0d354df-57c8-4fa1-b3da-bd895a07abb6",
+            "inputs": {
+              "query": "跨境电商中，目标市场筛选是什么？",
+              "platform_context": "",
+              "market_context": "",
+              "sys.files": [],
+              "sys.user_id": "user_caec9d52-94dd-4362-be1e-4bf4e27394c2",
+              "sys.app_id": "cc0ea553-104f-4de7-9d25-a6909f0ec823",
+              "sys.workflow_id": "f0d354df-57c8-4fa1-b3da-bd895a07abb6",
+              "sys.workflow_run_id": "23b7a586-393f-4ef9-878c-2fc998b85422"
+            },
+            "created_at": 1791107109,
+            "reason": "initial"
+          }
+        },
+        {
+          "received_ms": 1116,
+          "event": "node_started",
+          "workflow_run_id": "23b7a586-393f-4ef9-878c-2fc998b85422",
+          "task_id": "27514d3d-1e0f-45fd-ac44-1e03b8fa41eb",
+          "data": {
+            "id": "a446aead-8f9e-4f53-a41a-341d76161299",
+            "node_id": "1789821062107",
+            "node_type": "start",
+            "title": "用户输入",
+            "index": 1,
+            "predecessor_node_id": null,
+            "inputs": null,
+            "inputs_truncated": false,
+            "created_at": 1791107109,
+            "extras": {},
+            "iteration_id": null,
+            "loop_id": null,
+            "agent_strategy": null
+          }
+        },
+        {
+          "received_ms": 1133,
+          "event": "node_finished",
+          "workflow_run_id": "23b7a586-393f-4ef9-878c-2fc998b85422",
+          "task_id": "27514d3d-1e0f-45fd-ac44-1e03b8fa41eb",
+          "data": {
+            "id": "a446aead-8f9e-4f53-a41a-341d76161299",
+            "node_id": "1789821062107",
+            "node_type": "start",
+            "title": "用户输入",
+            "index": 1,
+            "predecessor_node_id": null,
+            "inputs": {
+              "query": "跨境电商中，目标市场筛选是什么？",
+              "platform_context": "",
+              "market_context": ""
+            },
+            "inputs_truncated": false,
+            "process_data": {},
+            "process_data_truncated": false,
+            "outputs": {
+              "query": "跨境电商中，目标市场筛选是什么？",
+              "platform_context": "",
+              "market_context": ""
+            },
+            "outputs_truncated": false,
+            "status": "succeeded",
+            "error": null,
+            "elapsed_time": 0.000084,
+            "execution_metadata": null,
+            "created_at": 1791107109,
+            "finished_at": 1791107109,
+            "files": [],
+            "iteration_id": null,
+            "loop_id": null
+          }
+        },
+        {
+          "received_ms": 1209,
+          "event": "node_started",
+          "workflow_run_id": "23b7a586-393f-4ef9-878c-2fc998b85422",
+          "task_id": "27514d3d-1e0f-45fd-ac44-1e03b8fa41eb",
+          "data": {
+            "id": "1ce6f2ab-e54b-49bd-a968-db823c99d8c5",
+            "node_id": "1789821211742",
+            "node_type": "code",
+            "title": "代码执行",
+            "index": 1,
+            "predecessor_node_id": null,
+            "inputs": null,
+            "inputs_truncated": false,
+            "created_at": 1791107109,
+            "extras": {},
+            "iteration_id": null,
+            "loop_id": null,
+            "agent_strategy": null
+          }
+        },
+        {
+          "received_ms": 1343,
+          "event": "node_finished",
+          "workflow_run_id": "23b7a586-393f-4ef9-878c-2fc998b85422",
+          "task_id": "27514d3d-1e0f-45fd-ac44-1e03b8fa41eb",
+          "data": {
+            "id": "1ce6f2ab-e54b-49bd-a968-db823c99d8c5",
+            "node_id": "1789821211742",
+            "node_type": "code",
+            "title": "代码执行",
+            "index": 1,
+            "predecessor_node_id": null,
+            "inputs": {
+              "query": "跨境电商中，目标市场筛选是什么？",
+              "platform_context": "",
+              "market_context": ""
+            },
+            "inputs_truncated": false,
+            "process_data": {},
+            "process_data_truncated": false,
+            "outputs": {
+              "category": "general_cross_border",
+              "intent": "knowledge_query",
+              "need_kb": true,
+              "reply": "",
+              "resolved_platform": "",
+              "resolved_market": "",
+              "retrieval_query": "跨境电商中，目标市场筛选是什么？"
+            },
+            "outputs_truncated": false,
+            "status": "succeeded",
+            "error": null,
+            "elapsed_time": 0.135147,
+            "execution_metadata": null,
+            "created_at": 1791107109,
+            "finished_at": 1791107110,
+            "files": [],
+            "iteration_id": null,
+            "loop_id": null
+          }
+        },
+        {
+          "received_ms": 1415,
+          "event": "node_started",
+          "workflow_run_id": "23b7a586-393f-4ef9-878c-2fc998b85422",
+          "task_id": "27514d3d-1e0f-45fd-ac44-1e03b8fa41eb",
+          "data": {
+            "id": "0c19eafa-ae14-4373-a0f7-62bf2905bb65",
+            "node_id": "1789824639702",
+            "node_type": "if-else",
+            "title": "条件分支",
+            "index": 1,
+            "predecessor_node_id": null,
+            "inputs": null,
+            "inputs_truncated": false,
+            "created_at": 1791107110,
+            "extras": {},
+            "iteration_id": null,
+            "loop_id": null,
+            "agent_strategy": null
+          }
+        },
+        {
+          "received_ms": 1433,
+          "event": "node_finished",
+          "workflow_run_id": "23b7a586-393f-4ef9-878c-2fc998b85422",
+          "task_id": "27514d3d-1e0f-45fd-ac44-1e03b8fa41eb",
+          "data": {
+            "id": "0c19eafa-ae14-4373-a0f7-62bf2905bb65",
+            "node_id": "1789824639702",
+            "node_type": "if-else",
+            "title": "条件分支",
+            "index": 1,
+            "predecessor_node_id": null,
+            "inputs": {
+              "conditions": [
+                {
+                  "actual_value": "knowledge_query",
+                  "expected_value": "knowledge_query",
+                  "comparison_operator": "is"
+                }
+              ]
+            },
+            "inputs_truncated": false,
+            "process_data": {
+              "condition_results": [
+                {
+                  "group": {
+                    "case_id": "true",
+                    "logical_operator": "and",
+                    "conditions": [
+                      {
+                        "variable_selector": [
+                          "1789821211742",
+                          "intent"
+                        ],
+                        "comparison_operator": "is",
+                        "value": "human_service",
+                        "sub_variable_condition": null
+                      }
+                    ]
+                  },
+                  "results": [
+                    false
+                  ],
+                  "final_result": false
+                },
+                {
+                  "group": {
+                    "case_id": "b87ba007-d9b6-49d0-a5c0-0e2ef80867b0",
+                    "logical_operator": "and",
+                    "conditions": [
+                      {
+                        "variable_selector": [
+                          "1789821211742",
+                          "intent"
+                        ],
+                        "comparison_operator": "is",
+                        "value": "greeting",
+                        "sub_variable_condition": null
+                      }
+                    ]
+                  },
+                  "results": [
+                    false
+                  ],
+                  "final_result": false
+                },
+                {
+                  "group": {
+                    "case_id": "e24f2af3-1b27-43f2-8c38-61c6df7e6f3e",
+                    "logical_operator": "and",
+                    "conditions": [
+                      {
+                        "variable_selector": [
+                          "1789821211742",
+                          "intent"
+                        ],
+                        "comparison_operator": "is",
+                        "value": "polite",
+                        "sub_variable_condition": null
+                      }
+                    ]
+                  },
+                  "results": [
+                    false
+                  ],
+                  "final_result": false
+                },
+                {
+                  "group": {
+                    "case_id": "956e1f56-825a-4420-a734-f2dfe6d37161",
+                    "logical_operator": "and",
+                    "conditions": [
+                      {
+                        "variable_selector": [
+                          "1789821211742",
+                          "intent"
+                        ],
+                        "comparison_operator": "is",
+                        "value": "goodbye",
+                        "sub_variable_condition": null
+                      }
+                    ]
+                  },
+                  "results": [
+                    false
+                  ],
+                  "final_result": false
+                },
+                {
+                  "group": {
+                    "case_id": "fa2451f3-3c54-425b-b20b-cd989e6a1e07",
+                    "logical_operator": "and",
+                    "conditions": [
+                      {
+                        "variable_selector": [
+                          "1789821211742",
+                          "intent"
+                        ],
+                        "comparison_operator": "is",
+                        "value": "knowledge_query",
+                        "sub_variable_condition": null
+                      }
+                    ]
+                  },
+                  "results": [
+                    true
+                  ],
+                  "final_result": true
+                }
+              ]
+            },
+            "process_data_truncated": false,
+            "outputs": {
+              "result": true,
+              "selected_case_id": "fa2451f3-3c54-425b-b20b-cd989e6a1e07"
+            },
+            "outputs_truncated": false,
+            "status": "succeeded",
+            "error": null,
+            "elapsed_time": 0.000211,
+            "execution_metadata": null,
+            "created_at": 1791107110,
+            "finished_at": 1791107110,
+            "files": [],
+            "iteration_id": null,
+            "loop_id": null
+          }
+        },
+        {
+          "received_ms": 1448,
+          "event": "node_started",
+          "workflow_run_id": "23b7a586-393f-4ef9-878c-2fc998b85422",
+          "task_id": "27514d3d-1e0f-45fd-ac44-1e03b8fa41eb",
+          "data": {
+            "id": "83387ecb-33da-40a2-9859-345e7d7f71be",
+            "node_id": "1789825465873",
+            "node_type": "knowledge-retrieval",
+            "title": "知识检索",
+            "index": 1,
+            "predecessor_node_id": null,
+            "inputs": null,
+            "inputs_truncated": false,
+            "created_at": 1791107110,
+            "extras": {},
+            "iteration_id": null,
+            "loop_id": null,
+            "agent_strategy": null
+          }
+        },
+        {
+          "received_ms": 7397,
+          "event": "node_finished",
+          "workflow_run_id": "23b7a586-393f-4ef9-878c-2fc998b85422",
+          "task_id": "27514d3d-1e0f-45fd-ac44-1e03b8fa41eb",
+          "data": {
+            "id": "83387ecb-33da-40a2-9859-345e7d7f71be",
+            "node_id": "1789825465873",
+            "node_type": "knowledge-retrieval",
+            "title": "知识检索",
+            "index": 1,
+            "predecessor_node_id": null,
+            "inputs": {
+              "query": "跨境电商中，目标市场筛选是什么？"
+            },
+            "inputs_truncated": false,
+            "process_data": {
+              "usage": {
+                "prompt_tokens": 0,
+                "prompt_unit_price": "0.0",
+                "prompt_price_unit": "0.0",
+                "prompt_price": "0.0",
+                "completion_tokens": 0,
+                "completion_unit_price": "0.0",
+                "completion_price_unit": "0.0",
+                "completion_price": "0.0",
+                "total_tokens": 0,
+                "total_price": "0.0",
+                "currency": "USD",
+                "latency": 0,
+                "time_to_first_token": null,
+                "time_to_generate": null
+              }
+            },
+            "process_data_truncated": false,
+            "outputs": {
+              "result": [
+                {
+                  "metadata": {
+                    "_source": "knowledge",
+                    "dataset_id": "ba919c03-da30-4761-ac8f-abe35dad0c97",
+                    "dataset_name": "跨境电商知识问答 1",
+                    "document_id": "614fb475-5f85-4e8c-a433-423740e3ca95",
+                    "document_name": "跨境电商高频问答500条.csv",
+                    "data_source_type": "local_file",
+                    "segment_id": "99241764-8af0-4bf9-bb13-2501257ded4e",
+                    "retriever_from": "workflow",
+                    "score": 0.7934158421750669,
+                    "child_chunks": [],
+                    "segment_hit_count": 2,
+                    "segment_word_count": 70,
+                    "segment_position": 1,
+                    "segment_index_node_hash": "4b17ea8f885eb330b36eaf0d8e6a2e06e7d2b9d478df4601f8b9354be9c64ee8",
+                    "doc_metadata": null,
+                    "position": 1
+                  },
+                  "title": "跨境电商高频问答500条.csv",
+                  "files": null,
+                  "content": "question:核心是用需求、竞争、准入、物流和税费共同筛选可进入的国家或地区，而不是只看流量大小。跨境场景还要同时核对目的国要求、平台规则和实际履约能力。 \nanswer:将“目标市场筛选”纳入站点与SKU的上线清单。",
+                  "summary": null
+                },
+                {
+                  "metadata": {
+                    "_source": "knowledge",
+                    "dataset_id": "ba919c03-da30-4761-ac8f-abe35dad0c97",
+                    "dataset_name": "跨境电商知识问答 1",
+                    "document_id": "614fb475-5f85-4e8c-a433-423740e3ca95",
+                    "document_name": "跨境电商高频问答500条.csv",
+                    "data_source_type": "local_file",
+                    "segment_id": "7fe021f1-f893-4f81-a557-f8fd4317fea7",
+                    "retriever_from": "workflow",
+                    "score": 0.6100211573004598,
+                    "child_chunks": [],
+                    "segment_hit_count": 1,
+                    "segment_word_count": 69,
+                    "segment_position": 3,
+                    "segment_index_node_hash": "d7018a0787091e9e877065bac820421af01e1ef454aca9fe37521666b908f75f",
+                    "doc_metadata": null,
+                    "position": 2
+                  },
+                  "title": "跨境电商高频问答500条.csv",
+                  "files": null,
+                  "content": "question:先建立候选市场表，核对需求信号、竞品价格、禁限售、关税税费、派送时效和退货可行性。把结论写入可复查清单，未被证据支持的字段不作为上线依据。 \nanswer:先完成资料收集与逐项核对，再启动试运行。",
+                  "summary": null
+                },
+                {
+                  "metadata": {
+                    "_source": "knowledge",
+                    "dataset_id": "ba919c03-da30-4761-ac8f-abe35dad0c97",
+                    "dataset_name": "跨境电商知识问答 1",
+                    "document_id": "614fb475-5f85-4e8c-a433-423740e3ca95",
+                    "document_name": "跨境电商高频问答500条.csv",
+                    "data_source_type": "local_file",
+                    "segment_id": "f354ecc6-41a1-45a5-8eb2-24675020670b",
+                    "retriever_from": "workflow",
+                    "score": 0.563905835959326,
+                    "child_chunks": [],
+                    "segment_hit_count": 4,
+                    "segment_word_count": 66,
+                    "segment_position": 11,
+                    "segment_index_node_hash": "601d002c9ef20a0216e799c7d7380ad8d9c267eaf465d01bd274b90f98d56916",
+                    "doc_metadata": null,
+                    "position": 3
+                  },
+                  "title": "跨境电商高频问答500条.csv",
+                  "files": null,
+                  "content": "question:核心是通过关键词、类目、竞品评价和试单数据确认真实购买需求与未被满足的痛点。跨境场景还要同时核对目的国要求、平台规则和实际履约能力。 \nanswer:将“需求验证”纳入站点与SKU的上线清单。",
+                  "summary": null
+                }
+              ]
+            },
+            "outputs_truncated": false,
+            "status": "succeeded",
+            "error": null,
+            "elapsed_time": 5.952067,
+            "execution_metadata": {
+              "total_tokens": 0,
+              "total_price": "0.0",
+              "currency": "USD"
+            },
+            "created_at": 1791107110,
+            "finished_at": 1791107116,
+            "files": [],
+            "iteration_id": null,
+            "loop_id": null
+          }
+        },
+        {
+          "received_ms": 7426,
+          "event": "node_started",
+          "workflow_run_id": "23b7a586-393f-4ef9-878c-2fc998b85422",
+          "task_id": "27514d3d-1e0f-45fd-ac44-1e03b8fa41eb",
+          "data": {
+            "id": "31cc98f2-7e0c-4341-975f-d11676e7cdcb",
+            "node_id": "1789825705782",
+            "node_type": "if-else",
+            "title": "条件分支 2",
+            "index": 1,
+            "predecessor_node_id": null,
+            "inputs": null,
+            "inputs_truncated": false,
+            "created_at": 1791107116,
+            "extras": {},
+            "iteration_id": null,
+            "loop_id": null,
+            "agent_strategy": null
+          }
+        },
+        {
+          "received_ms": 7433,
+          "event": "node_finished",
+          "workflow_run_id": "23b7a586-393f-4ef9-878c-2fc998b85422",
+          "task_id": "27514d3d-1e0f-45fd-ac44-1e03b8fa41eb",
+          "data": {
+            "id": "31cc98f2-7e0c-4341-975f-d11676e7cdcb",
+            "node_id": "1789825705782",
+            "node_type": "if-else",
+            "title": "条件分支 2",
+            "index": 1,
+            "predecessor_node_id": null,
+            "inputs": {
+              "conditions": [
+                {
+                  "actual_value": [
+                    {
+                      "metadata": {
+                        "_source": "knowledge",
+                        "dataset_id": "ba919c03-da30-4761-ac8f-abe35dad0c97",
+                        "dataset_name": "跨境电商知识问答 1",
+                        "document_id": "614fb475-5f85-4e8c-a433-423740e3ca95",
+                        "document_name": "跨境电商高频问答500条.csv",
+                        "data_source_type": "local_file",
+                        "segment_id": "99241764-8af0-4bf9-bb13-2501257ded4e",
+                        "retriever_from": "workflow",
+                        "score": 0.7934158421750669,
+                        "child_chunks": [],
+                        "segment_hit_count": 2,
+                        "segment_word_count": 70,
+                        "segment_position": 1,
+                        "segment_index_node_hash": "4b17ea8f885eb330b36eaf0d8e6a2e06e7d2b9d478df4601f8b9354be9c64ee8",
+                        "doc_metadata": null,
+                        "position": 1
+                      },
+                      "title": "跨境电商高频问答500条.csv",
+                      "files": null,
+                      "content": "question:核心是用需求、竞争、准入、物流和税费共同筛选可进入的国家或地区，而不是只看流量大小。跨境场景还要同时核对目的国要求、平台规则和实际履约能力。 \nanswer:将“目标市场筛选”纳入站点与SKU的上线清单。",
+                      "summary": null
+                    },
+                    {
+                      "metadata": {
+                        "_source": "knowledge",
+                        "dataset_id": "ba919c03-da30-4761-ac8f-abe35dad0c97",
+                        "dataset_name": "跨境电商知识问答 1",
+                        "document_id": "614fb475-5f85-4e8c-a433-423740e3ca95",
+                        "document_name": "跨境电商高频问答500条.csv",
+                        "data_source_type": "local_file",
+                        "segment_id": "7fe021f1-f893-4f81-a557-f8fd4317fea7",
+                        "retriever_from": "workflow",
+                        "score": 0.6100211573004598,
+                        "child_chunks": [],
+                        "segment_hit_count": 1,
+                        "segment_word_count": 69,
+                        "segment_position": 3,
+                        "segment_index_node_hash": "d7018a0787091e9e877065bac820421af01e1ef454aca9fe37521666b908f75f",
+                        "doc_metadata": null,
+                        "position": 2
+                      },
+                      "title": "跨境电商高频问答500条.csv",
+                      "files": null,
+                      "content": "question:先建立候选市场表，核对需求信号、竞品价格、禁限售、关税税费、派送时效和退货可行性。把结论写入可复查清单，未被证据支持的字段不作为上线依据。 \nanswer:先完成资料收集与逐项核对，再启动试运行。",
+                      "summary": null
+                    },
+                    {
+                      "metadata": {
+                        "_source": "knowledge",
+                        "dataset_id": "ba919c03-da30-4761-ac8f-abe35dad0c97",
+                        "dataset_name": "跨境电商知识问答 1",
+                        "document_id": "614fb475-5f85-4e8c-a433-423740e3ca95",
+                        "document_name": "跨境电商高频问答500条.csv",
+                        "data_source_type": "local_file",
+                        "segment_id": "f354ecc6-41a1-45a5-8eb2-24675020670b",
+                        "retriever_from": "workflow",
+                        "score": 0.563905835959326,
+                        "child_chunks": [],
+                        "segment_hit_count": 4,
+                        "segment_word_count": 66,
+                        "segment_position": 11,
+                        "segment_index_node_hash": "601d002c9ef20a0216e799c7d7380ad8d9c267eaf465d01bd274b90f98d56916",
+                        "doc_metadata": null,
+                        "position": 3
+                      },
+                      "title": "跨境电商高频问答500条.csv",
+                      "files": null,
+                      "content": "question:核心是通过关键词、类目、竞品评价和试单数据确认真实购买需求与未被满足的痛点。跨境场景还要同时核对目的国要求、平台规则和实际履约能力。 \nanswer:将“需求验证”纳入站点与SKU的上线清单。",
+                      "summary": null
+                    }
+                  ],
+                  "expected_value": "",
+                  "comparison_operator": "not empty"
+                }
+              ]
+            },
+            "inputs_truncated": false,
+            "process_data": {
+              "condition_results": [
+                {
+                  "group": {
+                    "case_id": "true",
+                    "logical_operator": "and",
+                    "conditions": [
+                      {
+                        "variable_selector": [
+                          "1789825465873",
+                          "result"
+                        ],
+                        "comparison_operator": "not empty",
+                        "value": "",
+                        "sub_variable_condition": null
+                      }
+                    ]
+                  },
+                  "results": [
+                    true
+                  ],
+                  "final_result": true
+                }
+              ]
+            },
+            "process_data_truncated": false,
+            "outputs": {
+              "result": true,
+              "selected_case_id": "true"
+            },
+            "outputs_truncated": false,
+            "status": "succeeded",
+            "error": null,
+            "elapsed_time": 0.000116,
+            "execution_metadata": null,
+            "created_at": 1791107116,
+            "finished_at": 1791107116,
+            "files": [],
+            "iteration_id": null,
+            "loop_id": null
+          }
+        },
+        {
+          "received_ms": 7501,
+          "event": "node_started",
+          "workflow_run_id": "23b7a586-393f-4ef9-878c-2fc998b85422",
+          "task_id": "27514d3d-1e0f-45fd-ac44-1e03b8fa41eb",
+          "data": {
+            "id": "bcde7358-1462-48e5-b8b4-a4c51bf3a1b1",
+            "node_id": "1789825733670",
+            "node_type": "llm",
+            "title": "LLM检索",
+            "index": 1,
+            "predecessor_node_id": null,
+            "inputs": null,
+            "inputs_truncated": false,
+            "created_at": 1791107116,
+            "extras": {},
+            "iteration_id": null,
+            "loop_id": null,
+            "agent_strategy": null
+          }
+        },
+        {
+          "received_ms": 28501,
+          "event": "text_chunk",
+          "workflow_run_id": "23b7a586-393f-4ef9-878c-2fc998b85422",
+          "task_id": "27514d3d-1e0f-45fd-ac44-1e03b8fa41eb",
+          "data": {
+            "text": "跨境电商",
+            "from_variable_selector": [
+              "1789825733670",
+              "text"
+            ]
+          }
+        },
+        {
+          "received_ms": 28540,
+          "event": "text_chunk",
+          "workflow_run_id": "23b7a586-393f-4ef9-878c-2fc998b85422",
+          "task_id": "27514d3d-1e0f-45fd-ac44-1e03b8fa41eb",
+          "data": {
+            "text": "中的",
+            "from_variable_selector": [
+              "1789825733670",
+              "text"
+            ]
+          }
+        },
+        {
+          "received_ms": 28579,
+          "event": "text_chunk",
+          "workflow_run_id": "23b7a586-393f-4ef9-878c-2fc998b85422",
+          "task_id": "27514d3d-1e0f-45fd-ac44-1e03b8fa41eb",
+          "data": {
+            "text": "**",
+            "from_variable_selector": [
+              "1789825733670",
+              "text"
+            ]
+          }
+        },
+        {
+          "received_ms": 28624,
+          "event": "text_chunk",
+          "workflow_run_id": "23b7a586-393f-4ef9-878c-2fc998b85422",
+          "task_id": "27514d3d-1e0f-45fd-ac44-1e03b8fa41eb",
+          "data": {
+            "text": "目标市场筛选**",
+            "from_variable_selector": [
+              "1789825733670",
+              "text"
+            ]
+          }
+        },
+        {
+          "received_ms": 28707,
+          "event": "text_chunk",
+          "workflow_run_id": "23b7a586-393f-4ef9-878c-2fc998b85422",
+          "task_id": "27514d3d-1e0f-45fd-ac44-1e03b8fa41eb",
+          "data": {
+            "text": "，是指通过多维度",
+            "from_variable_selector": [
+              "1789825733670",
+              "text"
+            ]
+          }
+        },
+        {
+          "received_ms": 28760,
+          "event": "text_chunk",
+          "workflow_run_id": "23b7a586-393f-4ef9-878c-2fc998b85422",
+          "task_id": "27514d3d-1e0f-45fd-ac44-1e03b8fa41eb",
+          "data": {
+            "text": "数据评估，确定",
+            "from_variable_selector": [
+              "1789825733670",
+              "text"
+            ]
+          }
+        },
+        {
+          "received_ms": 28879,
+          "event": "text_chunk",
+          "workflow_run_id": "23b7a586-393f-4ef9-878c-2fc998b85422",
+          "task_id": "27514d3d-1e0f-45fd-ac44-1e03b8fa41eb",
+          "data": {
+            "text": "适合进入的国家或",
+            "from_variable_selector": [
+              "1789825733670",
+              "text"
+            ]
+          }
+        },
+        {
+          "received_ms": 28923,
+          "event": "text_chunk",
+          "workflow_run_id": "23b7a586-393f-4ef9-878c-2fc998b85422",
+          "task_id": "27514d3d-1e0f-45fd-ac44-1e03b8fa41eb",
+          "data": {
+            "text": "地区",
+            "from_variable_selector": [
+              "1789825733670",
+              "text"
+            ]
+          }
+        },
+        {
+          "received_ms": 28923,
+          "event": "text_chunk",
+          "workflow_run_id": "23b7a586-393f-4ef9-878c-2fc998b85422",
+          "task_id": "27514d3d-1e0f-45fd-ac44-1e03b8fa41eb",
+          "data": {
+            "text": "的过程。其核心",
+            "from_variable_selector": [
+              "1789825733670",
+              "text"
+            ]
+          }
+        },
+        {
+          "received_ms": 29043,
+          "event": "text_chunk",
+          "workflow_run_id": "23b7a586-393f-4ef9-878c-2fc998b85422",
+          "task_id": "27514d3d-1e0f-45fd-ac44-1e03b8fa41eb",
+          "data": {
+            "text": "在于**不只看",
+            "from_variable_selector": [
+              "1789825733670",
+              "text"
+            ]
+          }
+        },
+        {
+          "received_ms": 29160,
+          "event": "text_chunk",
+          "workflow_run_id": "23b7a586-393f-4ef9-878c-2fc998b85422",
+          "task_id": "27514d3d-1e0f-45fd-ac44-1e03b8fa41eb",
+          "data": {
+            "text": "流量大小**，",
+            "from_variable_selector": [
+              "1789825733670",
+              "text"
+            ]
+          }
+        },
+        {
+          "received_ms": 29160,
+          "event": "text_chunk",
+          "workflow_run_id": "23b7a586-393f-4ef9-878c-2fc998b85422",
+          "task_id": "27514d3d-1e0f-45fd-ac44-1e03b8fa41eb",
+          "data": {
+            "text": "而是基于",
+            "from_variable_selector": [
+              "1789825733670",
+              "text"
+            ]
+          }
+        },
+        {
+          "received_ms": 29207,
+          "event": "text_chunk",
+          "workflow_run_id": "23b7a586-393f-4ef9-878c-2fc998b85422",
+          "task_id": "27514d3d-1e0f-45fd-ac44-1e03b8fa41eb",
+          "data": {
+            "text": "以下五个关键维度",
+            "from_variable_selector": [
+              "1789825733670",
+              "text"
+            ]
+          }
+        },
+        {
+          "received_ms": 29329,
+          "event": "text_chunk",
+          "workflow_run_id": "23b7a586-393f-4ef9-878c-2fc998b85422",
+          "task_id": "27514d3d-1e0f-45fd-ac44-1e03b8fa41eb",
+          "data": {
+            "text": "共同决策：\n\n",
+            "from_variable_selector": [
+              "1789825733670",
+              "text"
+            ]
+          }
+        },
+        {
+          "received_ms": 29331,
+          "event": "text_chunk",
+          "workflow_run_id": "23b7a586-393f-4ef9-878c-2fc998b85422",
+          "task_id": "27514d3d-1e0f-45fd-ac44-1e03b8fa41eb",
+          "data": {
+            "text": "1.",
+            "from_variable_selector": [
+              "1789825733670",
+              "text"
+            ]
+          }
+        },
+        {
+          "received_ms": 29331,
+          "event": "text_chunk",
+          "workflow_run_id": "23b7a586-393f-4ef9-878c-2fc998b85422",
+          "task_id": "27514d3d-1e0f-45fd-ac44-1e03b8fa41eb",
+          "data": {
+            "text": "  **需求验证",
+            "from_variable_selector": [
+              "1789825733670",
+              "text"
+            ]
+          }
+        },
+        {
+          "received_ms": 29406,
+          "event": "text_chunk",
+          "workflow_run_id": "23b7a586-393f-4ef9-878c-2fc998b85422",
+          "task_id": "27514d3d-1e0f-45fd-ac44-1e03b8fa41eb",
+          "data": {
+            "text": "**：通过关键词",
+            "from_variable_selector": [
+              "1789825733670",
+              "text"
+            ]
+          }
+        },
+        {
+          "received_ms": 29433,
+          "event": "text_chunk",
+          "workflow_run_id": "23b7a586-393f-4ef9-878c-2fc998b85422",
+          "task_id": "27514d3d-1e0f-45fd-ac44-1e03b8fa41eb",
+          "data": {
+            "text": "、类目",
+            "from_variable_selector": [
+              "1789825733670",
+              "text"
+            ]
+          }
+        },
+        {
+          "received_ms": 29498,
+          "event": "text_chunk",
+          "workflow_run_id": "23b7a586-393f-4ef9-878c-2fc998b85422",
+          "task_id": "27514d3d-1e0f-45fd-ac44-1e03b8fa41eb",
+          "data": {
+            "text": "热度、竞品评价",
+            "from_variable_selector": [
+              "1789825733670",
+              "text"
+            ]
+          }
+        },
+        {
+          "received_ms": 29580,
+          "event": "text_chunk",
+          "workflow_run_id": "23b7a586-393f-4ef9-878c-2fc998b85422",
+          "task_id": "27514d3d-1e0f-45fd-ac44-1e03b8fa41eb",
+          "data": {
+            "text": "及试单数据",
+            "from_variable_selector": [
+              "1789825733670",
+              "text"
+            ]
+          }
+        },
+        {
+          "received_ms": 29581,
+          "event": "text_chunk",
+          "workflow_run_id": "23b7a586-393f-4ef9-878c-2fc998b85422",
+          "task_id": "27514d3d-1e0f-45fd-ac44-1e03b8fa41eb",
+          "data": {
+            "text": "，确",
+            "from_variable_selector": [
+              "1789825733670",
+              "text"
+            ]
+          }
+        },
+        {
+          "received_ms": 29691,
+          "event": "text_chunk",
+          "workflow_run_id": "23b7a586-393f-4ef9-878c-2fc998b85422",
+          "task_id": "27514d3d-1e0f-45fd-ac44-1e03b8fa41eb",
+          "data": {
+            "text": "认真实购买需求",
+            "from_variable_selector": [
+              "1789825733670",
+              "text"
+            ]
+          }
+        },
+        {
+          "received_ms": 29692,
+          "event": "text_chunk",
+          "workflow_run_id": "23b7a586-393f-4ef9-878c-2fc998b85422",
+          "task_id": "27514d3d-1e0f-45fd-ac44-1e03b8fa41eb",
+          "data": {
+            "text": "与未被",
+            "from_variable_selector": [
+              "1789825733670",
+              "text"
+            ]
+          }
+        },
+        {
+          "received_ms": 29698,
+          "event": "text_chunk",
+          "workflow_run_id": "23b7a586-393f-4ef9-878c-2fc998b85422",
+          "task_id": "27514d3d-1e0f-45fd-ac44-1e03b8fa41eb",
+          "data": {
+            "text": "满足的痛点。",
+            "from_variable_selector": [
+              "1789825733670",
+              "text"
+            ]
+          }
+        },
+        {
+          "received_ms": 29743,
+          "event": "text_chunk",
+          "workflow_run_id": "23b7a586-393f-4ef9-878c-2fc998b85422",
+          "task_id": "27514d3d-1e0f-45fd-ac44-1e03b8fa41eb",
+          "data": {
+            "text": "\n2. ",
+            "from_variable_selector": [
+              "1789825733670",
+              "text"
+            ]
+          }
+        },
+        {
+          "received_ms": 29868,
+          "event": "text_chunk",
+          "workflow_run_id": "23b7a586-393f-4ef9-878c-2fc998b85422",
+          "task_id": "27514d3d-1e0f-45fd-ac44-1e03b8fa41eb",
+          "data": {
+            "text": " **竞争分析**",
+            "from_variable_selector": [
+              "1789825733670",
+              "text"
+            ]
+          }
+        },
+        {
+          "received_ms": 29871,
+          "event": "text_chunk",
+          "workflow_run_id": "23b7a586-393f-4ef9-878c-2fc998b85422",
+          "task_id": "27514d3d-1e0f-45fd-ac44-1e03b8fa41eb",
+          "data": {
+            "text": "：核对竞品",
+            "from_variable_selector": [
+              "1789825733670",
+              "text"
+            ]
+          }
+        },
+        {
+          "received_ms": 29964,
+          "event": "text_chunk",
+          "workflow_run_id": "23b7a586-393f-4ef9-878c-2fc998b85422",
+          "task_id": "27514d3d-1e0f-45fd-ac44-1e03b8fa41eb",
+          "data": {
+            "text": "价格与市场饱和度。",
+            "from_variable_selector": [
+              "1789825733670",
+              "text"
+            ]
+          }
+        },
+        {
+          "received_ms": 30055,
+          "event": "text_chunk",
+          "workflow_run_id": "23b7a586-393f-4ef9-878c-2fc998b85422",
+          "task_id": "27514d3d-1e0f-45fd-ac44-1e03b8fa41eb",
+          "data": {
+            "text": "\n3. ",
+            "from_variable_selector": [
+              "1789825733670",
+              "text"
+            ]
+          }
+        },
+        {
+          "received_ms": 30093,
+          "event": "text_chunk",
+          "workflow_run_id": "23b7a586-393f-4ef9-878c-2fc998b85422",
+          "task_id": "27514d3d-1e0f-45fd-ac44-1e03b8fa41eb",
+          "data": {
+            "text": " **准入合规**",
+            "from_variable_selector": [
+              "1789825733670",
+              "text"
+            ]
+          }
+        },
+        {
+          "received_ms": 30094,
+          "event": "text_chunk",
+          "workflow_run_id": "23b7a586-393f-4ef9-878c-2fc998b85422",
+          "task_id": "27514d3d-1e0f-45fd-ac44-1e03b8fa41eb",
+          "data": {
+            "text": "：检查",
+            "from_variable_selector": [
+              "1789825733670",
+              "text"
+            ]
+          }
+        },
+        {
+          "received_ms": 30216,
+          "event": "text_chunk",
+          "workflow_run_id": "23b7a586-393f-4ef9-878c-2fc998b85422",
+          "task_id": "27514d3d-1e0f-45fd-ac44-1e03b8fa41eb",
+          "data": {
+            "text": "目的国的禁限售",
+            "from_variable_selector": [
+              "1789825733670",
+              "text"
+            ]
+          }
+        },
+        {
+          "received_ms": 30216,
+          "event": "text_chunk",
+          "workflow_run_id": "23b7a586-393f-4ef9-878c-2fc998b85422",
+          "task_id": "27514d3d-1e0f-45fd-ac44-1e03b8fa41eb",
+          "data": {
+            "text": "规定",
+            "from_variable_selector": [
+              "1789825733670",
+              "text"
+            ]
+          }
+        },
+        {
+          "received_ms": 30217,
+          "event": "text_chunk",
+          "workflow_run_id": "23b7a586-393f-4ef9-878c-2fc998b85422",
+          "task_id": "27514d3d-1e0f-45fd-ac44-1e03b8fa41eb",
+          "data": {
+            "text": "、平台规则以及",
+            "from_variable_selector": [
+              "1789825733670",
+              "text"
+            ]
+          }
+        },
+        {
+          "received_ms": 30308,
+          "event": "text_chunk",
+          "workflow_run_id": "23b7a586-393f-4ef9-878c-2fc998b85422",
+          "task_id": "27514d3d-1e0f-45fd-ac44-1e03b8fa41eb",
+          "data": {
+            "text": "当地法律要求。",
+            "from_variable_selector": [
+              "1789825733670",
+              "text"
+            ]
+          }
+        },
+        {
+          "received_ms": 30340,
+          "event": "text_chunk",
+          "workflow_run_id": "23b7a586-393f-4ef9-878c-2fc998b85422",
+          "task_id": "27514d3d-1e0f-45fd-ac44-1e03b8fa41eb",
+          "data": {
+            "text": "\n4",
+            "from_variable_selector": [
+              "1789825733670",
+              "text"
+            ]
+          }
+        },
+        {
+          "received_ms": 30397,
+          "event": "text_chunk",
+          "workflow_run_id": "23b7a586-393f-4ef9-878c-2fc998b85422",
+          "task_id": "27514d3d-1e0f-45fd-ac44-1e03b8fa41eb",
+          "data": {
+            "text": ".  **物流",
+            "from_variable_selector": [
+              "1789825733670",
+              "text"
+            ]
+          }
+        },
+        {
+          "received_ms": 30397,
+          "event": "text_chunk",
+          "workflow_run_id": "23b7a586-393f-4ef9-878c-2fc998b85422",
+          "task_id": "27514d3d-1e0f-45fd-ac44-1e03b8fa41eb",
+          "data": {
+            "text": "履约",
+            "from_variable_selector": [
+              "1789825733670",
+              "text"
+            ]
+          }
+        },
+        {
+          "received_ms": 30456,
+          "event": "text_chunk",
+          "workflow_run_id": "23b7a586-393f-4ef9-878c-2fc998b85422",
+          "task_id": "27514d3d-1e0f-45fd-ac44-1e03b8fa41eb",
+          "data": {
+            "text": "**：评估派送",
+            "from_variable_selector": [
+              "1789825733670",
+              "text"
+            ]
+          }
+        },
+        {
+          "received_ms": 30574,
+          "event": "text_chunk",
+          "workflow_run_id": "23b7a586-393f-4ef9-878c-2fc998b85422",
+          "task_id": "27514d3d-1e0f-45fd-ac44-1e03b8fa41eb",
+          "data": {
+            "text": "时效、退货可行性",
+            "from_variable_selector": [
+              "1789825733670",
+              "text"
+            ]
+          }
+        },
+        {
+          "received_ms": 30575,
+          "event": "text_chunk",
+          "workflow_run_id": "23b7a586-393f-4ef9-878c-2fc998b85422",
+          "task_id": "27514d3d-1e0f-45fd-ac44-1e03b8fa41eb",
+          "data": {
+            "text": "及实际履约",
+            "from_variable_selector": [
+              "1789825733670",
+              "text"
+            ]
+          }
+        },
+        {
+          "received_ms": 30577,
+          "event": "text_chunk",
+          "workflow_run_id": "23b7a586-393f-4ef9-878c-2fc998b85422",
+          "task_id": "27514d3d-1e0f-45fd-ac44-1e03b8fa41eb",
+          "data": {
+            "text": "能力。\n5",
+            "from_variable_selector": [
+              "1789825733670",
+              "text"
+            ]
+          }
+        },
+        {
+          "received_ms": 30718,
+          "event": "text_chunk",
+          "workflow_run_id": "23b7a586-393f-4ef9-878c-2fc998b85422",
+          "task_id": "27514d3d-1e0f-45fd-ac44-1e03b8fa41eb",
+          "data": {
+            "text": ".  **税费",
+            "from_variable_selector": [
+              "1789825733670",
+              "text"
+            ]
+          }
+        },
+        {
+          "received_ms": 30719,
+          "event": "text_chunk",
+          "workflow_run_id": "23b7a586-393f-4ef9-878c-2fc998b85422",
+          "task_id": "27514d3d-1e0f-45fd-ac44-1e03b8fa41eb",
+          "data": {
+            "text": "成本**：",
+            "from_variable_selector": [
+              "1789825733670",
+              "text"
+            ]
+          }
+        },
+        {
+          "received_ms": 30720,
+          "event": "text_chunk",
+          "workflow_run_id": "23b7a586-393f-4ef9-878c-2fc998b85422",
+          "task_id": "27514d3d-1e0f-45fd-ac44-1e03b8fa41eb",
+          "data": {
+            "text": "核算关税、增值税",
+            "from_variable_selector": [
+              "1789825733670",
+              "text"
+            ]
+          }
+        },
+        {
+          "received_ms": 30893,
+          "event": "text_chunk",
+          "workflow_run_id": "23b7a586-393f-4ef9-878c-2fc998b85422",
+          "task_id": "27514d3d-1e0f-45fd-ac44-1e03b8fa41eb",
+          "data": {
+            "text": "及其他相关费用对",
+            "from_variable_selector": [
+              "1789825733670",
+              "text"
+            ]
+          }
+        },
+        {
+          "received_ms": 30894,
+          "event": "text_chunk",
+          "workflow_run_id": "23b7a586-393f-4ef9-878c-2fc998b85422",
+          "task_id": "27514d3d-1e0f-45fd-ac44-1e03b8fa41eb",
+          "data": {
+            "text": "利润的影响。\n\n",
+            "from_variable_selector": [
+              "1789825733670",
+              "text"
+            ]
+          }
+        },
+        {
+          "received_ms": 30924,
+          "event": "text_chunk",
+          "workflow_run_id": "23b7a586-393f-4ef9-878c-2fc998b85422",
+          "task_id": "27514d3d-1e0f-45fd-ac44-1e03b8fa41eb",
+          "data": {
+            "text": "**执行建议：**",
+            "from_variable_selector": [
+              "1789825733670",
+              "text"
+            ]
+          }
+        },
+        {
+          "received_ms": 31051,
+          "event": "text_chunk",
+          "workflow_run_id": "23b7a586-393f-4ef9-878c-2fc998b85422",
+          "task_id": "27514d3d-1e0f-45fd-ac44-1e03b8fa41eb",
+          "data": {
+            "text": "\n*   **",
+            "from_variable_selector": [
+              "1789825733670",
+              "text"
+            ]
+          }
+        },
+        {
+          "received_ms": 31060,
+          "event": "text_chunk",
+          "workflow_run_id": "23b7a586-393f-4ef9-878c-2fc998b85422",
+          "task_id": "27514d3d-1e0f-45fd-ac44-1e03b8fa41eb",
+          "data": {
+            "text": "建立候选市场表",
+            "from_variable_selector": [
+              "1789825733670",
+              "text"
+            ]
+          }
+        },
+        {
+          "received_ms": 31146,
+          "event": "text_chunk",
+          "workflow_run_id": "23b7a586-393f-4ef9-878c-2fc998b85422",
+          "task_id": "27514d3d-1e0f-45fd-ac44-1e03b8fa41eb",
+          "data": {
+            "text": "**：先完成",
+            "from_variable_selector": [
+              "1789825733670",
+              "text"
+            ]
+          }
+        },
+        {
+          "received_ms": 31190,
+          "event": "text_chunk",
+          "workflow_run_id": "23b7a586-393f-4ef9-878c-2fc998b85422",
+          "task_id": "27514d3d-1e0f-45fd-ac44-1e03b8fa41eb",
+          "data": {
+            "text": "资料收集与",
+            "from_variable_selector": [
+              "1789825733670",
+              "text"
+            ]
+          }
+        },
+        {
+          "received_ms": 31239,
+          "event": "text_chunk",
+          "workflow_run_id": "23b7a586-393f-4ef9-878c-2fc998b85422",
+          "task_id": "27514d3d-1e0f-45fd-ac44-1e03b8fa41eb",
+          "data": {
+            "text": "逐项核对，将",
+            "from_variable_selector": [
+              "1789825733670",
+              "text"
+            ]
+          }
+        },
+        {
+          "received_ms": 31239,
+          "event": "text_chunk",
+          "workflow_run_id": "23b7a586-393f-4ef9-878c-2fc998b85422",
+          "task_id": "27514d3d-1e0f-45fd-ac44-1e03b8fa41eb",
+          "data": {
+            "text": "上述维",
+            "from_variable_selector": [
+              "1789825733670",
+              "text"
+            ]
+          }
+        },
+        {
+          "received_ms": 31335,
+          "event": "text_chunk",
+          "workflow_run_id": "23b7a586-393f-4ef9-878c-2fc998b85422",
+          "task_id": "27514d3d-1e0f-45fd-ac44-1e03b8fa41eb",
+          "data": {
+            "text": "度的结论写入可",
+            "from_variable_selector": [
+              "1789825733670",
+              "text"
+            ]
+          }
+        },
+        {
+          "received_ms": 31336,
+          "event": "text_chunk",
+          "workflow_run_id": "23b7a586-393f-4ef9-878c-2fc998b85422",
+          "task_id": "27514d3d-1e0f-45fd-ac44-1e03b8fa41eb",
+          "data": {
+            "text": "复查清单。\n",
+            "from_variable_selector": [
+              "1789825733670",
+              "text"
+            ]
+          }
+        },
+        {
+          "received_ms": 31367,
+          "event": "text_chunk",
+          "workflow_run_id": "23b7a586-393f-4ef9-878c-2fc998b85422",
+          "task_id": "27514d3d-1e0f-45fd-ac44-1e03b8fa41eb",
+          "data": {
+            "text": "*   **证据",
+            "from_variable_selector": [
+              "1789825733670",
+              "text"
+            ]
+          }
+        },
+        {
+          "received_ms": 31540,
+          "event": "text_chunk",
+          "workflow_run_id": "23b7a586-393f-4ef9-878c-2fc998b85422",
+          "task_id": "27514d3d-1e0f-45fd-ac44-1e03b8fa41eb",
+          "data": {
+            "text": "导向**：只有",
+            "from_variable_selector": [
+              "1789825733670",
+              "text"
+            ]
+          }
+        },
+        {
+          "received_ms": 31540,
+          "event": "text_chunk",
+          "workflow_run_id": "23b7a586-393f-4ef9-878c-2fc998b85422",
+          "task_id": "27514d3d-1e0f-45fd-ac44-1e03b8fa41eb",
+          "data": {
+            "text": "被",
+            "from_variable_selector": [
+              "1789825733670",
+              "text"
+            ]
+          }
+        },
+        {
+          "received_ms": 31586,
+          "event": "text_chunk",
+          "workflow_run_id": "23b7a586-393f-4ef9-878c-2fc998b85422",
+          "task_id": "27514d3d-1e0f-45fd-ac44-1e03b8fa41eb",
+          "data": {
+            "text": "证据支持的字段才能",
+            "from_variable_selector": [
+              "1789825733670",
+              "text"
+            ]
+          }
+        },
+        {
+          "received_ms": 31632,
+          "event": "text_chunk",
+          "workflow_run_id": "23b7a586-393f-4ef9-878c-2fc998b85422",
+          "task_id": "27514d3d-1e0f-45fd-ac44-1e03b8fa41eb",
+          "data": {
+            "text": "作为上线依据，",
+            "from_variable_selector": [
+              "1789825733670",
+              "text"
+            ]
+          }
+        },
+        {
+          "received_ms": 31800,
+          "event": "text_chunk",
+          "workflow_run_id": "23b7a586-393f-4ef9-878c-2fc998b85422",
+          "task_id": "27514d3d-1e0f-45fd-ac44-1e03b8fa41eb",
+          "data": {
+            "text": "避免主观猜测。",
+            "from_variable_selector": [
+              "1789825733670",
+              "text"
+            ]
+          }
+        },
+        {
+          "received_ms": 31808,
+          "event": "text_chunk",
+          "workflow_run_id": "23b7a586-393f-4ef9-878c-2fc998b85422",
+          "task_id": "27514d3d-1e0f-45fd-ac44-1e03b8fa41eb",
+          "data": {
+            "text": "\n*",
+            "from_variable_selector": [
+              "1789825733670",
+              "text"
+            ]
+          }
+        },
+        {
+          "received_ms": 31808,
+          "event": "text_chunk",
+          "workflow_run_id": "23b7a586-393f-4ef9-878c-2fc998b85422",
+          "task_id": "27514d3d-1e0f-45fd-ac44-1e03b8fa41eb",
+          "data": {
+            "text": "   **纳入上线",
+            "from_variable_selector": [
+              "1789825733670",
+              "text"
+            ]
+          }
+        },
+        {
+          "received_ms": 31885,
+          "event": "text_chunk",
+          "workflow_run_id": "23b7a586-393f-4ef9-878c-2fc998b85422",
+          "task_id": "27514d3d-1e0f-45fd-ac44-1e03b8fa41eb",
+          "data": {
+            "text": "清单**：将",
+            "from_variable_selector": [
+              "1789825733670",
+              "text"
+            ]
+          }
+        },
+        {
+          "received_ms": 31940,
+          "event": "text_chunk",
+          "workflow_run_id": "23b7a586-393f-4ef9-878c-2fc998b85422",
+          "task_id": "27514d3d-1e0f-45fd-ac44-1e03b8fa41eb",
+          "data": {
+            "text": "“目标市场筛选",
+            "from_variable_selector": [
+              "1789825733670",
+              "text"
+            ]
+          }
+        },
+        {
+          "received_ms": 31941,
+          "event": "text_chunk",
+          "workflow_run_id": "23b7a586-393f-4ef9-878c-2fc998b85422",
+          "task_id": "27514d3d-1e0f-45fd-ac44-1e03b8fa41eb",
+          "data": {
+            "text": "”",
+            "from_variable_selector": [
+              "1789825733670",
+              "text"
+            ]
+          }
+        },
+        {
+          "received_ms": 31992,
+          "event": "text_chunk",
+          "workflow_run_id": "23b7a586-393f-4ef9-878c-2fc998b85422",
+          "task_id": "27514d3d-1e0f-45fd-ac44-1e03b8fa41eb",
+          "data": {
+            "text": "和“需求验证",
+            "from_variable_selector": [
+              "1789825733670",
+              "text"
+            ]
+          }
+        },
+        {
+          "received_ms": 32159,
+          "event": "text_chunk",
+          "workflow_run_id": "23b7a586-393f-4ef9-878c-2fc998b85422",
+          "task_id": "27514d3d-1e0f-45fd-ac44-1e03b8fa41eb",
+          "data": {
+            "text": "”结果正式纳入",
+            "from_variable_selector": [
+              "1789825733670",
+              "text"
+            ]
+          }
+        },
+        {
+          "received_ms": 32159,
+          "event": "text_chunk",
+          "workflow_run_id": "23b7a586-393f-4ef9-878c-2fc998b85422",
+          "task_id": "27514d3d-1e0f-45fd-ac44-1e03b8fa41eb",
+          "data": {
+            "text": "站点与SKU",
+            "from_variable_selector": [
+              "1789825733670",
+              "text"
+            ]
+          }
+        },
+        {
+          "received_ms": 32206,
+          "event": "text_chunk",
+          "workflow_run_id": "23b7a586-393f-4ef9-878c-2fc998b85422",
+          "task_id": "27514d3d-1e0f-45fd-ac44-1e03b8fa41eb",
+          "data": {
+            "text": "的上线准备工作中",
+            "from_variable_selector": [
+              "1789825733670",
+              "text"
+            ]
+          }
+        },
+        {
+          "received_ms": 32383,
+          "event": "text_chunk",
+          "workflow_run_id": "23b7a586-393f-4ef9-878c-2fc998b85422",
+          "task_id": "27514d3d-1e0f-45fd-ac44-1e03b8fa41eb",
+          "data": {
+            "text": "，确认无误后再",
+            "from_variable_selector": [
+              "1789825733670",
+              "text"
+            ]
+          }
+        },
+        {
+          "received_ms": 32383,
+          "event": "text_chunk",
+          "workflow_run_id": "23b7a586-393f-4ef9-878c-2fc998b85422",
+          "task_id": "27514d3d-1e0f-45fd-ac44-1e03b8fa41eb",
+          "data": {
+            "text": "启动试运行",
+            "from_variable_selector": [
+              "1789825733670",
+              "text"
+            ]
+          }
+        },
+        {
+          "received_ms": 32385,
+          "event": "text_chunk",
+          "workflow_run_id": "23b7a586-393f-4ef9-878c-2fc998b85422",
+          "task_id": "27514d3d-1e0f-45fd-ac44-1e03b8fa41eb",
+          "data": {
+            "text": "。",
+            "from_variable_selector": [
+              "1789825733670",
+              "text"
+            ]
+          }
+        },
+        {
+          "received_ms": 32454,
+          "event": "text_chunk",
+          "workflow_run_id": "23b7a586-393f-4ef9-878c-2fc998b85422",
+          "task_id": "27514d3d-1e0f-45fd-ac44-1e03b8fa41eb",
+          "data": {
+            "text": "",
+            "from_variable_selector": [
+              "1789825733670",
+              "text"
+            ]
+          }
+        },
+        {
+          "received_ms": 32454,
+          "event": "node_finished",
+          "workflow_run_id": "23b7a586-393f-4ef9-878c-2fc998b85422",
+          "task_id": "27514d3d-1e0f-45fd-ac44-1e03b8fa41eb",
+          "data": {
+            "id": "bcde7358-1462-48e5-b8b4-a4c51bf3a1b1",
+            "node_id": "1789825733670",
+            "node_type": "llm",
+            "title": "LLM检索",
+            "index": 1,
+            "predecessor_node_id": null,
+            "inputs": {
+              "#context#": "question:核心是用需求、竞争、准入、物流和税费共同筛选可进入的国家或地区，而不是只看流量大小。跨境场景还要同时核对目的国要求、平台规则和实际履约能力。 \nanswer:将“目标市场筛选”纳入站点与SKU的上线清单。\nquestion:先建立候选市场表，核对需求信号、竞品价格、禁限售、关税税费、派送时效和退货可行性。把结论写入可复查清单，未被证据支持的字段不作为上线依据。 \nanswer:先完成资料收集与逐项核对，再启动试运行。\nquestion:核心是通过关键词、类目、竞品评价和试单数据确认真实购买需求与未被满足的痛点。跨境场景还要同时核对目的国要求、平台规则和实际履约能力。 \nanswer:将“需求验证”纳入站点与SKU的上线清单。",
+              "model_provider": "langgenius/tongyi/tongyi",
+              "model_name": "qwen3.8-flash"
+            },
+            "inputs_truncated": false,
+            "process_data": {
+              "model_mode": "chat",
+              "prompts": [
+                {
+                  "role": "system",
+                  "text": "你是「越海 AI」，一个面向跨境电商商户的知识助手。\n\n你的任务是根据当前知识库检索结果，结合用户本次问题和经营环境，提供准确、清晰、可执行的跨境电商信息。\n\n【用户原始问题】\n{跨境电商中，目标市场筛选是什么？\n\n【当前经营环境】\n平台：{\n市场/站点：{\n上下文：question:核心是用需求、竞争、准入、物流和税费共同筛选可进入的国家或地区，而不是只看流量大小。跨境场景还要同时核对目的国要求、平台规则和实际履约能力。 \nanswer:将“目标市场筛选”纳入站点与SKU的上线清单。\nquestion:先建立候选市场表，核对需求信号、竞品价格、禁限售、关税税费、派送时效和退货可行性。把结论写入可复查清单，未被证据支持的字段不作为上线依据。 \nanswer:先完成资料收集与逐项核对，再启动试运行。\nquestion:核心是通过关键词、类目、竞品评价和试单数据确认真实购买需求与未被满足的痛点。跨境场景还要同时核对目的国要求、平台规则和实际履约能力。 \nanswer:将“需求验证”纳入站点与SKU的上线清单。\n请严格遵守以下规则：\n\n1. 用户本次问题中的明确表达优先级最高。\n\n如果用户在问题中明确指定了平台或站点，应以用户本次问题为准。\n\n例如：\n当前经营环境是 TikTok Shop 美国站，\n但用户询问 Amazon FBA，\n则回答 Amazon 相关问题，不得继续按照 TikTok Shop 回答。\n\n2. 当前经营环境只用于帮助理解和消除歧义。\n\n经营环境不是知识依据。\n\n不得因为当前经营环境显示某个平台或站点，就擅自认定检索到的所有内容都适用于该平台或站点。\n\n3. 跨境电商规则类问题优先依据知识库。\n\n涉及以下内容时尤其严格：\n- 平台政策\n- 退款退货\n- 物流履约\n- 费用\n- 税务\n- 合规\n- 违规\n- 申诉\n- 账号规则\n- 时间期限\n- 数值阈值\n\n如果当前知识检索结果不足以支持明确结论，不要依赖模型自身知识补充具体规则。\n\n应明确告诉用户：\n\n“当前知识库信息不足，暂时无法可靠确认该平台或站点的具体规则，建议以平台最新官方政策为准。”\n\n4. 不得混淆不同平台或不同站点的规则。\n\n如果检索结果明显来自与用户问题不同的平台或站点，不得将其直接作为答案。\n\n如果无法确认知识是否适用于当前平台或站点，应说明信息不足。\n\n5. 回答用户真正提出的问题。\n\n不要复述“当前经营环境”。\n不要告诉用户系统内部使用了什么变量、检索 Query、Workflow 或知识库节点。\n\n6. 回答应尽量简洁、明确。\n\n如果知识充分：\n先直接回答核心问题，再补充必要说明和注意事项。\n\n如果知识不足：\n直接说明缺失，不要为了完整而猜测。\n\n7. 对可能变化的平台政策保持谨慎。\n\n不得把可能随时间变化的政策、费用、税务、物流或合规要求描述为永久不变的事实。\n\n必要时提醒用户以平台最新官方规则为准。",
+                  "files": []
+                },
+                {
+                  "role": "user",
+                  "text": "用户问题：跨境电商中，目标市场筛选是什么？",
+                  "files": []
+                }
+              ],
+              "usage": {
+                "prompt_tokens": 695,
+                "prompt_unit_price": "0.0008",
+                "prompt_price_unit": "0.001",
+                "prompt_price": "0.000556",
+                "completion_tokens": 244,
+                "completion_unit_price": "0.0027",
+                "completion_price_unit": "0.001",
+                "completion_price": "0.0006588",
+                "total_tokens": 939,
+                "total_price": "0.0012148",
+                "currency": "RMB",
+                "latency": 24.928,
+                "time_to_first_token": 21,
+                "time_to_generate": 3.928
+              },
+              "finish_reason": "stop",
+              "model_provider": "langgenius/tongyi/tongyi",
+              "model_name": "qwen3.8-flash"
+            },
+            "process_data_truncated": false,
+            "outputs": {
+              "text": "跨境电商中的**目标市场筛选**，是指通过多维度数据评估，确定适合进入的国家或地区的过程。其核心在于**不只看流量大小**，而是基于以下五个关键维度共同决策：\n\n1.  **需求验证**：通过关键词、类目热度、竞品评价及试单数据，确认真实购买需求与未被满足的痛点。\n2.  **竞争分析**：核对竞品价格与市场饱和度。\n3.  **准入合规**：检查目的国的禁限售规定、平台规则以及当地法律要求。\n4.  **物流履约**：评估派送时效、退货可行性及实际履约能力。\n5.  **税费成本**：核算关税、增值税及其他相关费用对利润的影响。\n\n**执行建议：**\n*   **建立候选市场表**：先完成资料收集与逐项核对，将上述维度的结论写入可复查清单。\n*   **证据导向**：只有被证据支持的字段才能作为上线依据，避免主观猜测。\n*   **纳入上线清单**：将“目标市场筛选”和“需求验证”结果正式纳入站点与SKU的上线准备工作中，确认无误后再启动试运行。",
+              "reasoning_content": "",
+              "usage": {
+                "prompt_tokens": 695,
+                "prompt_unit_price": "0.0008",
+                "prompt_price_unit": "0.001",
+                "prompt_price": "0.000556",
+                "completion_tokens": 244,
+                "completion_unit_price": "0.0027",
+                "completion_price_unit": "0.001",
+                "completion_price": "0.0006588",
+                "total_tokens": 939,
+                "total_price": "0.0012148",
+                "currency": "RMB",
+                "latency": 24.928,
+                "time_to_first_token": 21,
+                "time_to_generate": 3.928
+              },
+              "finish_reason": "stop"
+            },
+            "outputs_truncated": false,
+            "status": "succeeded",
+            "error": null,
+            "elapsed_time": 24.930253,
+            "execution_metadata": {
+              "total_tokens": 939,
+              "total_price": "0.0012148",
+              "currency": "RMB"
+            },
+            "created_at": 1791107116,
+            "finished_at": 1791107141,
+            "files": [],
+            "iteration_id": null,
+            "loop_id": null
+          }
+        },
+        {
+          "received_ms": 32457,
+          "event": "node_started",
+          "workflow_run_id": "23b7a586-393f-4ef9-878c-2fc998b85422",
+          "task_id": "27514d3d-1e0f-45fd-ac44-1e03b8fa41eb",
+          "data": {
+            "id": "83c6968b-d942-4128-9160-4f44d820f830",
+            "node_id": "1789825506496",
+            "node_type": "end",
+            "title": "rag输出",
+            "index": 1,
+            "predecessor_node_id": null,
+            "inputs": null,
+            "inputs_truncated": false,
+            "created_at": 1791107141,
+            "extras": {},
+            "iteration_id": null,
+            "loop_id": null,
+            "agent_strategy": null
+          }
+        },
+        {
+          "received_ms": 32489,
+          "event": "node_finished",
+          "workflow_run_id": "23b7a586-393f-4ef9-878c-2fc998b85422",
+          "task_id": "27514d3d-1e0f-45fd-ac44-1e03b8fa41eb",
+          "data": {
+            "id": "83c6968b-d942-4128-9160-4f44d820f830",
+            "node_id": "1789825506496",
+            "node_type": "end",
+            "title": "rag输出",
+            "index": 1,
+            "predecessor_node_id": null,
+            "inputs": {
+              "result": "跨境电商中的**目标市场筛选**，是指通过多维度数据评估，确定适合进入的国家或地区的过程。其核心在于**不只看流量大小**，而是基于以下五个关键维度共同决策：\n\n1.  **需求验证**：通过关键词、类目热度、竞品评价及试单数据，确认真实购买需求与未被满足的痛点。\n2.  **竞争分析**：核对竞品价格与市场饱和度。\n3.  **准入合规**：检查目的国的禁限售规定、平台规则以及当地法律要求。\n4.  **物流履约**：评估派送时效、退货可行性及实际履约能力。\n5.  **税费成本**：核算关税、增值税及其他相关费用对利润的影响。\n\n**执行建议：**\n*   **建立候选市场表**：先完成资料收集与逐项核对，将上述维度的结论写入可复查清单。\n*   **证据导向**：只有被证据支持的字段才能作为上线依据，避免主观猜测。\n*   **纳入上线清单**：将“目标市场筛选”和“需求验证”结果正式纳入站点与SKU的上线准备工作中，确认无误后再启动试运行。"
+            },
+            "inputs_truncated": false,
+            "process_data": {},
+            "process_data_truncated": false,
+            "outputs": {
+              "result": "跨境电商中的**目标市场筛选**，是指通过多维度数据评估，确定适合进入的国家或地区的过程。其核心在于**不只看流量大小**，而是基于以下五个关键维度共同决策：\n\n1.  **需求验证**：通过关键词、类目热度、竞品评价及试单数据，确认真实购买需求与未被满足的痛点。\n2.  **竞争分析**：核对竞品价格与市场饱和度。\n3.  **准入合规**：检查目的国的禁限售规定、平台规则以及当地法律要求。\n4.  **物流履约**：评估派送时效、退货可行性及实际履约能力。\n5.  **税费成本**：核算关税、增值税及其他相关费用对利润的影响。\n\n**执行建议：**\n*   **建立候选市场表**：先完成资料收集与逐项核对，将上述维度的结论写入可复查清单。\n*   **证据导向**：只有被证据支持的字段才能作为上线依据，避免主观猜测。\n*   **纳入上线清单**：将“目标市场筛选”和“需求验证”结果正式纳入站点与SKU的上线准备工作中，确认无误后再启动试运行。"
+            },
+            "outputs_truncated": false,
+            "status": "succeeded",
+            "error": null,
+            "elapsed_time": 0.000066,
+            "execution_metadata": null,
+            "created_at": 1791107141,
+            "finished_at": 1791107141,
+            "files": [],
+            "iteration_id": null,
+            "loop_id": null
+          }
+        },
+        {
+          "received_ms": 32509,
+          "event": "workflow_finished",
+          "workflow_run_id": "23b7a586-393f-4ef9-878c-2fc998b85422",
+          "task_id": "27514d3d-1e0f-45fd-ac44-1e03b8fa41eb",
+          "data": {
+            "id": "23b7a586-393f-4ef9-878c-2fc998b85422",
+            "workflow_id": "f0d354df-57c8-4fa1-b3da-bd895a07abb6",
+            "status": "succeeded",
+            "outputs": {
+              "result": "跨境电商中的**目标市场筛选**，是指通过多维度数据评估，确定适合进入的国家或地区的过程。其核心在于**不只看流量大小**，而是基于以下五个关键维度共同决策：\n\n1.  **需求验证**：通过关键词、类目热度、竞品评价及试单数据，确认真实购买需求与未被满足的痛点。\n2.  **竞争分析**：核对竞品价格与市场饱和度。\n3.  **准入合规**：检查目的国的禁限售规定、平台规则以及当地法律要求。\n4.  **物流履约**：评估派送时效、退货可行性及实际履约能力。\n5.  **税费成本**：核算关税、增值税及其他相关费用对利润的影响。\n\n**执行建议：**\n*   **建立候选市场表**：先完成资料收集与逐项核对，将上述维度的结论写入可复查清单。\n*   **证据导向**：只有被证据支持的字段才能作为上线依据，避免主观猜测。\n*   **纳入上线清单**：将“目标市场筛选”和“需求验证”结果正式纳入站点与SKU的上线准备工作中，确认无误后再启动试运行。"
+            },
+            "error": null,
+            "elapsed_time": 31.390823,
+            "total_tokens": 939,
+            "total_steps": 7,
+            "created_by": {
+              "id": "75008423-1862-4b8d-9dfa-99bf62c6aa8c",
+              "user": "user_caec9d52-94dd-4362-be1e-4bf4e27394c2"
+            },
+            "created_at": 1791107109,
+            "finished_at": 1791107141,
+            "exceptions_count": 0,
+            "files": []
+          }
+        }
+      ],
+      "text_chunks": [
+        {
+          "received_ms": 28501,
+          "text": "跨境电商"
+        },
+        {
+          "received_ms": 28540,
+          "text": "中的"
+        },
+        {
+          "received_ms": 28579,
+          "text": "**"
+        },
+        {
+          "received_ms": 28624,
+          "text": "目标市场筛选**"
+        },
+        {
+          "received_ms": 28707,
+          "text": "，是指通过多维度"
+        },
+        {
+          "received_ms": 28760,
+          "text": "数据评估，确定"
+        },
+        {
+          "received_ms": 28879,
+          "text": "适合进入的国家或"
+        },
+        {
+          "received_ms": 28923,
+          "text": "地区"
+        },
+        {
+          "received_ms": 28923,
+          "text": "的过程。其核心"
+        },
+        {
+          "received_ms": 29043,
+          "text": "在于**不只看"
+        },
+        {
+          "received_ms": 29160,
+          "text": "流量大小**，"
+        },
+        {
+          "received_ms": 29160,
+          "text": "而是基于"
+        },
+        {
+          "received_ms": 29207,
+          "text": "以下五个关键维度"
+        },
+        {
+          "received_ms": 29329,
+          "text": "共同决策：\n\n"
+        },
+        {
+          "received_ms": 29331,
+          "text": "1."
+        },
+        {
+          "received_ms": 29331,
+          "text": "  **需求验证"
+        },
+        {
+          "received_ms": 29406,
+          "text": "**：通过关键词"
+        },
+        {
+          "received_ms": 29433,
+          "text": "、类目"
+        },
+        {
+          "received_ms": 29498,
+          "text": "热度、竞品评价"
+        },
+        {
+          "received_ms": 29580,
+          "text": "及试单数据"
+        },
+        {
+          "received_ms": 29581,
+          "text": "，确"
+        },
+        {
+          "received_ms": 29691,
+          "text": "认真实购买需求"
+        },
+        {
+          "received_ms": 29692,
+          "text": "与未被"
+        },
+        {
+          "received_ms": 29698,
+          "text": "满足的痛点。"
+        },
+        {
+          "received_ms": 29743,
+          "text": "\n2. "
+        },
+        {
+          "received_ms": 29868,
+          "text": " **竞争分析**"
+        },
+        {
+          "received_ms": 29871,
+          "text": "：核对竞品"
+        },
+        {
+          "received_ms": 29964,
+          "text": "价格与市场饱和度。"
+        },
+        {
+          "received_ms": 30055,
+          "text": "\n3. "
+        },
+        {
+          "received_ms": 30093,
+          "text": " **准入合规**"
+        },
+        {
+          "received_ms": 30094,
+          "text": "：检查"
+        },
+        {
+          "received_ms": 30216,
+          "text": "目的国的禁限售"
+        },
+        {
+          "received_ms": 30216,
+          "text": "规定"
+        },
+        {
+          "received_ms": 30217,
+          "text": "、平台规则以及"
+        },
+        {
+          "received_ms": 30308,
+          "text": "当地法律要求。"
+        },
+        {
+          "received_ms": 30340,
+          "text": "\n4"
+        },
+        {
+          "received_ms": 30397,
+          "text": ".  **物流"
+        },
+        {
+          "received_ms": 30397,
+          "text": "履约"
+        },
+        {
+          "received_ms": 30456,
+          "text": "**：评估派送"
+        },
+        {
+          "received_ms": 30574,
+          "text": "时效、退货可行性"
+        },
+        {
+          "received_ms": 30575,
+          "text": "及实际履约"
+        },
+        {
+          "received_ms": 30577,
+          "text": "能力。\n5"
+        },
+        {
+          "received_ms": 30718,
+          "text": ".  **税费"
+        },
+        {
+          "received_ms": 30719,
+          "text": "成本**："
+        },
+        {
+          "received_ms": 30720,
+          "text": "核算关税、增值税"
+        },
+        {
+          "received_ms": 30893,
+          "text": "及其他相关费用对"
+        },
+        {
+          "received_ms": 30894,
+          "text": "利润的影响。\n\n"
+        },
+        {
+          "received_ms": 30924,
+          "text": "**执行建议：**"
+        },
+        {
+          "received_ms": 31051,
+          "text": "\n*   **"
+        },
+        {
+          "received_ms": 31060,
+          "text": "建立候选市场表"
+        },
+        {
+          "received_ms": 31146,
+          "text": "**：先完成"
+        },
+        {
+          "received_ms": 31190,
+          "text": "资料收集与"
+        },
+        {
+          "received_ms": 31239,
+          "text": "逐项核对，将"
+        },
+        {
+          "received_ms": 31239,
+          "text": "上述维"
+        },
+        {
+          "received_ms": 31335,
+          "text": "度的结论写入可"
+        },
+        {
+          "received_ms": 31336,
+          "text": "复查清单。\n"
+        },
+        {
+          "received_ms": 31367,
+          "text": "*   **证据"
+        },
+        {
+          "received_ms": 31540,
+          "text": "导向**：只有"
+        },
+        {
+          "received_ms": 31540,
+          "text": "被"
+        },
+        {
+          "received_ms": 31586,
+          "text": "证据支持的字段才能"
+        },
+        {
+          "received_ms": 31632,
+          "text": "作为上线依据，"
+        },
+        {
+          "received_ms": 31800,
+          "text": "避免主观猜测。"
+        },
+        {
+          "received_ms": 31808,
+          "text": "\n*"
+        },
+        {
+          "received_ms": 31808,
+          "text": "   **纳入上线"
+        },
+        {
+          "received_ms": 31885,
+          "text": "清单**：将"
+        },
+        {
+          "received_ms": 31940,
+          "text": "“目标市场筛选"
+        },
+        {
+          "received_ms": 31941,
+          "text": "”"
+        },
+        {
+          "received_ms": 31992,
+          "text": "和“需求验证"
+        },
+        {
+          "received_ms": 32159,
+          "text": "”结果正式纳入"
+        },
+        {
+          "received_ms": 32159,
+          "text": "站点与SKU"
+        },
+        {
+          "received_ms": 32206,
+          "text": "的上线准备工作中"
+        },
+        {
+          "received_ms": 32383,
+          "text": "，确认无误后再"
+        },
+        {
+          "received_ms": 32383,
+          "text": "启动试运行"
+        },
+        {
+          "received_ms": 32385,
+          "text": "。"
+        },
+        {
+          "received_ms": 32454,
+          "text": ""
+        }
+      ],
+      "retrieval_nodes": [
+        {
+          "node_id": "1789825465873",
+          "title": "知识检索",
+          "result": [
+            {
+              "metadata": {
+                "_source": "knowledge",
+                "dataset_id": "ba919c03-da30-4761-ac8f-abe35dad0c97",
+                "dataset_name": "跨境电商知识问答 1",
+                "document_id": "614fb475-5f85-4e8c-a433-423740e3ca95",
+                "document_name": "跨境电商高频问答500条.csv",
+                "data_source_type": "local_file",
+                "segment_id": "99241764-8af0-4bf9-bb13-2501257ded4e",
+                "retriever_from": "workflow",
+                "score": 0.7934158421750669,
+                "child_chunks": [],
+                "segment_hit_count": 2,
+                "segment_word_count": 70,
+                "segment_position": 1,
+                "segment_index_node_hash": "4b17ea8f885eb330b36eaf0d8e6a2e06e7d2b9d478df4601f8b9354be9c64ee8",
+                "doc_metadata": null,
+                "position": 1
+              },
+              "title": "跨境电商高频问答500条.csv",
+              "files": null,
+              "content": "question:核心是用需求、竞争、准入、物流和税费共同筛选可进入的国家或地区，而不是只看流量大小。跨境场景还要同时核对目的国要求、平台规则和实际履约能力。 \nanswer:将“目标市场筛选”纳入站点与SKU的上线清单。",
+              "summary": null
+            },
+            {
+              "metadata": {
+                "_source": "knowledge",
+                "dataset_id": "ba919c03-da30-4761-ac8f-abe35dad0c97",
+                "dataset_name": "跨境电商知识问答 1",
+                "document_id": "614fb475-5f85-4e8c-a433-423740e3ca95",
+                "document_name": "跨境电商高频问答500条.csv",
+                "data_source_type": "local_file",
+                "segment_id": "7fe021f1-f893-4f81-a557-f8fd4317fea7",
+                "retriever_from": "workflow",
+                "score": 0.6100211573004598,
+                "child_chunks": [],
+                "segment_hit_count": 1,
+                "segment_word_count": 69,
+                "segment_position": 3,
+                "segment_index_node_hash": "d7018a0787091e9e877065bac820421af01e1ef454aca9fe37521666b908f75f",
+                "doc_metadata": null,
+                "position": 2
+              },
+              "title": "跨境电商高频问答500条.csv",
+              "files": null,
+              "content": "question:先建立候选市场表，核对需求信号、竞品价格、禁限售、关税税费、派送时效和退货可行性。把结论写入可复查清单，未被证据支持的字段不作为上线依据。 \nanswer:先完成资料收集与逐项核对，再启动试运行。",
+              "summary": null
+            },
+            {
+              "metadata": {
+                "_source": "knowledge",
+                "dataset_id": "ba919c03-da30-4761-ac8f-abe35dad0c97",
+                "dataset_name": "跨境电商知识问答 1",
+                "document_id": "614fb475-5f85-4e8c-a433-423740e3ca95",
+                "document_name": "跨境电商高频问答500条.csv",
+                "data_source_type": "local_file",
+                "segment_id": "f354ecc6-41a1-45a5-8eb2-24675020670b",
+                "retriever_from": "workflow",
+                "score": 0.563905835959326,
+                "child_chunks": [],
+                "segment_hit_count": 4,
+                "segment_word_count": 66,
+                "segment_position": 11,
+                "segment_index_node_hash": "601d002c9ef20a0216e799c7d7380ad8d9c267eaf465d01bd274b90f98d56916",
+                "doc_metadata": null,
+                "position": 3
+              },
+              "title": "跨境电商高频问答500条.csv",
+              "files": null,
+              "content": "question:核心是通过关键词、类目、竞品评价和试单数据确认真实购买需求与未被满足的痛点。跨境场景还要同时核对目的国要求、平台规则和实际履约能力。 \nanswer:将“需求验证”纳入站点与SKU的上线清单。",
+              "summary": null
+            }
+          ],
+          "inputs": {
+            "query": "跨境电商中，目标市场筛选是什么？"
+          },
+          "status": "succeeded"
+        }
+      ],
+      "workflow_ids": [
+        "23b7a586-393f-4ef9-878c-2fc998b85422"
+      ],
+      "event_counts": {
+        "workflow_started": 1,
+        "node_started": 7,
+        "node_finished": 7,
+        "text_chunk": 75,
+        "workflow_finished": 1
+      },
+      "context_delivery": "DIFY_EVENT_ECHO_CONFIRMED",
+      "content_type": "text/event-stream; charset=utf-8",
+      "workflow_status": "succeeded",
+      "raw_streaming_text": "跨境电商中的**目标市场筛选**，是指通过多维度数据评估，确定适合进入的国家或地区的过程。其核心在于**不只看流量大小**，而是基于以下五个关键维度共同决策：\n\n1.  **需求验证**：通过关键词、类目热度、竞品评价及试单数据，确认真实购买需求与未被满足的痛点。\n2.  **竞争分析**：核对竞品价格与市场饱和度。\n3.  **准入合规**：检查目的国的禁限售规定、平台规则以及当地法律要求。\n4.  **物流履约**：评估派送时效、退货可行性及实际履约能力。\n5.  **税费成本**：核算关税、增值税及其他相关费用对利润的影响。\n\n**执行建议：**\n*   **建立候选市场表**：先完成资料收集与逐项核对，将上述维度的结论写入可复查清单。\n*   **证据导向**：只有被证据支持的字段才能作为上线依据，避免主观猜测。\n*   **纳入上线清单**：将“目标市场筛选”和“需求验证”结果正式纳入站点与SKU的上线准备工作中，确认无误后再启动试运行。",
+      "nodes": [
+        {
+          "received_ms": 1133,
+          "id": "a446aead-8f9e-4f53-a41a-341d76161299",
+          "node_id": "1789821062107",
+          "node_type": "start",
+          "title": "用户输入",
+          "index": 1,
+          "predecessor_node_id": null,
+          "inputs": {
+            "query": "跨境电商中，目标市场筛选是什么？",
+            "platform_context": "",
+            "market_context": ""
+          },
+          "inputs_truncated": false,
+          "process_data": {},
+          "process_data_truncated": false,
+          "outputs": {
+            "query": "跨境电商中，目标市场筛选是什么？",
+            "platform_context": "",
+            "market_context": ""
+          },
+          "outputs_truncated": false,
+          "status": "succeeded",
+          "error": null,
+          "elapsed_time": 0.000084,
+          "execution_metadata": null,
+          "created_at": 1791107109,
+          "finished_at": 1791107109,
+          "files": [],
+          "iteration_id": null,
+          "loop_id": null
+        },
+        {
+          "received_ms": 1343,
+          "id": "1ce6f2ab-e54b-49bd-a968-db823c99d8c5",
+          "node_id": "1789821211742",
+          "node_type": "code",
+          "title": "代码执行",
+          "index": 1,
+          "predecessor_node_id": null,
+          "inputs": {
+            "query": "跨境电商中，目标市场筛选是什么？",
+            "platform_context": "",
+            "market_context": ""
+          },
+          "inputs_truncated": false,
+          "process_data": {},
+          "process_data_truncated": false,
+          "outputs": {
+            "category": "general_cross_border",
+            "intent": "knowledge_query",
+            "need_kb": true,
+            "reply": "",
+            "resolved_platform": "",
+            "resolved_market": "",
+            "retrieval_query": "跨境电商中，目标市场筛选是什么？"
+          },
+          "outputs_truncated": false,
+          "status": "succeeded",
+          "error": null,
+          "elapsed_time": 0.135147,
+          "execution_metadata": null,
+          "created_at": 1791107109,
+          "finished_at": 1791107110,
+          "files": [],
+          "iteration_id": null,
+          "loop_id": null
+        },
+        {
+          "received_ms": 1433,
+          "id": "0c19eafa-ae14-4373-a0f7-62bf2905bb65",
+          "node_id": "1789824639702",
+          "node_type": "if-else",
+          "title": "条件分支",
+          "index": 1,
+          "predecessor_node_id": null,
+          "inputs": {
+            "conditions": [
+              {
+                "actual_value": "knowledge_query",
+                "expected_value": "knowledge_query",
+                "comparison_operator": "is"
+              }
+            ]
+          },
+          "inputs_truncated": false,
+          "process_data": {
+            "condition_results": [
+              {
+                "group": {
+                  "case_id": "true",
+                  "logical_operator": "and",
+                  "conditions": [
+                    {
+                      "variable_selector": [
+                        "1789821211742",
+                        "intent"
+                      ],
+                      "comparison_operator": "is",
+                      "value": "human_service",
+                      "sub_variable_condition": null
+                    }
+                  ]
+                },
+                "results": [
+                  false
+                ],
+                "final_result": false
+              },
+              {
+                "group": {
+                  "case_id": "b87ba007-d9b6-49d0-a5c0-0e2ef80867b0",
+                  "logical_operator": "and",
+                  "conditions": [
+                    {
+                      "variable_selector": [
+                        "1789821211742",
+                        "intent"
+                      ],
+                      "comparison_operator": "is",
+                      "value": "greeting",
+                      "sub_variable_condition": null
+                    }
+                  ]
+                },
+                "results": [
+                  false
+                ],
+                "final_result": false
+              },
+              {
+                "group": {
+                  "case_id": "e24f2af3-1b27-43f2-8c38-61c6df7e6f3e",
+                  "logical_operator": "and",
+                  "conditions": [
+                    {
+                      "variable_selector": [
+                        "1789821211742",
+                        "intent"
+                      ],
+                      "comparison_operator": "is",
+                      "value": "polite",
+                      "sub_variable_condition": null
+                    }
+                  ]
+                },
+                "results": [
+                  false
+                ],
+                "final_result": false
+              },
+              {
+                "group": {
+                  "case_id": "956e1f56-825a-4420-a734-f2dfe6d37161",
+                  "logical_operator": "and",
+                  "conditions": [
+                    {
+                      "variable_selector": [
+                        "1789821211742",
+                        "intent"
+                      ],
+                      "comparison_operator": "is",
+                      "value": "goodbye",
+                      "sub_variable_condition": null
+                    }
+                  ]
+                },
+                "results": [
+                  false
+                ],
+                "final_result": false
+              },
+              {
+                "group": {
+                  "case_id": "fa2451f3-3c54-425b-b20b-cd989e6a1e07",
+                  "logical_operator": "and",
+                  "conditions": [
+                    {
+                      "variable_selector": [
+                        "1789821211742",
+                        "intent"
+                      ],
+                      "comparison_operator": "is",
+                      "value": "knowledge_query",
+                      "sub_variable_condition": null
+                    }
+                  ]
+                },
+                "results": [
+                  true
+                ],
+                "final_result": true
+              }
+            ]
+          },
+          "process_data_truncated": false,
+          "outputs": {
+            "result": true,
+            "selected_case_id": "fa2451f3-3c54-425b-b20b-cd989e6a1e07"
+          },
+          "outputs_truncated": false,
+          "status": "succeeded",
+          "error": null,
+          "elapsed_time": 0.000211,
+          "execution_metadata": null,
+          "created_at": 1791107110,
+          "finished_at": 1791107110,
+          "files": [],
+          "iteration_id": null,
+          "loop_id": null
+        },
+        {
+          "received_ms": 7397,
+          "id": "83387ecb-33da-40a2-9859-345e7d7f71be",
+          "node_id": "1789825465873",
+          "node_type": "knowledge-retrieval",
+          "title": "知识检索",
+          "index": 1,
+          "predecessor_node_id": null,
+          "inputs": {
+            "query": "跨境电商中，目标市场筛选是什么？"
+          },
+          "inputs_truncated": false,
+          "process_data": {
+            "usage": {
+              "prompt_tokens": 0,
+              "prompt_unit_price": "0.0",
+              "prompt_price_unit": "0.0",
+              "prompt_price": "0.0",
+              "completion_tokens": 0,
+              "completion_unit_price": "0.0",
+              "completion_price_unit": "0.0",
+              "completion_price": "0.0",
+              "total_tokens": 0,
+              "total_price": "0.0",
+              "currency": "USD",
+              "latency": 0,
+              "time_to_first_token": null,
+              "time_to_generate": null
+            }
+          },
+          "process_data_truncated": false,
+          "outputs": {
+            "result": [
+              {
+                "metadata": {
+                  "_source": "knowledge",
+                  "dataset_id": "ba919c03-da30-4761-ac8f-abe35dad0c97",
+                  "dataset_name": "跨境电商知识问答 1",
+                  "document_id": "614fb475-5f85-4e8c-a433-423740e3ca95",
+                  "document_name": "跨境电商高频问答500条.csv",
+                  "data_source_type": "local_file",
+                  "segment_id": "99241764-8af0-4bf9-bb13-2501257ded4e",
+                  "retriever_from": "workflow",
+                  "score": 0.7934158421750669,
+                  "child_chunks": [],
+                  "segment_hit_count": 2,
+                  "segment_word_count": 70,
+                  "segment_position": 1,
+                  "segment_index_node_hash": "4b17ea8f885eb330b36eaf0d8e6a2e06e7d2b9d478df4601f8b9354be9c64ee8",
+                  "doc_metadata": null,
+                  "position": 1
+                },
+                "title": "跨境电商高频问答500条.csv",
+                "files": null,
+                "content": "question:核心是用需求、竞争、准入、物流和税费共同筛选可进入的国家或地区，而不是只看流量大小。跨境场景还要同时核对目的国要求、平台规则和实际履约能力。 \nanswer:将“目标市场筛选”纳入站点与SKU的上线清单。",
+                "summary": null
+              },
+              {
+                "metadata": {
+                  "_source": "knowledge",
+                  "dataset_id": "ba919c03-da30-4761-ac8f-abe35dad0c97",
+                  "dataset_name": "跨境电商知识问答 1",
+                  "document_id": "614fb475-5f85-4e8c-a433-423740e3ca95",
+                  "document_name": "跨境电商高频问答500条.csv",
+                  "data_source_type": "local_file",
+                  "segment_id": "7fe021f1-f893-4f81-a557-f8fd4317fea7",
+                  "retriever_from": "workflow",
+                  "score": 0.6100211573004598,
+                  "child_chunks": [],
+                  "segment_hit_count": 1,
+                  "segment_word_count": 69,
+                  "segment_position": 3,
+                  "segment_index_node_hash": "d7018a0787091e9e877065bac820421af01e1ef454aca9fe37521666b908f75f",
+                  "doc_metadata": null,
+                  "position": 2
+                },
+                "title": "跨境电商高频问答500条.csv",
+                "files": null,
+                "content": "question:先建立候选市场表，核对需求信号、竞品价格、禁限售、关税税费、派送时效和退货可行性。把结论写入可复查清单，未被证据支持的字段不作为上线依据。 \nanswer:先完成资料收集与逐项核对，再启动试运行。",
+                "summary": null
+              },
+              {
+                "metadata": {
+                  "_source": "knowledge",
+                  "dataset_id": "ba919c03-da30-4761-ac8f-abe35dad0c97",
+                  "dataset_name": "跨境电商知识问答 1",
+                  "document_id": "614fb475-5f85-4e8c-a433-423740e3ca95",
+                  "document_name": "跨境电商高频问答500条.csv",
+                  "data_source_type": "local_file",
+                  "segment_id": "f354ecc6-41a1-45a5-8eb2-24675020670b",
+                  "retriever_from": "workflow",
+                  "score": 0.563905835959326,
+                  "child_chunks": [],
+                  "segment_hit_count": 4,
+                  "segment_word_count": 66,
+                  "segment_position": 11,
+                  "segment_index_node_hash": "601d002c9ef20a0216e799c7d7380ad8d9c267eaf465d01bd274b90f98d56916",
+                  "doc_metadata": null,
+                  "position": 3
+                },
+                "title": "跨境电商高频问答500条.csv",
+                "files": null,
+                "content": "question:核心是通过关键词、类目、竞品评价和试单数据确认真实购买需求与未被满足的痛点。跨境场景还要同时核对目的国要求、平台规则和实际履约能力。 \nanswer:将“需求验证”纳入站点与SKU的上线清单。",
+                "summary": null
+              }
+            ]
+          },
+          "outputs_truncated": false,
+          "status": "succeeded",
+          "error": null,
+          "elapsed_time": 5.952067,
+          "execution_metadata": {
+            "total_tokens": 0,
+            "total_price": "0.0",
+            "currency": "USD"
+          },
+          "created_at": 1791107110,
+          "finished_at": 1791107116,
+          "files": [],
+          "iteration_id": null,
+          "loop_id": null
+        },
+        {
+          "received_ms": 7433,
+          "id": "31cc98f2-7e0c-4341-975f-d11676e7cdcb",
+          "node_id": "1789825705782",
+          "node_type": "if-else",
+          "title": "条件分支 2",
+          "index": 1,
+          "predecessor_node_id": null,
+          "inputs": {
+            "conditions": [
+              {
+                "actual_value": [
+                  {
+                    "metadata": {
+                      "_source": "knowledge",
+                      "dataset_id": "ba919c03-da30-4761-ac8f-abe35dad0c97",
+                      "dataset_name": "跨境电商知识问答 1",
+                      "document_id": "614fb475-5f85-4e8c-a433-423740e3ca95",
+                      "document_name": "跨境电商高频问答500条.csv",
+                      "data_source_type": "local_file",
+                      "segment_id": "99241764-8af0-4bf9-bb13-2501257ded4e",
+                      "retriever_from": "workflow",
+                      "score": 0.7934158421750669,
+                      "child_chunks": [],
+                      "segment_hit_count": 2,
+                      "segment_word_count": 70,
+                      "segment_position": 1,
+                      "segment_index_node_hash": "4b17ea8f885eb330b36eaf0d8e6a2e06e7d2b9d478df4601f8b9354be9c64ee8",
+                      "doc_metadata": null,
+                      "position": 1
+                    },
+                    "title": "跨境电商高频问答500条.csv",
+                    "files": null,
+                    "content": "question:核心是用需求、竞争、准入、物流和税费共同筛选可进入的国家或地区，而不是只看流量大小。跨境场景还要同时核对目的国要求、平台规则和实际履约能力。 \nanswer:将“目标市场筛选”纳入站点与SKU的上线清单。",
+                    "summary": null
+                  },
+                  {
+                    "metadata": {
+                      "_source": "knowledge",
+                      "dataset_id": "ba919c03-da30-4761-ac8f-abe35dad0c97",
+                      "dataset_name": "跨境电商知识问答 1",
+                      "document_id": "614fb475-5f85-4e8c-a433-423740e3ca95",
+                      "document_name": "跨境电商高频问答500条.csv",
+                      "data_source_type": "local_file",
+                      "segment_id": "7fe021f1-f893-4f81-a557-f8fd4317fea7",
+                      "retriever_from": "workflow",
+                      "score": 0.6100211573004598,
+                      "child_chunks": [],
+                      "segment_hit_count": 1,
+                      "segment_word_count": 69,
+                      "segment_position": 3,
+                      "segment_index_node_hash": "d7018a0787091e9e877065bac820421af01e1ef454aca9fe37521666b908f75f",
+                      "doc_metadata": null,
+                      "position": 2
+                    },
+                    "title": "跨境电商高频问答500条.csv",
+                    "files": null,
+                    "content": "question:先建立候选市场表，核对需求信号、竞品价格、禁限售、关税税费、派送时效和退货可行性。把结论写入可复查清单，未被证据支持的字段不作为上线依据。 \nanswer:先完成资料收集与逐项核对，再启动试运行。",
+                    "summary": null
+                  },
+                  {
+                    "metadata": {
+                      "_source": "knowledge",
+                      "dataset_id": "ba919c03-da30-4761-ac8f-abe35dad0c97",
+                      "dataset_name": "跨境电商知识问答 1",
+                      "document_id": "614fb475-5f85-4e8c-a433-423740e3ca95",
+                      "document_name": "跨境电商高频问答500条.csv",
+                      "data_source_type": "local_file",
+                      "segment_id": "f354ecc6-41a1-45a5-8eb2-24675020670b",
+                      "retriever_from": "workflow",
+                      "score": 0.563905835959326,
+                      "child_chunks": [],
+                      "segment_hit_count": 4,
+                      "segment_word_count": 66,
+                      "segment_position": 11,
+                      "segment_index_node_hash": "601d002c9ef20a0216e799c7d7380ad8d9c267eaf465d01bd274b90f98d56916",
+                      "doc_metadata": null,
+                      "position": 3
+                    },
+                    "title": "跨境电商高频问答500条.csv",
+                    "files": null,
+                    "content": "question:核心是通过关键词、类目、竞品评价和试单数据确认真实购买需求与未被满足的痛点。跨境场景还要同时核对目的国要求、平台规则和实际履约能力。 \nanswer:将“需求验证”纳入站点与SKU的上线清单。",
+                    "summary": null
+                  }
+                ],
+                "expected_value": "",
+                "comparison_operator": "not empty"
+              }
+            ]
+          },
+          "inputs_truncated": false,
+          "process_data": {
+            "condition_results": [
+              {
+                "group": {
+                  "case_id": "true",
+                  "logical_operator": "and",
+                  "conditions": [
+                    {
+                      "variable_selector": [
+                        "1789825465873",
+                        "result"
+                      ],
+                      "comparison_operator": "not empty",
+                      "value": "",
+                      "sub_variable_condition": null
+                    }
+                  ]
+                },
+                "results": [
+                  true
+                ],
+                "final_result": true
+              }
+            ]
+          },
+          "process_data_truncated": false,
+          "outputs": {
+            "result": true,
+            "selected_case_id": "true"
+          },
+          "outputs_truncated": false,
+          "status": "succeeded",
+          "error": null,
+          "elapsed_time": 0.000116,
+          "execution_metadata": null,
+          "created_at": 1791107116,
+          "finished_at": 1791107116,
+          "files": [],
+          "iteration_id": null,
+          "loop_id": null
+        },
+        {
+          "received_ms": 32454,
+          "id": "bcde7358-1462-48e5-b8b4-a4c51bf3a1b1",
+          "node_id": "1789825733670",
+          "node_type": "llm",
+          "title": "LLM检索",
+          "index": 1,
+          "predecessor_node_id": null,
+          "inputs": {
+            "#context#": "question:核心是用需求、竞争、准入、物流和税费共同筛选可进入的国家或地区，而不是只看流量大小。跨境场景还要同时核对目的国要求、平台规则和实际履约能力。 \nanswer:将“目标市场筛选”纳入站点与SKU的上线清单。\nquestion:先建立候选市场表，核对需求信号、竞品价格、禁限售、关税税费、派送时效和退货可行性。把结论写入可复查清单，未被证据支持的字段不作为上线依据。 \nanswer:先完成资料收集与逐项核对，再启动试运行。\nquestion:核心是通过关键词、类目、竞品评价和试单数据确认真实购买需求与未被满足的痛点。跨境场景还要同时核对目的国要求、平台规则和实际履约能力。 \nanswer:将“需求验证”纳入站点与SKU的上线清单。",
+            "model_provider": "langgenius/tongyi/tongyi",
+            "model_name": "qwen3.8-flash"
+          },
+          "inputs_truncated": false,
+          "process_data": {
+            "model_mode": "chat",
+            "prompts": [
+              {
+                "role": "system",
+                "text": "你是「越海 AI」，一个面向跨境电商商户的知识助手。\n\n你的任务是根据当前知识库检索结果，结合用户本次问题和经营环境，提供准确、清晰、可执行的跨境电商信息。\n\n【用户原始问题】\n{跨境电商中，目标市场筛选是什么？\n\n【当前经营环境】\n平台：{\n市场/站点：{\n上下文：question:核心是用需求、竞争、准入、物流和税费共同筛选可进入的国家或地区，而不是只看流量大小。跨境场景还要同时核对目的国要求、平台规则和实际履约能力。 \nanswer:将“目标市场筛选”纳入站点与SKU的上线清单。\nquestion:先建立候选市场表，核对需求信号、竞品价格、禁限售、关税税费、派送时效和退货可行性。把结论写入可复查清单，未被证据支持的字段不作为上线依据。 \nanswer:先完成资料收集与逐项核对，再启动试运行。\nquestion:核心是通过关键词、类目、竞品评价和试单数据确认真实购买需求与未被满足的痛点。跨境场景还要同时核对目的国要求、平台规则和实际履约能力。 \nanswer:将“需求验证”纳入站点与SKU的上线清单。\n请严格遵守以下规则：\n\n1. 用户本次问题中的明确表达优先级最高。\n\n如果用户在问题中明确指定了平台或站点，应以用户本次问题为准。\n\n例如：\n当前经营环境是 TikTok Shop 美国站，\n但用户询问 Amazon FBA，\n则回答 Amazon 相关问题，不得继续按照 TikTok Shop 回答。\n\n2. 当前经营环境只用于帮助理解和消除歧义。\n\n经营环境不是知识依据。\n\n不得因为当前经营环境显示某个平台或站点，就擅自认定检索到的所有内容都适用于该平台或站点。\n\n3. 跨境电商规则类问题优先依据知识库。\n\n涉及以下内容时尤其严格：\n- 平台政策\n- 退款退货\n- 物流履约\n- 费用\n- 税务\n- 合规\n- 违规\n- 申诉\n- 账号规则\n- 时间期限\n- 数值阈值\n\n如果当前知识检索结果不足以支持明确结论，不要依赖模型自身知识补充具体规则。\n\n应明确告诉用户：\n\n“当前知识库信息不足，暂时无法可靠确认该平台或站点的具体规则，建议以平台最新官方政策为准。”\n\n4. 不得混淆不同平台或不同站点的规则。\n\n如果检索结果明显来自与用户问题不同的平台或站点，不得将其直接作为答案。\n\n如果无法确认知识是否适用于当前平台或站点，应说明信息不足。\n\n5. 回答用户真正提出的问题。\n\n不要复述“当前经营环境”。\n不要告诉用户系统内部使用了什么变量、检索 Query、Workflow 或知识库节点。\n\n6. 回答应尽量简洁、明确。\n\n如果知识充分：\n先直接回答核心问题，再补充必要说明和注意事项。\n\n如果知识不足：\n直接说明缺失，不要为了完整而猜测。\n\n7. 对可能变化的平台政策保持谨慎。\n\n不得把可能随时间变化的政策、费用、税务、物流或合规要求描述为永久不变的事实。\n\n必要时提醒用户以平台最新官方规则为准。",
+                "files": []
+              },
+              {
+                "role": "user",
+                "text": "用户问题：跨境电商中，目标市场筛选是什么？",
+                "files": []
+              }
+            ],
+            "usage": {
+              "prompt_tokens": 695,
+              "prompt_unit_price": "0.0008",
+              "prompt_price_unit": "0.001",
+              "prompt_price": "0.000556",
+              "completion_tokens": 244,
+              "completion_unit_price": "0.0027",
+              "completion_price_unit": "0.001",
+              "completion_price": "0.0006588",
+              "total_tokens": 939,
+              "total_price": "0.0012148",
+              "currency": "RMB",
+              "latency": 24.928,
+              "time_to_first_token": 21,
+              "time_to_generate": 3.928
+            },
+            "finish_reason": "stop",
+            "model_provider": "langgenius/tongyi/tongyi",
+            "model_name": "qwen3.8-flash"
+          },
+          "process_data_truncated": false,
+          "outputs": {
+            "text": "跨境电商中的**目标市场筛选**，是指通过多维度数据评估，确定适合进入的国家或地区的过程。其核心在于**不只看流量大小**，而是基于以下五个关键维度共同决策：\n\n1.  **需求验证**：通过关键词、类目热度、竞品评价及试单数据，确认真实购买需求与未被满足的痛点。\n2.  **竞争分析**：核对竞品价格与市场饱和度。\n3.  **准入合规**：检查目的国的禁限售规定、平台规则以及当地法律要求。\n4.  **物流履约**：评估派送时效、退货可行性及实际履约能力。\n5.  **税费成本**：核算关税、增值税及其他相关费用对利润的影响。\n\n**执行建议：**\n*   **建立候选市场表**：先完成资料收集与逐项核对，将上述维度的结论写入可复查清单。\n*   **证据导向**：只有被证据支持的字段才能作为上线依据，避免主观猜测。\n*   **纳入上线清单**：将“目标市场筛选”和“需求验证”结果正式纳入站点与SKU的上线准备工作中，确认无误后再启动试运行。",
+            "reasoning_content": "",
+            "usage": {
+              "prompt_tokens": 695,
+              "prompt_unit_price": "0.0008",
+              "prompt_price_unit": "0.001",
+              "prompt_price": "0.000556",
+              "completion_tokens": 244,
+              "completion_unit_price": "0.0027",
+              "completion_price_unit": "0.001",
+              "completion_price": "0.0006588",
+              "total_tokens": 939,
+              "total_price": "0.0012148",
+              "currency": "RMB",
+              "latency": 24.928,
+              "time_to_first_token": 21,
+              "time_to_generate": 3.928
+            },
+            "finish_reason": "stop"
+          },
+          "outputs_truncated": false,
+          "status": "succeeded",
+          "error": null,
+          "elapsed_time": 24.930253,
+          "execution_metadata": {
+            "total_tokens": 939,
+            "total_price": "0.0012148",
+            "currency": "RMB"
+          },
+          "created_at": 1791107116,
+          "finished_at": 1791107141,
+          "files": [],
+          "iteration_id": null,
+          "loop_id": null
+        },
+        {
+          "received_ms": 32489,
+          "id": "83c6968b-d942-4128-9160-4f44d820f830",
+          "node_id": "1789825506496",
+          "node_type": "end",
+          "title": "rag输出",
+          "index": 1,
+          "predecessor_node_id": null,
+          "inputs": {
+            "result": "跨境电商中的**目标市场筛选**，是指通过多维度数据评估，确定适合进入的国家或地区的过程。其核心在于**不只看流量大小**，而是基于以下五个关键维度共同决策：\n\n1.  **需求验证**：通过关键词、类目热度、竞品评价及试单数据，确认真实购买需求与未被满足的痛点。\n2.  **竞争分析**：核对竞品价格与市场饱和度。\n3.  **准入合规**：检查目的国的禁限售规定、平台规则以及当地法律要求。\n4.  **物流履约**：评估派送时效、退货可行性及实际履约能力。\n5.  **税费成本**：核算关税、增值税及其他相关费用对利润的影响。\n\n**执行建议：**\n*   **建立候选市场表**：先完成资料收集与逐项核对，将上述维度的结论写入可复查清单。\n*   **证据导向**：只有被证据支持的字段才能作为上线依据，避免主观猜测。\n*   **纳入上线清单**：将“目标市场筛选”和“需求验证”结果正式纳入站点与SKU的上线准备工作中，确认无误后再启动试运行。"
+          },
+          "inputs_truncated": false,
+          "process_data": {},
+          "process_data_truncated": false,
+          "outputs": {
+            "result": "跨境电商中的**目标市场筛选**，是指通过多维度数据评估，确定适合进入的国家或地区的过程。其核心在于**不只看流量大小**，而是基于以下五个关键维度共同决策：\n\n1.  **需求验证**：通过关键词、类目热度、竞品评价及试单数据，确认真实购买需求与未被满足的痛点。\n2.  **竞争分析**：核对竞品价格与市场饱和度。\n3.  **准入合规**：检查目的国的禁限售规定、平台规则以及当地法律要求。\n4.  **物流履约**：评估派送时效、退货可行性及实际履约能力。\n5.  **税费成本**：核算关税、增值税及其他相关费用对利润的影响。\n\n**执行建议：**\n*   **建立候选市场表**：先完成资料收集与逐项核对，将上述维度的结论写入可复查清单。\n*   **证据导向**：只有被证据支持的字段才能作为上线依据，避免主观猜测。\n*   **纳入上线清单**：将“目标市场筛选”和“需求验证”结果正式纳入站点与SKU的上线准备工作中，确认无误后再启动试运行。"
+          },
+          "outputs_truncated": false,
+          "status": "succeeded",
+          "error": null,
+          "elapsed_time": 0.000066,
+          "execution_metadata": null,
+          "created_at": 1791107141,
+          "finished_at": 1791107141,
+          "files": [],
+          "iteration_id": null,
+          "loop_id": null
+        }
+      ],
+      "actual_intent": "knowledge_query",
+      "retrieval_top1_definition": "第一个实际完成的knowledge-retrieval节点返回数组的首项；多个节点分别保留在JSON，不猜最终LLM主要依据。",
+      "observed_models": [
+        "qwen3.8-flash"
+      ],
+      "qa_checks": [
+        {
+          "status": "MISALIGNED",
+          "local_row_id": "G0001",
+          "group": "General",
+          "document_type": "General KB",
+          "actual_question": "核心是用需求、竞争、准入、物流和税费共同筛选可进入的国家或地区，而不是只看流量大小。跨境场景还要同时核对目的国要求、平台规则和实际履约能力。",
+          "actual_answer": "将“目标市场筛选”纳入站点与SKU的上线清单。",
+          "expected_question": "跨境电商中，目标市场筛选是什么？",
+          "expected_answer": "核心是用需求、竞争、准入、物流和税费共同筛选可进入的国家或地区，而不是只看流量大小。跨境场景还要同时核对目的国要求、平台规则和实际履约能力。",
+          "dataset_id": "ba919c03-da30-4761-ac8f-abe35dad0c97",
+          "dataset_name": "跨境电商知识问答 1",
+          "document_id": "614fb475-5f85-4e8c-a433-423740e3ca95",
+          "document_name": "跨境电商高频问答500条.csv",
+          "segment_id": "99241764-8af0-4bf9-bb13-2501257ded4e",
+          "segment_position": 1,
+          "same_segment_id_seen_before_fix": true,
+          "score": 0.7934158421750669
+        },
+        {
+          "status": "MISALIGNED",
+          "local_row_id": "G0003",
+          "group": "General",
+          "document_type": "General KB",
+          "actual_question": "先建立候选市场表，核对需求信号、竞品价格、禁限售、关税税费、派送时效和退货可行性。把结论写入可复查清单，未被证据支持的字段不作为上线依据。",
+          "actual_answer": "先完成资料收集与逐项核对，再启动试运行。",
+          "expected_question": "如何建立目标市场筛选的最小执行清单？",
+          "expected_answer": "先建立候选市场表，核对需求信号、竞品价格、禁限售、关税税费、派送时效和退货可行性。把结论写入可复查清单，未被证据支持的字段不作为上线依据。",
+          "dataset_id": "ba919c03-da30-4761-ac8f-abe35dad0c97",
+          "dataset_name": "跨境电商知识问答 1",
+          "document_id": "614fb475-5f85-4e8c-a433-423740e3ca95",
+          "document_name": "跨境电商高频问答500条.csv",
+          "segment_id": "7fe021f1-f893-4f81-a557-f8fd4317fea7",
+          "segment_position": 3,
+          "same_segment_id_seen_before_fix": true,
+          "score": 0.6100211573004598
+        },
+        {
+          "status": "MISALIGNED",
+          "local_row_id": "G0011",
+          "group": "General",
+          "document_type": "General KB",
+          "actual_question": "核心是通过关键词、类目、竞品评价和试单数据确认真实购买需求与未被满足的痛点。跨境场景还要同时核对目的国要求、平台规则和实际履约能力。",
+          "actual_answer": "将“需求验证”纳入站点与SKU的上线清单。",
+          "expected_question": "跨境电商中，需求验证是什么？",
+          "expected_answer": "核心是通过关键词、类目、竞品评价和试单数据确认真实购买需求与未被满足的痛点。跨境场景还要同时核对目的国要求、平台规则和实际履约能力。",
+          "dataset_id": "ba919c03-da30-4761-ac8f-abe35dad0c97",
+          "dataset_name": "跨境电商知识问答 1",
+          "document_id": "614fb475-5f85-4e8c-a433-423740e3ca95",
+          "document_name": "跨境电商高频问答500条.csv",
+          "segment_id": "f354ecc6-41a1-45a5-8eb2-24675020670b",
+          "segment_position": 11,
+          "same_segment_id_seen_before_fix": true,
+          "score": 0.563905835959326
+        }
+      ],
+      "actual_document_types": [],
+      "severity": "P0",
+      "recommended_next_action": "人工核对当前Workflow所连dataset/document、重处理任务与实际QA预览；先让正确映射出现在当前Workflow返回中。本轮不修改Dify或检索参数。"
+    }
+  ],
+  "smoke": [],
+  "full": [],
+  "systemic_blockers": [
+    "实际QA映射仍错位，立即停止后续测试。",
+    "真实调用或映射检查失败，停止后续请求。",
+    "尚未核验三个分组各至少3条正确QA，停止后续测试。"
+  ],
+  "engineering": {
+    "TypeScript": {
+      "result": "PASS",
+      "exit_code": 0,
+      "command": "node node_modules/typescript/bin/tsc --noEmit",
+      "note": "build完成后顺序执行。"
+    },
+    "lint": {
+      "result": "PASS",
+      "exit_code": 0,
+      "command": "node node_modules/next/dist/bin/next lint",
+      "warnings": 8,
+      "note": "保留既有Hook/unused参数警告与Next工具提示。"
+    },
+    "build": {
+      "result": "PASS",
+      "exit_code": 0,
+      "command": "node node_modules/next/dist/bin/next build",
+      "note": "Next.js 15.5.25构建成功；未清理既有警告。"
+    },
+    "unit_tests": {
+      "result": "PASS",
+      "exit_code": 0,
+      "command": "node --disable-warning=MODULE_TYPELESS_PACKAGE_JSON --test tests/*.test.mjs",
+      "tests": 12,
+      "passed": 12,
+      "failed": 0,
+      "note": "隔离单元测试与唯一真实结构请求分别统计。"
+    }
+  },
+  "grading_policy": "自动检查只判定可证实的API/Streaming/显式字段故障；语义结论须保存逐条证据审查，无法判断保留NEEDS_REVIEW。",
+  "mapping_check": {
+    "status": "BLOCKED",
+    "groups": {
+      "General": [],
+      "Amazon": [],
+      "TikTok Shop": []
+    },
+    "correct_hit_count": 0,
+    "unique_correct_rows": 0,
+    "misaligned": [
+      {
+        "test_id": "STRUCT-G0001",
+        "local_row_id": "G0001",
+        "document_name": "跨境电商高频问答500条.csv"
+      },
+      {
+        "test_id": "STRUCT-G0001",
+        "local_row_id": "G0003",
+        "document_name": "跨境电商高频问答500条.csv"
+      },
+      {
+        "test_id": "STRUCT-G0001",
+        "local_row_id": "G0011",
+        "document_name": "跨境电商高频问答500条.csv"
+      }
+    ],
+    "unverified_count": 0,
+    "rule": "实际Question与CSV问题、Answer与CSV答案逐字去空白对照；仅忽略空白，不丢掉来源或数字，不依赖旧segment_position。"
+  },
+  "updated_at_utc": "2026-10-04T10:23:40.085Z",
+  "protection": {
+    "baseline_files": 168,
+    "changed": [],
+    "added": [],
+    "unchanged": true
+  },
+  "summary": {
+    "structure_requests": 1,
+    "smoke": {
+      "status": "NOT_RUN",
+      "count": 0,
+      "pass": 0,
+      "expected_gap": 0,
+      "needs_review": 0,
+      "fail": 0,
+      "layers": {
+        "API": 0,
+        "ROUTER": 0,
+        "CONTEXT": 0,
+        "RETRIEVAL": 0,
+        "COVERAGE": 0,
+        "GENERATION": 0
+      },
+      "gap_correct": 0,
+      "gap_total": 0,
+      "cross_platform_errors": 0,
+      "cross_market_errors": 0
+    },
+    "full": {
+      "status": "NOT_RUN",
+      "count": 0,
+      "pass": 0,
+      "expected_gap": 0,
+      "needs_review": 0,
+      "fail": 0,
+      "layers": {
+        "API": 0,
+        "ROUTER": 0,
+        "CONTEXT": 0,
+        "RETRIEVAL": 0,
+        "COVERAGE": 0,
+        "GENERATION": 0
+      },
+      "gap_correct": 0,
+      "gap_total": 0,
+      "cross_platform_errors": 0,
+      "cross_market_errors": 0
+    }
+  },
+  "recommendation": "FAIL",
+  "diagnostics": {
+    "requests": 1,
+    "start_input_echo_confirmed": 1,
+    "streaming_success": 1,
+    "retrieval_nodes": 1,
+    "retrieval_query_matches": 1,
+    "raw_cross_platform_cases": [],
+    "raw_cross_market_cases": []
+  },
+  "evidence_review": {
+    "reviewed_at_utc": "2026-10-04",
+    "method": "逐字对照当前真实Workflow检索事件与本地原始五列CSV；General发现映射错位后按用户第一阶段要求停止。未复用旧语义判定。"
+  },
+  "artifact_security": "PASS；9个本轮评测文件及29个客户端JS产物未含真实API Key；未打印密钥或Authorization值。",
+  "artifact_validation": {
+    "structure_requests": 1,
+    "misaligned_qa_count": 3,
+    "smoke_status": "NOT_RUN",
+    "full_status": "NOT_RUN",
+    "old_evaluation_and_business_hash_match": true,
+    "original_desktop_csv_unchanged": true,
+    "key_found_in_artifacts": false
+  }
+}

@@ -1,24 +1,26 @@
 'use client'
 import React, { useEffect, useRef, useState } from 'react'
-import { ArrowPathIcon, ArrowUpRightIcon } from '@heroicons/react/24/outline'
+import { ArrowPathIcon } from '@heroicons/react/24/outline'
 import RunOnce from './run-once'
 import Result from './result'
-import BusinessTips from './business-tips'
+import TaskLauncher from './task-launcher'
+import { useOperatingEnvironment } from './site-shell/environment'
 import { APP_INFO, IS_WORKFLOW } from '@/config'
+import type { TaskId } from '@/config/tasks'
+import { TASKS, TASK_GUIDES } from '@/config/tasks'
+import { toWorkflowContext } from '@/config/operating-environment'
+import { isWorkflowContextKey } from '@/utils/workflow-context'
 import { fetchAppParams } from '@/service'
 import { userInputsFormToPromptVariables } from '@/utils/prompt'
 import { changeLanguage } from '@/i18n/i18next-config'
 import type { PromptConfig, VisionFile, VisionSettings } from '@/types/app'
 import { Resolution, TransferMethod } from '@/types/app'
 
-const questions = [
-  { topic: '库存管理', text: 'Amazon FBA 库存积压应该怎么处理？' },
-  { topic: '广告投放', text: 'ACOS 持续上升可能有哪些原因？' },
-  { topic: '平台比较', text: 'Temu 和 Amazon 的履约模式有什么区别？' },
-  { topic: '税务合规', text: '欧洲站 VAT 有哪些常见风险？' },
-]
-
 export default function TextGeneration({ isConfigured }: { isConfigured: boolean }) {
+  const { environment, storageUnavailable } = useOperatingEnvironment()
+  const [activeTask, setActiveTask] = useState<TaskId | null>(null)
+  const [pendingExample, setPendingExample] = useState<string | null>(null)
+  const [exampleNotice, setExampleNotice] = useState('')
   const [inputs, setInputs] = useState<Record<string, any>>({})
   const [promptConfig, setPromptConfig] = useState<PromptConfig | null>(null)
   const [appError, setAppError] = useState('')
@@ -34,6 +36,19 @@ export default function TextGeneration({ isConfigured }: { isConfigured: boolean
   })
   const composerRef = useRef<HTMLDivElement>(null)
   const answerRef = useRef<HTMLElement>(null)
+  const pendingFocus = useRef(false)
+
+  useEffect(() => {
+    const task = new URLSearchParams(window.location.search).get('task')
+    const selected = TASKS.find(item => item.id === task)
+    if (selected) {
+      setActiveTask(selected.id)
+      pendingFocus.current = true
+    }
+    else if (window.location.hash === '#ask') {
+      pendingFocus.current = true
+    }
+  }, [])
 
   useEffect(() => {
     let active = true
@@ -51,6 +66,7 @@ export default function TextGeneration({ isConfigured }: { isConfigured: boolean
         if (!active)
           return
         const prompt_variables = userInputsFormToPromptVariables(parameters.user_input_form)
+          .filter(item => !isWorkflowContextKey(item.key))
         setPromptConfig({ prompt_template: '', prompt_variables })
         setVisionConfig(current => ({
           ...current,
@@ -71,11 +87,51 @@ export default function TextGeneration({ isConfigured }: { isConfigured: boolean
   const questionVariable = promptConfig?.prompt_variables.find(item => ['query', 'question'].includes(item.key) && ['string', 'paragraph'].includes(item.type))
     || promptConfig?.prompt_variables.find(item => ['string', 'paragraph'].includes(item.type))
 
+  const taskQuestion = activeTask ? TASK_GUIDES[activeTask].questions[0] : null
+  const placeholder = taskQuestion
+    ? `例如：${environment ? taskQuestion.contextExample : taskQuestion.example}`
+    : environment ? '例如：退款申请需要在多久内处理？' : '例如：TikTok Shop 商品被下架后怎么处理？'
+
+  const focusQuestion = () => {
+    const question = composerRef.current?.querySelector<HTMLTextAreaElement>('#question')
+    if (question) {
+      question.focus({ preventScroll: true })
+      question.scrollIntoView({ block: 'center' })
+      pendingFocus.current = false
+    }
+    else {
+      pendingFocus.current = true
+      composerRef.current?.scrollIntoView({ block: 'center' })
+    }
+  }
+
+  useEffect(() => {
+    if (questionVariable && pendingExample !== null) {
+      setInputs(current => ({ ...current, [questionVariable.key]: pendingExample }))
+      setPendingExample(null)
+      setExampleNotice('已填入示例问题，可编辑并补充你的情况。')
+    }
+    if (questionVariable && pendingFocus.current)
+      focusQuestion()
+  }, [questionVariable, pendingExample])
+
   const selectQuestion = (question: string) => {
-    if (!questionVariable || isBusy)
+    if (isBusy)
       return
-    setInputs(current => ({ ...current, [questionVariable.key]: question }))
-    composerRef.current?.querySelector<HTMLTextAreaElement>('textarea')?.focus()
+    if (questionVariable) {
+      setInputs(current => ({ ...current, [questionVariable.key]: question }))
+      setExampleNotice('已填入示例问题，可编辑并补充你的情况。')
+    }
+    else {
+      setPendingExample(question)
+      setExampleNotice('已选好问题，连接恢复后将填入输入框。')
+    }
+    focusQuestion()
+  }
+
+  const changeInputs = (nextInputs: Record<string, any>) => {
+    setInputs(nextInputs)
+    setExampleNotice('')
   }
 
   const handleSend = () => {
@@ -87,65 +143,36 @@ export default function TextGeneration({ isConfigured }: { isConfigured: boolean
   }
 
   return (
-    <div className='site-shell'>
-      <a className='skip-link' href='#question'>跳到提问</a>
-      <header className='site-header'>
-        <div className='header-inner'>
-          <a className='brand' href='/' aria-label='越海首页'>
-            <svg className='brand-mark' viewBox='0 0 40 40' aria-hidden='true'>
-              <rect width='40' height='40' rx='12' fill='currentColor' />
-              <path d='m12 27 7-16 3 10 7 6H12Z M10 31h20' fill='none' stroke='white' strokeWidth='1.8' strokeLinejoin='round' strokeLinecap='round' />
-            </svg>
-            <span>{APP_INFO.title}</span>
-            <span className='brand-description'>跨境电商 AI 知识助手</span>
-          </a>
-          <span className='header-note'>让每一步出海，更有方向</span>
-        </div>
-      </header>
-      <main className='main-content'>
-        <section className='intro'>
-          <h1>跨境生意的难题，<br className='mobile-break' /><span>一起理清。</span></h1>
-          <p>{APP_INFO.description}</p>
-          <div className='platforms' aria-label='支持的话题平台'>
-            <span>Amazon</span><span>Temu</span><span>TikTok Shop</span><span>Shopee</span>
-          </div>
-        </section>
+    <main className='main-content home-page' id='main-content' tabIndex={-1}>
+      <TaskLauncher activeTask={activeTask} onSelect={setActiveTask} onQuestion={selectQuestion}
+        onCompose={focusQuestion} hasEnvironment={!!environment} isBusy={isBusy} />
+      <section className='assistant-section' id='ask' aria-labelledby='ask-heading'>
+        <div className='assistant-intro'><h2 id='ask-heading'>或者直接问越海 AI</h2><p>越海当前基于跨境电商知识库提供规则与经营信息辅助。</p></div>
         <div className='workspace'>
           <section className='question-panel' aria-label='提问区域'>
-            <div className='suggestions-heading'><h2>从一个问题开始</h2><span>点击填入</span></div>
-            <div className='suggestions'>
-              {questions.map(question => (
-                <button className='suggestion' type='button' key={question.text}
-                  disabled={!questionVariable || isBusy} onClick={() => selectQuestion(question.text)}>
-                  <span className='suggestion-topic'>{question.topic}</span>
-                  <span className='suggestion-text'>{question.text}</span>
-                  <ArrowUpRightIcon aria-hidden='true' />
-                </button>
-              ))}
-            </div>
+            {exampleNotice && <p className='example-notice' role='status'>{exampleNotice}{pendingExample && <span>{pendingExample}</span>}</p>}
             <div ref={composerRef} className='composer-wrap'>
               {appError
                 ? <div className='connection-error' role='alert'><p>{appError}</p><button type='button' onClick={() => setReload(current => current + 1)}><ArrowPathIcon aria-hidden='true' />重新连接</button></div>
                 : promptConfig
-                  ? <RunOnce inputs={inputs} onInputsChange={setInputs} promptConfig={promptConfig}
+                  ? <RunOnce inputs={inputs} onInputsChange={changeInputs} promptConfig={promptConfig}
                     onSend={handleSend} visionConfig={visionConfig} onVisionFilesChange={setCompletionFiles}
-                    isBusy={isBusy} questionKey={questionVariable?.key} />
+                    isBusy={isBusy} questionKey={questionVariable?.key} questionPlaceholder={placeholder} />
                   : <div className='composer-loading' role='status'><span className='loading-ring' />正在连接知识助手…</div>
               }
             </div>
-            <p className='question-hint'>带上平台、站点和具体情况，回答会更有针对性。</p>
+            <p className='question-hint'>回答将参考当前经营环境；若问题中明确指定其他平台或站点，以问题内容为准。</p>
+            {storageUnavailable && <p className='question-hint' role='status'>浏览器暂不支持保存经营环境，选择仅在本次页面使用。</p>}
           </section>
           <section className='answer-panel' ref={answerRef} aria-labelledby='answer-heading' aria-busy={isBusy}>
             <div className='answer-heading'><h2 id='answer-heading'>分析与建议</h2><span className={isBusy ? 'answer-status active' : 'answer-status'}>{isBusy ? '正在整理思路' : controlSend ? '本次回答' : '等待你的问题'}</span></div>
             <Result isWorkflow={IS_WORKFLOW} isCallBatchAPI={false} isPC isMobile={false} isError={false}
-              promptConfig={promptConfig} inputs={inputs} controlSend={controlSend}
+              promptConfig={promptConfig} inputs={inputs} controlSend={controlSend} workflowContext={toWorkflowContext(environment)}
               onShowRes={() => {}} onCompleted={() => {}} onRespondingChange={setIsBusy}
               visionConfig={visionConfig} completionFiles={completionFiles} />
           </section>
         </div>
-        <BusinessTips />
-      </main>
-      <footer className='site-footer'><span>越海 · 专注跨境电商知识</span><span>AI 回答仅供参考，平台政策与合规要求请以官方信息为准。</span></footer>
-    </div>
+      </section>
+    </main>
   )
 }

@@ -1,0 +1,2 @@
+# Keep imported knowledge and historical evaluation evidence byte-for-byte.
+knowledge-base/** -text

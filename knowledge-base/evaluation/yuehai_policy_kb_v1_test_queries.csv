@@ -1,0 +1,55 @@
+﻿test_id,platform_context,market_context,topic,query,query_type,expected_kb,expected_policy_rows,expected_behavior,status
+TEST-001,,,市场选择,跨境电商中，目标市场筛选是什么？,general_concept,General KB,,召回General G0001的通用经营解释，不杜撰平台政策。,not_run
+TEST-002,,,市场调研,跨境电商中，需求验证是什么？,general_concept,General KB,,召回General G0011的通用经营解释，不杜撰平台政策。,not_run
+TEST-003,,,选品,跨境电商中，跨境选品标准是什么？,general_concept,General KB,,召回General G0051的通用经营解释，不杜撰平台政策。,not_run
+TEST-004,,,供应商管理,跨境电商中，供应商准入是什么？,general_concept,General KB,,召回General G0071的通用经营解释，不杜撰平台政策。,not_run
+TEST-005,,,履约模式,跨境电商中，FBA 与自发货选择是什么？,general_concept,General KB,,召回General G0261的通用经营解释，不杜撰平台政策。,not_run
+TEST-006,,,利润,跨境电商中，单位贡献毛利是什么？,general_concept,General KB,,召回General G0211的通用经营解释，不杜撰平台政策。,not_run
+TEST-007,,,税务合规,跨境电商中，VAT、OSS 与 IOSS是什么？,general_concept,General KB,,召回General G0171的通用经营解释，不杜撰平台政策。,not_run
+TEST-008,,,现金流,跨境电商中，补货现金流是什么？,general_concept,General KB,,召回General G0251的通用经营解释，不杜撰平台政策。,not_run
+TEST-009,,,库存,跨境电商中，跨境库存规划是什么？,general_concept,General KB,,召回General G0281的通用经营解释，不杜撰平台政策。,not_run
+TEST-010,,,产品安全,跨境电商中，产品安全与认证是什么？,general_concept,General KB,,召回General G0121的通用经营解释，不杜撰平台政策。,not_run
+TEST-011,Amazon,UK,退款退货,Amazon 英国站退货规则是什么？,expected_gap,Expected Gap,,用户给定的真实Bad Case；本轮只做美国站，不能套用美国站期限。 应明确缺口或请求补充信息，不能编造答案。,not_run
+TEST-012,,,广告与经营,ACOS 是什么？,expected_gap,Expected Gap,,原始500条问题与答案全文未找到ACOS字样；应归General，但本轮不扩写。 应明确缺口或请求补充信息，不能编造答案。,not_run
+TEST-013,,,广告与经营,ROAS 是什么？,expected_gap,Expected Gap,,原始500条问题与答案全文未找到ROAS字样；应归General，但本轮不扩写。 应明确缺口或请求补充信息，不能编造答案。,not_run
+TEST-014,TikTok Shop,UK,退款退货,TikTok Shop 英国站退款需要多久处理？,expected_gap,Expected Gap,,范围外测试候选，不是实际线上失败日志；不能套用美国站时限。 应明确缺口或请求补充信息，不能编造答案。,not_run
+TEST-015,Temu,US,退款退货,Temu 美国市场的退货期限是多久？,expected_gap,Expected Gap,,范围外测试候选，本轮不铺Temu。 应明确缺口或请求补充信息，不能编造答案。,not_run
+TEST-016,Shopee,SG,账号与违规,Shopee 新加坡站违规申诉期限是多少？,expected_gap,Expected Gap,,范围外测试候选，本轮不铺Shopee。 应明确缺口或请求补充信息，不能编造答案。,not_run
+TEST-017,,,退款退货,退款多久？,ambiguous,Expected Gap,,模糊测试候选；无平台、站点和订单状态，预期先澄清，不猜具体期限。 应明确缺口或请求补充信息，不能编造答案。,not_run
+TEST-018,Amazon,US,费用与结算,我的店铺今天还能结算多少钱？,expected_gap,Expected Gap,,没有店铺API或真实结算数据，知识库不能回答账户实时金额。 应明确缺口或请求补充信息，不能编造答案。,not_run
+TEST-019,TikTok Shop,US,退款退货,Amazon 美国站自配送收回退货后多久要退款？,platform_conflict,Policy KB,P0001,问题明确指定Amazon美国站，优先问题内容；区分收货后退款与首次扫描退款。,not_run
+TEST-020,Amazon,US,退款退货,退货请求需要我手动审批，几小时内得回？,colloquial,Policy KB,P0002,明确为手动审核请求，不能当成收到退货后的退款期限。,not_run
+TEST-021,Amazon,US,退款退货,退件没回仓，怎么已经退款了？,colloquial,Policy KB,P0003,说明首次扫描退款的标签计划及授权条件。,not_run
+TEST-022,Amazon,US,申诉,A-to-z判我退款，我觉得判错能提异议吗？,colloquial,Policy KB,P0006,只回答公开指南支持的可申诉及证据，不编造后台期限。,not_run
+TEST-023,Amazon,US,账号与违规,ODR要求？,short,Policy KB,P0015,使用当前美国站环境，回答一般要求并保留计算细则未覆盖边界。,not_run
+TEST-024,Amazon,US,订单履约,Pending订单先寄出去可以吗？,short,Policy KB,P0018,Pending付款未确认不能发货或联系买家。,not_run
+TEST-025,Amazon,US,商品发布,包装有个很小的logo，能填generic吗？,colloquial,Policy KB,P0025,核对商品及包装是否存在品牌标识。,not_run
+TEST-026,Amazon,US,商品发布,5665怎么处理？,short,Policy KB,P0029,命中具体上架错误处理，不能泛化成店铺违规。,not_run
+TEST-027,Amazon,US,商品发布,美国站商品图片多大、支持什么格式？,natural,Policy KB,P0031,只提供已核验基本规格，不杜撰类目主图要求。,not_run
+TEST-028,Amazon,US,订单履约,供应商代发的包裹放他家的卖家发票行不行？,colloquial,Policy KB,P0035,说明记录卖家及第三方身份材料限制。,not_run
+TEST-029,Amazon,US,物流,Buy Shipping标签买了，是不是A-to-z就自动保护？,natural,Policy KB,P0021,保留按时首次扫描和48小时回消息的条件。,not_run
+TEST-030,Amazon,US,物流,FBA入库少了几件，申请查差异准备什么？,colloquial,Policy KB,P0040,先核对调查资格，再回答所有权与送达证明。,not_run
+TEST-031,Amazon,US,费用与结算,专业计划月费多少？,short,Policy KB,P0044,回答美国站计划费用，说明其他销售及可选费用另计。,not_run
+TEST-032,Amazon,US,费用与结算,佣金会把运费也算进去吗？,short,Policy KB,P0045,说明总价组成及适用最低佣金。,not_run
+TEST-033,Amazon,US,广告与经营,给两星买家退款，能让他顺便改成好评吗？,colloquial,Policy KB,P0054,说明工具资格和不能附加改评要求。,not_run
+TEST-034,Amazon,US,广告与经营,Vine报名需要满足什么条件？,natural,Policy KB,P0056,回答商品与账号资格，不承诺获得好评。,not_run
+TEST-035,TikTok Shop,US,退款退货,不可退的食品退款，商品120美元要多久处理？,known_gap,Expected Gap,,官方摘要与详细条款存在适用边界差异，当前QA排除；不得擅自给出统一时限或举证格式，提示需核对具体案件和官方规则；此测试尚未执行。,not_run
+TEST-036,TikTok Shop,US,退款退货,还没发货，买家退款我要多久内处理？,known_gap,Expected Gap,,官方摘要与详细条款存在适用边界差异，当前QA排除；不得擅自给出统一时限或举证格式，提示需核对具体案件和官方规则；此测试尚未执行。,not_run
+TEST-037,TikTok Shop,US,退款退货,退回来的货坏了，拒绝退款上传视频可以吗？,known_gap,Expected Gap,,官方摘要与详细条款存在适用边界差异，当前QA排除；不得擅自给出统一时限或举证格式，提示需核对具体案件和官方规则；此测试尚未执行。,not_run
+TEST-038,TikTok Shop,US,退款退货,签收后多少天可以退？,short,Policy KB,P0062,提供默认窗口并保留结账显示及活动覆盖例外。,not_run
+TEST-039,TikTok Shop,US,申诉,收到售后纠纷通知，交证据还有多久？,short,Policy KB,P0066,命中售后纠纷证据时限，不与违规申诉混淆。,not_run
+TEST-040,Amazon,US,申诉,TikTok Shop 美国站违规被拒一次后，还能申诉吗？,platform_conflict,Policy KB,P0072,问题明确指定TikTok美国站；保留普通及即时执法分支，不用Amazon规则。,not_run
+TEST-041,TikTok Shop,US,账号与违规,AHR只剩100分，会受什么限制？,short,Policy KB,P0079,按对应里程碑条件解释，不声称拿到了店铺真实分数。,not_run
+TEST-042,TikTok Shop,US,商品合规,膳食补充剂提交资料就一定能卖吗？,natural,Policy KB,P0086,区分邀请、申请及获批。,not_run
+TEST-043,TikTok Shop,US,商品发布,老链接评价很好，能换成另外一个产品吗？,colloquial,Policy KB,P0089,回答商品发布对替换旧listing的限制。,not_run
+TEST-044,TikTok Shop,US,商品发布,系统自动推荐的类目还要检查吗？,natural,Policy KB,P0091,强调卖家复核责任及需要批准的类目。,not_run
+TEST-045,TikTok Shop,US,订单履约,美区普通订单多久内发货？,short,Policy KB,P0098,命中常规订单SLA，区分工作日和订单状态。,not_run
+TEST-046,TikTok Shop,US,订单履约,SFCR能不能超过2.5%？,short,Policy KB,P0104,回答卖家责任取消率边界，不借用Amazon严格小于的表述。,not_run
+TEST-047,TikTok Shop,US,物流,有效追踪率最低多少？,short,Policy KB,P0110,保留物流方式例外，区分AHR与SPS影响。,not_run
+TEST-048,TikTok Shop,US,物流,接到单再去另一个零售平台下单直寄，行不行？,colloquial,Policy KB,P0115,回答美国站该物流行为限制，不套用Amazon代发准入。,not_run
+TEST-049,TikTok Shop,US,广告与经营,送优惠券让客户写评价可以吗？,natural,Policy KB,P0119,区分私下激励与官方功能例外。,not_run
+TEST-050,TikTok Shop,US,费用与结算,预留款从什么时候算30天？,short,Policy KB,P0123,回答送达日起计，不编造当前店铺预留比例。,not_run
+TEST-051,TikTok Shop,US,退款退货,买家责任退货的运费，卖家承担100%还是50%？,known_gap,Expected Gap,,官方正文与FAQ存在差异；说明待核验，不强选一个比例。；这是设计的回退测试，不是新增线上Bad Case。,not_run
+TEST-052,Amazon,US,商品合规,美国站处方医疗器械能通过专业医疗计划销售吗？,known_gap,Expected Gap,,官方指南范围表述不清，当前未建立可售结论。；这是设计的回退测试，不是新增线上Bad Case。,not_run
+TEST-053,TikTok Shop,US,费用与结算,每个结算档位具体几天、预留百分之几？,known_gap,Expected Gap,,图片表格尚未核验，不能输出旧版数字。；这是设计的回退测试，不是新增线上Bad Case。,not_run
+TEST-054,Amazon,US,申诉,A-to-z申诉必须几天内提交？,known_gap,Expected Gap,,公开指南无详细期限，后台正文未读到，不推测截止日。；这是设计的回退测试，不是新增线上Bad Case。,not_run

@@ -1,0 +1,42 @@
+[
+  {
+    "source_id": "TTS-S01",
+    "topic": "退款退货",
+    "question": "TikTok Shop 美国站不可退商品的退款申请多久要处理？",
+    "answer": "适用范围：TikTok Shop 美国站因商品性质而不可退的商品退款，如食品饮料；Final Sale审核时限存在差异，不适用本结论；商品价格≤100美元须在2个工作日内决定，>100美元为4个工作日；逾期平台可自动同意；官方来源：TikTok Shop Seller University《退货、退款及替换商品管理要求》；官方页面：https://seller-us.tiktok.com/university/essay?knowledge_id=984433248438058；官方页面日期：2026-08-20；官方页面未明确标注生效日期；最后核验：2026-10-02。",
+    "action": "按实付商品价确认时限，在售后订单内批准或拒绝。",
+    "exclusion_reason": "官方正文与摘要/相关详细规则存在适用边界差异；等待人工或平台确认，不能自动选一"
+  },
+  {
+    "source_id": "TTS-S01",
+    "topic": "退款退货",
+    "question": "TikTok Shop 美国站尚未发货的订单收到退款请求，处理时限是什么？",
+    "answer": "适用范围：TikTok Shop 美国站处于Ready to Ship至Transit to Ship之间的订单；须在24小时内决定；期间转为Transit to Ship则适用运输中订单规则，逾期平台可自动同意；官方来源：TikTok Shop Seller University《退货、退款及替换商品管理要求》；官方页面：https://seller-us.tiktok.com/university/essay?knowledge_id=984433248438058；官方页面日期：2026-08-20；官方页面未明确标注生效日期；最后核验：2026-10-02。",
+    "action": "查看订单状态及倒计时，在24小时内处理。",
+    "exclusion_reason": "官方正文与摘要/相关详细规则存在适用边界差异；等待人工或平台确认，不能自动选一"
+  },
+  {
+    "source_id": "TTS-S01",
+    "topic": "退款退货",
+    "question": "TikTok Shop 美国站收回退货后因损坏或错货拒绝退款，要提交什么材料？",
+    "answer": "适用范围：TikTok Shop 美国站退货评级及快速退款申诉；按原样、轻微损坏仍可用、严重损坏不可售或买家寄错货评级；提交JPG/PNG照片，每文件≤5MB、最多6张，该流程不收视频；官方来源：TikTok Shop Seller University《退货、退款及替换商品管理要求》；官方页面：https://seller-us.tiktok.com/university/essay?knowledge_id=984433248438058；官方页面日期：2026-08-20；官方页面未明确标注生效日期；最后核验：2026-10-02。",
+    "action": "在Manage Return/Refund点击Respond或Appeal，评级并上传对应照片。",
+    "exclusion_reason": "官方正文与摘要/相关详细规则存在适用边界差异；等待人工或平台确认，不能自动选一"
+  },
+  {
+    "source_id": "TTS-S12",
+    "topic": "订单履约",
+    "question": "TikTok Shop 美国站manifest或应用内扫码可以证明按时发货吗？",
+    "answer": "适用范围：TikTok Shop 美国站功能可用且符合资格的订单；承运商扫描通常用于发货SLA；合格manifest或应用内扫码事件也可被采用，卖家仍须准确备货并按要求真实交接，不能泛化到所有订单；官方来源：TikTok Shop Seller University《订单履约政策》；官方页面：https://seller-us.tiktok.com/university/essay?knowledge_id=3995852763301633；官方页面日期：2026-09-28；官方页面未明确标注生效日期；最后核验：2026-10-02。",
+    "action": "核对订单资格及平台认可的发货事件，并完成真实交接。",
+    "exclusion_reason": "官方正文与摘要/相关详细规则存在适用边界差异；等待人工或平台确认，不能自动选一"
+  },
+  {
+    "source_id": "TTS-S01",
+    "topic": "退款退货",
+    "question": "TikTok Shop 美国站买家要补发替换商品，卖家有多长时间响应？",
+    "answer": "适用范围：TikTok Shop 美国站替换商品请求；须在1个工作日内批准，否则平台可代批；卖家承担补发运费；同一原订单商品限1次替换，缺货可自动退款；官方来源：TikTok Shop Seller University《退货、退款及替换商品管理要求》；官方页面：https://seller-us.tiktok.com/university/essay?knowledge_id=984433248438058；官方页面日期：2026-08-20；官方页面未明确标注生效日期；最后核验：2026-10-02。",
+    "action": "及时审核补发请求并确认库存和运费。",
+    "exclusion_reason": "Policy Pulse所有售后4工作日的宽泛表述与替换商品1工作日分支关系未明确，保守排除时限结论待确认"
+  }
+]
