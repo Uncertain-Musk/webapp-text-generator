@@ -2,7 +2,7 @@
 
 基于 [Dify 官方 Text Generator Web App 模板](https://github.com/langgenius/webapp-text-generator)制作的面试 Demo。首页以商户经营任务为入口，帮助用户找到平台规则、违规处理、退款售后等问题的提问方向，保留现有 Dify Workflow 流式回答与 Markdown 展示。
 
-项目接手入口：[2026-10-08 交接文档](docs/handoff-2026-10-08.md)，包含当前功能、工程验证、知识质量限制和后续修改优先级。
+当前开发入口为本文、[MVP 0.4 广告分析说明](docs/mvp-0.4.md)及 [Streaming 排查与部署核验](docs/streaming-diagnostics.md)。最新广告知识候选见 [P0 简洁导入包](knowledge-base/shopee/p0-candidate/README.md)。[2026-10-08 交接文档](docs/handoff-2026-10-08.md)保留该日的功能、工程验证和知识质量快照。
 
 ## 当前能力与范围
 
@@ -14,7 +14,8 @@ AI 后端为 Dify 知识助手；当前模型由 Dify 配置，项目需求记�
 | 六个首页任务 | 就地展开各自的 6 个场景问题和建议补充的信息；点击具体问题才填入输入框，不自动提交。切换或收起分类不覆盖草稿；“直接描述我的情况”聚焦输入框 |
 | 上架合规 | 提供品牌、图片、类目、认证、宣传用语和知识产权规则的提问方向；自动合规检查待开放 |
 | 利润广告 | 提供 ACOS、ROAS、成本和利润口径的提问方向；不接入广告数据、不提供计算器结果 |
-| 经营工具 `/tools` | 计算工具待开放说明，可返回知识问答了解指标概念 |
+| 经营工具 `/tools` | Shopee 广告分析入口；保留返回知识问答链接 |
+| Shopee 广告分析 `/tools/shopee-ads` | 手工输入，本地公式计算、三层漏斗与对应经营计划，区分手动搜索广告和 GMV Max，不上传经营数据 |
 | 规则与合规 `/compliance` | 合规检查待开放说明，以及返回首页咨询规则或平台差异的入口 |
 | 问题处理 `/issues` | 专项流程待开放说明，以及违规、售后问题的提问入口 |
 
@@ -24,13 +25,21 @@ AI 后端为 Dify 知识助手；当前模型由 Dify 配置，项目需求记�
 
 首页问答采用同宽单列：用户输入问题后，在输入区域下方阅读“分析与建议”。PC 内容区最大宽度为 1040px，回答正文可用宽度约 918px；主标题 34px、问答区块标题 22px、任务名称 16px、输入与回答正文 16px、辅助说明 12–13px。回答按 Markdown 标题、列表和加粗内容呈现层级，不改写模型输出。手机保留两列任务入口，问答继续纵向排列，长表格在回答内部横向滚动。
 
+## Shopee 广告分析（MVP 0.4）
+
+经营工具提供独立分析页，计算逻辑与规则在 `utils/shopee-ads.ts`；页面不调用 Dify、不接入广告账户、不保存商家输入。目标 ROAS 和广告前贡献毛利率由用户提供，Orders 与 Conversions 分开计算。完整公式、输入边界、回滚方式与测试命令见 [模块说明](docs/mvp-0.4.md)。
+
+最新 Shopee 广告专题候选位于 [`knowledge-base/shopee/p0-candidate/`](knowledge-base/shopee/p0-candidate/README.md)，只需两份 QA CSV：50 条广告知识、8 条行业研究，共 58 条。原 28 条保留，新增 30 条 P0 场景知识；来源、审计、未应用修订建议和 54 条未执行评测集中在 `review.json`。本包重点补充有官方依据的 SG/MY 广告场景，不能当成全站点广告规则。人工操作见包内 [导入与测试说明](knowledge-base/shopee/p0-candidate/Dify_QA导入及测试操作说明.md)。
+
+`knowledge-base/shopee/shopee_all_qa.csv` 保留另一批 97 条基线：原 20 条广告、8 条行业研究和 69 条多站点经营 QA；原维护文件保持不变。两批重叠原 28 条，不能同时完整导入。多站点部分覆盖新加坡、马来西亚、菲律宾、泰国、越南、台湾、巴西、墨西哥和印度尼西亚；具体范围与限制见 [扩充报告](knowledge-base/reports/shopee-multimarket-expansion-2026-10-11.md)及 [基线导入指南](knowledge-base/shopee/shopee_kb_import_guide.md)。这些本地候选尚未导入 Dify，不代表网页已能检索；模型、Workflow 与 Netlify 配置未修改。既有 Streaming 生产断流和 MVP 0.3.1 知识质量缺陷仍需单独处理。
+
 ## 知识库维护与真实回归（MVP 0.3）
 
 `knowledge-base/` 分文件维护 General 与 Policy。General 为原始 500 条的字节一致副本；Policy v0.1 为 Amazon 美国站和 TikTok Shop 美国站的 124 条官方来源 QA。两个导入文件均为五列 UTF-8-SIG CSV，来源审计、Gap、测试集及报告不导入 Dify。
 
 MVP 0.3.1 已完成 2026-10-08 的真实结构核验及完整回归。General 4 条、Amazon US 3 条、TikTok Shop US 3 条结构样本均为 Question=CSV 问题、Answer=完整答案；全轮 126 次命中对应 81 条唯一知识，未发现错位。管理 API 未开放，全部文档的启用/索引状态仍须人工确认，不能把样本核验等同于全库扫描。
 
-当前验收建议为 FAIL：8 条冒烟为 4 PASS、1 EXPECTED_GAP、3 FAIL；54 条为 21 PASS、9 EXPECTED_GAP、10 NEEDS_REVIEW、14 FAIL。结构和 Streaming 正常，但仍有政策时限混淆、阈值错误、关键例外遗漏及知识缺口下无依据回答。证据见 [完整验收报告](knowledge-base/reports/mvp-0.3.1-final-evaluation.md)与[前后比较](knowledge-base/reports/mvp-0.3.1-final-comparison.md)，运行方式见 [知识库 README](knowledge-base/README.md)。历史评测及 2026-10-04 阻塞报告完整保留；旧版 28/9/9/8 不作为修复后质量结论。
+当前验收建议为 FAIL：8 条冒烟为 4 PASS、1 EXPECTED_GAP、3 FAIL；54 条为 21 PASS、9 EXPECTED_GAP、10 NEEDS_REVIEW、14 FAIL。该轮 Dify API 回归的结构和 Streaming 正常，但仍有政策时限混淆、阈值错误、关键例外遗漏及知识缺口下无依据回答。生产环境的 Streaming 核验单独记录在 [Streaming 排查文档](docs/streaming-diagnostics.md)。知识质量证据见 [完整验收报告](knowledge-base/reports/mvp-0.3.1-final-evaluation.md)与[前后比较](knowledge-base/reports/mvp-0.3.1-final-comparison.md)，运行方式见 [知识库 README](knowledge-base/README.md)。历史评测及 2026-10-04 阻塞报告完整保留；旧版 28/9/9/8 不作为修复后质量结论。
 
 ## 当前经营环境与 Workflow 上下文
 
@@ -97,7 +106,11 @@ Dify Workflow Service API Key 已绑定应用，因此不需要单独的 App ID�
 
 ## 流式回答
 
-Workflow Route 使用 SSE 转发 Dify 的 `text_chunk`、节点状态和完成事件。浏览器在首个文本块到达后开始展示回答，后续文本按短时间窗口合并刷新；每次 SSE 活动都会重置无活动超时。连续 60 秒未收到任何活动时，客户端取消请求并显示重新分析入口。
+Workflow Route 使用 SSE 转发 Dify 的 `text_chunk`、节点状态和完成事件。浏览器在首个文本块到达后开始展示回答，后续文本按短时间窗口合并刷新；每次 SSE 活动都会重置无活动超时。连续 60 秒未收到任何活动时，客户端取消请求并显示重新分析入口。这是浏览器无活动计时，不是部署平台的函数执行时长配置。
+
+Workflow 只有收到 `workflow_finished` 且状态为 `succeeded` 才作为成功回答。流在结束事件之前关闭、读取失败、Workflow 失败或无活动超时时，保留已经收到的可见正文（包含末尾待刷新的文本），明确标记“回答未完成”，提供重新分析入口；不把残缺回答作为成功结果。思考标签仍会过滤。Completion 模式保持原有 EOF 完成行为。生产断流的证据、三路诊断命令及缺失日志见 [Streaming 排查与部署核验](docs/streaming-diagnostics.md)。
+
+`/api/diagnostics/stream` 是默认关闭的临时隔离实验：无需 Dify，在 45 秒内输出固定测试事件。它仅接受指定的越海 Deploy Preview 域名、临时服务端令牌和不超过 1 小时的有效窗口；正式域名和未授权请求返回 404。不公开令牌、不输出 Dify 数据、不伪造 Workflow 完成事件。Preview 配置、日志对照和五轮验收步骤见 [受控 SSE 隔离实验](docs/streaming-diagnostics.md#受控-sse-隔离实验)。该实验尚未部署或作为生产修复通过验收。
 
 ## 验证
 
@@ -108,11 +121,15 @@ npm run build
 node --disable-warning=MODULE_TYPELESS_PACKAGE_JSON --test tests/*.test.mjs
 ```
 
-单元测试直接导入 TypeScript，使用 Node.js 24.19.0 复现；项目没有 `npm test` 脚本。测试覆盖 SSE 分块与思考标签过滤、流读取错误传播，以及经营环境存储值校验、上下文映射、原始 query/额外 inputs 保留、空上下文兼容和 Route Handler 转发/脱敏。浏览器需额外检查：六类任务展开与收起、每类 6 个示例、只在点击示例时替换草稿、直接描述聚焦及连接恢复后的填入、选择器键盘操作和刷新恢复、三个扩展路由、390×844 手机布局、真实回答在完成前显示，以及请求只访问本站代理、携带独立上下文且不包含服务端密钥。
+单元测试直接导入 TypeScript，使用 Node.js 24.19.0 复现；项目没有 `npm test` 脚本。测试覆盖 SSE 分块、思考标签过滤、流读取错误传播、Workflow 提前 EOF 判失败及 Completion 兼容，以及经营环境存储值校验、上下文映射、原始 query/额外 inputs 保留、空上下文兼容和 Route Handler 转发/脱敏。浏览器需额外检查：中断后部分正文与未完成标记、末尾文本保留、重试恢复、六类任务展开与收起、每类 6 个示例、只在点击示例时替换草稿、直接描述聚焦及连接恢复后的填入、选择器键盘操作和刷新恢复、三个扩展路由、390×844 手机布局、真实回答在完成前显示，以及请求只访问本站代理、携带独立上下文且不包含服务端密钥。
 
 真实 Dify 评测独立于隔离单元测试，当前脚本为 `script/evaluate-dify-mvp-0.3.1.mjs`，按结构、冒烟、完整集顺序执行，运行方式见知识库 README。旧脚本与结果保留。build 与独立 TypeScript 检查应顺序执行，避免构建重建 `.next/types` 时互相干扰。
 
-## 部署到 Vercel
+## 部署平台
+
+当前需排查的生产地址为 <https://yuehaiai.netlify.app/>。生产 Commit、构建时间、Next.js Runtime / OpenNext 适配器版本及函数日志必须从 Netlify 已发布部署核验，不能用 GitHub main、HTTP Date 或本地 Next.js 版本代替。Netlify 核验步骤见 [Streaming 排查与部署核验](docs/streaming-diagnostics.md)。未经明确授权不触发构建、推送或部署。
+
+### Vercel 备选部署说明
 
 将仓库推送到 GitHub，在 [Vercel 新建项目](https://vercel.com/new)中导入仓库。Framework Preset 选择 Next.js，使用默认安装和 `npm run build` 命令。
 

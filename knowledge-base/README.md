@@ -1,12 +1,17 @@
-# 越海知识库：General KB + Policy KB
+# 越海知识库：General、Policy 与 Shopee
+
+最新 Shopee 广告 P0 候选位于 [shopee/p0-candidate/](shopee/p0-candidate/README.md)：两份 CSV 分别为 50 条广告和 8 条行业研究，共 58 条，包含原 28 条及新增 30 条。来源、审计、未应用修订建议和 54 条未执行评测集中在 `review.json`；不导入管理数据。原 28 条正文保留，8 项修订建议须单独审核。真实 Dify 检索尚未执行。
+
+`shopee/shopee_all_qa.csv` 为另一批 97 条基线，包含原 20 条广告、8 条行业研究、69 条多站点经营与差异 QA；原三份 QA 保留用于维护。该基线与 P0 候选重叠 28 条，不同时完整导入；各维护文件也不与合并版重复导入。多站点部分覆盖九个市场，含六组站点对照，不证明全部类目、费率、物流、准入或全球市场完整覆盖。基线导入见 [Shopee 指南](shopee/shopee_kb_import_guide.md)，范围和限制见 [扩充报告](reports/shopee-multimarket-expansion-2026-10-11.md)。两批均严格使用 `question,answer`，尚未导入 Dify；下述五列规范仅适用于原 General/Policy。
+
 
 General 保存跨境电商通用经营概念与方法；Policy 保存 Amazon 美国站、TikTok Shop 美国站的具体平台规则。分文件维护稳定知识和变化较快的政策，避免把通用建议包装成平台规则。
 
-本目录保存知识文件、来源审计与评测证据。当前 MVP 0.3.1 先核验 QA 映射，再依门槛执行原冒烟和固定测试集。本轮只评测，没有导入或修改 Dify、Prompt、知识正文、检索参数、模型或网站。
+本目录保存知识文件、来源审计与评测证据。MVP 0.3.1 的历史评测于 2026-10-08 核验 QA 映射并执行原冒烟和固定测试集；该历史评测没有修改 Dify、Prompt、知识正文、检索参数、模型或网站。
 
 2026-10-08 结构核验为 VERIFIED：General G0001/G0003/G0009/G0011、Amazon US P0001/P0002/P0037、TikTok Shop US P0062/P0063/P0072 的真实 QA 均对应问题列索引 2、完整答案列索引 3。全部命中 126 次、81 条唯一知识均无错位，Policy 来源/适用范围/核验日期保留。当前服务 API 不能列出全库启用和索引状态，未观察到旧错误分块不等于已证明所有旧文档停用。
 
-本轮 8 条冒烟为 4 PASS、1 EXPECTED_GAP、3 FAIL；54 条为 21 PASS、9 EXPECTED_GAP、10 NEEDS_REVIEW、14 FAIL。验收建议 FAIL，依据见 [完整报告](reports/mvp-0.3.1-final-evaluation.md)和[前后比较](reports/mvp-0.3.1-final-comparison.md)。历史完整集 28/9/9/8 与 2026-10-04 阻塞报告完整保留，不能作为修复后质量结论。
+该历史评测 8 条冒烟为 4 PASS、1 EXPECTED_GAP、3 FAIL；54 条为 21 PASS、9 EXPECTED_GAP、10 NEEDS_REVIEW、14 FAIL。验收建议 FAIL，依据见 [完整报告](reports/mvp-0.3.1-final-evaluation.md)和[前后比较](reports/mvp-0.3.1-final-comparison.md)。历史完整集 28/9/9/8 与 2026-10-04 阻塞报告完整保留，不能作为修复后质量结论。
 
 ## 导入范围
 
@@ -15,12 +20,17 @@ General 保存跨境电商通用经营概念与方法；Policy 保存 Amazon 美
 | `general/yuehai_general_kb_v2.csv` | 越海｜跨境电商通用经营知识库，原始 500 条的字节一致副本 | 是，已有同一基线时避免重复导入 |
 | `policy/yuehai_policy_kb_v1.csv` | 越海｜平台政策知识库 V1，两个美国站 | 是，人工审核后 |
 | `policy/yuehai_policy_kb_v1_sources.csv` | 来源、日期及受影响 QA 行映射 | 禁止 |
+| `shopee/shopee_all_qa.csv` | 统一双列问答候选，97 条 | 尚未导入；人工审核与测试后决定 |
+| `shopee/p0-candidate/shopee_ads_qa.csv`、`shopee_market_insights_qa.csv` | 最新广告专题双列候选，50 / 8 条；与 97 条基线重叠 28 条 | 尚未导入；审核后在隔离测试库验证，避免重复 |
+| `shopee/p0-candidate/review.json`、审计报告与指南 | 来源、54 条未执行评测、待批准修订、知识缺口 | 禁止 |
+| `shopee/shopee_ads_qa.csv`、`shopee_market_insights_qa.csv`、`shopee_multimarket_qa.csv` | 三份独立维护基线，20 / 8 / 69 条 | 不与合并版重复导入 |
+| `shopee/*sources.csv`、`*coverage.csv`、`*gaps.csv`、`*test_queries.csv`、导入指南 | 来源证据、部分覆盖、待确认项与预期测试；管理字段不是已接入的 metadata | 禁止 |
 | `evaluation/yuehai_knowledge_gaps.csv` | 无法覆盖、无法访问或待确认的知识缺口 | 禁止 |
 | `evaluation/yuehai_policy_kb_v1_test_queries.csv` | 固定 54 条召回、覆盖及回退测试 | 禁止 |
 | `evaluation/*dify*`、`*smoke*`、`*bad_cases*`、`*engineering_checks*`、`evaluation/runs/` | 真实回答、脱敏节点事件、判定与工程证据 | 禁止 |
 | `research/`、`reports/`、README、CHANGELOG | 研究中间记录、审计和维护文档 | 禁止 |
 
-两个导入文件都只有五列，顺序为 `一级主题,二级主题,问题,答案,关键行动`，UTF-8-SIG 编码，一条知识一行，采用标准 CSV 转义。管理 CSV 也使用 UTF-8-SIG，但结构独立。
+原 General/Policy 两个导入文件都只有五列，顺序为 `一级主题,二级主题,问题,答案,关键行动`，UTF-8-SIG 编码，一条知识一行，采用标准 CSV 转义。管理 CSV 也使用 UTF-8-SIG，但结构独立。
 
 仓库 `.gitattributes` 对 `knowledge-base/**` 禁用 Git 换行转换，以保留导入文件与历史证据的原始字节。评测 CSV 中回答自带的 Markdown 换行空格和空行应原样保留，不作格式清洗。
 
@@ -38,7 +48,7 @@ P0001 等编号是 Policy CSV 的一基数据行号，G0001 等是 General CSV �
 
 ## 官方来源与新增标准
 
-来源必须实际打开正文核验。Amazon 使用 Sell on Amazon、Seller Central、Amazon 官方政策或 Amazon Ads 官方页面；TikTok 使用美国 Seller University / Seller Center 正文。搜索摘要、第三方文章、登录页面壳、模型记忆不能作为事实来源。
+政策来源必须实际打开正文核验。Amazon 使用 Sell on Amazon、Seller Central、Amazon 官方政策或 Amazon Ads 官方页面；TikTok 使用美国 Seller University / Seller Center 正文；Shopee 多站点候选使用各市场官方帮助中心公开正文，并核对店铺类型、问题原因、履约方式和时间起点。搜索摘要、第三方文章、登录页面壳、模型记忆不能作为政策事实来源。独立行业研究文件按其指南保留研究机构样本与年份限制，不用行业报告替代平台政策。
 
 新增知识前先检查 General 是否已有该通用问题，并在 Policy 中检查重复意图。保存来源页面标题、URL、页面日期、生效日期、核验日期及关键证据定位；阅读最新详细政策和适用条件，再写简短中文 QA。不同官方说明出现冲突时，将争议事实移入 Gap，不能自动择一。未访问或未核验的内容不得写入候选 Policy。
 

@@ -1,0 +1,3145 @@
+{
+  "version": "shopee-multimarket-v1",
+  "verified_at": "2026-10-11",
+  "status": "LOCAL_CANDIDATE_NOT_IMPORTED",
+  "markets": {
+    "SG": "新加坡",
+    "MY": "马来西亚",
+    "PH": "菲律宾",
+    "TH": "泰国",
+    "VN": "越南",
+    "TW": "台湾",
+    "BR": "巴西",
+    "MX": "墨西哥",
+    "ID": "印度尼西亚"
+  },
+  "sources": {
+    "SG-R": {
+      "source_id": "SG-R",
+      "title": "Refunds and Return Policy",
+      "url": "https://help.shopee.sg/portal/4/article/77152",
+      "fetched_at": "2026-10-11T09:54:58.325055+00:00",
+      "content_sha256": "babb12a592216a9158953e0f5bcf933f318895361a06523d27481d47a266bb15",
+      "market": "SG",
+      "page_date": "2025-03-04",
+      "page_date_label": "4 March 2025",
+      "date_kind": "page_update",
+      "effective_date": "",
+      "verified_at": "2026-10-11",
+      "evidence_excerpt": "three (3) days of being notified to do so, and (ii) ship the Received Item to the app",
+      "review_status": "VERIFIED_BODY",
+      "limitations": "只支持本文明确适用对象；核验日期不等于政策生效日期。"
+    },
+    "MY-R": {
+      "source_id": "MY-R",
+      "title": "Refunds and Return Policy",
+      "url": "https://help.shopee.com.my/portal/4/article/77221",
+      "fetched_at": "2026-10-11T09:54:58.022572+00:00",
+      "content_sha256": "62d7111b591f077834c29b16d3294d621da49c7252d264ab41736cd152ac45ba",
+      "market": "MY",
+      "page_date": "2026-02-11",
+      "page_date_label": "11 February 2026",
+      "date_kind": "page_update",
+      "effective_date": "",
+      "verified_at": "2026-10-11",
+      "evidence_excerpt": "five (5) calendar days after the return request is approved.",
+      "review_status": "VERIFIED_BODY",
+      "limitations": "只支持本文明确适用对象；核验日期不等于政策生效日期。"
+    },
+    "PH-R": {
+      "source_id": "PH-R",
+      "title": "Refunds and Return Policy",
+      "url": "https://help.shopee.ph/portal/4/article/77279",
+      "fetched_at": "2026-10-11T09:54:59.345827+00:00",
+      "content_sha256": "fd756d9604f6ffe1fa8aa8c16cab373474b5ecc36088f2f21be7afe18ee96ab0",
+      "market": "PH",
+      "page_date": "2026-04-29",
+      "page_date_label": "29 April 2026",
+      "date_kind": "page_update",
+      "effective_date": "",
+      "verified_at": "2026-10-11",
+      "evidence_excerpt": "3.4 Received Item",
+      "review_status": "VERIFIED_BODY",
+      "limitations": "只支持本文明确适用对象；核验日期不等于政策生效日期。"
+    },
+    "SG-P": {
+      "source_id": "SG-P",
+      "title": "Prohibited and Restricted Items Policy",
+      "url": "https://help.shopee.sg/portal/4/article/77151",
+      "fetched_at": "2026-10-11T09:56:44.621317+00:00",
+      "content_sha256": "8cb7a27ffe26ff0b8e6d99b7ca9328508b086d22e2a6655ca7050788c8eaa6ad",
+      "market": "SG",
+      "page_date": "2026-07-16",
+      "page_date_label": "16 July 2026",
+      "date_kind": "page_update",
+      "effective_date": "",
+      "verified_at": "2026-10-11",
+      "evidence_excerpt": "Last Updated: 16 July 2026",
+      "review_status": "VERIFIED_BODY",
+      "limitations": "只支持本文明确适用对象；核验日期不等于政策生效日期。"
+    },
+    "MY-P": {
+      "source_id": "MY-P",
+      "title": "Prohibited and Restricted Items Policy",
+      "url": "https://help.shopee.com.my/portal/4/article/77220",
+      "fetched_at": "2026-10-11T09:55:05.308923+00:00",
+      "content_sha256": "bc1d606ea53eef6eca1623e40950ef4ad572808cdb27cb51bccd98109a4d4aea",
+      "market": "MY",
+      "page_date": "2025-05-22",
+      "page_date_label": "22 May 2025",
+      "date_kind": "page_update",
+      "effective_date": "",
+      "verified_at": "2026-10-11",
+      "evidence_excerpt": "Alcohol (a valid license must be submitted to, and approved by, Shopee);",
+      "review_status": "VERIFIED_BODY",
+      "limitations": "只支持本文明确适用对象；核验日期不等于政策生效日期。"
+    },
+    "PH-P": {
+      "source_id": "PH-P",
+      "title": "Prohibited and Restricted Items Policy",
+      "url": "https://help.shopee.ph/portal/4/article/77276",
+      "fetched_at": "2026-10-11T09:55:06.061400+00:00",
+      "content_sha256": "9171b3abc0216f1c95c92eb0acefd32fc04d6763a76eefe748bcd15c1d0d793b",
+      "market": "PH",
+      "page_date": "2025-04-28",
+      "page_date_label": "28 April 2025",
+      "date_kind": "page_update",
+      "effective_date": "",
+      "verified_at": "2026-10-11",
+      "evidence_excerpt": "Alcohol (a valid license must be submitted to, and approved by, Shopee);",
+      "review_status": "VERIFIED_BODY",
+      "limitations": "只支持本文明确适用对象；核验日期不等于政策生效日期。"
+    },
+    "TH-T": {
+      "source_id": "TH-T",
+      "title": "ขั้นตอนการขอคืนเงิน/คืนสินค้า",
+      "url": "https://help.shopee.co.th/portal/4/article/80427",
+      "fetched_at": "2026-10-11T09:55:00.026588+00:00",
+      "content_sha256": "2c5483960f0c1bb2ba7a8ead337e2e6e12be1a3c2b9a6d4273737bd9841a1c7f",
+      "market": "TH",
+      "page_date": "2026-05-01",
+      "page_date_label": "1 พฤษภาคม 2569",
+      "date_kind": "page_update",
+      "effective_date": "",
+      "verified_at": "2026-10-11",
+      "evidence_excerpt": "ร้านค้าทางการ Shopee Mall (OS) |",
+      "review_status": "VERIFIED_BODY",
+      "limitations": "只支持本文明确适用对象；核验日期不等于政策生效日期。"
+    },
+    "TH-C": {
+      "source_id": "TH-C",
+      "title": "เงื่อนไขการให้บริการเช็กก่อนจ่าย คืนได้ทันที (Check and Return)",
+      "url": "https://help.shopee.co.th/portal/4/article/158620",
+      "fetched_at": "2026-10-11T09:56:45.512823+00:00",
+      "content_sha256": "83185c5332764d955361cc8478f0e6de7cb48befaaa9e3154b831b90a57914ee",
+      "market": "TH",
+      "page_date": "2024-09-05",
+      "page_date_label": "5 กันยายน 2567",
+      "date_kind": "page_update",
+      "effective_date": "",
+      "verified_at": "2026-10-11",
+      "evidence_excerpt": "คุณจะไม่เปิดหรือทำลายบรรจุภัณฑ์ของผู้ผลิต รวมถึงตราประทับหรือสติกเกอร์ของผู้ผลิต หากค",
+      "review_status": "VERIFIED_BODY",
+      "limitations": "只支持本文明确适用对象；核验日期不等于政策生效日期。页面日期较旧，导入前必须再复核。"
+    },
+    "TH-P2": {
+      "source_id": "TH-P2",
+      "title": "นโยบายสิ่งของต้องห้ามและสิ่งของที่ถูกจำกัด",
+      "url": "https://help.shopee.co.th/portal/4/article/77249",
+      "fetched_at": "2026-10-11T10:01:42.745857+00:00",
+      "content_sha256": "776a35024e98d379a37bd065676db78f919cf1ef024600ea77144f69d772fee0",
+      "market": "TH",
+      "page_date": "2025-04-28",
+      "page_date_label": "28 เมษายน 2568",
+      "date_kind": "page_update",
+      "effective_date": "",
+      "verified_at": "2026-10-11",
+      "evidence_excerpt": "เครื่องดื่มแอลกอฮอล์หรือที่มีส่วนผสมของแอลกอฮอล์",
+      "review_status": "VERIFIED_BODY",
+      "limitations": "只支持本文明确适用对象；核验日期不等于政策生效日期。"
+    },
+    "VN-T": {
+      "source_id": "VN-T",
+      "title": "[Mua sắm an toàn] Shopee Đảm Bảo là gì?",
+      "url": "https://help.shopee.vn/portal/4/article/79314",
+      "fetched_at": "2026-10-11T09:55:01.087454+00:00",
+      "content_sha256": "e30d638991cebd1558471363a962fedf366319e6523b194a3f64f422c75a6c15",
+      "market": "VN",
+      "page_date": "",
+      "page_date_label": "未明确标注页面日期",
+      "date_kind": "unknown",
+      "effective_date": "",
+      "verified_at": "2026-10-11",
+      "evidence_excerpt": "Trong trường hợp Người mua nhận được sản phẩm khác với mô tả hoặc bị hư hỏng, Người m",
+      "review_status": "VERIFIED_BODY",
+      "limitations": "只支持本文明确适用对象；核验日期不等于政策生效日期。"
+    },
+    "VN-E": {
+      "source_id": "VN-E",
+      "title": "[Trả hàng/ Hoàn tiền] Quy trình Shopee xử lý yêu cầu Trả hàng/ Hoàn tiền",
+      "url": "https://help.shopee.vn/portal/4/article/190242",
+      "fetched_at": "2026-10-11T09:56:47.487571+00:00",
+      "content_sha256": "e0fcf50fce058a45e94200f3a64c105cf2a588c403bbfd076f5dea095528d562",
+      "market": "VN",
+      "page_date": "",
+      "page_date_label": "未明确标注页面日期",
+      "date_kind": "unknown",
+      "effective_date": "",
+      "verified_at": "2026-10-11",
+      "evidence_excerpt": "3-5 ngày làm việc (không tính Chủ nhật và các ngày lễ, Tết).",
+      "review_status": "VERIFIED_BODY",
+      "limitations": "只支持本文明确适用对象；核验日期不等于政策生效日期。"
+    },
+    "VN-X": {
+      "source_id": "VN-X",
+      "title": "[Trả hàng/ Hoàn tiền] Sản phẩm hạn chế trả hàng là gì?",
+      "url": "https://help.shopee.vn/portal/4/article/79465",
+      "fetched_at": "2026-10-11T09:56:48.016972+00:00",
+      "content_sha256": "98669b061252a4fba73fbc1f1b00ea366ad909c3220362fd68a7349f6df1a4be",
+      "market": "VN",
+      "page_date": "",
+      "page_date_label": "未明确标注页面日期",
+      "date_kind": "unknown",
+      "effective_date": "",
+      "verified_at": "2026-10-11",
+      "evidence_excerpt": "không áp dụng lý do trả hàng “Đổi ý (Sản phẩm còn nguyên tem, nhãn mác, bao bì)”.",
+      "review_status": "VERIFIED_BODY",
+      "limitations": "只支持本文明确适用对象；核验日期不等于政策生效日期。"
+    },
+    "VN-P": {
+      "source_id": "VN-P",
+      "title": "CHÍNH SÁCH CẤM/HẠN CHẾ SẢN PHẨM",
+      "url": "https://help.shopee.vn/portal/4/article/77247",
+      "fetched_at": "2026-10-11T09:56:43.594602+00:00",
+      "content_sha256": "fe9a7749de1bd5ed958bfac979932941a1ac92905a9ceb827cac3eb9fa303483",
+      "market": "VN",
+      "page_date": "2025-04-28",
+      "page_date_label": "28/4/2025",
+      "date_kind": "page_update",
+      "effective_date": "",
+      "verified_at": "2026-10-11",
+      "evidence_excerpt": "(iv) Cấn trừ số dư tài khoản Shopee, phong tỏa quyền rút tiền từ số dư tài khoản Shop",
+      "review_status": "VERIFIED_BODY",
+      "limitations": "只支持本文明确适用对象；核验日期不等于政策生效日期。"
+    },
+    "TW-T": {
+      "source_id": "TW-T",
+      "title": "[其它退貨退款問題] 什麼是「七天鑑賞期」？",
+      "url": "https://help.shopee.tw/portal/4/article/80317",
+      "fetched_at": "2026-10-11T09:55:01.401658+00:00",
+      "content_sha256": "084c674a659a28d647b9696559c3372e60f5fb8dfa7be355f01227902831b218",
+      "market": "TW",
+      "page_date": "",
+      "page_date_label": "未明确标注页面日期",
+      "date_kind": "unknown",
+      "effective_date": "",
+      "verified_at": "2026-10-11",
+      "evidence_excerpt": "七天鑑賞期的算法是從收到商品的隔天開始算七天內(",
+      "review_status": "VERIFIED_BODY",
+      "limitations": "只支持本文明确适用对象；核验日期不等于政策生效日期。"
+    },
+    "TW-M": {
+      "source_id": "TW-M",
+      "title": "[其它退貨退款問題] 蝦皮商城 15 天鑑賞期服務",
+      "url": "https://help.shopee.tw/portal/4/article/80079",
+      "fetched_at": "2026-10-11T09:55:01.710901+00:00",
+      "content_sha256": "de02fbcf21e45290472616971784190c7a26ae31192f281c500b288cd5e215cc",
+      "market": "TW",
+      "page_date": "",
+      "page_date_label": "未明确标注页面日期",
+      "date_kind": "unknown",
+      "effective_date": "",
+      "verified_at": "2026-10-11",
+      "evidence_excerpt": "無條件退貨原因，延長鑑賞時程的尊榮服務，也降低您",
+      "review_status": "VERIFIED_BODY",
+      "limitations": "只支持本文明确适用对象；核验日期不等于政策生效日期。"
+    },
+    "TW-R": {
+      "source_id": "TW-R",
+      "title": "[退貨退款申請] 商品已超過鑑賞期，若經買賣雙方協調同意如何申請退貨退款？",
+      "url": "https://help.shopee.tw/portal/4/article/79715",
+      "fetched_at": "2026-10-11T09:55:02.331925+00:00",
+      "content_sha256": "70be38454214a4ba325fe8e6a3469086b2da8e423f0bfcc75ec353ea7c380046",
+      "market": "TW",
+      "page_date": "",
+      "page_date_label": "未明确标注页面日期",
+      "date_kind": "unknown",
+      "effective_date": "",
+      "verified_at": "2026-10-11",
+      "evidence_excerpt": "鑑賞期有申請退款需求，需由買、賣雙方先自行協調退",
+      "review_status": "VERIFIED_BODY",
+      "limitations": "只支持本文明确适用对象；核验日期不等于政策生效日期。"
+    },
+    "TW-Q": {
+      "source_id": "TW-Q",
+      "title": "[退貨退款申請] 如何申請退貨退款？",
+      "url": "https://help.shopee.tw/portal/4/article/79943",
+      "fetched_at": "2026-10-11T09:55:03.229856+00:00",
+      "content_sha256": "5c86d4ad45085b85fb6c67b19f22d7155879e6274276206f0ca4b6044de638ad",
+      "market": "TW",
+      "page_date": "",
+      "page_date_label": "未明确标注页面日期",
+      "date_kind": "unknown",
+      "effective_date": "",
+      "verified_at": "2026-10-11",
+      "evidence_excerpt": "組合商品可以申請部分退款嗎？",
+      "review_status": "VERIFIED_BODY",
+      "limitations": "只支持本文明确适用对象；核验日期不等于政策生效日期。"
+    },
+    "TW-N": {
+      "source_id": "TW-N",
+      "title": "[退貨交寄] 賣家已退款，商品怎麼退回？",
+      "url": "https://help.shopee.tw/portal/4/article/80208",
+      "fetched_at": "2026-10-11T09:56:47.995333+00:00",
+      "content_sha256": "e761a4c9e8898890ddf638d9f436ebc5b161a9683cde1931f526d6c4b2b0270f",
+      "market": "TW",
+      "page_date": "",
+      "page_date_label": "未明确标注页面日期",
+      "date_kind": "unknown",
+      "effective_date": "",
+      "verified_at": "2026-10-11",
+      "evidence_excerpt": "此筆訂單已取消】，表示賣家已點選【全額退款】或【",
+      "review_status": "VERIFIED_BODY",
+      "limitations": "只支持本文明确适用对象；核验日期不等于政策生效日期。"
+    },
+    "BR-R": {
+      "source_id": "BR-R",
+      "title": "[Políticas] Política de Devolução e Reembolso",
+      "url": "https://help.shopee.com.br/portal/4/article/77827",
+      "fetched_at": "2026-10-11T09:55:02.667975+00:00",
+      "content_sha256": "6e91d1d5717f7ed31a3496cd10c14782b6a04c54030ea10eb11cac4cf606d930",
+      "market": "BR",
+      "page_date": "2024-06-18",
+      "page_date_label": "18 de junho de 2024",
+      "date_kind": "page_update",
+      "effective_date": "",
+      "verified_at": "2026-10-11",
+      "evidence_excerpt": "3 (três) dias corridos após o recebimento do produto retornado para verificar as cond",
+      "review_status": "VERIFIED_BODY",
+      "limitations": "只支持本文明确适用对象；核验日期不等于政策生效日期。页面日期较旧，导入前必须再复核。"
+    },
+    "BR-S": {
+      "source_id": "BR-S",
+      "title": "Termos de Serviço da Shopee",
+      "url": "https://help.shopee.com.br/portal/4/article/77113",
+      "fetched_at": "2026-10-11T09:56:46.207637+00:00",
+      "content_sha256": "5ebe3e88e172c087cc22f2af08006d3b4702726ffc4ea6e37c183b41ef8d9d19",
+      "market": "BR",
+      "page_date": "2026-09-25",
+      "page_date_label": "25 de setembro de 2026",
+      "date_kind": "page_update",
+      "effective_date": "",
+      "verified_at": "2026-10-11",
+      "evidence_excerpt": "14.8 A Taxa de Envio pode variar de acordo com o peso do pacote (produto(s) encomenda",
+      "review_status": "VERIFIED_BODY",
+      "limitations": "只支持本文明确适用对象；核验日期不等于政策生效日期。"
+    },
+    "BR-C": {
+      "source_id": "BR-C",
+      "title": "Diretrizes da Comunidade Shopee",
+      "url": "https://help.shopee.com.br/portal/4/article/150027",
+      "fetched_at": "2026-10-11T09:56:46.226857+00:00",
+      "content_sha256": "88d3e03ba6be35a463962849eba433294691bdc1c9eedd7e2ef245c7bbe69d19",
+      "market": "BR",
+      "page_date": "",
+      "page_date_label": "未明确标注页面日期",
+      "date_kind": "unknown",
+      "effective_date": "",
+      "verified_at": "2026-10-11",
+      "evidence_excerpt": "7.1. Spam e Engajamento Falso",
+      "review_status": "VERIFIED_BODY",
+      "limitations": "只支持本文明确适用对象；核验日期不等于政策生效日期。"
+    },
+    "MX-R": {
+      "source_id": "MX-R",
+      "title": "Política de Reembolsos y Devoluciones",
+      "url": "https://help.shopee.com.mx/portal/4/article/75926",
+      "fetched_at": "2026-10-11T09:55:03.258631+00:00",
+      "content_sha256": "00ca40b3caf31158e5b35ab4e0705a89dca1eb493655e2ce3cf219d8e2b234c6",
+      "market": "MX",
+      "page_date": "2023-10-16",
+      "page_date_label": "16 de octubre de 2023",
+      "date_kind": "page_update",
+      "effective_date": "",
+      "verified_at": "2026-10-11",
+      "evidence_excerpt": "tres (3) días de la fecha en que el Comprador es reembolsado en el caso de Disputas e",
+      "review_status": "VERIFIED_BODY",
+      "limitations": "只支持本文明确适用对象；核验日期不等于政策生效日期。页面日期较旧，导入前必须再复核。"
+    },
+    "MX-P": {
+      "source_id": "MX-P",
+      "title": "Lista de Productos Prohibidos",
+      "url": "https://help.shopee.com.mx/portal/4/article/75925",
+      "fetched_at": "2026-10-11T09:56:46.322082+00:00",
+      "content_sha256": "6b431accc525b52c9d367a91eef5a7f88f196c81c99f8f995fa072cfa3593a68",
+      "market": "MX",
+      "page_date": "",
+      "page_date_label": "原文：26/092023（格式不完整，未解析为ISO日期）",
+      "date_kind": "unknown",
+      "effective_date": "",
+      "verified_at": "2026-10-11",
+      "evidence_excerpt": "Los Vendedores son los responsables exclusivos de la legalidad de los artículos que o",
+      "review_status": "VERIFIED_BODY",
+      "limitations": "公开清单正文已读；页面标注2023但格式不完整，导入前须重新确认时效。"
+    },
+    "ID-R": {
+      "source_id": "ID-R",
+      "title": "Kebijakan Pengembalian Barang dan/atau Dana",
+      "url": "https://help.shopee.co.id/portal/4/article/73503",
+      "fetched_at": "2026-10-11T09:55:04.393719+00:00",
+      "content_sha256": "86c4abdcae70200b0f006fd6b6178a76e3710b69a6513a6ad11e72e9b2548f61",
+      "market": "ID",
+      "page_date": "2025-08-04",
+      "page_date_label": "4 Agustus 2025",
+      "date_kind": "page_update",
+      "effective_date": "",
+      "verified_at": "2026-10-11",
+      "evidence_excerpt": "9. Keberlakuan Ketentuan",
+      "review_status": "VERIFIED_BODY",
+      "limitations": "只支持本文明确适用对象；核验日期不等于政策生效日期。"
+    },
+    "ID-T": {
+      "source_id": "ID-T",
+      "title": "[Pengembalian Barang/Dana] Apakah saya dapat mengajukan pengembalian barang/dana setelah memilih Pesanan Selesai?",
+      "url": "https://help.shopee.co.id/portal/4/article/72909",
+      "fetched_at": "2026-10-11T09:55:04.428339+00:00",
+      "content_sha256": "2be55555b718f7e1e3fd419febe792c5b0172e44aafd4a0b16616bd8fe702ac7",
+      "market": "ID",
+      "page_date": "",
+      "page_date_label": "未明确标注页面日期",
+      "date_kind": "unknown",
+      "effective_date": "",
+      "verified_at": "2026-10-11",
+      "evidence_excerpt": "Mall: Maksimal 15 hari sejak barang diterima",
+      "review_status": "VERIFIED_BODY",
+      "limitations": "只支持本文明确适用对象；核验日期不等于政策生效日期。"
+    },
+    "ID-Q": {
+      "source_id": "ID-Q",
+      "title": "[Pengembalian Barang/Dana] Apa syarat & ketentuan Pengembalian Barang dan/atau Dana di Shopee?",
+      "url": "https://help.shopee.co.id/portal/4/article/73232",
+      "fetched_at": "2026-10-11T09:55:05.143856+00:00",
+      "content_sha256": "f56c1245025e0b63dab85d12c9a1494598dbe8514d97dacbaa328a89efbb9c7b",
+      "market": "ID",
+      "page_date": "",
+      "page_date_label": "未明确标注页面日期",
+      "date_kind": "unknown",
+      "effective_date": "",
+      "verified_at": "2026-10-11",
+      "evidence_excerpt": "2 (dua) hari kerja sejak barang diterima Penjual. Penjual harus mempersiapkan dokumen",
+      "review_status": "VERIFIED_BODY",
+      "limitations": "只支持本文明确适用对象；核验日期不等于政策生效日期。"
+    },
+    "ID-P": {
+      "source_id": "ID-P",
+      "title": "Kebijakan Barang yang dilarang dan dibatasi",
+      "url": "https://help.shopee.co.id/portal/4/article/71189",
+      "fetched_at": "2026-10-11T09:56:43.173965+00:00",
+      "content_sha256": "6f6146cc8407db8326a35ada621e8d202283aada8000ede900b86f9da507bebe",
+      "market": "ID",
+      "page_date": "2026-07-31",
+      "page_date_label": "31 Juli 2026",
+      "date_kind": "page_update",
+      "effective_date": "",
+      "verified_at": "2026-10-11",
+      "evidence_excerpt": "(xli) Barang yang tidak memenuhi ketentuan SNI, sertifikasi wajib, pelabelan, penggun",
+      "review_status": "VERIFIED_BODY",
+      "limitations": "只支持本文明确适用对象；核验日期不等于政策生效日期。"
+    },
+    "MY-F": {
+      "source_id": "MY-F",
+      "title": "[Seller Basics] What is Sales & Service Tax (SST)?",
+      "url": "https://help.shopee.com.my/portal/4/article/143248",
+      "fetched_at": "2026-10-11T09:55:07.489127+00:00",
+      "content_sha256": "6a4886b7aa30df0679ead9a94481f3ac9f99684a5691578578fe91160250f5e5",
+      "market": "MY",
+      "page_date": "",
+      "page_date_label": "未明确标注页面日期",
+      "date_kind": "unknown",
+      "effective_date": "2024-03-01",
+      "verified_at": "2026-10-11",
+      "evidence_excerpt": "Effective 1 March 2024, SST will be increased from 6% to 8% on prescribed taxable ser",
+      "review_status": "VERIFIED_BODY",
+      "limitations": "只支持本文明确适用对象；核验日期不等于政策生效日期。"
+    },
+    "MY-A": {
+      "source_id": "MY-A",
+      "title": "Affiliate Marketing Solutions Program (Participating Seller) Terms and Conditions",
+      "url": "https://help.shopee.com.my/portal/4/article/121770",
+      "fetched_at": "2026-10-11T09:55:08.435170+00:00",
+      "content_sha256": "28739ed4f0729eb46e223f681ab75134a4415ca5b27924e3c48d27dac4e24326",
+      "market": "MY",
+      "page_date": "2026-01-13",
+      "page_date_label": "13 January 2026",
+      "date_kind": "page_update",
+      "effective_date": "",
+      "verified_at": "2026-10-11",
+      "evidence_excerpt": "exclusive of all sales, service, use, consumption, value-added, goods-and-services, b",
+      "review_status": "VERIFIED_BODY",
+      "limitations": "只支持本文明确适用对象；核验日期不等于政策生效日期。"
+    },
+    "SG-A": {
+      "source_id": "SG-A",
+      "title": "Shopee Affiliate Marketing Solutions Program",
+      "url": "https://help.shopee.sg/portal/4/article/185585",
+      "fetched_at": "2026-10-11T09:55:09.733837+00:00",
+      "content_sha256": "82aeb6513b1ce47cb1cbbc9f9cfc8edc5b9039500a10011c478373975f8c21c2",
+      "market": "SG",
+      "page_date": "2026-06-26",
+      "page_date_label": "26 June 2026",
+      "date_kind": "page_update",
+      "effective_date": "",
+      "verified_at": "2026-10-11",
+      "evidence_excerpt": "inclusive of all sales, service, use, consumption, value-added, goods-and-services, b",
+      "review_status": "VERIFIED_BODY",
+      "limitations": "只支持本文明确适用对象；核验日期不等于政策生效日期。"
+    },
+    "SG-S": {
+      "source_id": "SG-S",
+      "title": "Shopee Terms of Service",
+      "url": "https://help.shopee.sg/portal/4/article/77148",
+      "fetched_at": "2026-10-11T09:57:29.947313+00:00",
+      "content_sha256": "fb573b6888c914592c3bb74d24b306e4cf20045e51f09c54462d41b6b38179ac",
+      "market": "SG",
+      "page_date": "2026-10-09",
+      "page_date_label": "9 October 2026",
+      "date_kind": "page_update",
+      "effective_date": "",
+      "verified_at": "2026-10-11",
+      "evidence_excerpt": "Cross Border Fee”). The Cross Border Fee is borne by the Seller, and is calculated ac",
+      "review_status": "VERIFIED_BODY",
+      "limitations": "只支持本文明确适用对象；核验日期不等于政策生效日期。"
+    },
+    "PH-S": {
+      "source_id": "PH-S",
+      "title": "Shopee Terms of Service",
+      "url": "https://help.shopee.ph/portal/4/article/77272",
+      "fetched_at": "2026-10-11T09:57:29.013531+00:00",
+      "content_sha256": "5cde95b68df377a665af28be30c2bb872798b9ac9e0817c5dc8752c2c11a749e",
+      "market": "PH",
+      "page_date": "2026-08-26",
+      "page_date_label": "26 August 2026",
+      "date_kind": "page_update",
+      "effective_date": "",
+      "verified_at": "2026-10-11",
+      "evidence_excerpt": "Cross Border Fee (if applicable and as defined below), and withholding tax (if applic",
+      "review_status": "VERIFIED_BODY",
+      "limitations": "只支持本文明确适用对象；核验日期不等于政策生效日期。"
+    },
+    "MY-L": {
+      "source_id": "MY-L",
+      "title": "Direct Programme Terms and Conditions  (“Terms and Conditions”)",
+      "url": "https://help.shopee.com.my/portal/4/article/163668",
+      "fetched_at": "2026-10-11T09:57:28.343827+00:00",
+      "content_sha256": "d507e7b0480db188abdfbaba795a3d30e0a07b08d386d40ef4281d344596a00d",
+      "market": "MY",
+      "page_date": "2025-11-14",
+      "page_date_label": "14 November 2025",
+      "date_kind": "page_update",
+      "effective_date": "",
+      "verified_at": "2026-10-11",
+      "evidence_excerpt": "2.1. This Program is only eligible to Malaysia Sellers who meet Shopee’s requirements",
+      "review_status": "VERIFIED_BODY",
+      "limitations": "只支持本文明确适用对象；核验日期不等于政策生效日期。"
+    },
+    "TW-P": {
+      "source_id": "TW-P",
+      "title": "禁止和限制商品政策",
+      "url": "https://help.shopee.tw/portal/4/article/77273",
+      "fetched_at": "2026-10-11T09:55:06.325374+00:00",
+      "content_sha256": "2a304944c122d5cd15b51ce7b641e3fbc0e479064e5be444f6950e672bf0e15e",
+      "market": "TW",
+      "page_date": "2025-06-13",
+      "page_date_label": "最新修改日期：2025年6月13日",
+      "date_kind": "page_update",
+      "effective_date": "",
+      "verified_at": "2026-10-11",
+      "evidence_excerpt": "(i) 含酒精飲料和酒精濃度超出0.5%(含)",
+      "review_status": "VERIFIED_BODY",
+      "limitations": "本地禁限售清单；不用于其他市场。"
+    }
+  },
+  "qas": [
+    {
+      "qa_id": "S001",
+      "markets": [
+        "SG"
+      ],
+      "site": "新加坡",
+      "topic": "售后时限",
+      "question": "【新加坡】Shopee 已收货的退款申请从哪天起算？",
+      "answer_core": "已收货退款申请窗口为15天。Shopee支持物流以应用状态更新为Delivered的日期为基准；其他已收货商品以预计送达日期为基准。不要对所有物流都用同一签收日算法。",
+      "applies_to": "已收到商品；区分Shopee支持物流与其他物流",
+      "source_evidence": {
+        "SG-R": "§2.1 Received Items，15天及两种起算点"
+      }
+    },
+    {
+      "qa_id": "S002",
+      "markets": [
+        "SG"
+      ],
+      "site": "新加坡",
+      "topic": "售后时限",
+      "question": "【新加坡】Shopee 选择退货物流和寄回商品各有多久？",
+      "answer_core": "如Shopee要求退回，买家收到通知后3天内选择退货方式，再从选定方式起7天内寄至指定地点。两段期限起点不同，逾期可能自动取消申请。",
+      "applies_to": "被要求退回已收货商品的买家",
+      "source_evidence": {
+        "SG-R": "§2.1，通知后3天选方式、选择后7天寄回"
+      }
+    },
+    {
+      "qa_id": "S003",
+      "markets": [
+        "SG"
+      ],
+      "site": "新加坡",
+      "topic": "申诉争议",
+      "question": "【新加坡】Shopee 系统显示退件送达但没收到，非商城卖家多久内反馈？",
+      "answer_core": "非商城卖家应在两个期限中较早者之前通知Shopee：卖家中心退件状态更新为Delivered后2天，或收到退件邮件通知后5天。保留物流和邮件记录，不要等较晚的期限。",
+      "applies_to": "Non-Mall Seller未实际收到退回商品",
+      "source_evidence": {
+        "SG-R": "Return Procedure，earlier of 2 days / 5 days"
+      }
+    },
+    {
+      "qa_id": "S004",
+      "markets": [
+        "SG"
+      ],
+      "site": "新加坡",
+      "topic": "申诉争议",
+      "question": "【新加坡】Shopee 非商城卖家不同意仅退款决定，如何确认申诉期限？",
+      "answer_core": "政策对仅退款在线申诉列买家退款日起3天，线下争议列退款日起1个月；同时有退款后仅可线下争议的限制，通道适用衔接未明确。应核对通知并及时向官方确认，不把3天作为所有场景的安全等待期。",
+      "applies_to": "Non-Mall Seller；申诉渠道条款衔接待确认",
+      "source_evidence": {
+        "SG-R": "仅退款在线3天、线下1个月与退款后线下限制的适用衔接待确认"
+      }
+    },
+    {
+      "qa_id": "S005",
+      "markets": [
+        "SG"
+      ],
+      "site": "新加坡",
+      "topic": "商品合规",
+      "question": "【新加坡】Shopee 刊登禁限售商品可能有什么后果？",
+      "answer_core": "新加坡禁限售清单会更新。违规可能删除刊登、限制账户权限、暂停或终止账户及法律行动。先核对具体清单及通知，该页不能推导统一扣分或申诉天数。",
+      "applies_to": "新加坡商品刊登",
+      "source_evidence": {
+        "SG-P": "Violation of our Terms of Service，可能的处罚类型"
+      }
+    },
+    {
+      "qa_id": "S006",
+      "markets": [
+        "SG"
+      ],
+      "site": "新加坡",
+      "topic": "商品合规",
+      "question": "【新加坡】Shopee 食品页面能宣传治病或预防疾病吗？",
+      "answer_core": "新加坡禁限售政策将带有诊断、治疗、缓解或预防疾病等药用宣称的食品刊登列为禁止食品情形。上架前审查标题、详情和图片中的宣称，不仅检查商品名称。",
+      "applies_to": "食品及食品相关商品；药用宣称",
+      "source_evidence": {
+        "SG-P": "Prohibited Food / medicinal claims"
+      }
+    },
+    {
+      "qa_id": "S007",
+      "markets": [
+        "SG"
+      ],
+      "site": "新加坡",
+      "topic": "费用税费",
+      "question": "【新加坡】Shopee 海外卖家的跨境费用能套用其他站点费率吗？",
+      "answer_core": "新加坡服务条款设有对位于新加坡之外卖家的Cross Border Fee，由卖家承担，费率按平台不时通知。核对本店适用费项和通知，不能据此编造固定费率或套用其他站点。",
+      "applies_to": "位于新加坡之外的卖家；成功交易",
+      "source_evidence": {
+        "SG-S": "§21.2 Cross Border Fee，rates notified"
+      }
+    },
+    {
+      "qa_id": "S008",
+      "markets": [
+        "SG"
+      ],
+      "site": "新加坡",
+      "topic": "广告经营",
+      "question": "【新加坡】Shopee AMS联盟佣金的税是否已包含？",
+      "answer_core": "新加坡AMS条款中的联盟佣金包含列举的相关税；Shopee从佣金扣除的Service Fees则不含VAT。这是AMS项目口径，不能当作所有店铺销售佣金或广告点击费。",
+      "applies_to": "AMS联盟佣金和服务费",
+      "source_evidence": {
+        "SG-A": "§3.2 Commission Fees含税，Service Fees不含VAT"
+      }
+    },
+    {
+      "qa_id": "S009",
+      "markets": [
+        "MY"
+      ],
+      "site": "马来西亚",
+      "topic": "售后时限",
+      "question": "【马来西亚】Shopee 买家被要求退货后有多久寄回？",
+      "answer_core": "如Shopee要求退回，买家须在退货请求获准后5个自然日内寄至指定地点。起点是批准退货，不是新加坡的先选方式再起算7天。",
+      "applies_to": "获准且被要求退回商品的买家",
+      "source_evidence": {
+        "MY-R": "§2.5，5 calendar days after approval"
+      }
+    },
+    {
+      "qa_id": "S010",
+      "markets": [
+        "MY"
+      ],
+      "site": "马来西亚",
+      "topic": "申诉争议",
+      "question": "【马来西亚】Shopee 非商城卖家收到退款申请一定只有3天响应吗？",
+      "answer_core": "马来西亚政策要求非商城卖家按书面通知中的程序和期限响应。查看邮件和卖家中心通知，不能把新加坡仅退款在线申诉的3天当作这里所有申请的响应期限。",
+      "applies_to": "Non-Mall Seller收到退货退款申请",
+      "source_evidence": {
+        "MY-R": "Rights of Non-Mall Sellers，written notification"
+      }
+    },
+    {
+      "qa_id": "S011",
+      "markets": [
+        "MY"
+      ],
+      "site": "马来西亚",
+      "topic": "申诉争议",
+      "question": "【马来西亚】Shopee 非商城卖家没收到退件，多久内通知平台？",
+      "answer_core": "未收到退件时，非商城卖家须在收到退件邮件通知后7天内通知Shopee。留存邮件日期和物流证据，该期限不是普通发货时限。",
+      "applies_to": "Non-Mall Seller；退件未收到",
+      "source_evidence": {
+        "MY-R": "§3.4，7 days of receiving Email Notification"
+      }
+    },
+    {
+      "qa_id": "S012",
+      "markets": [
+        "MY"
+      ],
+      "site": "马来西亚",
+      "topic": "售后时限",
+      "question": "【马来西亚】Shopee 原封商品和运输中退款选项适用于所有地区吗？",
+      "answer_core": "这两类选项只适用于位于马来西亚的买家：原封商品退货、运输中商品退款或退货。Shopee Instant Mart购买的原封商品不适用这里的退货退款选项。",
+      "applies_to": "马来西亚买家；原封/运输中商品及Instant Mart例外",
+      "source_evidence": {
+        "MY-R": "§2选项脚注及Instant Mart排除"
+      }
+    },
+    {
+      "qa_id": "S013",
+      "markets": [
+        "MY"
+      ],
+      "site": "马来西亚",
+      "topic": "商品合规",
+      "question": "【马来西亚】Shopee 酒类能直接上架吗？",
+      "answer_core": "马来西亚政策要求向Shopee提交有效酒类许可证并获得批准。不能省略平台审批，也不能理解为所有卖家都可销售；许可不能当作其他站点的准入依据。",
+      "applies_to": "马来西亚酒类商品；许可证及平台审批",
+      "source_evidence": {
+        "MY-P": "Alcohol，valid license submitted and approved"
+      }
+    },
+    {
+      "qa_id": "S014",
+      "markets": [
+        "MY"
+      ],
+      "site": "马来西亚",
+      "topic": "商品合规",
+      "question": "【马来西亚】Shopee 食品详情可以使用医疗效果宣传吗？",
+      "answer_core": "禁限售政策禁止食品刊登中的药用宣称，包括诊断、治疗、缓解或预防疾病等。上架前核对文案和图片，不将普通食品描述为医疗产品。",
+      "applies_to": "食品及食品相关商品；药用宣称",
+      "source_evidence": {
+        "MY-P": "Prohibited Food / medicinal claims"
+      }
+    },
+    {
+      "qa_id": "S015",
+      "markets": [
+        "MY"
+      ],
+      "site": "马来西亚",
+      "topic": "费用税费",
+      "question": "【马来西亚】Shopee 8% SST是按整笔销售额直接收取吗？",
+      "answer_core": "该页将8% SST用于规定的应税服务，列举交易费、Marketplace Commission、营销服务、部分提现费、营销套餐和广告充值。它不是对整笔GMV再收8%；应逐项核对服务费及账单。",
+      "applies_to": "适用SST的服务；特定豁免除外",
+      "source_evidence": {
+        "MY-F": "2024-03-01生效；8% SST taxable services list"
+      }
+    },
+    {
+      "qa_id": "S016",
+      "markets": [
+        "MY"
+      ],
+      "site": "马来西亚",
+      "topic": "广告经营",
+      "question": "【马来西亚】Shopee AMS的PPS佣金基数和税如何处理？",
+      "answer_core": "PPS佣金为佣金率乘Net Completed Purchase Value，基数扣除折扣、运费、优惠券费用和Shopee Coins等回扣；联盟佣金不含相关税，税另加。不要当作所有销售佣金的统一算法。",
+      "applies_to": "AMS Participating Seller；PPS Affiliate Services",
+      "source_evidence": {
+        "MY-A": "§4.3基数定义及exclusive of taxes"
+      }
+    },
+    {
+      "qa_id": "S017",
+      "markets": [
+        "MY"
+      ],
+      "site": "马来西亚",
+      "topic": "物流履约",
+      "question": "【马来西亚】Shopee MY Direct Programme可以作为中国卖家入驻依据吗？",
+      "answer_core": "不可以。该项目面向符合要求的马来西亚卖家，包括西马揽收地址及店铺表现、商品重量尺寸条件。它不是中国跨境入驻或SLS全站物流指南。",
+      "applies_to": "Direct Programme的Malaysia Seller",
+      "source_evidence": {
+        "MY-L": "§2.1 Eligibility Requirements，West Malaysia pickup"
+      }
+    },
+    {
+      "qa_id": "S018",
+      "markets": [
+        "MY"
+      ],
+      "site": "马来西亚",
+      "topic": "物流履约",
+      "question": "【马来西亚】Shopee Direct Programme失败配送且未离开MY中转仓怎么办？",
+      "answer_core": "商品尚未离开MY中转仓时，可在Shopee通知期限内申请自费退至提供的地址；超时可能失去商品权利。离仓后处理涉及另行条款且存在解释差异，须逐单确认，不能承诺一定退回或补偿。",
+      "applies_to": "Direct Programme；失败配送或退货；未离开MY仓",
+      "source_evidence": {
+        "MY-L": "§3.6.1；3.6.2/3.6.3后续差异列Gap"
+      }
+    },
+    {
+      "qa_id": "S019",
+      "markets": [
+        "PH"
+      ],
+      "site": "菲律宾",
+      "topic": "售后时限",
+      "question": "【菲律宾】Shopee 已收货的退款窗口按店铺类型区分吗？",
+      "answer_core": "所核验政策§3.4列明普通和Preferred店铺7天、Mall店铺15天，从应用状态更新为Delivered的日期时间起算。先确认店铺类型和订单期限，不将Mall的15天套到所有店铺。",
+      "applies_to": "Received Item；Ordinary/Preferred/Mall",
+      "source_evidence": {
+        "PH-R": "§3.4(a)表格及Delivered起算点"
+      }
+    },
+    {
+      "qa_id": "S020",
+      "markets": [
+        "PH"
+      ],
+      "site": "菲律宾",
+      "topic": "售后时限",
+      "question": "【菲律宾】Shopee 选择退货方式和寄回分别有多久？",
+      "answer_core": "如Shopee要求退回，通知后2天内选择方式，再从选定方式起5天内寄至指定地点。超时可能自动取消申请，不与新加坡3天加7天混用。",
+      "applies_to": "被要求退回Received Item的买家",
+      "source_evidence": {
+        "PH-R": "§3.4(b)，2天选方式、选择后5天寄回"
+      }
+    },
+    {
+      "qa_id": "S021",
+      "markets": [
+        "PH"
+      ],
+      "site": "菲律宾",
+      "topic": "申诉争议",
+      "question": "【菲律宾】Shopee 非商城卖家收到售后申请按哪个期限响应？",
+      "answer_core": "非商城卖家应按Shopee书面通知载明的程序和期限响应，留意邮件与卖家中心推送。不能将其他站点的固定申诉天数用作菲律宾全部售后申请的期限。",
+      "applies_to": "Non-Mall Seller；申请响应",
+      "source_evidence": {
+        "PH-R": "§4.3(a)，written notification"
+      }
+    },
+    {
+      "qa_id": "S022",
+      "markets": [
+        "PH"
+      ],
+      "site": "菲律宾",
+      "topic": "售后时限",
+      "question": "【菲律宾】Shopee Returned on the Spot允许开封试用后再退吗？",
+      "answer_core": "只允许当面目视检查，不得破坏制造商包装封条，也不得试用或测试。骑手记录开箱视频，当场退件需骑手接受并形成申请；不能承诺所有订单均能试用后退。",
+      "applies_to": "符合Returned on the Spot（RoS）条件的订单",
+      "source_evidence": {
+        "PH-R": "RoS，visual inspection、manufacturer packaging及rider acceptance"
+      }
+    },
+    {
+      "qa_id": "S023",
+      "markets": [
+        "PH"
+      ],
+      "site": "菲律宾",
+      "topic": "商品合规",
+      "question": "【菲律宾】Shopee 酒类销售需要平台批准吗？",
+      "answer_core": "菲律宾禁限售政策要求将有效许可证提交给Shopee并获得批准。不能因马来西亚有相似条款就认为两地共用许可，仍须核对本地要求。",
+      "applies_to": "菲律宾酒类商品",
+      "source_evidence": {
+        "PH-P": "Alcohol，license submitted and approved"
+      }
+    },
+    {
+      "qa_id": "S024",
+      "markets": [
+        "PH"
+      ],
+      "site": "菲律宾",
+      "topic": "商品合规",
+      "question": "【菲律宾】Shopee 违规商品只会被删除而不影响账户吗？",
+      "answer_core": "政策列明可能移除刊登、限制账户权限、暂停或终止账户及法律行动。不能把商品移除理解为不会影响账户，该页未提供统一扣分或申诉期限。",
+      "applies_to": "违反菲律宾禁限售政策的卖家",
+      "source_evidence": {
+        "PH-P": "Violation of our Terms of Service，可能后果"
+      }
+    },
+    {
+      "qa_id": "S025",
+      "markets": [
+        "PH"
+      ],
+      "site": "菲律宾",
+      "topic": "费用税费",
+      "question": "【菲律宾】Shopee 海外卖家跨境费用有全站统一费率吗？",
+      "answer_core": "菲律宾服务条款设有境外卖家的Cross Border Fee，费率依平台给卖家的通知。核对本店费项和通知，不能编造固定全站费率或套用其他站点数值。",
+      "applies_to": "位于菲律宾之外的卖家；成功交易",
+      "source_evidence": {
+        "PH-S": "Cross Border Fee，rates notified"
+      }
+    },
+    {
+      "qa_id": "S026",
+      "markets": [
+        "TH"
+      ],
+      "site": "泰国",
+      "topic": "售后时限",
+      "question": "【泰国】Shopee Mall和跨境店铺退款窗口相同吗？",
+      "answer_core": "泰国退货步骤页列明Shopee Guarantee：Mall 15天，跨境CB、Preferred和普通C2C店铺7天。订单须仍在适用保证期内；不是所有类目无条件退货承诺。",
+      "applies_to": "泰国Mall/CB/Preferred/C2C；Shopee Guarantee",
+      "source_evidence": {
+        "TH-T": "店铺类型表；2026-05-01页面"
+      }
+    },
+    {
+      "qa_id": "S027",
+      "markets": [
+        "TH"
+      ],
+      "site": "泰国",
+      "topic": "售后时限",
+      "question": "【泰国】Shopee 为什么不同订单可选退货理由不同？",
+      "answer_core": "官方步骤说明，退货退款理由依店铺类型和商品类别变化。查看订单实际选项及证据要求，不能由另一店铺的选项推断本订单一定支持相同退货。",
+      "applies_to": "退款申请；店铺类型及商品类别",
+      "source_evidence": {
+        "TH-T": "理由选项依店铺类型与类目变化"
+      }
+    },
+    {
+      "qa_id": "S028",
+      "markets": [
+        "TH"
+      ],
+      "site": "泰国",
+      "topic": "售后时限",
+      "question": "【泰国】Shopee COD退款一定由骑手退现金吗？",
+      "answer_core": "步骤页列明COD、ShopeePay、Mobile Banking、PromptPay QR和信用卡积分等支付的退款渠道为ShopeePay或银行账户，需绑定相应账户。不能承诺COD都当面退现金。",
+      "applies_to": "步骤页第1组支付方式；不是所有渠道",
+      "source_evidence": {
+        "TH-T": "退款渠道组1，需绑定ShopeePay或银行账户"
+      }
+    },
+    {
+      "qa_id": "S029",
+      "markets": [
+        "TH"
+      ],
+      "site": "泰国",
+      "topic": "售后时限",
+      "question": "【泰国】Shopee Check and Return允许拆封试用吗？",
+      "answer_core": "服务允许检查是否正确或有缺陷，不允许破坏制造商包装封条，也不得试用或测试。违反条件可能视为已交付并须付款，后续仍按正常售后政策申请。",
+      "applies_to": "符合Check and Return条件的订单",
+      "source_evidence": {
+        "TH-C": "制造商包装；仅检查不得测试；2024-09-05条款"
+      }
+    },
+    {
+      "qa_id": "S030",
+      "markets": [
+        "TH"
+      ],
+      "site": "泰国",
+      "topic": "商品合规",
+      "question": "【泰国】Shopee 酒类和用过的化妆品可以上架吗？",
+      "answer_core": "泰国禁限售清单列有含酒精饮料及使用过的化妆品。核对泰国本地清单，不以马来西亚酒类许可证审批条款替代。",
+      "applies_to": "泰国刊登；酒类及二手化妆品",
+      "source_evidence": {
+        "TH-P2": "§2(i)酒类、§2(iv)使用过的化妆品"
+      }
+    },
+    {
+      "qa_id": "S031",
+      "markets": [
+        "TH"
+      ],
+      "site": "泰国",
+      "topic": "申诉争议",
+      "question": "【泰国】Shopee 禁限售违规会影响店铺权限吗？",
+      "answer_core": "可能移除刊登、限制账户权限、暂停或终止账户及法律行动。核对通知对应条款和商品材料，该页不能推导统一申诉天数或固定扣分。",
+      "applies_to": "违反泰国禁限售政策的卖家",
+      "source_evidence": {
+        "TH-P2": "§1可能的违规后果"
+      }
+    },
+    {
+      "qa_id": "S032",
+      "markets": [
+        "VN"
+      ],
+      "site": "越南",
+      "topic": "售后时限",
+      "question": "【越南】Shopee 商品损坏或与描述不符，确认收货后还能退款吗？",
+      "answer_core": "越南Shopee Guarantee说明，这两类问题可在配送成功状态更新后15天内申请。点击已收到商品不会直接取消窗口，但仍须在15天范围内。",
+      "applies_to": "损坏/描述不符商品；配送成功状态为起点",
+      "source_evidence": {
+        "VN-T": "损坏/描述不符15天；按已收到后仍可申请"
+      }
+    },
+    {
+      "qa_id": "S033",
+      "markets": [
+        "VN"
+      ],
+      "site": "越南",
+      "topic": "申诉争议",
+      "question": "【越南】Shopee 3至5个工作日处理是卖家提交证据的期限吗？",
+      "answer_core": "不是。流程页的3至5个工作日是Shopee审查并发送结果的时间说明，不含星期日和公共节假日。补充证据按通知要求，不能把审查耗时当作卖家响应期限。",
+      "applies_to": "审查耗时与证据期限不同",
+      "source_evidence": {
+        "VN-E": "§1审查3-5工作日；不含星期日和节假日"
+      }
+    },
+    {
+      "qa_id": "S034",
+      "markets": [
+        "VN"
+      ],
+      "site": "越南",
+      "topic": "申诉争议",
+      "question": "【越南】Shopee 退货争议要关注哪些证据通知？",
+      "answer_core": "及时查看应用的订单更新通知和已提供的邮箱，按Shopee要求补充资料。退件物流状态错误或收回商品有问题时联系官方客服，不等审查结束才补证。",
+      "applies_to": "退款争议参与方；证据补充及退件异常",
+      "source_evidence": {
+        "VN-E": "通知渠道、证据补充和退件问题"
+      }
+    },
+    {
+      "qa_id": "S035",
+      "markets": [
+        "VN"
+      ],
+      "site": "越南",
+      "topic": "售后时限",
+      "question": "【越南】Shopee 限制退货类目意味着损坏也不能退款吗？",
+      "answer_core": "限制清单针对不适用“改变主意且商品原封”理由的特定类目，例如个人卫生、生鲜和部分数字服务。不能扩大为所有损坏或货不对板均不得申请，应按真实原因核对。",
+      "applies_to": "限制退货类目；Change of Mind理由",
+      "source_evidence": {
+        "VN-X": "不适用Đổi ý理由；清单仅针对该原因"
+      }
+    },
+    {
+      "qa_id": "S036",
+      "markets": [
+        "VN"
+      ],
+      "site": "越南",
+      "topic": "商品合规",
+      "question": "【越南】Shopee 仿牌或未经授权复制品能销售吗？",
+      "answer_core": "越南禁限售政策列有假货、仿冒及可能侵犯版权、商标等权利的未经授权复制品。保留有效授权及商品来源材料，不靠改标题规避商品本身的问题。",
+      "applies_to": "越南刊登；知识产权商品",
+      "source_evidence": {
+        "VN-P": "§4.1知识产权、假货及未经授权复制品"
+      }
+    },
+    {
+      "qa_id": "S037",
+      "markets": [
+        "VN"
+      ],
+      "site": "越南",
+      "topic": "商品合规",
+      "question": "【越南】Shopee 禁限售违规会影响余额提现吗？",
+      "answer_core": "处罚除删除商品、账户限制或停用外，还列有抵扣Shopee余额和冻结余额提款权。具体处理由平台按适用政策决定，不能编造固定罚款或必然冻结结论。",
+      "applies_to": "违反越南禁限售政策的卖家",
+      "source_evidence": {
+        "VN-P": "§3(iv)抵扣余额、冻结提款权及平台裁量"
+      }
+    },
+    {
+      "qa_id": "S038",
+      "markets": [
+        "TW"
+      ],
+      "site": "台湾",
+      "topic": "售后时限",
+      "question": "【台湾】Shopee 七天鉴赏期从收货当天还是次日起算？",
+      "answer_core": "台湾帮助页说明从收到商品的次日起算7天，第7天为周六、周日或当地法定假日时末日顺延。鉴赏期是犹豫期，不等于随意试用；仍须符合适用商品和卖家条件。",
+      "applies_to": "适用七天鉴赏期的商品及卖家",
+      "source_evidence": {
+        "TW-T": "七天鉴赏期算法；犹豫期而非试用期"
+      }
+    },
+    {
+      "qa_id": "S039",
+      "markets": [
+        "TW"
+      ],
+      "site": "台湾",
+      "topic": "商品合规",
+      "question": "【台湾】Shopee 客制化或已拆封卫生用品可排除鉴赏期吗？",
+      "answer_core": "官方页列有客制化、易腐败、已拆封个人卫生用品等例外，并要求卖家事先在商品页载明；未预先载明不能据此排除。核对具体商品是否符合例外，不能对所有商品笼统写不退货。",
+      "applies_to": "符合所列例外的商品；必须事先载明",
+      "source_evidence": {
+        "TW-T": "例外清单；事先在商品页载明"
+      }
+    },
+    {
+      "qa_id": "S040",
+      "markets": [
+        "TW"
+      ],
+      "site": "台湾",
+      "topic": "售后时限",
+      "question": "【台湾】Shopee 商城15天服务等于任何商品都能退吗？",
+      "answer_core": "不是。须在商城购买，退件全新、原包装密封完整含赠品及单据，且排除特定商品。商城页写收到商品起算15天，普通七天页写次日起算；两种服务不同，商城精确截止日应核对订单并向官方确认。",
+      "applies_to": "商城15天服务；起算日尚待确认",
+      "source_evidence": {
+        "TW-M": "商城15天条件；收到商品起算的文字未明确首日计数",
+        "TW-T": "普通七天服务明确次日起算；不直接扩展至商城15天"
+      }
+    },
+    {
+      "qa_id": "S041",
+      "markets": [
+        "TW"
+      ],
+      "site": "台湾",
+      "topic": "售后时限",
+      "question": "【台湾】Shopee 系统能直接换货或补寄吗？",
+      "answer_core": "帮助页说明没有系统换货或补寄功能。缺件、发错或瑕疵时，建议在鉴赏期内申请退货退款，仍有需求再重新下单。不能虚构换货按钮。",
+      "applies_to": "台湾退货退款系统功能",
+      "source_evidence": {
+        "TW-Q": "未提供补寄、换货系统功能"
+      }
+    },
+    {
+      "qa_id": "S042",
+      "markets": [
+        "TW"
+      ],
+      "site": "台湾",
+      "topic": "售后时限",
+      "question": "【台湾】Shopee 组合装能在系统里只退其中一个吗？",
+      "answer_core": "组合商品的系统申请以组为单位，不能拆开组内商品申请。若需协商部分金额，应通过聊聊与卖家达成协议；协商退款和系统拆分退货不是同一流程。",
+      "applies_to": "组合商品；系统申请与协商部分金额",
+      "source_evidence": {
+        "TW-Q": "组合商品以组为单位；可协商部分金额"
+      }
+    },
+    {
+      "qa_id": "S043",
+      "markets": [
+        "TW"
+      ],
+      "site": "台湾",
+      "topic": "售后时限",
+      "question": "【台湾】Shopee 已同意不收退件并退款，为什么寄件编号无效？",
+      "answer_core": "达成不收回商品的全额或部分退款后，系统可能显示订单取消并无法再提供寄件编号。如卖家仍要退回，应通过聊聊协调方式、地址，保留协议记录。",
+      "applies_to": "已达成退款协议且系统不再提供退件编号",
+      "source_evidence": {
+        "TW-N": "此笔订单已取消；退款后另行协调退回"
+      }
+    },
+    {
+      "qa_id": "S044",
+      "markets": [
+        "TW"
+      ],
+      "site": "台湾",
+      "topic": "申诉争议",
+      "question": "【台湾】Shopee 超过鉴赏期但双方同意退款，怎么办？",
+      "answer_core": "取得卖家在聊聊的同意声明及订单、账户、金额信息，保存截图后联系Shopee。处理涉及卖家钱包余额，余额不足需按平台指示补足；口头同意不会自动完成系统退款。",
+      "applies_to": "鉴赏期后双方协商同意；官方协助退款",
+      "source_evidence": {
+        "TW-R": "同意声明、聊聊截图、客服及钱包余额"
+      }
+    },
+    {
+      "qa_id": "S045",
+      "markets": [
+        "TW"
+      ],
+      "site": "台湾",
+      "topic": "商品合规",
+      "question": "【台湾】Shopee 酒类能照搬马来西亚许可证审批规则吗？",
+      "answer_core": "不能。台湾禁限售清单将含酒精饮料列为禁止类，并另列含酒精果冻。马来西亚酒类许可证审批条款不适用于台湾，跨站复制刊登前应核对本地清单。",
+      "applies_to": "台湾刊登；酒类及含酒精果冻",
+      "source_evidence": {
+        "TW-P": "禁止类(i)酒类及含酒精果冻"
+      }
+    },
+    {
+      "qa_id": "S046",
+      "markets": [
+        "BR"
+      ],
+      "site": "巴西",
+      "topic": "售后时限",
+      "question": "【巴西】Shopee 退货批准后买家多久寄回？",
+      "answer_core": "巴西政策说明，买家在请求获准后7个自然日内，按确认邮件指示寄回商品。这是批准后的寄回时限，不是把所有退款申请窗口统一为7天。",
+      "applies_to": "获准并要求寄回的退货请求",
+      "source_evidence": {
+        "BR-R": "批准后07 dias corridos寄回"
+      }
+    },
+    {
+      "qa_id": "S047",
+      "markets": [
+        "BR"
+      ],
+      "site": "巴西",
+      "topic": "申诉争议",
+      "question": "【巴西】Shopee 卖家收回商品后多久检查或提出争议？",
+      "answer_core": "实际收到退回商品后3个自然日内检查，并批准退货或提出争议。超时不响应，退件状态会被视为合适且申请结束；不是从买家最初申请日起算。",
+      "applies_to": "卖家已收到退回商品",
+      "source_evidence": {
+        "BR-R": "收到退件后3 dias corridos；超时后果"
+      }
+    },
+    {
+      "qa_id": "S048",
+      "markets": [
+        "BR"
+      ],
+      "site": "巴西",
+      "topic": "售后时限",
+      "question": "【巴西】Shopee 质量问题超过普通窗口还有处理入口吗？",
+      "answer_core": "政策对缺陷商品列有平台协助处理的例外：非耐用品交付起30天、耐用品90天；排除捐赠、数字和定制商品，并受退件及不可退商品条件约束。不能当作所有商品无理由退货期。",
+      "applies_to": "缺陷商品；非耐用品/耐用品及排除项",
+      "source_evidence": {
+        "BR-R": "§1.2缺陷例外30/90天及排除商品"
+      }
+    },
+    {
+      "qa_id": "S049",
+      "markets": [
+        "BR"
+      ],
+      "site": "巴西",
+      "topic": "费用税费",
+      "question": "【巴西】Shopee 买家退款到账时间等于卖家账单调整时间吗？",
+      "answer_core": "不是。买家到账时间与原付款方式有关；卖家账单或支付扣减最长60个自然日是另一流程，从退款获准日起算。不能告诉买家退款一定要等60天。",
+      "applies_to": "买家到账与卖家账单调整不同流程",
+      "source_evidence": {
+        "BR-R": "账单扣减60天；买家到账取决付款方式"
+      }
+    },
+    {
+      "qa_id": "S050",
+      "markets": [
+        "BR"
+      ],
+      "site": "巴西",
+      "topic": "物流履约",
+      "question": "【巴西】Shopee 运费能只按商品售价估算吗？",
+      "answer_core": "服务条款说明运费可能依包裹重量、尺寸、起讫路线及其他物流因素变化，并在交易完成前向承担方展示。应核对包裹及路线，不能从售价推导统一运费。",
+      "applies_to": "巴西物流收费；运费承担方",
+      "source_evidence": {
+        "BR-S": "§14.8 peso、medida、rota"
+      }
+    },
+    {
+      "qa_id": "S051",
+      "markets": [
+        "BR"
+      ],
+      "site": "巴西",
+      "topic": "商品合规",
+      "question": "【巴西】Shopee 刷视频观看或评论违反社区规则吗？",
+      "answer_core": "社区规则禁止人为提高观看、点赞、评论等互动指标。文件适用于视频、评论、链接等内容，它不是全部商品禁售清单，不能据此判断具体商品可销售。",
+      "applies_to": "Shopee社区内容及互动；不替代商品禁售清单",
+      "source_evidence": {
+        "BR-C": "适用范围；§7.1 Spam e Engajamento Falso"
+      }
+    },
+    {
+      "qa_id": "S052",
+      "markets": [
+        "MX"
+      ],
+      "site": "墨西哥",
+      "topic": "申诉争议",
+      "question": "【墨西哥】Shopee Preferred卖家不服退款决定，何时申诉？",
+      "answer_core": "该政策对Preferred卖家列明在线争议在买家退款日起3天内、线下争议在退款日起1个月内申诉。页面日期为2023年，导入前需复核，不能扩展为全部店铺的初次响应期限。",
+      "applies_to": "Preferred Seller；线上/线下争议",
+      "source_evidence": {
+        "MX-R": "Preferred申诉3天/1个月；2023-10-16页面"
+      }
+    },
+    {
+      "qa_id": "S053",
+      "markets": [
+        "MX"
+      ],
+      "site": "墨西哥",
+      "topic": "申诉争议",
+      "question": "【墨西哥】Shopee Preferred卖家未收到退件，何时通知平台？",
+      "answer_core": "政策要求Preferred卖家在收到退件邮件通知后7天内通知Shopee。保留邮件和物流记录，该页面较旧，操作前应复核实际通知。",
+      "applies_to": "Preferred Seller；未收到退件",
+      "source_evidence": {
+        "MX-R": "Preferred return procedure，邮件后7天"
+      }
+    },
+    {
+      "qa_id": "S054",
+      "markets": [
+        "MX"
+      ],
+      "site": "墨西哥",
+      "topic": "售后时限",
+      "question": "【墨西哥】Shopee 买家改变主意，退货运费一定卖家付吗？",
+      "answer_core": "该政策要求改变主意退货先取得卖家同意，买家承担退货运费。商品问题或双方争议适用其他条款，不能直接套用台湾退货运费结论。",
+      "applies_to": "Change of Mind；先取得卖家同意",
+      "source_evidence": {
+        "MX-R": "退货运费条款(ii)，cambio de opinión"
+      }
+    },
+    {
+      "qa_id": "S055",
+      "markets": [
+        "MX"
+      ],
+      "site": "墨西哥",
+      "topic": "售后时限",
+      "question": "【墨西哥】Shopee 卖家错误导致损坏或发错，退货运费谁付？",
+      "answer_core": "卖家过错的退货由卖家承担买家退货运费；双方争议责任时由Shopee判断。区分卖家过错与改变主意，不承诺全部退货统一免费。",
+      "applies_to": "卖家过错；退货运费",
+      "source_evidence": {
+        "MX-R": "退货运费条款(i)/(iii)，seller fault及平台裁决"
+      }
+    },
+    {
+      "qa_id": "S056",
+      "markets": [
+        "MX"
+      ],
+      "site": "墨西哥",
+      "topic": "商品合规",
+      "question": "【墨西哥】Shopee 商品没被拦截就证明可以销售吗？",
+      "answer_core": "不能。墨西哥清单要求卖家负责合法性并满足必要登记、许可和授权，Shopee可终止不符合政策的刊登。页面日期较旧，不能作为当前全部商品的完整合规结论。",
+      "applies_to": "墨西哥刊登；本地许可；旧日期需复核",
+      "source_evidence": {
+        "MX-P": "开头seller responsibility、permits及listing removal"
+      }
+    },
+    {
+      "qa_id": "S057",
+      "markets": [
+        "ID"
+      ],
+      "site": "印度尼西亚",
+      "topic": "申诉争议",
+      "question": "【印度尼西亚】Shopee 卖家处理退货申请一定只有3天吗？",
+      "answer_core": "印尼退款政策要求按书面通知载明的期限响应。查看通知及证据要求，不能把新加坡仅退款在线申诉的3天当作印尼统一响应期。",
+      "applies_to": "收到退款/退货申请的卖家",
+      "source_evidence": {
+        "ID-R": "卖家响应依written notification"
+      }
+    },
+    {
+      "qa_id": "S058",
+      "markets": [
+        "ID"
+      ],
+      "site": "印度尼西亚",
+      "topic": "申诉争议",
+      "question": "【印度尼西亚】Shopee 收回错误或损坏商品，多久内申诉？",
+      "answer_core": "官方条件页说明，实际收到错误或损坏退件后最迟2个工作日内申诉，并准备显示问题的照片或视频。工作日不能改成自然日，也不能从买家申请日起算。",
+      "applies_to": "错误/损坏退件；实际收到为起点",
+      "source_evidence": {
+        "ID-Q": "2 working days since receipt；照片视频"
+      }
+    },
+    {
+      "qa_id": "S059",
+      "markets": [
+        "ID"
+      ],
+      "site": "印度尼西亚",
+      "topic": "售后时限",
+      "question": "【印度尼西亚】Shopee 确认订单完成后还能退款，能用统一天数判断吗？",
+      "answer_core": "政策页和订单完成帮助页对适用范围存在不一致说明，当前不能确定所有店铺统一窗口。核对店铺类型、订单剩余期限并向官方确认，不套用其他站点或编造统一15天。",
+      "applies_to": "订单完成后退款资格；官方范围冲突未解决",
+      "source_evidence": {
+        "ID-R": "完成后仍在适用期申请",
+        "ID-T": "Mall/Star+/其他店铺完成后限制；冲突证据"
+      }
+    },
+    {
+      "qa_id": "S060",
+      "markets": [
+        "ID"
+      ],
+      "site": "印度尼西亚",
+      "topic": "商品合规",
+      "question": "【印度尼西亚】Shopee 未取得许可或使用过的化妆品能卖吗？",
+      "answer_core": "印尼清单列有未取得正式流通许可的化妆品及使用过的化妆品。核对当地许可和商品状态，不能凭其他站点可上架就判断印尼合规。",
+      "applies_to": "印尼化妆品；流通许可及二手状态",
+      "source_evidence": {
+        "ID-P": "化妆品无正式流通许可及二手化妆品"
+      }
+    },
+    {
+      "qa_id": "S061",
+      "markets": [
+        "ID"
+      ],
+      "site": "印度尼西亚",
+      "topic": "商品合规",
+      "question": "【印度尼西亚】Shopee 所有商品都只要一个SNI证书吗？",
+      "answer_core": "政策要求符合商品适用的SNI、强制认证、标签及印尼语要求。哪些规定适用于该类目须另行核对，不能解释为所有商品统一需要或只需要SNI。",
+      "applies_to": "受对应认证、标签及语言规定约束的商品",
+      "source_evidence": {
+        "ID-P": "§2(xli)，SNI、mandatory certification、label及语言"
+      }
+    },
+    {
+      "qa_id": "S062",
+      "markets": [
+        "ID"
+      ],
+      "site": "印度尼西亚",
+      "topic": "商品合规",
+      "question": "【印度尼西亚】Shopee 酒类能使用马来西亚许可证上架吗？",
+      "answer_core": "不能。印尼禁限售清单列有酒精饮料，马来西亚提交有效许可证审批的条款不适用于印尼。跨站销售前须重新核对本地清单。",
+      "applies_to": "印尼商品刊登；酒精饮料",
+      "source_evidence": {
+        "ID-P": "食品饮料相关(i)酒精饮料"
+      }
+    },
+    {
+      "qa_id": "S063",
+      "markets": [
+        "ID"
+      ],
+      "site": "印度尼西亚",
+      "topic": "物流履约",
+      "question": "【印度尼西亚】Shopee 退款政策提到海外卖家，能证明中国卖家现在能入驻吗？",
+      "answer_core": "不能。末条说明政策涵盖Mall及海外卖家，只界定政策对象，不提供中国卖家当前开户资格或渠道。中国跨境能否经营印尼须另查当前官方入驻资料。",
+      "applies_to": "退款政策适用对象；不证明中国跨境开放资格",
+      "source_evidence": {
+        "ID-R": "§9适用Mall和海外卖家；不是入驻资料"
+      }
+    },
+    {
+      "qa_id": "S064",
+      "markets": [
+        "SG",
+        "MY",
+        "PH"
+      ],
+      "site": "跨站点",
+      "topic": "跨站点差异",
+      "question": "【跨站点】Shopee 新加坡、马来西亚和菲律宾的寄回期限能统一吗？",
+      "answer_core": "不能。新加坡通知后3天选方式、选定后7天寄回；马来西亚批准后5个自然日寄回；菲律宾通知后2天选方式、选定后5天寄回。阶段和起算点不同，应按订单站点处理。",
+      "applies_to": "各站被要求退回的已收货商品；起算阶段不同",
+      "source_evidence": {
+        "SG-R": "§2.1 3+7",
+        "MY-R": "§2.5批准后5自然日",
+        "PH-R": "§3.4(b)2+5"
+      }
+    },
+    {
+      "qa_id": "S065",
+      "markets": [
+        "TH",
+        "PH",
+        "VN"
+      ],
+      "site": "跨站点",
+      "topic": "跨站点差异",
+      "question": "【跨站点】Shopee 泰国、菲律宾和越南的售后窗口能统一15天吗？",
+      "answer_core": "不能。泰国Mall 15天而CB/Preferred/C2C 7天；菲律宾已收货普通/Preferred 7天、Mall 15天；越南损坏或描述不符为配送成功后15天。先确认市场、店铺类型、原因和起点。",
+      "applies_to": "TH店铺类型表；PH已收货；VN损坏/描述不符",
+      "source_evidence": {
+        "TH-T": "店铺类型表",
+        "PH-R": "§3.4(a)及起点",
+        "VN-T": "损坏/描述不符15天"
+      }
+    },
+    {
+      "qa_id": "S066",
+      "markets": [
+        "SG",
+        "MY",
+        "ID"
+      ],
+      "site": "跨站点",
+      "topic": "跨站点差异",
+      "question": "【跨站点】Shopee 新加坡、马来西亚和印尼卖家申诉都按3天处理吗？",
+      "answer_core": "不能。马来西亚和印尼申请响应按书面通知；印尼错误或损坏退件收到后2个工作日内申诉。新加坡仅退款在线3天条款与退款后线下限制的衔接待确认，应按场景核对通知，不能统一按3天。",
+      "applies_to": "初次响应、仅退款申诉与退件异常分别处理",
+      "source_evidence": {
+        "SG-R": "仅退款在线3天与退款后线下限制存在适用衔接歧义",
+        "MY-R": "written notification",
+        "ID-R": "written notification",
+        "ID-Q": "异常退件2工作日"
+      }
+    },
+    {
+      "qa_id": "S067",
+      "markets": [
+        "TW",
+        "MY",
+        "TH",
+        "ID",
+        "PH"
+      ],
+      "site": "跨站点",
+      "topic": "跨站点差异",
+      "question": "【跨站点】Shopee 台湾、马来西亚、泰国、印尼和菲律宾酒类规则相同吗？",
+      "answer_core": "不同。台湾、泰国和印尼列有酒类禁售；马来西亚和菲律宾要求有效许可证并经各站Shopee批准。许可和批准不能跨站通用，不能将同一商品直接同步销售。",
+      "applies_to": "五站酒类；禁售与许可条件不同",
+      "source_evidence": {
+        "TW-P": "酒类禁止",
+        "MY-P": "酒类许可及批准",
+        "TH-P2": "§2(i)酒类",
+        "ID-P": "酒类禁止",
+        "PH-P": "酒类许可及批准"
+      }
+    },
+    {
+      "qa_id": "S068",
+      "markets": [
+        "SG",
+        "MY"
+      ],
+      "site": "跨站点",
+      "topic": "跨站点差异",
+      "question": "【跨站点】Shopee 新加坡和马来西亚AMS联盟佣金的税口径相同吗？",
+      "answer_core": "不同。新加坡AMS联盟佣金写为含相关税；马来西亚Participating Seller的PPS联盟佣金不含相关税并另加。只适用于所核验项目，不能代表两站全部销售佣金或广告点击费税率。",
+      "applies_to": "SG AMS与MY PPS；不是全平台收费",
+      "source_evidence": {
+        "SG-A": "§3.2含税",
+        "MY-A": "§4.3不含税"
+      }
+    },
+    {
+      "qa_id": "S069",
+      "markets": [
+        "BR",
+        "ID"
+      ],
+      "site": "跨站点",
+      "topic": "跨站点差异",
+      "question": "【跨站点】Shopee 巴西和印尼收到异常退件后的申诉期限相同吗？",
+      "answer_core": "不同。巴西收到退件后3个自然日检查批准或争议；印尼收到错误或损坏退件后最迟2个工作日申诉并附照片视频。适用事件和日历口径不同。",
+      "applies_to": "BR退件检查；ID错误/损坏退件申诉",
+      "source_evidence": {
+        "BR-R": "实际收到退件后3自然日",
+        "ID-Q": "错误/损坏退件后2工作日"
+      }
+    }
+  ],
+  "notes": [
+    "公开官方帮助中心正文经服务端渲染内容读取；完整临时阅读副本不入仓库。",
+    "九个市场为部分覆盖，不证明覆盖全球所有市场或中国跨境准入。",
+    "两列QA；管理字段不代表metadata filtering。",
+    "所有QA为人工编写的经营问题，不代表真实用户提问频次。"
+  ],
+  "gaps": [
+    {
+      "gap_id": "SGAP001",
+      "markets": [
+        "SG",
+        "MY",
+        "PH",
+        "TH",
+        "VN",
+        "TW",
+        "BR",
+        "MX",
+        "ID"
+      ],
+      "topic": "来源可访问性",
+      "gap_type": "ACCESS_LIMIT",
+      "question": "中国跨境卖家学习中心的站点政策能否全文核验？",
+      "reason": "公开文章URL返回登录/动态页面；观察到的匿名正文接口返回code1008而无正文。搜索摘要不作为正文证据。",
+      "reference_urls": "https://shopee.cn/edu/",
+      "priority": "P0",
+      "status": "OPEN",
+      "verified_at": "2026-10-11",
+      "next_action": "取得适用卖家类型、市场及履约方式的当前官方正文，再审核补充；不得借其他站点规则填空。"
+    },
+    {
+      "gap_id": "SGAP002",
+      "markets": [
+        "TW"
+      ],
+      "topic": "售后时限",
+      "gap_type": "AMBIGUOUS_SCOPE",
+      "question": "商城15天鉴赏期精确从哪天起算？",
+      "reason": "TW-M写收到商品起算15天，TW-T普通七天服务明确次日起算；服务范围不同，不能据此直接认定冲突。商城第一天计数需官方确认。",
+      "reference_urls": "https://help.shopee.tw/portal/4/article/80079;https://help.shopee.tw/portal/4/article/80317",
+      "priority": "P0",
+      "status": "OPEN",
+      "verified_at": "2026-10-11",
+      "next_action": "取得适用卖家类型、市场及履约方式的当前官方正文，再审核补充；不得借其他站点规则填空。"
+    },
+    {
+      "gap_id": "SGAP003",
+      "markets": [
+        "ID"
+      ],
+      "topic": "售后时限",
+      "gap_type": "OFFICIAL_CONFLICT",
+      "question": "确认订单完成后，各类卖家的统一退款窗口是多少？",
+      "reason": "ID-R与ID-T对完成后范围限制表述不一致；不能声称全部店铺15天。",
+      "reference_urls": "https://help.shopee.co.id/portal/4/article/73503;https://help.shopee.co.id/portal/4/article/72909",
+      "priority": "P0",
+      "status": "OPEN",
+      "verified_at": "2026-10-11",
+      "next_action": "取得适用卖家类型、市场及履约方式的当前官方正文，再审核补充；不得借其他站点规则填空。"
+    },
+    {
+      "gap_id": "SGAP004",
+      "markets": [
+        "MY"
+      ],
+      "topic": "售后时限",
+      "gap_type": "OFFICIAL_CONFLICT",
+      "question": "假货退货是否仅Mall或也含Preferred？",
+      "reason": "MY-R脚注含Mall与Preferred；另一官方FAQ 78640仅标Mall，需明确版本与适用条件。",
+      "reference_urls": "https://help.shopee.com.my/portal/4/article/77221;https://help.shopee.com.my/portal/4/article/78640",
+      "priority": "P1",
+      "status": "OPEN",
+      "verified_at": "2026-10-11",
+      "next_action": "取得适用卖家类型、市场及履约方式的当前官方正文，再审核补充；不得借其他站点规则填空。"
+    },
+    {
+      "gap_id": "SGAP005",
+      "markets": [
+        "MY"
+      ],
+      "topic": "物流履约",
+      "gap_type": "OFFICIAL_CONFLICT",
+      "question": "Direct Programme离仓后是否可以退回，SGD27条款如何衔接？",
+      "reason": "MY-L §3.6.2表示离仓不寄回，§3.6.3另给新加坡退款金额条件，二者衔接未明确。新QA仅支持未离仓情况。",
+      "reference_urls": "https://help.shopee.com.my/portal/4/article/163668",
+      "priority": "P1",
+      "status": "OPEN",
+      "verified_at": "2026-10-11",
+      "next_action": "取得适用卖家类型、市场及履约方式的当前官方正文，再审核补充；不得借其他站点规则填空。"
+    },
+    {
+      "gap_id": "SGAP006",
+      "markets": [
+        "PH"
+      ],
+      "topic": "申诉争议",
+      "gap_type": "AMBIGUOUS_SCOPE",
+      "question": "退件未收到的7天条款究竟适用哪些非商城卖家？",
+      "reason": "PH-R §4.3(b)交替使用Non-Mall与Preferred，不能把该段统一扩展给全部非商城卖家。",
+      "reference_urls": "https://help.shopee.ph/portal/4/article/77279",
+      "priority": "P1",
+      "status": "OPEN",
+      "verified_at": "2026-10-11",
+      "next_action": "取得适用卖家类型、市场及履约方式的当前官方正文，再审核补充；不得借其他站点规则填空。"
+    },
+    {
+      "gap_id": "SGAP007",
+      "markets": [
+        "BR"
+      ],
+      "topic": "售后时限",
+      "gap_type": "OFFICIAL_CONFLICT",
+      "question": "Turbo配送的48小时与一般7天条款如何衔接？",
+      "reason": "BR-T列Turbo 48小时而BR-S一般条款列7天；需明确流程期限、法定权利和特殊商品例外，未写入统一窗口QA。",
+      "reference_urls": "https://help.shopee.com.br/portal/4/article/76204;https://help.shopee.com.br/portal/4/article/77113",
+      "priority": "P0",
+      "status": "OPEN",
+      "verified_at": "2026-10-11",
+      "next_action": "取得适用卖家类型、市场及履约方式的当前官方正文，再审核补充；不得借其他站点规则填空。"
+    },
+    {
+      "gap_id": "SGAP008",
+      "markets": [
+        "MY"
+      ],
+      "topic": "费用税费",
+      "gap_type": "AMBIGUOUS_SCOPE",
+      "question": "非Mall费用适用范围如何解释？",
+      "reason": "MY-S §23.5与其他费用说明存在表述差异；不新增统一费率或适用卖家结论。",
+      "reference_urls": "https://help.shopee.com.my/portal/4/article/77215",
+      "priority": "P1",
+      "status": "OPEN",
+      "verified_at": "2026-10-11",
+      "next_action": "取得适用卖家类型、市场及履约方式的当前官方正文，再审核补充；不得借其他站点规则填空。"
+    },
+    {
+      "gap_id": "SGAP009",
+      "markets": [
+        "BR"
+      ],
+      "topic": "商品合规",
+      "gap_type": "ACCESS_LIMIT",
+      "question": "巴西完整商品禁售清单是什么？",
+      "reason": "公开政策索引指向Seller Education Hub商品禁售页，未取得该页完整正文。BR-C社区内容规范不能替代商品清单。",
+      "reference_urls": "https://seller.shopee.com.br/edu/article/3304/politica-de-produtos-proibidos-e-restritos",
+      "priority": "P1",
+      "status": "OPEN",
+      "verified_at": "2026-10-11",
+      "next_action": "取得适用卖家类型、市场及履约方式的当前官方正文，再审核补充；不得借其他站点规则填空。"
+    },
+    {
+      "gap_id": "SGAP010",
+      "markets": [
+        "MX"
+      ],
+      "topic": "政策时效",
+      "gap_type": "STALE_SOURCE",
+      "question": "2023年墨西哥政策是否仍适用于当前全部卖家？",
+      "reason": "正文可读但页面日期较旧；需核验最新版本及当前实际经营模式。候选明确标注旧日期，不宣称最新政策。",
+      "reference_urls": "https://help.shopee.com.mx/portal/4/article/75926;https://help.shopee.com.mx/portal/4/article/75925",
+      "priority": "P1",
+      "status": "OPEN",
+      "verified_at": "2026-10-11",
+      "next_action": "取得适用卖家类型、市场及履约方式的当前官方正文，再审核补充；不得借其他站点规则填空。"
+    },
+    {
+      "gap_id": "SGAP011",
+      "markets": [
+        "ID"
+      ],
+      "topic": "入驻资格",
+      "gap_type": "COVERAGE",
+      "question": "中国跨境卖家当前是否能入驻印度尼西亚？",
+      "reason": "当地退款条款提到海外卖家不等于中国卖家准入开放，未取得当前准入正文。",
+      "reference_urls": "https://help.shopee.co.id/portal/4/article/73503",
+      "priority": "P0",
+      "status": "OPEN",
+      "verified_at": "2026-10-11",
+      "next_action": "取得适用卖家类型、市场及履约方式的当前官方正文，再审核补充；不得借其他站点规则填空。"
+    },
+    {
+      "gap_id": "SGAP012",
+      "markets": [
+        "MX",
+        "BR"
+      ],
+      "topic": "入驻资格",
+      "gap_type": "COVERAGE",
+      "question": "中国卖家在巴西及墨西哥当前有哪些入驻模式？",
+      "reason": "当地帮助中心不能证明中国跨境、本地法人及邀请制的当前开放范围；需当前官方准入说明。",
+      "reference_urls": "https://shopee.cn/edu/",
+      "priority": "P1",
+      "status": "OPEN",
+      "verified_at": "2026-10-11",
+      "next_action": "取得适用卖家类型、市场及履约方式的当前官方正文，再审核补充；不得借其他站点规则填空。"
+    },
+    {
+      "gap_id": "SGAP013",
+      "markets": [
+        "CL",
+        "CO",
+        "AR"
+      ],
+      "topic": "站点范围",
+      "gap_type": "UNVERIFIED_MARKET",
+      "question": "智利、哥伦比亚、阿根廷当前是否仍有适用经营渠道？",
+      "reason": "涉及历史市场信息；没有取得当前官方市场注册表和政策正文，不能用旧资料推定当前开放。",
+      "reference_urls": "https://shopee.cn/",
+      "priority": "P1",
+      "status": "OPEN",
+      "verified_at": "2026-10-11",
+      "next_action": "取得适用卖家类型、市场及履约方式的当前官方正文，再审核补充；不得借其他站点规则填空。"
+    },
+    {
+      "gap_id": "SGAP014",
+      "markets": [
+        "SG"
+      ],
+      "topic": "物流履约",
+      "gap_type": "COVERAGE",
+      "question": "新加坡站当前发货时限、迟发率、预售和自动取消标准是什么？",
+      "reason": "未核验适用于该站店铺类型、物流路线及中国跨境卖家的现行完整规则，不提供固定天数/阈值。",
+      "reference_urls": "https://shopee.cn/edu/",
+      "priority": "P1",
+      "status": "OPEN",
+      "verified_at": "2026-10-11",
+      "next_action": "取得适用卖家类型、市场及履约方式的当前官方正文，再审核补充；不得借其他站点规则填空。"
+    },
+    {
+      "gap_id": "SGAP015",
+      "markets": [
+        "SG"
+      ],
+      "topic": "费用税费",
+      "gap_type": "COVERAGE",
+      "question": "新加坡站当前销售佣金、交易费、跨境费及结算周期是多少？",
+      "reason": "现有正文仅支持部分费用定义、税或账单流程，不能生成完整实时费率表或统一结算天数。",
+      "reference_urls": "https://shopee.cn/edu/",
+      "priority": "P1",
+      "status": "OPEN",
+      "verified_at": "2026-10-11",
+      "next_action": "取得适用卖家类型、市场及履约方式的当前官方正文，再审核补充；不得借其他站点规则填空。"
+    },
+    {
+      "gap_id": "SGAP016",
+      "markets": [
+        "MY"
+      ],
+      "topic": "物流履约",
+      "gap_type": "COVERAGE",
+      "question": "马来西亚站当前发货时限、迟发率、预售和自动取消标准是什么？",
+      "reason": "未核验适用于该站店铺类型、物流路线及中国跨境卖家的现行完整规则，不提供固定天数/阈值。",
+      "reference_urls": "https://shopee.cn/edu/",
+      "priority": "P1",
+      "status": "OPEN",
+      "verified_at": "2026-10-11",
+      "next_action": "取得适用卖家类型、市场及履约方式的当前官方正文，再审核补充；不得借其他站点规则填空。"
+    },
+    {
+      "gap_id": "SGAP017",
+      "markets": [
+        "MY"
+      ],
+      "topic": "费用税费",
+      "gap_type": "COVERAGE",
+      "question": "马来西亚站当前销售佣金、交易费、跨境费及结算周期是多少？",
+      "reason": "现有正文仅支持部分费用定义、税或账单流程，不能生成完整实时费率表或统一结算天数。",
+      "reference_urls": "https://shopee.cn/edu/",
+      "priority": "P1",
+      "status": "OPEN",
+      "verified_at": "2026-10-11",
+      "next_action": "取得适用卖家类型、市场及履约方式的当前官方正文，再审核补充；不得借其他站点规则填空。"
+    },
+    {
+      "gap_id": "SGAP018",
+      "markets": [
+        "MY"
+      ],
+      "topic": "广告经营",
+      "gap_type": "COVERAGE",
+      "question": "马来西亚站当前GMV Max、广告归因和开通条件如何定义？",
+      "reason": "现有广告QA主要为新加坡；MY PPS条款不能替代本地广告投放和归因规则。不套用新加坡窗口。",
+      "reference_urls": "https://shopee.cn/edu/",
+      "priority": "P1",
+      "status": "OPEN",
+      "verified_at": "2026-10-11",
+      "next_action": "取得适用卖家类型、市场及履约方式的当前官方正文，再审核补充；不得借其他站点规则填空。"
+    },
+    {
+      "gap_id": "SGAP019",
+      "markets": [
+        "PH"
+      ],
+      "topic": "物流履约",
+      "gap_type": "COVERAGE",
+      "question": "菲律宾站当前发货时限、迟发率、预售和自动取消标准是什么？",
+      "reason": "未核验适用于该站店铺类型、物流路线及中国跨境卖家的现行完整规则，不提供固定天数/阈值。",
+      "reference_urls": "https://shopee.cn/edu/",
+      "priority": "P1",
+      "status": "OPEN",
+      "verified_at": "2026-10-11",
+      "next_action": "取得适用卖家类型、市场及履约方式的当前官方正文，再审核补充；不得借其他站点规则填空。"
+    },
+    {
+      "gap_id": "SGAP020",
+      "markets": [
+        "PH"
+      ],
+      "topic": "费用税费",
+      "gap_type": "COVERAGE",
+      "question": "菲律宾站当前销售佣金、交易费、跨境费及结算周期是多少？",
+      "reason": "现有正文仅支持部分费用定义、税或账单流程，不能生成完整实时费率表或统一结算天数。",
+      "reference_urls": "https://shopee.cn/edu/",
+      "priority": "P1",
+      "status": "OPEN",
+      "verified_at": "2026-10-11",
+      "next_action": "取得适用卖家类型、市场及履约方式的当前官方正文，再审核补充；不得借其他站点规则填空。"
+    },
+    {
+      "gap_id": "SGAP021",
+      "markets": [
+        "PH"
+      ],
+      "topic": "广告经营",
+      "gap_type": "COVERAGE",
+      "question": "菲律宾站当前GMV Max、广告归因和开通条件如何定义？",
+      "reason": "现有广告QA主要为新加坡；MY PPS条款不能替代本地广告投放和归因规则。不套用新加坡窗口。",
+      "reference_urls": "https://shopee.cn/edu/",
+      "priority": "P1",
+      "status": "OPEN",
+      "verified_at": "2026-10-11",
+      "next_action": "取得适用卖家类型、市场及履约方式的当前官方正文，再审核补充；不得借其他站点规则填空。"
+    },
+    {
+      "gap_id": "SGAP022",
+      "markets": [
+        "TH"
+      ],
+      "topic": "物流履约",
+      "gap_type": "COVERAGE",
+      "question": "泰国站当前发货时限、迟发率、预售和自动取消标准是什么？",
+      "reason": "未核验适用于该站店铺类型、物流路线及中国跨境卖家的现行完整规则，不提供固定天数/阈值。",
+      "reference_urls": "https://shopee.cn/edu/",
+      "priority": "P1",
+      "status": "OPEN",
+      "verified_at": "2026-10-11",
+      "next_action": "取得适用卖家类型、市场及履约方式的当前官方正文，再审核补充；不得借其他站点规则填空。"
+    },
+    {
+      "gap_id": "SGAP023",
+      "markets": [
+        "TH"
+      ],
+      "topic": "费用税费",
+      "gap_type": "COVERAGE",
+      "question": "泰国站当前销售佣金、交易费、跨境费及结算周期是多少？",
+      "reason": "现有正文仅支持部分费用定义、税或账单流程，不能生成完整实时费率表或统一结算天数。",
+      "reference_urls": "https://shopee.cn/edu/",
+      "priority": "P1",
+      "status": "OPEN",
+      "verified_at": "2026-10-11",
+      "next_action": "取得适用卖家类型、市场及履约方式的当前官方正文，再审核补充；不得借其他站点规则填空。"
+    },
+    {
+      "gap_id": "SGAP024",
+      "markets": [
+        "TH"
+      ],
+      "topic": "广告经营",
+      "gap_type": "COVERAGE",
+      "question": "泰国站当前GMV Max、广告归因和开通条件如何定义？",
+      "reason": "现有广告QA主要为新加坡；MY PPS条款不能替代本地广告投放和归因规则。不套用新加坡窗口。",
+      "reference_urls": "https://shopee.cn/edu/",
+      "priority": "P1",
+      "status": "OPEN",
+      "verified_at": "2026-10-11",
+      "next_action": "取得适用卖家类型、市场及履约方式的当前官方正文，再审核补充；不得借其他站点规则填空。"
+    },
+    {
+      "gap_id": "SGAP025",
+      "markets": [
+        "VN"
+      ],
+      "topic": "物流履约",
+      "gap_type": "COVERAGE",
+      "question": "越南站当前发货时限、迟发率、预售和自动取消标准是什么？",
+      "reason": "未核验适用于该站店铺类型、物流路线及中国跨境卖家的现行完整规则，不提供固定天数/阈值。",
+      "reference_urls": "https://shopee.cn/edu/",
+      "priority": "P1",
+      "status": "OPEN",
+      "verified_at": "2026-10-11",
+      "next_action": "取得适用卖家类型、市场及履约方式的当前官方正文，再审核补充；不得借其他站点规则填空。"
+    },
+    {
+      "gap_id": "SGAP026",
+      "markets": [
+        "VN"
+      ],
+      "topic": "费用税费",
+      "gap_type": "COVERAGE",
+      "question": "越南站当前销售佣金、交易费、跨境费及结算周期是多少？",
+      "reason": "现有正文仅支持部分费用定义、税或账单流程，不能生成完整实时费率表或统一结算天数。",
+      "reference_urls": "https://shopee.cn/edu/",
+      "priority": "P1",
+      "status": "OPEN",
+      "verified_at": "2026-10-11",
+      "next_action": "取得适用卖家类型、市场及履约方式的当前官方正文，再审核补充；不得借其他站点规则填空。"
+    },
+    {
+      "gap_id": "SGAP027",
+      "markets": [
+        "VN"
+      ],
+      "topic": "广告经营",
+      "gap_type": "COVERAGE",
+      "question": "越南站当前GMV Max、广告归因和开通条件如何定义？",
+      "reason": "现有广告QA主要为新加坡；MY PPS条款不能替代本地广告投放和归因规则。不套用新加坡窗口。",
+      "reference_urls": "https://shopee.cn/edu/",
+      "priority": "P1",
+      "status": "OPEN",
+      "verified_at": "2026-10-11",
+      "next_action": "取得适用卖家类型、市场及履约方式的当前官方正文，再审核补充；不得借其他站点规则填空。"
+    },
+    {
+      "gap_id": "SGAP028",
+      "markets": [
+        "TW"
+      ],
+      "topic": "物流履约",
+      "gap_type": "COVERAGE",
+      "question": "台湾站当前发货时限、迟发率、预售和自动取消标准是什么？",
+      "reason": "未核验适用于该站店铺类型、物流路线及中国跨境卖家的现行完整规则，不提供固定天数/阈值。",
+      "reference_urls": "https://shopee.cn/edu/",
+      "priority": "P1",
+      "status": "OPEN",
+      "verified_at": "2026-10-11",
+      "next_action": "取得适用卖家类型、市场及履约方式的当前官方正文，再审核补充；不得借其他站点规则填空。"
+    },
+    {
+      "gap_id": "SGAP029",
+      "markets": [
+        "TW"
+      ],
+      "topic": "费用税费",
+      "gap_type": "COVERAGE",
+      "question": "台湾站当前销售佣金、交易费、跨境费及结算周期是多少？",
+      "reason": "现有正文仅支持部分费用定义、税或账单流程，不能生成完整实时费率表或统一结算天数。",
+      "reference_urls": "https://shopee.cn/edu/",
+      "priority": "P1",
+      "status": "OPEN",
+      "verified_at": "2026-10-11",
+      "next_action": "取得适用卖家类型、市场及履约方式的当前官方正文，再审核补充；不得借其他站点规则填空。"
+    },
+    {
+      "gap_id": "SGAP030",
+      "markets": [
+        "TW"
+      ],
+      "topic": "广告经营",
+      "gap_type": "COVERAGE",
+      "question": "台湾站当前GMV Max、广告归因和开通条件如何定义？",
+      "reason": "现有广告QA主要为新加坡；MY PPS条款不能替代本地广告投放和归因规则。不套用新加坡窗口。",
+      "reference_urls": "https://shopee.cn/edu/",
+      "priority": "P1",
+      "status": "OPEN",
+      "verified_at": "2026-10-11",
+      "next_action": "取得适用卖家类型、市场及履约方式的当前官方正文，再审核补充；不得借其他站点规则填空。"
+    },
+    {
+      "gap_id": "SGAP031",
+      "markets": [
+        "BR"
+      ],
+      "topic": "物流履约",
+      "gap_type": "COVERAGE",
+      "question": "巴西站当前发货时限、迟发率、预售和自动取消标准是什么？",
+      "reason": "未核验适用于该站店铺类型、物流路线及中国跨境卖家的现行完整规则，不提供固定天数/阈值。",
+      "reference_urls": "https://shopee.cn/edu/",
+      "priority": "P1",
+      "status": "OPEN",
+      "verified_at": "2026-10-11",
+      "next_action": "取得适用卖家类型、市场及履约方式的当前官方正文，再审核补充；不得借其他站点规则填空。"
+    },
+    {
+      "gap_id": "SGAP032",
+      "markets": [
+        "BR"
+      ],
+      "topic": "费用税费",
+      "gap_type": "COVERAGE",
+      "question": "巴西站当前销售佣金、交易费、跨境费及结算周期是多少？",
+      "reason": "现有正文仅支持部分费用定义、税或账单流程，不能生成完整实时费率表或统一结算天数。",
+      "reference_urls": "https://shopee.cn/edu/",
+      "priority": "P1",
+      "status": "OPEN",
+      "verified_at": "2026-10-11",
+      "next_action": "取得适用卖家类型、市场及履约方式的当前官方正文，再审核补充；不得借其他站点规则填空。"
+    },
+    {
+      "gap_id": "SGAP033",
+      "markets": [
+        "BR"
+      ],
+      "topic": "广告经营",
+      "gap_type": "COVERAGE",
+      "question": "巴西站当前GMV Max、广告归因和开通条件如何定义？",
+      "reason": "现有广告QA主要为新加坡；MY PPS条款不能替代本地广告投放和归因规则。不套用新加坡窗口。",
+      "reference_urls": "https://shopee.cn/edu/",
+      "priority": "P1",
+      "status": "OPEN",
+      "verified_at": "2026-10-11",
+      "next_action": "取得适用卖家类型、市场及履约方式的当前官方正文，再审核补充；不得借其他站点规则填空。"
+    },
+    {
+      "gap_id": "SGAP034",
+      "markets": [
+        "MX"
+      ],
+      "topic": "物流履约",
+      "gap_type": "COVERAGE",
+      "question": "墨西哥站当前发货时限、迟发率、预售和自动取消标准是什么？",
+      "reason": "未核验适用于该站店铺类型、物流路线及中国跨境卖家的现行完整规则，不提供固定天数/阈值。",
+      "reference_urls": "https://shopee.cn/edu/",
+      "priority": "P1",
+      "status": "OPEN",
+      "verified_at": "2026-10-11",
+      "next_action": "取得适用卖家类型、市场及履约方式的当前官方正文，再审核补充；不得借其他站点规则填空。"
+    },
+    {
+      "gap_id": "SGAP035",
+      "markets": [
+        "MX"
+      ],
+      "topic": "费用税费",
+      "gap_type": "COVERAGE",
+      "question": "墨西哥站当前销售佣金、交易费、跨境费及结算周期是多少？",
+      "reason": "现有正文仅支持部分费用定义、税或账单流程，不能生成完整实时费率表或统一结算天数。",
+      "reference_urls": "https://shopee.cn/edu/",
+      "priority": "P1",
+      "status": "OPEN",
+      "verified_at": "2026-10-11",
+      "next_action": "取得适用卖家类型、市场及履约方式的当前官方正文，再审核补充；不得借其他站点规则填空。"
+    },
+    {
+      "gap_id": "SGAP036",
+      "markets": [
+        "MX"
+      ],
+      "topic": "广告经营",
+      "gap_type": "COVERAGE",
+      "question": "墨西哥站当前GMV Max、广告归因和开通条件如何定义？",
+      "reason": "现有广告QA主要为新加坡；MY PPS条款不能替代本地广告投放和归因规则。不套用新加坡窗口。",
+      "reference_urls": "https://shopee.cn/edu/",
+      "priority": "P1",
+      "status": "OPEN",
+      "verified_at": "2026-10-11",
+      "next_action": "取得适用卖家类型、市场及履约方式的当前官方正文，再审核补充；不得借其他站点规则填空。"
+    },
+    {
+      "gap_id": "SGAP037",
+      "markets": [
+        "ID"
+      ],
+      "topic": "物流履约",
+      "gap_type": "COVERAGE",
+      "question": "印度尼西亚站当前发货时限、迟发率、预售和自动取消标准是什么？",
+      "reason": "未核验适用于该站店铺类型、物流路线及中国跨境卖家的现行完整规则，不提供固定天数/阈值。",
+      "reference_urls": "https://shopee.cn/edu/",
+      "priority": "P1",
+      "status": "OPEN",
+      "verified_at": "2026-10-11",
+      "next_action": "取得适用卖家类型、市场及履约方式的当前官方正文，再审核补充；不得借其他站点规则填空。"
+    },
+    {
+      "gap_id": "SGAP038",
+      "markets": [
+        "ID"
+      ],
+      "topic": "费用税费",
+      "gap_type": "COVERAGE",
+      "question": "印度尼西亚站当前销售佣金、交易费、跨境费及结算周期是多少？",
+      "reason": "现有正文仅支持部分费用定义、税或账单流程，不能生成完整实时费率表或统一结算天数。",
+      "reference_urls": "https://shopee.cn/edu/",
+      "priority": "P1",
+      "status": "OPEN",
+      "verified_at": "2026-10-11",
+      "next_action": "取得适用卖家类型、市场及履约方式的当前官方正文，再审核补充；不得借其他站点规则填空。"
+    },
+    {
+      "gap_id": "SGAP039",
+      "markets": [
+        "ID"
+      ],
+      "topic": "广告经营",
+      "gap_type": "COVERAGE",
+      "question": "印度尼西亚站当前GMV Max、广告归因和开通条件如何定义？",
+      "reason": "现有广告QA主要为新加坡；MY PPS条款不能替代本地广告投放和归因规则。不套用新加坡窗口。",
+      "reference_urls": "https://shopee.cn/edu/",
+      "priority": "P1",
+      "status": "OPEN",
+      "verified_at": "2026-10-11",
+      "next_action": "取得适用卖家类型、市场及履约方式的当前官方正文，再审核补充；不得借其他站点规则填空。"
+    },
+    {
+      "gap_id": "SGAP040",
+      "markets": [
+        "SG",
+        "MY",
+        "PH",
+        "TH",
+        "VN",
+        "TW",
+        "BR",
+        "MX",
+        "ID"
+      ],
+      "topic": "申诉争议",
+      "gap_type": "COVERAGE",
+      "question": "商品违规、计分及账户冻结的固定申诉时限和材料清单是什么？",
+      "reason": "本批核验了部分违规后果和售后争议，未取得所有站点账户违规的现行计分、申诉期限和专项材料清单。",
+      "reference_urls": "https://shopee.cn/edu/",
+      "priority": "P1",
+      "status": "OPEN",
+      "verified_at": "2026-10-11",
+      "next_action": "取得适用卖家类型、市场及履约方式的当前官方正文，再审核补充；不得借其他站点规则填空。"
+    },
+    {
+      "gap_id": "SGAP041",
+      "markets": [
+        "SG"
+      ],
+      "topic": "申诉争议",
+      "gap_type": "AMBIGUOUS_SCOPE",
+      "question": "仅退款在线3天与退款后仅线下争议限制如何衔接？",
+      "reason": "SG-R同时列退款日起3天的仅退款在线申诉与退款后仅线下限制，后者是否只限退货退款的适用范围未明确。不得擅自保证退款后在线申诉仍可用。",
+      "reference_urls": "https://help.shopee.sg/portal/4/article/77152",
+      "priority": "P1",
+      "status": "OPEN",
+      "verified_at": "2026-10-11",
+      "next_action": "向官方确认仅退款与退货退款的申诉通道及期限衔接，保留通知证据。"
+    }
+  ],
+  "tests": [
+    {
+      "test_id": "ST001",
+      "query": "已收货的退款申请从哪天起算？",
+      "platform_context": "Shopee",
+      "market_context": "SG",
+      "expected_qa_ids": "S001",
+      "expected_behavior": "已收货退款申请窗口为15天。Shopee支持物流以应用状态更新为Delivered的日期为基准；其他已收货商品以预计送达日期为基准。不要对所有物流都用同一签收日算法。",
+      "forbidden_claims": "不得套用其他市场或混淆店铺类型、时间起点与工作日/自然日",
+      "test_type": "POLICY",
+      "execution_status": "NOT_RUN"
+    },
+    {
+      "test_id": "ST002",
+      "query": "选择退货物流和寄回商品各有多久？",
+      "platform_context": "Shopee",
+      "market_context": "SG",
+      "expected_qa_ids": "S002",
+      "expected_behavior": "如Shopee要求退回，买家收到通知后3天内选择退货方式，再从选定方式起7天内寄至指定地点。两段期限起点不同，逾期可能自动取消申请。",
+      "forbidden_claims": "不得套用其他市场或混淆店铺类型、时间起点与工作日/自然日",
+      "test_type": "POLICY",
+      "execution_status": "NOT_RUN"
+    },
+    {
+      "test_id": "ST003",
+      "query": "系统显示退件送达但没收到，非商城卖家多久内反馈？",
+      "platform_context": "Shopee",
+      "market_context": "SG",
+      "expected_qa_ids": "S003",
+      "expected_behavior": "非商城卖家应在两个期限中较早者之前通知Shopee：卖家中心退件状态更新为Delivered后2天，或收到退件邮件通知后5天。保留物流和邮件记录，不要等较晚的期限。",
+      "forbidden_claims": "不得套用其他市场或混淆店铺类型、时间起点与工作日/自然日",
+      "test_type": "POLICY",
+      "execution_status": "NOT_RUN"
+    },
+    {
+      "test_id": "ST004",
+      "query": "非商城卖家不同意仅退款决定，如何确认申诉期限？",
+      "platform_context": "Shopee",
+      "market_context": "SG",
+      "expected_qa_ids": "S004",
+      "expected_behavior": "政策对仅退款在线申诉列买家退款日起3天，线下争议列退款日起1个月；同时有退款后仅可线下争议的限制，通道适用衔接未明确。应核对通知并及时向官方确认，不把3天作为所有场景的安全等待期。",
+      "forbidden_claims": "不得套用其他市场或混淆店铺类型、时间起点与工作日/自然日",
+      "test_type": "POLICY",
+      "execution_status": "NOT_RUN"
+    },
+    {
+      "test_id": "ST005",
+      "query": "刊登禁限售商品可能有什么后果？",
+      "platform_context": "Shopee",
+      "market_context": "SG",
+      "expected_qa_ids": "S005",
+      "expected_behavior": "新加坡禁限售清单会更新。违规可能删除刊登、限制账户权限、暂停或终止账户及法律行动。先核对具体清单及通知，该页不能推导统一扣分或申诉天数。",
+      "forbidden_claims": "不得套用其他市场或混淆店铺类型、时间起点与工作日/自然日",
+      "test_type": "POLICY",
+      "execution_status": "NOT_RUN"
+    },
+    {
+      "test_id": "ST006",
+      "query": "食品页面能宣传治病或预防疾病吗？",
+      "platform_context": "Shopee",
+      "market_context": "SG",
+      "expected_qa_ids": "S006",
+      "expected_behavior": "新加坡禁限售政策将带有诊断、治疗、缓解或预防疾病等药用宣称的食品刊登列为禁止食品情形。上架前审查标题、详情和图片中的宣称，不仅检查商品名称。",
+      "forbidden_claims": "不得套用其他市场或混淆店铺类型、时间起点与工作日/自然日",
+      "test_type": "POLICY",
+      "execution_status": "NOT_RUN"
+    },
+    {
+      "test_id": "ST007",
+      "query": "海外卖家的跨境费用能套用其他站点费率吗？",
+      "platform_context": "Shopee",
+      "market_context": "SG",
+      "expected_qa_ids": "S007",
+      "expected_behavior": "新加坡服务条款设有对位于新加坡之外卖家的Cross Border Fee，由卖家承担，费率按平台不时通知。核对本店适用费项和通知，不能据此编造固定费率或套用其他站点。",
+      "forbidden_claims": "不得套用其他市场或混淆店铺类型、时间起点与工作日/自然日",
+      "test_type": "POLICY",
+      "execution_status": "NOT_RUN"
+    },
+    {
+      "test_id": "ST008",
+      "query": "AMS联盟佣金的税是否已包含？",
+      "platform_context": "Shopee",
+      "market_context": "SG",
+      "expected_qa_ids": "S008",
+      "expected_behavior": "新加坡AMS条款中的联盟佣金包含列举的相关税；Shopee从佣金扣除的Service Fees则不含VAT。这是AMS项目口径，不能当作所有店铺销售佣金或广告点击费。",
+      "forbidden_claims": "不得套用其他市场或混淆店铺类型、时间起点与工作日/自然日",
+      "test_type": "POLICY",
+      "execution_status": "NOT_RUN"
+    },
+    {
+      "test_id": "ST009",
+      "query": "买家被要求退货后有多久寄回？",
+      "platform_context": "Shopee",
+      "market_context": "MY",
+      "expected_qa_ids": "S009",
+      "expected_behavior": "如Shopee要求退回，买家须在退货请求获准后5个自然日内寄至指定地点。起点是批准退货，不是新加坡的先选方式再起算7天。",
+      "forbidden_claims": "不得套用其他市场或混淆店铺类型、时间起点与工作日/自然日",
+      "test_type": "POLICY",
+      "execution_status": "NOT_RUN"
+    },
+    {
+      "test_id": "ST010",
+      "query": "非商城卖家收到退款申请一定只有3天响应吗？",
+      "platform_context": "Shopee",
+      "market_context": "MY",
+      "expected_qa_ids": "S010",
+      "expected_behavior": "马来西亚政策要求非商城卖家按书面通知中的程序和期限响应。查看邮件和卖家中心通知，不能把新加坡仅退款在线申诉的3天当作这里所有申请的响应期限。",
+      "forbidden_claims": "不得套用其他市场或混淆店铺类型、时间起点与工作日/自然日",
+      "test_type": "POLICY",
+      "execution_status": "NOT_RUN"
+    },
+    {
+      "test_id": "ST011",
+      "query": "非商城卖家没收到退件，多久内通知平台？",
+      "platform_context": "Shopee",
+      "market_context": "MY",
+      "expected_qa_ids": "S011",
+      "expected_behavior": "未收到退件时，非商城卖家须在收到退件邮件通知后7天内通知Shopee。留存邮件日期和物流证据，该期限不是普通发货时限。",
+      "forbidden_claims": "不得套用其他市场或混淆店铺类型、时间起点与工作日/自然日",
+      "test_type": "POLICY",
+      "execution_status": "NOT_RUN"
+    },
+    {
+      "test_id": "ST012",
+      "query": "原封商品和运输中退款选项适用于所有地区吗？",
+      "platform_context": "Shopee",
+      "market_context": "MY",
+      "expected_qa_ids": "S012",
+      "expected_behavior": "这两类选项只适用于位于马来西亚的买家：原封商品退货、运输中商品退款或退货。Shopee Instant Mart购买的原封商品不适用这里的退货退款选项。",
+      "forbidden_claims": "不得套用其他市场或混淆店铺类型、时间起点与工作日/自然日",
+      "test_type": "POLICY",
+      "execution_status": "NOT_RUN"
+    },
+    {
+      "test_id": "ST013",
+      "query": "酒类能直接上架吗？",
+      "platform_context": "Shopee",
+      "market_context": "MY",
+      "expected_qa_ids": "S013",
+      "expected_behavior": "马来西亚政策要求向Shopee提交有效酒类许可证并获得批准。不能省略平台审批，也不能理解为所有卖家都可销售；许可不能当作其他站点的准入依据。",
+      "forbidden_claims": "不得套用其他市场或混淆店铺类型、时间起点与工作日/自然日",
+      "test_type": "POLICY",
+      "execution_status": "NOT_RUN"
+    },
+    {
+      "test_id": "ST014",
+      "query": "食品详情可以使用医疗效果宣传吗？",
+      "platform_context": "Shopee",
+      "market_context": "MY",
+      "expected_qa_ids": "S014",
+      "expected_behavior": "禁限售政策禁止食品刊登中的药用宣称，包括诊断、治疗、缓解或预防疾病等。上架前核对文案和图片，不将普通食品描述为医疗产品。",
+      "forbidden_claims": "不得套用其他市场或混淆店铺类型、时间起点与工作日/自然日",
+      "test_type": "POLICY",
+      "execution_status": "NOT_RUN"
+    },
+    {
+      "test_id": "ST015",
+      "query": "8% SST是按整笔销售额直接收取吗？",
+      "platform_context": "Shopee",
+      "market_context": "MY",
+      "expected_qa_ids": "S015",
+      "expected_behavior": "该页将8% SST用于规定的应税服务，列举交易费、Marketplace Commission、营销服务、部分提现费、营销套餐和广告充值。它不是对整笔GMV再收8%；应逐项核对服务费及账单。",
+      "forbidden_claims": "不得套用其他市场或混淆店铺类型、时间起点与工作日/自然日",
+      "test_type": "POLICY",
+      "execution_status": "NOT_RUN"
+    },
+    {
+      "test_id": "ST016",
+      "query": "AMS的PPS佣金基数和税如何处理？",
+      "platform_context": "Shopee",
+      "market_context": "MY",
+      "expected_qa_ids": "S016",
+      "expected_behavior": "PPS佣金为佣金率乘Net Completed Purchase Value，基数扣除折扣、运费、优惠券费用和Shopee Coins等回扣；联盟佣金不含相关税，税另加。不要当作所有销售佣金的统一算法。",
+      "forbidden_claims": "不得套用其他市场或混淆店铺类型、时间起点与工作日/自然日",
+      "test_type": "POLICY",
+      "execution_status": "NOT_RUN"
+    },
+    {
+      "test_id": "ST017",
+      "query": "MY Direct Programme可以作为中国卖家入驻依据吗？",
+      "platform_context": "Shopee",
+      "market_context": "MY",
+      "expected_qa_ids": "S017",
+      "expected_behavior": "不可以。该项目面向符合要求的马来西亚卖家，包括西马揽收地址及店铺表现、商品重量尺寸条件。它不是中国跨境入驻或SLS全站物流指南。",
+      "forbidden_claims": "不得套用其他市场或混淆店铺类型、时间起点与工作日/自然日",
+      "test_type": "POLICY",
+      "execution_status": "NOT_RUN"
+    },
+    {
+      "test_id": "ST018",
+      "query": "Direct Programme失败配送且未离开MY中转仓怎么办？",
+      "platform_context": "Shopee",
+      "market_context": "MY",
+      "expected_qa_ids": "S018",
+      "expected_behavior": "商品尚未离开MY中转仓时，可在Shopee通知期限内申请自费退至提供的地址；超时可能失去商品权利。离仓后处理涉及另行条款且存在解释差异，须逐单确认，不能承诺一定退回或补偿。",
+      "forbidden_claims": "不得套用其他市场或混淆店铺类型、时间起点与工作日/自然日",
+      "test_type": "POLICY",
+      "execution_status": "NOT_RUN"
+    },
+    {
+      "test_id": "ST019",
+      "query": "已收货的退款窗口按店铺类型区分吗？",
+      "platform_context": "Shopee",
+      "market_context": "PH",
+      "expected_qa_ids": "S019",
+      "expected_behavior": "所核验政策§3.4列明普通和Preferred店铺7天、Mall店铺15天，从应用状态更新为Delivered的日期时间起算。先确认店铺类型和订单期限，不将Mall的15天套到所有店铺。",
+      "forbidden_claims": "不得套用其他市场或混淆店铺类型、时间起点与工作日/自然日",
+      "test_type": "POLICY",
+      "execution_status": "NOT_RUN"
+    },
+    {
+      "test_id": "ST020",
+      "query": "选择退货方式和寄回分别有多久？",
+      "platform_context": "Shopee",
+      "market_context": "PH",
+      "expected_qa_ids": "S020",
+      "expected_behavior": "如Shopee要求退回，通知后2天内选择方式，再从选定方式起5天内寄至指定地点。超时可能自动取消申请，不与新加坡3天加7天混用。",
+      "forbidden_claims": "不得套用其他市场或混淆店铺类型、时间起点与工作日/自然日",
+      "test_type": "POLICY",
+      "execution_status": "NOT_RUN"
+    },
+    {
+      "test_id": "ST021",
+      "query": "非商城卖家收到售后申请按哪个期限响应？",
+      "platform_context": "Shopee",
+      "market_context": "PH",
+      "expected_qa_ids": "S021",
+      "expected_behavior": "非商城卖家应按Shopee书面通知载明的程序和期限响应，留意邮件与卖家中心推送。不能将其他站点的固定申诉天数用作菲律宾全部售后申请的期限。",
+      "forbidden_claims": "不得套用其他市场或混淆店铺类型、时间起点与工作日/自然日",
+      "test_type": "POLICY",
+      "execution_status": "NOT_RUN"
+    },
+    {
+      "test_id": "ST022",
+      "query": "Returned on the Spot允许开封试用后再退吗？",
+      "platform_context": "Shopee",
+      "market_context": "PH",
+      "expected_qa_ids": "S022",
+      "expected_behavior": "只允许当面目视检查，不得破坏制造商包装封条，也不得试用或测试。骑手记录开箱视频，当场退件需骑手接受并形成申请；不能承诺所有订单均能试用后退。",
+      "forbidden_claims": "不得套用其他市场或混淆店铺类型、时间起点与工作日/自然日",
+      "test_type": "POLICY",
+      "execution_status": "NOT_RUN"
+    },
+    {
+      "test_id": "ST023",
+      "query": "酒类销售需要平台批准吗？",
+      "platform_context": "Shopee",
+      "market_context": "PH",
+      "expected_qa_ids": "S023",
+      "expected_behavior": "菲律宾禁限售政策要求将有效许可证提交给Shopee并获得批准。不能因马来西亚有相似条款就认为两地共用许可，仍须核对本地要求。",
+      "forbidden_claims": "不得套用其他市场或混淆店铺类型、时间起点与工作日/自然日",
+      "test_type": "POLICY",
+      "execution_status": "NOT_RUN"
+    },
+    {
+      "test_id": "ST024",
+      "query": "违规商品只会被删除而不影响账户吗？",
+      "platform_context": "Shopee",
+      "market_context": "PH",
+      "expected_qa_ids": "S024",
+      "expected_behavior": "政策列明可能移除刊登、限制账户权限、暂停或终止账户及法律行动。不能把商品移除理解为不会影响账户，该页未提供统一扣分或申诉期限。",
+      "forbidden_claims": "不得套用其他市场或混淆店铺类型、时间起点与工作日/自然日",
+      "test_type": "POLICY",
+      "execution_status": "NOT_RUN"
+    },
+    {
+      "test_id": "ST025",
+      "query": "海外卖家跨境费用有全站统一费率吗？",
+      "platform_context": "Shopee",
+      "market_context": "PH",
+      "expected_qa_ids": "S025",
+      "expected_behavior": "菲律宾服务条款设有境外卖家的Cross Border Fee，费率依平台给卖家的通知。核对本店费项和通知，不能编造固定全站费率或套用其他站点数值。",
+      "forbidden_claims": "不得套用其他市场或混淆店铺类型、时间起点与工作日/自然日",
+      "test_type": "POLICY",
+      "execution_status": "NOT_RUN"
+    },
+    {
+      "test_id": "ST026",
+      "query": "Shopee 泰国站，Mall和跨境店铺退款窗口相同吗？",
+      "platform_context": "Shopee",
+      "market_context": "",
+      "expected_qa_ids": "S026",
+      "expected_behavior": "泰国退货步骤页列明Shopee Guarantee：Mall 15天，跨境CB、Preferred和普通C2C店铺7天。订单须仍在适用保证期内；不是所有类目无条件退货承诺。",
+      "forbidden_claims": "不得套用其他市场或混淆店铺类型、时间起点与工作日/自然日",
+      "test_type": "POLICY",
+      "execution_status": "NOT_RUN"
+    },
+    {
+      "test_id": "ST027",
+      "query": "Shopee 泰国站，为什么不同订单可选退货理由不同？",
+      "platform_context": "Shopee",
+      "market_context": "",
+      "expected_qa_ids": "S027",
+      "expected_behavior": "官方步骤说明，退货退款理由依店铺类型和商品类别变化。查看订单实际选项及证据要求，不能由另一店铺的选项推断本订单一定支持相同退货。",
+      "forbidden_claims": "不得套用其他市场或混淆店铺类型、时间起点与工作日/自然日",
+      "test_type": "POLICY",
+      "execution_status": "NOT_RUN"
+    },
+    {
+      "test_id": "ST028",
+      "query": "Shopee 泰国站，COD退款一定由骑手退现金吗？",
+      "platform_context": "Shopee",
+      "market_context": "",
+      "expected_qa_ids": "S028",
+      "expected_behavior": "步骤页列明COD、ShopeePay、Mobile Banking、PromptPay QR和信用卡积分等支付的退款渠道为ShopeePay或银行账户，需绑定相应账户。不能承诺COD都当面退现金。",
+      "forbidden_claims": "不得套用其他市场或混淆店铺类型、时间起点与工作日/自然日",
+      "test_type": "POLICY",
+      "execution_status": "NOT_RUN"
+    },
+    {
+      "test_id": "ST029",
+      "query": "Shopee 泰国站，Check and Return允许拆封试用吗？",
+      "platform_context": "Shopee",
+      "market_context": "",
+      "expected_qa_ids": "S029",
+      "expected_behavior": "服务允许检查是否正确或有缺陷，不允许破坏制造商包装封条，也不得试用或测试。违反条件可能视为已交付并须付款，后续仍按正常售后政策申请。",
+      "forbidden_claims": "不得套用其他市场或混淆店铺类型、时间起点与工作日/自然日",
+      "test_type": "POLICY",
+      "execution_status": "NOT_RUN"
+    },
+    {
+      "test_id": "ST030",
+      "query": "Shopee 泰国站，酒类和用过的化妆品可以上架吗？",
+      "platform_context": "Shopee",
+      "market_context": "",
+      "expected_qa_ids": "S030",
+      "expected_behavior": "泰国禁限售清单列有含酒精饮料及使用过的化妆品。核对泰国本地清单，不以马来西亚酒类许可证审批条款替代。",
+      "forbidden_claims": "不得套用其他市场或混淆店铺类型、时间起点与工作日/自然日",
+      "test_type": "POLICY",
+      "execution_status": "NOT_RUN"
+    },
+    {
+      "test_id": "ST031",
+      "query": "Shopee 泰国站，禁限售违规会影响店铺权限吗？",
+      "platform_context": "Shopee",
+      "market_context": "",
+      "expected_qa_ids": "S031",
+      "expected_behavior": "可能移除刊登、限制账户权限、暂停或终止账户及法律行动。核对通知对应条款和商品材料，该页不能推导统一申诉天数或固定扣分。",
+      "forbidden_claims": "不得套用其他市场或混淆店铺类型、时间起点与工作日/自然日",
+      "test_type": "POLICY",
+      "execution_status": "NOT_RUN"
+    },
+    {
+      "test_id": "ST032",
+      "query": "Shopee 越南站，商品损坏或与描述不符，确认收货后还能退款吗？",
+      "platform_context": "Shopee",
+      "market_context": "",
+      "expected_qa_ids": "S032",
+      "expected_behavior": "越南Shopee Guarantee说明，这两类问题可在配送成功状态更新后15天内申请。点击已收到商品不会直接取消窗口，但仍须在15天范围内。",
+      "forbidden_claims": "不得套用其他市场或混淆店铺类型、时间起点与工作日/自然日",
+      "test_type": "POLICY",
+      "execution_status": "NOT_RUN"
+    },
+    {
+      "test_id": "ST033",
+      "query": "Shopee 越南站，3至5个工作日处理是卖家提交证据的期限吗？",
+      "platform_context": "Shopee",
+      "market_context": "",
+      "expected_qa_ids": "S033",
+      "expected_behavior": "不是。流程页的3至5个工作日是Shopee审查并发送结果的时间说明，不含星期日和公共节假日。补充证据按通知要求，不能把审查耗时当作卖家响应期限。",
+      "forbidden_claims": "不得套用其他市场或混淆店铺类型、时间起点与工作日/自然日",
+      "test_type": "POLICY",
+      "execution_status": "NOT_RUN"
+    },
+    {
+      "test_id": "ST034",
+      "query": "Shopee 越南站，退货争议要关注哪些证据通知？",
+      "platform_context": "Shopee",
+      "market_context": "",
+      "expected_qa_ids": "S034",
+      "expected_behavior": "及时查看应用的订单更新通知和已提供的邮箱，按Shopee要求补充资料。退件物流状态错误或收回商品有问题时联系官方客服，不等审查结束才补证。",
+      "forbidden_claims": "不得套用其他市场或混淆店铺类型、时间起点与工作日/自然日",
+      "test_type": "POLICY",
+      "execution_status": "NOT_RUN"
+    },
+    {
+      "test_id": "ST035",
+      "query": "Shopee 越南站，限制退货类目意味着损坏也不能退款吗？",
+      "platform_context": "Shopee",
+      "market_context": "",
+      "expected_qa_ids": "S035",
+      "expected_behavior": "限制清单针对不适用“改变主意且商品原封”理由的特定类目，例如个人卫生、生鲜和部分数字服务。不能扩大为所有损坏或货不对板均不得申请，应按真实原因核对。",
+      "forbidden_claims": "不得套用其他市场或混淆店铺类型、时间起点与工作日/自然日",
+      "test_type": "POLICY",
+      "execution_status": "NOT_RUN"
+    },
+    {
+      "test_id": "ST036",
+      "query": "Shopee 越南站，仿牌或未经授权复制品能销售吗？",
+      "platform_context": "Shopee",
+      "market_context": "",
+      "expected_qa_ids": "S036",
+      "expected_behavior": "越南禁限售政策列有假货、仿冒及可能侵犯版权、商标等权利的未经授权复制品。保留有效授权及商品来源材料，不靠改标题规避商品本身的问题。",
+      "forbidden_claims": "不得套用其他市场或混淆店铺类型、时间起点与工作日/自然日",
+      "test_type": "POLICY",
+      "execution_status": "NOT_RUN"
+    },
+    {
+      "test_id": "ST037",
+      "query": "Shopee 越南站，禁限售违规会影响余额提现吗？",
+      "platform_context": "Shopee",
+      "market_context": "",
+      "expected_qa_ids": "S037",
+      "expected_behavior": "处罚除删除商品、账户限制或停用外，还列有抵扣Shopee余额和冻结余额提款权。具体处理由平台按适用政策决定，不能编造固定罚款或必然冻结结论。",
+      "forbidden_claims": "不得套用其他市场或混淆店铺类型、时间起点与工作日/自然日",
+      "test_type": "POLICY",
+      "execution_status": "NOT_RUN"
+    },
+    {
+      "test_id": "ST038",
+      "query": "Shopee 台湾站，七天鉴赏期从收货当天还是次日起算？",
+      "platform_context": "Shopee",
+      "market_context": "",
+      "expected_qa_ids": "S038",
+      "expected_behavior": "台湾帮助页说明从收到商品的次日起算7天，第7天为周六、周日或当地法定假日时末日顺延。鉴赏期是犹豫期，不等于随意试用；仍须符合适用商品和卖家条件。",
+      "forbidden_claims": "不得套用其他市场或混淆店铺类型、时间起点与工作日/自然日",
+      "test_type": "POLICY",
+      "execution_status": "NOT_RUN"
+    },
+    {
+      "test_id": "ST039",
+      "query": "Shopee 台湾站，客制化或已拆封卫生用品可排除鉴赏期吗？",
+      "platform_context": "Shopee",
+      "market_context": "",
+      "expected_qa_ids": "S039",
+      "expected_behavior": "官方页列有客制化、易腐败、已拆封个人卫生用品等例外，并要求卖家事先在商品页载明；未预先载明不能据此排除。核对具体商品是否符合例外，不能对所有商品笼统写不退货。",
+      "forbidden_claims": "不得套用其他市场或混淆店铺类型、时间起点与工作日/自然日",
+      "test_type": "POLICY",
+      "execution_status": "NOT_RUN"
+    },
+    {
+      "test_id": "ST040",
+      "query": "Shopee 台湾站，商城15天服务等于任何商品都能退吗？",
+      "platform_context": "Shopee",
+      "market_context": "",
+      "expected_qa_ids": "S040",
+      "expected_behavior": "不是。须在商城购买，退件全新、原包装密封完整含赠品及单据，且排除特定商品。商城页写收到商品起算15天，普通七天页写次日起算；两种服务不同，商城精确截止日应核对订单并向官方确认。",
+      "forbidden_claims": "不得套用其他市场或混淆店铺类型、时间起点与工作日/自然日",
+      "test_type": "POLICY",
+      "execution_status": "NOT_RUN"
+    },
+    {
+      "test_id": "ST041",
+      "query": "Shopee 台湾站，系统能直接换货或补寄吗？",
+      "platform_context": "Shopee",
+      "market_context": "",
+      "expected_qa_ids": "S041",
+      "expected_behavior": "帮助页说明没有系统换货或补寄功能。缺件、发错或瑕疵时，建议在鉴赏期内申请退货退款，仍有需求再重新下单。不能虚构换货按钮。",
+      "forbidden_claims": "不得套用其他市场或混淆店铺类型、时间起点与工作日/自然日",
+      "test_type": "POLICY",
+      "execution_status": "NOT_RUN"
+    },
+    {
+      "test_id": "ST042",
+      "query": "Shopee 台湾站，组合装能在系统里只退其中一个吗？",
+      "platform_context": "Shopee",
+      "market_context": "",
+      "expected_qa_ids": "S042",
+      "expected_behavior": "组合商品的系统申请以组为单位，不能拆开组内商品申请。若需协商部分金额，应通过聊聊与卖家达成协议；协商退款和系统拆分退货不是同一流程。",
+      "forbidden_claims": "不得套用其他市场或混淆店铺类型、时间起点与工作日/自然日",
+      "test_type": "POLICY",
+      "execution_status": "NOT_RUN"
+    },
+    {
+      "test_id": "ST043",
+      "query": "Shopee 台湾站，已同意不收退件并退款，为什么寄件编号无效？",
+      "platform_context": "Shopee",
+      "market_context": "",
+      "expected_qa_ids": "S043",
+      "expected_behavior": "达成不收回商品的全额或部分退款后，系统可能显示订单取消并无法再提供寄件编号。如卖家仍要退回，应通过聊聊协调方式、地址，保留协议记录。",
+      "forbidden_claims": "不得套用其他市场或混淆店铺类型、时间起点与工作日/自然日",
+      "test_type": "POLICY",
+      "execution_status": "NOT_RUN"
+    },
+    {
+      "test_id": "ST044",
+      "query": "Shopee 台湾站，超过鉴赏期但双方同意退款，怎么办？",
+      "platform_context": "Shopee",
+      "market_context": "",
+      "expected_qa_ids": "S044",
+      "expected_behavior": "取得卖家在聊聊的同意声明及订单、账户、金额信息，保存截图后联系Shopee。处理涉及卖家钱包余额，余额不足需按平台指示补足；口头同意不会自动完成系统退款。",
+      "forbidden_claims": "不得套用其他市场或混淆店铺类型、时间起点与工作日/自然日",
+      "test_type": "POLICY",
+      "execution_status": "NOT_RUN"
+    },
+    {
+      "test_id": "ST045",
+      "query": "Shopee 台湾站，酒类能照搬马来西亚许可证审批规则吗？",
+      "platform_context": "Shopee",
+      "market_context": "",
+      "expected_qa_ids": "S045",
+      "expected_behavior": "不能。台湾禁限售清单将含酒精饮料列为禁止类，并另列含酒精果冻。马来西亚酒类许可证审批条款不适用于台湾，跨站复制刊登前应核对本地清单。",
+      "forbidden_claims": "不得套用其他市场或混淆店铺类型、时间起点与工作日/自然日",
+      "test_type": "POLICY",
+      "execution_status": "NOT_RUN"
+    },
+    {
+      "test_id": "ST046",
+      "query": "Shopee 巴西站，退货批准后买家多久寄回？",
+      "platform_context": "Shopee",
+      "market_context": "",
+      "expected_qa_ids": "S046",
+      "expected_behavior": "巴西政策说明，买家在请求获准后7个自然日内，按确认邮件指示寄回商品。这是批准后的寄回时限，不是把所有退款申请窗口统一为7天。",
+      "forbidden_claims": "不得套用其他市场或混淆店铺类型、时间起点与工作日/自然日",
+      "test_type": "POLICY",
+      "execution_status": "NOT_RUN"
+    },
+    {
+      "test_id": "ST047",
+      "query": "Shopee 巴西站，卖家收回商品后多久检查或提出争议？",
+      "platform_context": "Shopee",
+      "market_context": "",
+      "expected_qa_ids": "S047",
+      "expected_behavior": "实际收到退回商品后3个自然日内检查，并批准退货或提出争议。超时不响应，退件状态会被视为合适且申请结束；不是从买家最初申请日起算。",
+      "forbidden_claims": "不得套用其他市场或混淆店铺类型、时间起点与工作日/自然日",
+      "test_type": "POLICY",
+      "execution_status": "NOT_RUN"
+    },
+    {
+      "test_id": "ST048",
+      "query": "Shopee 巴西站，质量问题超过普通窗口还有处理入口吗？",
+      "platform_context": "Shopee",
+      "market_context": "",
+      "expected_qa_ids": "S048",
+      "expected_behavior": "政策对缺陷商品列有平台协助处理的例外：非耐用品交付起30天、耐用品90天；排除捐赠、数字和定制商品，并受退件及不可退商品条件约束。不能当作所有商品无理由退货期。",
+      "forbidden_claims": "不得套用其他市场或混淆店铺类型、时间起点与工作日/自然日",
+      "test_type": "POLICY",
+      "execution_status": "NOT_RUN"
+    },
+    {
+      "test_id": "ST049",
+      "query": "Shopee 巴西站，买家退款到账时间等于卖家账单调整时间吗？",
+      "platform_context": "Shopee",
+      "market_context": "",
+      "expected_qa_ids": "S049",
+      "expected_behavior": "不是。买家到账时间与原付款方式有关；卖家账单或支付扣减最长60个自然日是另一流程，从退款获准日起算。不能告诉买家退款一定要等60天。",
+      "forbidden_claims": "不得套用其他市场或混淆店铺类型、时间起点与工作日/自然日",
+      "test_type": "POLICY",
+      "execution_status": "NOT_RUN"
+    },
+    {
+      "test_id": "ST050",
+      "query": "Shopee 巴西站，运费能只按商品售价估算吗？",
+      "platform_context": "Shopee",
+      "market_context": "",
+      "expected_qa_ids": "S050",
+      "expected_behavior": "服务条款说明运费可能依包裹重量、尺寸、起讫路线及其他物流因素变化，并在交易完成前向承担方展示。应核对包裹及路线，不能从售价推导统一运费。",
+      "forbidden_claims": "不得套用其他市场或混淆店铺类型、时间起点与工作日/自然日",
+      "test_type": "POLICY",
+      "execution_status": "NOT_RUN"
+    },
+    {
+      "test_id": "ST051",
+      "query": "Shopee 巴西站，刷视频观看或评论违反社区规则吗？",
+      "platform_context": "Shopee",
+      "market_context": "",
+      "expected_qa_ids": "S051",
+      "expected_behavior": "社区规则禁止人为提高观看、点赞、评论等互动指标。文件适用于视频、评论、链接等内容，它不是全部商品禁售清单，不能据此判断具体商品可销售。",
+      "forbidden_claims": "不得套用其他市场或混淆店铺类型、时间起点与工作日/自然日",
+      "test_type": "POLICY",
+      "execution_status": "NOT_RUN"
+    },
+    {
+      "test_id": "ST052",
+      "query": "Shopee 墨西哥站，Preferred卖家不服退款决定，何时申诉？",
+      "platform_context": "Shopee",
+      "market_context": "",
+      "expected_qa_ids": "S052",
+      "expected_behavior": "该政策对Preferred卖家列明在线争议在买家退款日起3天内、线下争议在退款日起1个月内申诉。页面日期为2023年，导入前需复核，不能扩展为全部店铺的初次响应期限。",
+      "forbidden_claims": "不得套用其他市场或混淆店铺类型、时间起点与工作日/自然日",
+      "test_type": "POLICY",
+      "execution_status": "NOT_RUN"
+    },
+    {
+      "test_id": "ST053",
+      "query": "Shopee 墨西哥站，Preferred卖家未收到退件，何时通知平台？",
+      "platform_context": "Shopee",
+      "market_context": "",
+      "expected_qa_ids": "S053",
+      "expected_behavior": "政策要求Preferred卖家在收到退件邮件通知后7天内通知Shopee。保留邮件和物流记录，该页面较旧，操作前应复核实际通知。",
+      "forbidden_claims": "不得套用其他市场或混淆店铺类型、时间起点与工作日/自然日",
+      "test_type": "POLICY",
+      "execution_status": "NOT_RUN"
+    },
+    {
+      "test_id": "ST054",
+      "query": "Shopee 墨西哥站，买家改变主意，退货运费一定卖家付吗？",
+      "platform_context": "Shopee",
+      "market_context": "",
+      "expected_qa_ids": "S054",
+      "expected_behavior": "该政策要求改变主意退货先取得卖家同意，买家承担退货运费。商品问题或双方争议适用其他条款，不能直接套用台湾退货运费结论。",
+      "forbidden_claims": "不得套用其他市场或混淆店铺类型、时间起点与工作日/自然日",
+      "test_type": "POLICY",
+      "execution_status": "NOT_RUN"
+    },
+    {
+      "test_id": "ST055",
+      "query": "Shopee 墨西哥站，卖家错误导致损坏或发错，退货运费谁付？",
+      "platform_context": "Shopee",
+      "market_context": "",
+      "expected_qa_ids": "S055",
+      "expected_behavior": "卖家过错的退货由卖家承担买家退货运费；双方争议责任时由Shopee判断。区分卖家过错与改变主意，不承诺全部退货统一免费。",
+      "forbidden_claims": "不得套用其他市场或混淆店铺类型、时间起点与工作日/自然日",
+      "test_type": "POLICY",
+      "execution_status": "NOT_RUN"
+    },
+    {
+      "test_id": "ST056",
+      "query": "Shopee 墨西哥站，商品没被拦截就证明可以销售吗？",
+      "platform_context": "Shopee",
+      "market_context": "",
+      "expected_qa_ids": "S056",
+      "expected_behavior": "不能。墨西哥清单要求卖家负责合法性并满足必要登记、许可和授权，Shopee可终止不符合政策的刊登。页面日期较旧，不能作为当前全部商品的完整合规结论。",
+      "forbidden_claims": "不得套用其他市场或混淆店铺类型、时间起点与工作日/自然日",
+      "test_type": "POLICY",
+      "execution_status": "NOT_RUN"
+    },
+    {
+      "test_id": "ST057",
+      "query": "Shopee 印度尼西亚站，卖家处理退货申请一定只有3天吗？",
+      "platform_context": "Shopee",
+      "market_context": "",
+      "expected_qa_ids": "S057",
+      "expected_behavior": "印尼退款政策要求按书面通知载明的期限响应。查看通知及证据要求，不能把新加坡仅退款在线申诉的3天当作印尼统一响应期。",
+      "forbidden_claims": "不得套用其他市场或混淆店铺类型、时间起点与工作日/自然日",
+      "test_type": "POLICY",
+      "execution_status": "NOT_RUN"
+    },
+    {
+      "test_id": "ST058",
+      "query": "Shopee 印度尼西亚站，收回错误或损坏商品，多久内申诉？",
+      "platform_context": "Shopee",
+      "market_context": "",
+      "expected_qa_ids": "S058",
+      "expected_behavior": "官方条件页说明，实际收到错误或损坏退件后最迟2个工作日内申诉，并准备显示问题的照片或视频。工作日不能改成自然日，也不能从买家申请日起算。",
+      "forbidden_claims": "不得套用其他市场或混淆店铺类型、时间起点与工作日/自然日",
+      "test_type": "POLICY",
+      "execution_status": "NOT_RUN"
+    },
+    {
+      "test_id": "ST059",
+      "query": "Shopee 印度尼西亚站，确认订单完成后还能退款，能用统一天数判断吗？",
+      "platform_context": "Shopee",
+      "market_context": "",
+      "expected_qa_ids": "S059",
+      "expected_behavior": "政策页和订单完成帮助页对适用范围存在不一致说明，当前不能确定所有店铺统一窗口。核对店铺类型、订单剩余期限并向官方确认，不套用其他站点或编造统一15天。",
+      "forbidden_claims": "不得套用其他市场或混淆店铺类型、时间起点与工作日/自然日",
+      "test_type": "POLICY",
+      "execution_status": "NOT_RUN"
+    },
+    {
+      "test_id": "ST060",
+      "query": "Shopee 印度尼西亚站，未取得许可或使用过的化妆品能卖吗？",
+      "platform_context": "Shopee",
+      "market_context": "",
+      "expected_qa_ids": "S060",
+      "expected_behavior": "印尼清单列有未取得正式流通许可的化妆品及使用过的化妆品。核对当地许可和商品状态，不能凭其他站点可上架就判断印尼合规。",
+      "forbidden_claims": "不得套用其他市场或混淆店铺类型、时间起点与工作日/自然日",
+      "test_type": "POLICY",
+      "execution_status": "NOT_RUN"
+    },
+    {
+      "test_id": "ST061",
+      "query": "Shopee 印度尼西亚站，所有商品都只要一个SNI证书吗？",
+      "platform_context": "Shopee",
+      "market_context": "",
+      "expected_qa_ids": "S061",
+      "expected_behavior": "政策要求符合商品适用的SNI、强制认证、标签及印尼语要求。哪些规定适用于该类目须另行核对，不能解释为所有商品统一需要或只需要SNI。",
+      "forbidden_claims": "不得套用其他市场或混淆店铺类型、时间起点与工作日/自然日",
+      "test_type": "POLICY",
+      "execution_status": "NOT_RUN"
+    },
+    {
+      "test_id": "ST062",
+      "query": "Shopee 印度尼西亚站，酒类能使用马来西亚许可证上架吗？",
+      "platform_context": "Shopee",
+      "market_context": "",
+      "expected_qa_ids": "S062",
+      "expected_behavior": "不能。印尼禁限售清单列有酒精饮料，马来西亚提交有效许可证审批的条款不适用于印尼。跨站销售前须重新核对本地清单。",
+      "forbidden_claims": "不得套用其他市场或混淆店铺类型、时间起点与工作日/自然日",
+      "test_type": "POLICY",
+      "execution_status": "NOT_RUN"
+    },
+    {
+      "test_id": "ST063",
+      "query": "Shopee 印度尼西亚站，退款政策提到海外卖家，能证明中国卖家现在能入驻吗？",
+      "platform_context": "Shopee",
+      "market_context": "",
+      "expected_qa_ids": "S063",
+      "expected_behavior": "不能。末条说明政策涵盖Mall及海外卖家，只界定政策对象，不提供中国卖家当前开户资格或渠道。中国跨境能否经营印尼须另查当前官方入驻资料。",
+      "forbidden_claims": "不得套用其他市场或混淆店铺类型、时间起点与工作日/自然日",
+      "test_type": "POLICY",
+      "execution_status": "NOT_RUN"
+    },
+    {
+      "test_id": "ST064",
+      "query": "新加坡、马来西亚和菲律宾的寄回期限能统一吗？",
+      "platform_context": "Shopee",
+      "market_context": "",
+      "expected_qa_ids": "S064",
+      "expected_behavior": "不能。新加坡通知后3天选方式、选定后7天寄回；马来西亚批准后5个自然日寄回；菲律宾通知后2天选方式、选定后5天寄回。阶段和起算点不同，应按订单站点处理。",
+      "forbidden_claims": "不得把多站点差异改写成全球统一规则",
+      "test_type": "COMPARISON",
+      "execution_status": "NOT_RUN"
+    },
+    {
+      "test_id": "ST065",
+      "query": "泰国、菲律宾和越南的售后窗口能统一15天吗？",
+      "platform_context": "Shopee",
+      "market_context": "",
+      "expected_qa_ids": "S065",
+      "expected_behavior": "不能。泰国Mall 15天而CB/Preferred/C2C 7天；菲律宾已收货普通/Preferred 7天、Mall 15天；越南损坏或描述不符为配送成功后15天。先确认市场、店铺类型、原因和起点。",
+      "forbidden_claims": "不得把多站点差异改写成全球统一规则",
+      "test_type": "COMPARISON",
+      "execution_status": "NOT_RUN"
+    },
+    {
+      "test_id": "ST066",
+      "query": "新加坡、马来西亚和印尼卖家申诉都按3天处理吗？",
+      "platform_context": "Shopee",
+      "market_context": "",
+      "expected_qa_ids": "S066",
+      "expected_behavior": "不能。马来西亚和印尼申请响应按书面通知；印尼错误或损坏退件收到后2个工作日内申诉。新加坡仅退款在线3天条款与退款后线下限制的衔接待确认，应按场景核对通知，不能统一按3天。",
+      "forbidden_claims": "不得把多站点差异改写成全球统一规则",
+      "test_type": "COMPARISON",
+      "execution_status": "NOT_RUN"
+    },
+    {
+      "test_id": "ST067",
+      "query": "台湾、马来西亚、泰国、印尼和菲律宾酒类规则相同吗？",
+      "platform_context": "Shopee",
+      "market_context": "",
+      "expected_qa_ids": "S067",
+      "expected_behavior": "不同。台湾、泰国和印尼列有酒类禁售；马来西亚和菲律宾要求有效许可证并经各站Shopee批准。许可和批准不能跨站通用，不能将同一商品直接同步销售。",
+      "forbidden_claims": "不得把多站点差异改写成全球统一规则",
+      "test_type": "COMPARISON",
+      "execution_status": "NOT_RUN"
+    },
+    {
+      "test_id": "ST068",
+      "query": "新加坡和马来西亚AMS联盟佣金的税口径相同吗？",
+      "platform_context": "Shopee",
+      "market_context": "",
+      "expected_qa_ids": "S068",
+      "expected_behavior": "不同。新加坡AMS联盟佣金写为含相关税；马来西亚Participating Seller的PPS联盟佣金不含相关税并另加。只适用于所核验项目，不能代表两站全部销售佣金或广告点击费税率。",
+      "forbidden_claims": "不得把多站点差异改写成全球统一规则",
+      "test_type": "COMPARISON",
+      "execution_status": "NOT_RUN"
+    },
+    {
+      "test_id": "ST069",
+      "query": "巴西和印尼收到异常退件后的申诉期限相同吗？",
+      "platform_context": "Shopee",
+      "market_context": "",
+      "expected_qa_ids": "S069",
+      "expected_behavior": "不同。巴西收到退件后3个自然日检查批准或争议；印尼收到错误或损坏退件后最迟2个工作日申诉并附照片视频。适用事件和日历口径不同。",
+      "forbidden_claims": "不得把多站点差异改写成全球统一规则",
+      "test_type": "COMPARISON",
+      "execution_status": "NOT_RUN"
+    },
+    {
+      "test_id": "ST070",
+      "query": "新加坡站退款，但我问菲律宾Mall已收货的申请期限",
+      "platform_context": "Shopee",
+      "market_context": "SG",
+      "expected_qa_ids": "",
+      "expected_behavior": "以问题中的菲律宾Mall为准，依PH-R回答15天及Delivered起点",
+      "forbidden_claims": "不可继续按新加坡物流类型回答",
+      "test_type": "GAP_OR_SCOPE",
+      "execution_status": "NOT_RUN"
+    },
+    {
+      "test_id": "ST071",
+      "query": "卖家收到错误退件后几天申诉？",
+      "platform_context": "Shopee",
+      "market_context": "",
+      "expected_qa_ids": "",
+      "expected_behavior": "先问清市场及退件情形，巴西与印尼口径不同",
+      "forbidden_claims": "不可不问站点直接答3天",
+      "test_type": "GAP_OR_SCOPE",
+      "execution_status": "NOT_RUN"
+    },
+    {
+      "test_id": "ST072",
+      "query": "新加坡全部卖家退款都只有3天吗？",
+      "platform_context": "Shopee",
+      "market_context": "SG",
+      "expected_qa_ids": "",
+      "expected_behavior": "区分买家申请、仅退款在线申诉与退件通知，不确认统一3天",
+      "forbidden_claims": "不可把仅退款申诉当作买家申请窗口",
+      "test_type": "GAP_OR_SCOPE",
+      "execution_status": "NOT_RUN"
+    },
+    {
+      "test_id": "ST073",
+      "query": "马来西亚AMS税和SST可以直接按GMV收8%吗？",
+      "platform_context": "Shopee",
+      "market_context": "MY",
+      "expected_qa_ids": "",
+      "expected_behavior": "区分应税服务费、PPS联盟佣金基数与税，不以GMV统一计税",
+      "forbidden_claims": "不可给统一8% GMV扣费",
+      "test_type": "GAP_OR_SCOPE",
+      "execution_status": "NOT_RUN"
+    },
+    {
+      "test_id": "ST074",
+      "query": "我是中国卖家，印尼是否已经可以开店？",
+      "platform_context": "Shopee",
+      "market_context": "",
+      "expected_qa_ids": "",
+      "expected_behavior": "说明当地退款条款不证明准入，当前准入待核验",
+      "forbidden_claims": "不可保证开放入驻",
+      "test_type": "GAP_OR_SCOPE",
+      "execution_status": "NOT_RUN"
+    },
+    {
+      "test_id": "ST075",
+      "query": "巴西商品禁售表帮我完整列出来",
+      "platform_context": "Shopee",
+      "market_context": "",
+      "expected_qa_ids": "",
+      "expected_behavior": "说明仅社区内容规则已核验，完整商品禁售清单缺口",
+      "forbidden_claims": "不可把社区规范当完整商品清单",
+      "test_type": "GAP_OR_SCOPE",
+      "execution_status": "NOT_RUN"
+    },
+    {
+      "test_id": "ST076",
+      "query": "台湾Mall第15天怎么精确计算？",
+      "platform_context": "Shopee",
+      "market_context": "",
+      "expected_qa_ids": "",
+      "expected_behavior": "商城页面首日计数不够明确；普通7天规则不能自动扩展，核对订单并确认精确截止日。",
+      "forbidden_claims": "不可断言起点已确定",
+      "test_type": "GAP_OR_SCOPE",
+      "execution_status": "NOT_RUN"
+    },
+    {
+      "test_id": "ST077",
+      "query": "印尼订单完成后是否所有店铺都有15天？",
+      "platform_context": "Shopee",
+      "market_context": "",
+      "expected_qa_ids": "",
+      "expected_behavior": "说明官方范围冲突，核对店铺类型和实际订单窗口",
+      "forbidden_claims": "不可确认全部店铺15天",
+      "test_type": "GAP_OR_SCOPE",
+      "execution_status": "NOT_RUN"
+    },
+    {
+      "test_id": "ST078",
+      "query": "巴西Turbo 48小时是否就没有7天退货权？",
+      "platform_context": "Shopee",
+      "market_context": "",
+      "expected_qa_ids": "",
+      "expected_behavior": "说明条款差异及法定/流程范围待确认，不推导统一权利结论",
+      "forbidden_claims": "不可以Turbo帮助页否定全部权利",
+      "test_type": "GAP_OR_SCOPE",
+      "execution_status": "NOT_RUN"
+    },
+    {
+      "test_id": "ST079",
+      "query": "墨西哥现行佣金是多少？",
+      "platform_context": "Shopee",
+      "market_context": "",
+      "expected_qa_ids": "",
+      "expected_behavior": "当前完整费率缺口；官方通知或后台确认",
+      "forbidden_claims": "不可编造固定佣金",
+      "test_type": "GAP_OR_SCOPE",
+      "execution_status": "NOT_RUN"
+    },
+    {
+      "test_id": "ST080",
+      "query": "泰国跨境店铺当前发货时限是几天？",
+      "platform_context": "Shopee",
+      "market_context": "",
+      "expected_qa_ids": "",
+      "expected_behavior": "当前履约数值缺口；核对官方通知和店铺模式",
+      "forbidden_claims": "不可套用其他站点发货天数",
+      "test_type": "GAP_OR_SCOPE",
+      "execution_status": "NOT_RUN"
+    },
+    {
+      "test_id": "ST081",
+      "query": "越南GMV Max归因窗口跟新加坡一样吗？",
+      "platform_context": "Shopee",
+      "market_context": "",
+      "expected_qa_ids": "",
+      "expected_behavior": "当地广告规则尚未核验，不套用新加坡归因窗口",
+      "forbidden_claims": "不可承诺两站相同",
+      "test_type": "GAP_OR_SCOPE",
+      "execution_status": "NOT_RUN"
+    },
+    {
+      "test_id": "ST082",
+      "query": "智利现在中国跨境卖家怎么入驻？",
+      "platform_context": "Shopee",
+      "market_context": "",
+      "expected_qa_ids": "",
+      "expected_behavior": "当前市场开放和准入均待官方确认",
+      "forbidden_claims": "不可按历史站点资料保证开放",
+      "test_type": "GAP_OR_SCOPE",
+      "execution_status": "NOT_RUN"
+    }
+  ],
+  "gap_sources": {
+    "MY-C": {
+      "source_id": "MY-C",
+      "title": "[Return Refund] What are the terms and conditions for returning products?",
+      "url": "https://help.shopee.com.my/portal/4/article/78640",
+      "fetched_at": "2026-10-11T10:23:43.282675+00:00",
+      "content_sha256": "d479b2fee628019f9dd8a83ad0438b3bc36d0febb3419d08a1ed43009ea84cf1",
+      "verified_at": "2026-10-11",
+      "evidence_excerpt": "Counterfeit product(s) (only for Shopee Mall) Empty Parcel Expired Product(s) I want to re",
+      "use": "GAP_EVIDENCE_ONLY_NOT_QA"
+    },
+    "MY-S": {
+      "source_id": "MY-S",
+      "title": "Shopee Terms of Service",
+      "url": "https://help.shopee.com.my/portal/4/article/77215",
+      "fetched_at": "2026-10-11T09:57:30.239718+00:00",
+      "content_sha256": "ae31199c97c1bda9846055976fe1aebf147643868768ec9f16d7faac852665a4",
+      "verified_at": "2026-10-11",
+      "evidence_excerpt": "23.5 The Shopee Commission Fee provided in this Terms of Service does not apply to non-Mal",
+      "use": "GAP_EVIDENCE_ONLY_NOT_QA"
+    },
+    "BR-T": {
+      "source_id": "BR-T",
+      "title": "[Devolução e Reembolso] Como faço para solicitar devolução/reembolso?",
+      "url": "https://help.shopee.com.br/portal/4/article/76204",
+      "fetched_at": "2026-10-11T09:55:02.569355+00:00",
+      "content_sha256": "3358f30c4800a35ecc41d5dee0e616b266449476cdf52686bec2ca4f1f226cd9",
+      "verified_at": "2026-10-11",
+      "evidence_excerpt": "Turbo | 48h a partir da entrega. Agora oferecemos duas opções de devolução para que você",
+      "use": "GAP_EVIDENCE_ONLY_NOT_QA"
+    },
+    "BR-I": {
+      "source_id": "BR-I",
+      "title": "Políticas Gerais | Artigos",
+      "url": "https://help.shopee.com.br/portal/4/article/77326",
+      "fetched_at": "2026-10-11T09:55:06.210886+00:00",
+      "content_sha256": "2bca9fe20d8c6d67c5a0a404e6d0643a25cfb144285c06fa04714d738ecb645c",
+      "verified_at": "2026-10-11",
+      "evidence_excerpt": "Políticas da Shopee · Termos de Serviço · Política de Privacidade · Polí",
+      "use": "GAP_EVIDENCE_ONLY_NOT_QA"
+    }
+  }
+}

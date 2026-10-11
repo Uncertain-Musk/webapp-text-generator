@@ -188,7 +188,7 @@ const handleStream = async (
       const textChunk = bufferObj as TextChunkResponse
       onTextChunk?.(textChunk.data?.text || '', textChunk)
     }
-  })
+  }, { requireWorkflowFinished: Boolean(onWorkflowFinished) })
   onCompleted?.()
 }
 

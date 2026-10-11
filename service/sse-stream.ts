@@ -42,7 +42,11 @@ export function stripHiddenThinking(text: string) {
   return visibleText.replace(/^\s+/, '')
 }
 
-export async function readSSEStream(response: Response, onEvent: (event: SSEEvent) => void) {
+export async function readSSEStream(
+  response: Response,
+  onEvent: (event: SSEEvent) => void,
+  { requireWorkflowFinished = false }: { requireWorkflowFinished?: boolean } = {},
+) {
   if (!response.ok)
     throw new Error(`Network response was not ok (${response.status})`)
 
@@ -52,6 +56,7 @@ export async function readSSEStream(response: Response, onEvent: (event: SSEEven
 
   const decoder = new TextDecoder('utf-8')
   let buffer = ''
+  let workflowFinished = false
 
   const deliverLine = (line: string) => {
     if (!line.startsWith('data:'))
@@ -61,7 +66,10 @@ export async function readSSEStream(response: Response, onEvent: (event: SSEEven
     if (!data || data === '[DONE]')
       return
 
-    onEvent(JSON.parse(data) as SSEEvent)
+    const event = JSON.parse(data) as SSEEvent
+    if (event.event === 'workflow_finished')
+      workflowFinished = true
+    onEvent(event)
   }
 
   while (true) {
@@ -77,4 +85,7 @@ export async function readSSEStream(response: Response, onEvent: (event: SSEEven
 
   if (buffer)
     deliverLine(buffer)
+
+  if (requireWorkflowFinished && !workflowFinished)
+    throw new Error('Workflow stream closed before workflow_finished')
 }

@@ -1,0 +1,15 @@
+{
+  "rows": 97,
+  "unique_questions": 97,
+  "columns": [
+    "question",
+    "answer"
+  ],
+  "encoding": "UTF-8-SIG",
+  "qa_text_exactly_preserved": true,
+  "desktop_copy_identical": true,
+  "source_mapping_rows_retained": 112,
+  "sha256": "4f7d89ea1c16e0ad0cc3589f8f1e5ab1a85aa8679ccc0662b4c6b90a738d1322",
+  "status": "PASS",
+  "dify_imported": false
+}

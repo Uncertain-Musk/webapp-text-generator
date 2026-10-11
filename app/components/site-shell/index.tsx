@@ -68,7 +68,7 @@ function Header() {
         <span>越海 AI</span>
       </Link>
       <nav className='main-nav' aria-label='主导航'>
-        {navigation.map(item => <Link key={item.href} href={item.href} aria-current={pathname === item.href ? 'page' : undefined}>{item.label}</Link>)}
+        {navigation.map(item => <Link key={item.href} href={item.href} aria-current={(pathname === item.href || (item.href !== '/' && pathname.startsWith(`${item.href}/`))) ? 'page' : undefined}>{item.label}</Link>)}
       </nav>
       <Popover className='environment-picker'>
         {({ close }) => <>

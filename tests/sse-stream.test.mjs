@@ -48,3 +48,32 @@ test('never exposes complete or partial think blocks while streaming', () => {
   assert.equal(stripHiddenThinking('安全正文<thi'), '安全正文')
   assert.equal(stripHiddenThinking('开头<think>内部</think>结尾'), '开头结尾')
 })
+
+test('rejects a workflow stream closed after partial text without a terminal event', async () => {
+  const events = []
+  const body = new ReadableStream({
+    start(controller) {
+      controller.enqueue(encode('data: {"event":"workflow_started"}\n\n'))
+      controller.enqueue(encode('data: {"event":"text_chunk","data":{"text":"已生成的部分回答"}}\n\n'))
+      controller.close()
+    },
+  })
+
+  await assert.rejects(
+    readSSEStream(new Response(body), event => events.push(event), { requireWorkflowFinished: true }),
+    /workflow_finished/,
+  )
+  assert.equal(events[1].data.text, '已生成的部分回答')
+})
+
+test('accepts a terminal workflow event even when the final SSE line has no newline', async () => {
+  const body = new ReadableStream({
+    start(controller) {
+      controller.enqueue(encode('data: {"event":"workflow_finished","data":{"status":"succeeded"}}'))
+      controller.close()
+    },
+  })
+  const events = []
+  await readSSEStream(new Response(body), event => events.push(event), { requireWorkflowFinished: true })
+  assert.equal(events[0].data.status, 'succeeded')
+})

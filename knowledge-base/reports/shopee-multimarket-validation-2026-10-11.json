@@ -1,0 +1,34 @@
+{
+  "status": "PASS_LOCAL_CHECKS",
+  "dify_status": "NOT_IMPORTED_NOT_TESTED",
+  "qa": 69,
+  "official_sources": 34,
+  "source_mappings": 84,
+  "markets": 9,
+  "market_counts": {
+    "新加坡": 8,
+    "马来西亚": 10,
+    "菲律宾": 7,
+    "泰国": 6,
+    "越南": 6,
+    "台湾": 8,
+    "巴西": 6,
+    "墨西哥": 5,
+    "印度尼西亚": 7,
+    "跨站点": 6
+  },
+  "coverage_cells": 54,
+  "coverage_status": {
+    "PARTIAL": 36,
+    "GAP": 18
+  },
+  "open_gaps": 41,
+  "designed_tests": 82,
+  "file_sha256": {
+    "shopee_multimarket_qa.csv": "2bea6224dc586ce723794f556f77b97fe1024940425b5a0a2a42aab2ef0e64f8",
+    "shopee_multimarket_sources.csv": "1a0da10299ffeab906ed7fc6f09e1c98e0cbb11be8a63e569ec57ea226b30843",
+    "shopee_multimarket_coverage.csv": "35c36ea60b95b3481ad1e80340b098cede180ba10cf9c8e8a3e845205d813b24",
+    "shopee_multimarket_gaps.csv": "5f1ba8a3185db911d52bb33e1150dce6547e8236542f7c6541140dcbb2b28fcd",
+    "shopee_multimarket_test_queries.csv": "42f3b81dc5a08423133dceda8b7015b7e8eae92402f7ebd03cbda92a73d59b08"
+  }
+}

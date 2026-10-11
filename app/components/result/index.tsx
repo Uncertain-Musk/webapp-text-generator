@@ -249,9 +249,22 @@ const Result: FC<IResultProps> = ({
       onCompleted(getCompletionRes(), taskId, success)
     }
 
+    const flushStreamedText = () => {
+      if (!isCurrentRequest() || isEnd)
+        return
+      if (renderTimerRef.current) {
+        clearTimeout(renderTimerRef.current)
+        renderTimerRef.current = null
+      }
+      const visibleText = stripHiddenThinking(streamedText)
+      lastVisibleText = visibleText
+      setCompletionRes(visibleText)
+    }
+
     const failRequest = () => {
       if (!isCurrentRequest() || isEnd)
         return
+      flushStreamedText()
       setRequestFailed(true)
       setWorkflowProccessData(undefined)
       settleRequest(false)
@@ -271,18 +284,6 @@ const Result: FC<IResultProps> = ({
       if (activityTimerRef.current)
         clearTimeout(activityTimerRef.current)
       activityTimerRef.current = setTimeout(handleActivityTimeout, STREAM_ACTIVITY_TIMEOUT)
-    }
-
-    const flushStreamedText = () => {
-      if (!isCurrentRequest() || isEnd)
-        return
-      if (renderTimerRef.current) {
-        clearTimeout(renderTimerRef.current)
-        renderTimerRef.current = null
-      }
-      const visibleText = stripHiddenThinking(streamedText)
-      lastVisibleText = visibleText
-      setCompletionRes(visibleText)
     }
 
     const queueTextChunk = (text: string) => {
@@ -438,9 +439,12 @@ const Result: FC<IResultProps> = ({
   )
 
   if (requestFailed) {
-    return <div className='answer-error' role='alert'>
-      <p>这次分析未能完成。请检查网络，或稍后重新尝试。</p>
-      <button className='retry-button' type='button' onClick={handleSend}><ArrowPathIcon aria-hidden='true' />重新分析</button>
+    return <div className='answer-content'>
+      <div className='answer-error' role='alert'>
+        <p>{isNoData ? '这次分析未能完成。请检查网络，或稍后重新尝试。' : '回答未完成。以下保留已生成的部分内容，请重新分析以获取完整回答。'}</p>
+        <button className='retry-button' type='button' onClick={handleSend}><ArrowPathIcon aria-hidden='true' />重新分析</button>
+      </div>
+      {!isNoData && renderTextGenerationRes()}
     </div>
   }
   if (isBusy && isNoData && !hasStartedStreaming) {
