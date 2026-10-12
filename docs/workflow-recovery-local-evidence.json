@@ -1,0 +1,41 @@
+{
+  "runId": "ec288724-900b-4738-8c6a-b68cf4cecf5d",
+  "cutMs": 31018,
+  "totalMs": 45314,
+  "streamFinished": false,
+  "lastEvent": "text_chunk",
+  "partialRawChars": 1469,
+  "finalVisibleChars": 1935,
+  "statuses": [
+    {
+      "http": 200,
+      "status": "running"
+    },
+    {
+      "http": 200,
+      "status": "running"
+    },
+    {
+      "http": 200,
+      "status": "running"
+    },
+    {
+      "http": 200,
+      "status": "running"
+    },
+    {
+      "http": 200,
+      "status": "succeeded"
+    }
+  ],
+  "otherSessionHTTP": 403,
+  "environment": "local Next production build, current real Dify API",
+  "forcedDisconnect": true,
+  "queryUnchanged": true,
+  "platformUnchanged": true,
+  "marketUnchanged": true,
+  "outputVariable": "text",
+  "unitTests": 53,
+  "browserScenarios": 7,
+  "netlifyRecoveryVerified": false
+}

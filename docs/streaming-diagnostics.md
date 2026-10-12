@@ -2,9 +2,9 @@
 
 ## 运行与完成规则
 
-浏览器只调用本站 `/api/workflows/run`，Route Handler 使用服务端 `dify-client` 转发上游 SSE。只有 `workflow_finished` 且 `data.status=succeeded` 才成功。缺少结束事件的 EOF 必须立即进入失败处理，保留已收到且过滤思考标签的正文，刷新末尾批次，显示“回答未完成”与重试入口。不能把 EOF、HTTP 200 或已有文字等同于完成。
+浏览器通过本站 `/api/workflows/run` 获取 SSE，Route Handler 使用服务端 `dify-client` 调用 Dify。正常流仍要求 `workflow_finished` 且 `data.status=succeeded`。提前 EOF 保留已生成正文，并使用流中捕获的运行 ID 和签名凭证向 `/api/workflows/recover` 查询原任务；只有详情状态 `succeeded` 且 End 输出 `text` 有可见内容时，才用完整答案替换部分正文并确认恢复。无 ID、失败、空输出、超出查询上限或用户停止恢复时，显示“回答未完成”。不能把 EOF、HTTP 200 或已有文字等同于完成。恢复实现、限制与验收见 [长回答断线恢复](workflow-recovery.md)。
 
-客户端连续 60 秒无 SSE 活动会取消请求；这是无活动超时。Route 中的 `maxDuration=300` 不能证明 Netlify 为该函数提供 300 秒。现代 Netlify Streaming Functions 的文档上限为 60 秒，实际部署还需核对函数类型、适配器和项目配置。来源：[Netlify Streaming API](https://docs.netlify.com/build/functions/api/)、[Next.js 部署支持](https://docs.netlify.com/build/frameworks/framework-setup-guides/nextjs/overview/)。
+客户端连续 60 秒无 SSE 活动会取消原流并尝试查询原任务；这是无活动超时。Route 中的 `maxDuration=300` 不能证明 Netlify 为该函数提供 300 秒。现代 Netlify Streaming Functions 的文档上限为 60 秒，实际部署还需核对函数类型、适配器和项目配置。来源：[Netlify Streaming API](https://docs.netlify.com/build/functions/api/)、[Next.js 部署支持](https://docs.netlify.com/build/frameworks/framework-setup-guides/nextjs/overview/)。
 
 ## 三路诊断
 

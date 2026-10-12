@@ -6,6 +6,7 @@ import RehypeKatex from 'rehype-katex'
 import RemarkGfm from 'remark-gfm'
 import SyntaxHighlighter from 'react-syntax-highlighter'
 import { atelierHeathLight } from 'react-syntax-highlighter/dist/esm/styles/hljs'
+import { normalizeMathMarkdown } from '@/utils/markdown-math'
 
 export function Markdown(props: { content: string }) {
   return (
@@ -13,7 +14,7 @@ export function Markdown(props: { content: string }) {
       <ReactMarkdown
         remarkPlugins={[RemarkMath, RemarkGfm, RemarkBreaks]}
         rehypePlugins={[
-          RehypeKatex,
+          [RehypeKatex, { strict: 'ignore', trust: false }],
         ]}
         components={{
           a({ children, ...props }) {
@@ -46,7 +47,7 @@ export function Markdown(props: { content: string }) {
         }}
         linkTarget={'_blank'}
       >
-        {props.content}
+        {normalizeMathMarkdown(props.content)}
       </ReactMarkdown>
     </div>
   )

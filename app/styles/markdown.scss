@@ -1066,3 +1066,19 @@
 
 .answer-panel .markdown-body { font-family: var(--font-sans); }
 .answer-panel .markdown-body p, .answer-panel .markdown-body > ul, .answer-panel .markdown-body > ol { max-width: 42em; }
+
+/* Keep long equations readable without widening the page on mobile. */
+.answer-panel .markdown-body .katex-display {
+  max-width: 100%;
+  overflow-x: auto;
+  overflow-y: hidden;
+  padding: 12px 2px;
+  margin: 20px 0;
+  text-align: left;
+}
+.answer-panel .markdown-body .katex-display > .katex {
+  text-align: left;
+}
+.answer-panel .markdown-body .katex {
+  font-size: 1.05em;
+}

@@ -8,6 +8,8 @@ import { ArrowPathIcon, ChatBubbleLeftRightIcon } from '@heroicons/react/24/outl
 import TextGenerationRes from './item'
 import Toast from '@/app/components/base/toast'
 import { sendCompletionMessage, sendWorkflowMessage } from '@/service'
+import { RECOVERY_ATTEMPTS, recoverWorkflowRun, recoveryFailureMessage } from '@/service/workflow-recovery'
+import type { WorkflowRecoveryCredential } from '@/service/workflow-recovery'
 import { stripHiddenThinking } from '@/service/sse-stream'
 import type { WorkflowContext } from '@/utils/workflow-context'
 import type { Feedbacktype, PromptConfig, VisionFile, VisionSettings, WorkflowProcess } from '@/types/app'
@@ -85,6 +87,9 @@ const Result: FC<IResultProps> = ({
 }) => {
   const [isResponsing, { setTrue: setResponsingTrue, setFalse: setResponsingFalse }] = useBoolean(false)
   const [requestFailed, setRequestFailed] = useState(false)
+  const [failureMessage, setFailureMessage] = useState('')
+  const [recoveryNotice, setRecoveryNotice] = useState('')
+  const [isRecovering, setIsRecovering] = useState(false)
   const [analysisStage, setAnalysisStage] = useState(0)
   const [hasStartedStreaming, setHasStartedStreaming] = useState(false)
   const abortControllerRef = useRef<AbortController | null>(null)
@@ -134,6 +139,10 @@ const Result: FC<IResultProps> = ({
     if (renderTimerRef.current)
       clearTimeout(renderTimerRef.current)
     setWorkflowProccessData(undefined)
+    setIsRecovering(false)
+    setRecoveryNotice('')
+    setFailureMessage('回答未完成。已停止等待并保留生成内容；原任务可能仍在后台运行。')
+    setRequestFailed(true)
     setResponsingFalse()
   }, [controlStopResponding, setResponsingFalse])
 
@@ -216,12 +225,17 @@ const Result: FC<IResultProps> = ({
     let receivedFirstChunk = false
     let lastVisibleText = ''
     let nodeCount = 0
+    let credential: WorkflowRecoveryCredential | null = null
+    let recovering = false
     const isCurrentRequest = () => requestSerialRef.current === requestId
 
     setFeedback({ rating: null })
     setCompletionRes('')
     setWorkflowProccessData(undefined)
     setRequestFailed(false)
+    setFailureMessage('')
+    setRecoveryNotice('')
+    setIsRecovering(false)
     setAnalysisStage(0)
     setHasStartedStreaming(false)
 
@@ -261,25 +275,73 @@ const Result: FC<IResultProps> = ({
       setCompletionRes(visibleText)
     }
 
-    const failRequest = () => {
+    const failRequest = (message = '') => {
       if (!isCurrentRequest() || isEnd)
         return
       flushStreamedText()
       setRequestFailed(true)
+      setFailureMessage(message)
+      setIsRecovering(false)
+      setRecoveryNotice('')
       setWorkflowProccessData(undefined)
       settleRequest(false)
+    }
+
+    const recoverOriginalRun = async () => {
+      if (!isCurrentRequest() || isEnd || recovering)
+        return
+      recovering = true
+      flushStreamedText()
+      clearRequestTimers()
+      abortController.abort()
+      const recoveryController = new AbortController()
+      abortControllerRef.current = recoveryController
+      setWorkflowProccessData(undefined)
+      setResponsingTrue()
+      setIsRecovering(true)
+      try {
+        const result = await recoverWorkflowRun(credential, recoveryController.signal, (attempt) => {
+          if (isCurrentRequest())
+            setRecoveryNotice(`连接已中断，回答尚未完成。正在查询原任务（${attempt}/${RECOVERY_ATTEMPTS}），已生成内容保留在下方。`)
+        })
+        if (!isCurrentRequest() || isEnd || recoveryController.signal.aborted)
+          return
+        if (result.status === 'succeeded' && result.answer) {
+          const answer = stripHiddenThinking(result.answer)
+          if (!answer.trim()) {
+            failRequest(recoveryFailureMessage('empty_output'))
+            return
+          }
+          setCompletionRes(answer)
+          setIsRecovering(false)
+          setRecoveryNotice('已从原任务恢复完整回答。')
+          settleRequest(true)
+        }
+        else {
+          failRequest(recoveryFailureMessage(result.status))
+        }
+      }
+      catch {
+        if (isCurrentRequest() && !recoveryController.signal.aborted)
+          failRequest(recoveryFailureMessage('unavailable'))
+      }
     }
 
     const handleActivityTimeout = () => {
       if (!isCurrentRequest() || isEnd)
         return
       isTimeout = true
-      abortController.abort()
-      failRequest()
+      if (isWorkflow) {
+        void recoverOriginalRun()
+      }
+      else {
+        abortController.abort()
+        failRequest()
+      }
     }
 
     const markActivity = () => {
-      if (!isCurrentRequest() || isEnd)
+      if (!isCurrentRequest() || isEnd || recovering)
         return
       if (activityTimerRef.current)
         clearTimeout(activityTimerRef.current)
@@ -311,9 +373,13 @@ const Result: FC<IResultProps> = ({
       void sendWorkflowMessage(data, {
         signal: abortController.signal,
         onActivity: markActivity,
+        onWorkflowRun: (run) => {
+          if (isCurrentRequest() && !isEnd && !recovering && run.recovery_token && (!credential || credential.runId === run.workflow_run_id))
+            credential = { runId: run.workflow_run_id, token: run.recovery_token }
+        },
         onTextChunk: queueTextChunk,
         onWorkflowStarted: () => {
-          if (isTimeout || !isCurrentRequest())
+          if (isTimeout || isEnd || recovering || !isCurrentRequest())
             return
           setWorkflowProccessData({
             status: WorkflowRunningStatus.Running,
@@ -323,7 +389,7 @@ const Result: FC<IResultProps> = ({
           setResponsingFalse()
         },
         onNodeStarted: ({ data }) => {
-          if (isTimeout || !isCurrentRequest())
+          if (isTimeout || isEnd || recovering || !isCurrentRequest())
             return
           nodeCount += 1
           setAnalysisStage(nodeCount === 1 ? 1 : 2)
@@ -340,7 +406,7 @@ const Result: FC<IResultProps> = ({
           }))
         },
         onNodeFinished: ({ data }) => {
-          if (isTimeout || !isCurrentRequest())
+          if (isTimeout || isEnd || recovering || !isCurrentRequest())
             return
           setAnalysisStage(2)
           const currentProcess = getWorkflowProccessData()
@@ -358,10 +424,10 @@ const Result: FC<IResultProps> = ({
           }))
         },
         onWorkflowFinished: ({ data }) => {
-          if (isTimeout || !isCurrentRequest())
+          if (isTimeout || isEnd || recovering || !isCurrentRequest())
             return
           if (data.error || data.status !== 'succeeded') {
-            failRequest()
+            failRequest(recoveryFailureMessage(data.status === 'succeeded' ? 'failed' : (data.status || 'failed')))
             return
           }
 
@@ -381,7 +447,7 @@ const Result: FC<IResultProps> = ({
         },
         onError: () => {
           if (!isTimeout)
-            failRequest()
+            void recoverOriginalRun()
         },
       })
     }
@@ -389,13 +455,13 @@ const Result: FC<IResultProps> = ({
       void sendCompletionMessage(data, {
         signal: abortController.signal,
         onData: (text: string) => {
-          if (isTimeout || !isCurrentRequest())
+          if (isTimeout || isEnd || recovering || !isCurrentRequest())
             return
           markActivity()
           queueTextChunk(text)
         },
         onCompleted: () => {
-          if (isTimeout || !isCurrentRequest())
+          if (isTimeout || isEnd || recovering || !isCurrentRequest())
             return
           if (renderTimerRef.current)
             clearTimeout(renderTimerRef.current)
@@ -438,10 +504,29 @@ const Result: FC<IResultProps> = ({
     />
   )
 
+  if (isRecovering) {
+    return <div className='answer-content'>
+      <div className='answer-error' role='status'>
+        <p>{recoveryNotice || '回答尚未完成，正在尝试恢复原任务。'}</p>
+        <button className='retry-button' type='button' onClick={() => {
+          requestSerialRef.current += 1
+          abortControllerRef.current?.abort()
+          abortControllerRef.current = null
+          setIsRecovering(false)
+          setRecoveryNotice('')
+          setRequestFailed(true)
+          setFailureMessage('回答未完成。已停止恢复并保留生成内容；原任务可能仍在后台运行。')
+          setWorkflowProccessData(undefined)
+          setResponsingFalse()
+        }}>停止恢复</button>
+      </div>
+      {!isNoData && renderTextGenerationRes()}
+    </div>
+  }
   if (requestFailed) {
     return <div className='answer-content'>
       <div className='answer-error' role='alert'>
-        <p>{isNoData ? '这次分析未能完成。请检查网络，或稍后重新尝试。' : '回答未完成。以下保留已生成的部分内容，请重新分析以获取完整回答。'}</p>
+        <p>{failureMessage || (isNoData ? '这次分析未能完成。请检查网络，或稍后重新尝试。' : '回答未完成。以下保留已生成的部分内容，请重新分析以获取完整回答。')}</p>
         <button className='retry-button' type='button' onClick={handleSend}><ArrowPathIcon aria-hidden='true' />重新分析</button>
       </div>
       {!isNoData && renderTextGenerationRes()}
@@ -470,7 +555,7 @@ const Result: FC<IResultProps> = ({
       <p>选择上方任务，或描述你遇到的情况。<br />回答将在这里呈现。</p>
     </div>
   }
-  return <div className='answer-content'>{renderTextGenerationRes()}</div>
+  return <div className='answer-content'>{recoveryNotice && <p className='question-hint' role='status'>{recoveryNotice}</p>}{renderTextGenerationRes()}</div>
 }
 
 export default React.memo(Result)

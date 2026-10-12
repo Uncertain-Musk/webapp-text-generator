@@ -2,6 +2,7 @@ import assert from 'node:assert/strict'
 import { readFileSync } from 'node:fs'
 import test from 'node:test'
 import ts from 'typescript'
+import { withRecoveryCredentials } from '../app/api/utils/workflow-recovery.ts'
 import { buildWorkflowInputs } from '../utils/workflow-context.ts'
 
 // Execute the actual route with an isolated SDK double. No real Dify request.
@@ -13,7 +14,9 @@ function loadRoute(runWorkflow) {
   const exports = {}
   const require = (name) => {
     if (name === '@/app/api/utils/common')
-      return { client: { runWorkflow }, getInfo: () => ({ user: 'test-user' }) }
+      return { client: { runWorkflow }, getInfo: () => ({ user: 'test-user', sessionId: 'test-session' }), setSession: id => ({ 'Set-Cookie': `session_id=${id}; Path=/; HttpOnly; SameSite=Lax` }) }
+    if (name === '@/app/api/utils/workflow-recovery') return { withRecoveryCredentials }
+    if (name === '@/config/server') return { DIFY_API_KEY: 'test-key' }
     if (name === '@/utils/workflow-context')
       return { buildWorkflowInputs }
     throw new Error(`Unexpected import: ${name}`)

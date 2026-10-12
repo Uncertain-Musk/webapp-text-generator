@@ -1,4 +1,4 @@
-import type { IOnActivity, IOnCompleted, IOnData, IOnError, IOnNodeFinished, IOnNodeStarted, IOnTextChunk, IOnWorkflowFinished, IOnWorkflowStarted } from './base'
+import type { IOnActivity, IOnCompleted, IOnData, IOnError, IOnNodeFinished, IOnNodeStarted, IOnTextChunk, IOnWorkflowFinished, IOnWorkflowRun, IOnWorkflowStarted } from './base'
 import { get, post, ssePost } from './base'
 import type { Feedbacktype } from '@/types/app'
 
@@ -20,6 +20,7 @@ export const sendCompletionMessage = async (body: Record<string, any>, { onData,
 export const sendWorkflowMessage = async (
   body: Record<string, any>,
   {
+    onWorkflowRun,
     onWorkflowStarted,
     onNodeStarted,
     onNodeFinished,
@@ -29,6 +30,7 @@ export const sendWorkflowMessage = async (
     onError,
     signal,
   }: {
+    onWorkflowRun?: IOnWorkflowRun
     onWorkflowStarted: IOnWorkflowStarted
     onNodeStarted: IOnNodeStarted
     onNodeFinished: IOnNodeFinished
@@ -45,7 +47,7 @@ export const sendWorkflowMessage = async (
       ...body,
       response_mode: 'streaming',
     },
-  }, { onNodeStarted, onWorkflowStarted, onWorkflowFinished, onNodeFinished, onTextChunk, onActivity, onError })
+  }, { onWorkflowRun, onNodeStarted, onWorkflowStarted, onWorkflowFinished, onNodeFinished, onTextChunk, onActivity, onError })
 }
 
 export const fetchAppParams = async () => {

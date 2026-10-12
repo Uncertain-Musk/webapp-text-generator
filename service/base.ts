@@ -1,6 +1,6 @@
+import { readSSEStream } from './sse-stream'
 import { API_PREFIX } from '@/config'
 import Toast from '@/app/components/base/toast'
-import { readSSEStream } from './sse-stream'
 
 const TIME_OUT = 5 * 60 * 1000 // five minutes
 
@@ -14,7 +14,7 @@ const ContentType = {
 const baseOptions = {
   method: 'GET',
   mode: 'cors',
-  credentials: 'include', // always send cookies、HTTP Basic authentication.
+  credentials: 'include', // always send cookies and HTTP Basic authentication.
   headers: new Headers({
     'Content-Type': ContentType.json,
   }),
@@ -120,7 +120,10 @@ export type IOnNodeFinished = (nodeFinished: NodeFinishedResponse) => void
 export type IOnTextChunk = (text: string, textChunk: TextChunkResponse) => void
 export type IOnActivity = (event: SSEActivityEvent) => void
 
+export type IOnWorkflowRun = (run: { workflow_run_id: string; recovery_token?: string }) => void
+
 type IOtherOptions = {
+  onWorkflowRun?: IOnWorkflowRun
   needAllResponseContent?: boolean
   onData?: IOnData // for stream
   onError?: IOnError
@@ -149,6 +152,7 @@ const handleStream = async (
   onNodeFinished?: IOnNodeFinished,
   onTextChunk?: IOnTextChunk,
   onActivity?: IOnActivity,
+  onWorkflowRun?: IOnWorkflowRun,
 ) => {
   let isFirstMessage = true
   const activityEvents = new Set<SSEActivityEvent>([
@@ -161,6 +165,8 @@ const handleStream = async (
   ])
 
   await readSSEStream(response, (bufferObj) => {
+    if (typeof bufferObj.workflow_run_id === 'string')
+      onWorkflowRun?.({ workflow_run_id: bufferObj.workflow_run_id, recovery_token: bufferObj.recovery_token })
     const event = bufferObj.event as SSEActivityEvent
     if (activityEvents.has(event))
       onActivity?.(event)
@@ -318,6 +324,7 @@ export const ssePost = (
     onNodeFinished,
     onTextChunk,
     onActivity,
+    onWorkflowRun,
   }: IOtherOptions) => {
   const options = Object.assign({}, baseOptions, {
     method: 'POST',
@@ -348,11 +355,12 @@ export const ssePost = (
           return
         }
         onData?.(str, isFirstMessage, moreInfo)
-      }, onCompleted, onWorkflowStarted, onWorkflowFinished, onNodeStarted, onNodeFinished, onTextChunk, onActivity)
+      }, onCompleted, onWorkflowStarted, onWorkflowFinished, onNodeStarted, onNodeFinished, onTextChunk, onActivity, onWorkflowRun)
     }).catch((e) => {
       if (e?.name === 'AbortError')
         return
-      Toast.notify({ type: 'error', message: e })
+      if (!onWorkflowFinished)
+        Toast.notify({ type: 'error', message: e })
       onError?.(e instanceof Error ? e.message : `${e}`)
     })
 }

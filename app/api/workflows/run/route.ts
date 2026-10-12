@@ -1,7 +1,11 @@
 import { type NextRequest } from 'next/server'
-import { client, getInfo } from '@/app/api/utils/common'
+import { client, getInfo, setSession } from '@/app/api/utils/common'
 import { buildWorkflowInputs } from '@/utils/workflow-context'
 
+import { withRecoveryCredentials } from '@/app/api/utils/workflow-recovery'
+import { DIFY_API_KEY } from '@/config/server'
+
+export const runtime = 'nodejs'
 export const maxDuration = 300
 
 export async function POST(request: NextRequest) {
@@ -14,7 +18,7 @@ export async function POST(request: NextRequest) {
   catch {
     return Response.json({ message: '请求参数格式不正确。' }, { status: 400 })
   }
-  const { user } = getInfo(request)
+  const { user, sessionId } = getInfo(request)
   let res
   try {
     res = await client.runWorkflow(workflowInputs, user, true, body.files)
@@ -23,8 +27,10 @@ export async function POST(request: NextRequest) {
     // Do not log SDK errors: they can contain the server Authorization header.
     return Response.json({ message: 'Workflow 请求未成功，请检查服务状态和已发布应用的输入变量配置。' }, { status: 502 })
   }
-  return new Response(res.data as any, {
+  const upstream = new Response(res.data as any)
+  return new Response(upstream.body ? withRecoveryCredentials(upstream.body, user, DIFY_API_KEY) : null, {
     headers: {
+      ...setSession(sessionId),
       'Content-Type': 'text/event-stream; charset=utf-8',
       'Cache-Control': 'no-cache, no-transform',
       'Connection': 'keep-alive',

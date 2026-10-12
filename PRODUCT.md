@@ -40,3 +40,8 @@ web
 ## Backend Readiness
 
 2026-10-08 参数接口接受 query、platform_context、market_context；7 次结构、8 次冒烟及 54 次固定集请求全部完成 Streaming，原 query 和独立上下文回显一致，68 次检索使用代码输出 retrieval_query。General、Amazon US、TikTok Shop US 均检索到修复后的完整 QA；全库启用/索引管理状态无法由当前服务 API 取得。系统链路可用，政策回答可靠性未通过，详见 [MVP 0.3.1 完整验收报告](knowledge-base/reports/mvp-0.3.1-final-evaluation.md)。Dify 配置、Prompt、知识正文与检索参数由人工管理，本轮未修改。
+
+
+## 长回答断线恢复
+
+提前 EOF 后保留已生成正文，显示恢复进度；使用原运行 ID 查询状态，最多 12 次、间隔 3 秒、总等待不超过 90 秒。详情成功且有完整 text 输出时替换正文。失败、空输出、缺少标识或超出次数时保持未完成提示。用户可停止恢复；只有手动重新分析才创建新任务。页面刷新不恢复任务。实现和验收规则见 docs/workflow-recovery.md。
