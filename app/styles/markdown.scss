@@ -50,7 +50,7 @@
   margin: 0;
   color: #101828;
   background-color: var(--color-canvas-default);
-  font-size: 15px;
+  font-size: var(--text-body);
   font-weight: 400;
   line-height: 1.9;
   word-wrap: break-word;
@@ -373,7 +373,7 @@
 .markdown-body samp {
   font-family: ui-monospace, SFMono-Regular, SF Mono, Menlo, Consolas,
     Liberation Mono, monospace;
-  font-size: 12px;
+  font-size: var(--text-caption);
 }
 
 .markdown-body pre {
@@ -381,7 +381,7 @@
   margin-bottom: 0;
   font-family: ui-monospace, SFMono-Regular, SF Mono, Menlo, Consolas,
     Liberation Mono, monospace;
-  font-size: 12px;
+  font-size: var(--text-caption);
   word-wrap: normal;
 }
 
@@ -787,7 +787,7 @@
 .markdown-body .csv-data th {
   padding: 5px;
   overflow: hidden;
-  font-size: 12px;
+  font-size: var(--text-caption);
   line-height: 1;
   text-align: left;
   white-space: nowrap;
@@ -819,7 +819,7 @@
 }
 
 .markdown-body .footnotes {
-  font-size: 12px;
+  font-size: var(--text-caption);
   color: var(--color-fg-muted);
   border-top: 1px solid var(--color-border-default);
 }
@@ -1040,26 +1040,29 @@
   filter: invert(50%);
 }
 
-.answer-panel .markdown-body { color: #33483b; font-size: 16px; line-height: 1.85; overflow-wrap: anywhere; word-break: break-word; }
+.answer-panel .markdown-body { color: var(--ink); font-size: var(--text-body); line-height: 1.85; overflow-wrap: anywhere; word-break: break-word; }
 .answer-panel .markdown-body > :first-child { margin-top: 0; }
 .answer-panel .markdown-body h1, .answer-panel .markdown-body h2, .answer-panel .markdown-body h3, .answer-panel .markdown-body h4 { color: #1c4936; font-weight: 600; line-height: 1.5; margin-top: 28px; margin-bottom: 12px; border: 0; padding-bottom: 0; text-wrap: balance; }
-.answer-panel .markdown-body h1 { font-size: 24px; }
-.answer-panel .markdown-body h2 { font-size: 20px; }
-.answer-panel .markdown-body h3 { font-size: 18px; }
-.answer-panel .markdown-body h4 { font-size: 16px; }
+.answer-panel .markdown-body h1 { font-size: var(--text-section); }
+.answer-panel .markdown-body h2 { font-size: var(--text-heading); }
+.answer-panel .markdown-body h3 { font-size: var(--text-body); }
+.answer-panel .markdown-body h4 { font-size: var(--text-body); }
 .answer-panel .markdown-body strong { color: #17594a; font-weight: 700; }
 .answer-panel .markdown-body p, .answer-panel .markdown-body ul, .answer-panel .markdown-body ol { margin-bottom: 18px; }
 .answer-panel .markdown-body li + li { margin-top: .5em; }
 .answer-panel .markdown-body a { color: #17594a; text-decoration: underline; text-underline-offset: 3px; }
 .answer-panel .markdown-body blockquote { border-left: 1px solid #9bb1a0; background: #f6f8f3; padding: 14px 18px; color: #546b5a; }
-.answer-panel .markdown-body pre, .structured-output { max-width: 100%; overflow: auto; padding: 16px; border-radius: 8px; background: #f4f6ef; font-size: 12px; line-height: 1.8; }
+.answer-panel .markdown-body pre, .structured-output { max-width: 100%; overflow: auto; padding: 16px; border-radius: 8px; background: #f4f6ef; font-size: var(--text-caption); line-height: 1.8; }
 .answer-panel .markdown-body .markdown-table-wrap { width: 100%; max-width: 100%; overflow-x: auto; overscroll-behavior-inline: contain; -webkit-overflow-scrolling: touch; }
 .answer-panel .markdown-body .markdown-table-wrap:focus-visible { outline-offset: 2px; }
-.answer-panel .markdown-body .markdown-table-wrap table { width: max-content; min-width: 100%; margin: 0; font-size: 14px; }
+.answer-panel .markdown-body .markdown-table-wrap table { width: max-content; min-width: 100%; margin: 0; font-size: var(--text-control); }
 .answer-panel .markdown-body th { background: #f0f4ec; }
 @media (max-width: 480px) {
-  .answer-panel .markdown-body { font-size: 15px; }
-  .answer-panel .markdown-body h1 { font-size: 22px; }
-  .answer-panel .markdown-body h2 { font-size: 19px; }
-  .answer-panel .markdown-body h3 { font-size: 17px; }
+  .answer-panel .markdown-body { font-size: var(--text-body); }
+  .answer-panel .markdown-body h1 { font-size: var(--text-section); }
+  .answer-panel .markdown-body h2 { font-size: var(--text-heading); }
+  .answer-panel .markdown-body h3 { font-size: var(--text-body); }
 }
+
+.answer-panel .markdown-body { font-family: var(--font-sans); }
+.answer-panel .markdown-body p, .answer-panel .markdown-body > ul, .answer-panel .markdown-body > ol { max-width: 42em; }

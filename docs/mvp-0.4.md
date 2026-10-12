@@ -16,7 +16,7 @@ Next.js 15.5.25 App Router、React 18.3.1、TypeScript 5.9.3；全局 CSS/Tailwi
 
 - app/tools/shopee-ads/page.tsx：路由和 metadata。
 - app/tools/shopee-ads/analyzer.tsx：本地输入、状态、漏斗、指标提示、诊断、复制和来源链接。
-- app/tools/shopee-ads/styles.module.css：作用域样式，沿用全局色彩、系统字体、留白和组件圆角；桌面两栏，手机单栏。
+- app/tools/shopee-ads/styles.module.css：作用域样式，沿用全局色彩、系统字体、留白和组件圆角；宽屏两栏，1100px 及以下单栏；窄容器表单单列。字号与文字对比度沿用 [DESIGN.md](../DESIGN.md) 的共享规则。
 - utils/shopee-ads.ts：纯函数输入校验、计算、优先级规则、显示格式与摘要。
 - knowledge-base/shopee/：两个双列 QA 候选、独立来源与导入指南。
 - script/validate-shopee-kb.py、script/test-shopee-kb.py：离线 CSV 检查及负例测试。
